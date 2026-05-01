@@ -1,0 +1,37 @@
+name: Horizon Scraper
+
+on:
+  schedule:
+    - cron: '30 10 * * *'   # 10:30 UTC = 12:30 po crnogorskom vremenu (CET/CEST)
+  workflow_dispatch:          # ručno pokretanje iz GitHub UI
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout koda
+        uses: actions/checkout@v4
+
+      - name: Podešavanje Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+
+      - name: Instalacija zavisnosti
+        run: pip install -r requirements.txt
+
+      - name: Pokretanje scrapera
+        env:
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          EMAIL_FROM: ${{ secrets.EMAIL_FROM }}
+        run: python horizon_scraper.py
+
+      - name: Sačuvaj log kao artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: scraper-log-${{ github.run_id }}
+          path: scraper.log
+          retention-days: 14
