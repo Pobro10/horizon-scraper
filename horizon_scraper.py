@@ -57,16 +57,10 @@ DELAY_PROFILE  = 1.0        # pauza između posjeta profilima
 MAX_OLD_IN_ROW = 5          # zaustavi paginaciju nakon N uzastopnih starih oglasa
 
 # ──────────────────────────────────────────────────────────────
-# CUTOFF DATUM  (ponedeljak ove sedmice, 00:00:00)
+# CUTOFF DATUM  (zadnjih 24 sata)
 # ──────────────────────────────────────────────────────────────
 
-def _this_monday() -> datetime:
-    today = datetime.now()
-    return (today - timedelta(days=today.weekday())).replace(
-        hour=0, minute=0, second=0, microsecond=0
-    )
-
-CUTOFF = _this_monday()
+CUTOFF = datetime.now() - timedelta(hours=24)
 
 # ──────────────────────────────────────────────────────────────
 # LOGGING
@@ -81,7 +75,7 @@ logging.basicConfig(
     ],
 )
 log = logging.getLogger(__name__)
-log.info("Cutoff datum: %s (ponedeljak ove sedmice)", CUTOFF.strftime("%d.%m.%Y"))
+log.info("Cutoff datum: %s (zadnjih 24h)", CUTOFF.strftime("%d.%m.%Y %H:%M"))
 
 http = requests.Session()
 http.headers.update({
@@ -193,7 +187,7 @@ def send_email(leads: list[dict]) -> None:
     html = f"""<!DOCTYPE html>
 <html lang="bs"><body style="font-family:Arial,sans-serif;color:#333">
 <h2 style="color:#1a1a1a">Horizon Scraper — {datum}</h2>
-<p>Pronađeno <strong>{len(leads)}</strong> vlasnik(a) za sedmicu od {CUTOFF.strftime('%d.%m.%Y')}:</p>
+<p>Pronađeno <strong>{len(leads)}</strong> vlasnik(a) u zadnjih 24 sata (od {CUTOFF.strftime('%d.%m.%Y %H:%M')}):</p>
 <table style="border-collapse:collapse;width:100%;font-size:14px">
   <thead>
     <tr style="background:#f4f4f4">
