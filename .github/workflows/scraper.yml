@@ -2,8 +2,11 @@ name: Horizon Scraper
 
 on:
   schedule:
-    - cron: '30 10 * * *'   # 10:30 UTC = 12:30 po crnogorskom vremenu (CET/CEST)
-  workflow_dispatch:          # ručno pokretanje iz GitHub UI
+    - cron: '0 6 * * *'     # 06:00 UTC = 08:00 CET
+    - cron: '30 10 * * *'   # 10:30 UTC = 12:30 CET  ← jedini run koji šalje email
+    - cron: '0 14 * * *'    # 14:00 UTC = 16:00 CET
+    - cron: '0 18 * * *'    # 18:00 UTC = 20:00 CET
+  workflow_dispatch:         # ručno pokretanje (uvijek šalje email)
 
 jobs:
   scrape:
@@ -26,7 +29,18 @@ jobs:
         env:
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
           EMAIL_FROM: ${{ secrets.EMAIL_FROM }}
+          # Email šalje samo run u 10:30 UTC ili ručni trigger
+          SEND_EMAIL: ${{ github.event.schedule == '30 10 * * *' || github.event_name == 'workflow_dispatch' }}
         run: python horizon_scraper.py
+
+      - name: Sačuvaj leads kao artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: leads-${{ github.run_id }}
+          path: leads_today.json
+          retention-days: 7
+          if-no-files-found: ignore
 
       - name: Sačuvaj log kao artifact
         if: always()
