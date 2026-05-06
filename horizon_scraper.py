@@ -290,7 +290,11 @@ def _parse_oglasi_listing(url: str) -> dict | None:
             log.debug("  [star oglas] %s  datum: %s", url, date_m.group(0))
             return None
 
-    name_tag = soup.select_one("p.sidebar-user-status-name")
+    name_tag = (
+        soup.select_one("p.sidebar-user-status-name") or
+        soup.select_one("div.korisnik span") or
+        soup.select_one("div.korisnik")
+    )
     if not name_tag:
         return None
     raw_name = name_tag.get_text(" ", strip=True)
@@ -298,10 +302,13 @@ def _parse_oglasi_listing(url: str) -> dict | None:
     uid_m    = re.search(r"\((\w+)\)", raw_name)
     user_id  = uid_m.group(1) if uid_m else None
 
-    loc_tag  = soup.select_one("a.ad-breadcrumbs__link[href*='grad-']")
+    loc_tag  = (
+        soup.select_one("a.ad-breadcrumbs__link[href*='grad-']") or
+        soup.select_one("a[href*='/grad-']")
+    )
     lokacija = loc_tag.get_text(strip=True) if loc_tag else ""
 
-    price_tag = soup.select_one("div.cena p")
+    price_tag = soup.select_one("div.cena p") or soup.select_one("div.cena")
     cijena    = clean_price(price_tag.get_text()) if price_tag else ""
 
     return {
@@ -418,25 +425,39 @@ def _parse_patuljak_listing(url: str) -> dict | None:
     soup      = BeautifulSoup(r.text, "lxml")
     page_text = soup.get_text(" ")
 
-    dm = re.search(r"datum[:\s]+(\d{1,2}\.\d{1,2}\.\d{4})", page_text, re.I)
+    dm = re.search(r"datum[:\s]+(\d{1,2}\.\d{1,2}\.\d{4})(?:\s+(\d{1,2}:\d{2}))?", page_text, re.I)
     if dm:
-        listing_dt = parse_date(dm.group(1))
+        date_str = dm.group(1)
+        time_str = dm.group(2)
+        if time_str:
+            try:
+                listing_dt = datetime.strptime(f"{date_str} {time_str}", "%d.%m.%Y %H:%M")
+            except ValueError:
+                listing_dt = parse_date(date_str)
+        else:
+            listing_dt = parse_date(date_str)
         if listing_dt is not None and listing_dt < CUTOFF:
-            log.debug("  [star oglas] %s  datum: %s", url, dm.group(1))
+            log.debug("  [star oglas] %s  datum: %s", url, date_str)
             return "old"
 
-    seller_div = soup.select_one("div.product_full__broj_tel")
+    seller_div = (
+        soup.select_one("div.product_full--opis---seller") or
+        soup.select_one("div.product_full__broj_tel")
+    )
     if not seller_div:
         return None
 
-    name_tag = seller_div.select_one("h2[itemprop='name']")
-    name     = name_tag.get_text(strip=True) if name_tag else "Nepoznat"
+    name_tag = (
+        seller_div.select_one("h6 a") or
+        seller_div.select_one("h2[itemprop='name']")
+    )
+    name = name_tag.get_text(strip=True) if name_tag else "Nepoznat"
 
     profile_a     = seller_div.find("a", href=re.compile(r"/profil/"))
     listing_count = _patuljak_count_from_href(profile_a["href"]) if profile_a else 1
 
     lokacija = ""
-    for li in soup.select("ul[itemprop='additionalProperty'] li"):
+    for li in soup.select("ul.product_full__info li, ul[itemprop='additionalProperty'] li"):
         spans = li.find_all("span")
         if len(spans) == 2 and spans[0].get_text(strip=True).lower() == "grad":
             lokacija = spans[1].get_text(strip=True)
@@ -446,8 +467,12 @@ def _parse_patuljak_listing(url: str) -> dict | None:
         log.debug("  [drugi grad] %s  →  %s", url, lokacija)
         return None
 
-    price_tag = soup.select_one("div.product_full__cijena span[itemprop='price']")
-    cijena    = clean_price(price_tag.get_text()) if price_tag else ""
+    price_tag = soup.select_one("div.product_full__cijena")
+    if price_tag:
+        raw_price = re.sub(r"(?i)cijena\s*:\s*", "", price_tag.get_text(strip=True))
+        cijena    = clean_price(raw_price)
+    else:
+        cijena    = ""
 
     return {
         "ime":        name,
