@@ -1,11 +1,12 @@
 {
-  "keywords": [
-    "nekretnine", "real estate", "realty",
-    "agencija", "agency", "d.o.o", "doo", "invest", "promet",
-    "property", "montenegro", "agent",
-    "proart", "prestige", "millennium", "toka",
-    "bestate4me", "bestate",
-    "globus", "did", "dm nekretnine", "my place", "prizma s"
+  "keywords_strong": [
+    "nekretnine", "real estate", "realty", "agencija", "agency",
+    "property", "agent", "invest", "promet", "d.o.o", "montenegro",
+    "proart", "prestige", "millennium", "bestate4me", "bestate",
+    "globus", "dm nekretnine", "my place", "prizma s"
+  ],
+  "keywords_weak": [
+    "did", "doo", "toka"
   ],
   "phones": [
     "+38267580584",

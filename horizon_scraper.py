@@ -39,11 +39,13 @@ try:
 except FileNotFoundError:
     _B = {}
 
-BROKER_KEYWORDS     = _B.get("keywords", [
+BROKER_KEYWORDS_STRONG = _B.get("keywords_strong", [
     "nekretnine", "real estate", "realty", "agencija", "agency",
-    "d.o.o", "doo", "invest", "promet", "property", "montenegro",
-    "agent", "proart", "prestige", "millennium", "toka", "bestate4me", "bestate",
+    "property", "agent", "invest", "promet", "d.o.o", "montenegro",
+    "proart", "prestige", "millennium", "bestate4me", "bestate",
+    "globus", "dm nekretnine", "my place", "prizma s",
 ])
+BROKER_KEYWORDS_WEAK   = _B.get("keywords_weak", ["did", "doo", "toka"])
 BROKER_PHONES       = set(_B.get("phones", [
     "+38267580584", "+38267447444", "+38268150115", "+38267347963",
 ]))
@@ -143,11 +145,14 @@ def is_broker(name: str, listing_count: int, phone: str = "") -> tuple[str, str]
     name_l = name.lower().strip()
     if name_l in BROKER_NAMES:
         return ("posrednik", "ime na listi")
+    strong = next((kw for kw in BROKER_KEYWORDS_STRONG if kw in name_l), None)
+    if strong:
+        return ("posrednik", f"agencija: {strong}")
     if phone and phone.replace(" ", "") in {p.replace(" ", "") for p in BROKER_PHONES}:
         return ("posrednik", "telefon na listi")
-    matched_kw = next((kw for kw in BROKER_KEYWORDS if kw in name_l), None)
-    if matched_kw:
-        return ("provjeri", f"keyword: {matched_kw}")
+    weak = next((kw for kw in BROKER_KEYWORDS_WEAK if kw in name_l), None)
+    if weak:
+        return ("provjeri", f"možda agencija: {weak}")
     if listing_count >= BROKER_MIN_LISTINGS:
         return ("provjeri", f"{listing_count} oglasa")
     return ("vlasnik", "")
