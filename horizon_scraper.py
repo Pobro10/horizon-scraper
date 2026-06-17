@@ -785,11 +785,9 @@ def run_realitica() -> tuple[list[dict], list[dict]]:
 
             time.sleep(DELAY_LISTING)
 
-        log.info("  --- Raw oglašivači sa Realitice ---")
         for lead in raw:
-            log.info("  IME: %-30s | %s | %s",
-                     lead["ime"], lead["cijena"], lead["lokacija"])
-        log.info("  --- Kraj raw liste ---")
+            log.debug("  [raw] %-30s | %s | %s",
+                      lead["ime"], lead["cijena"], lead["lokacija"])
 
         for lead in raw:
             count = name_count[lead["ime"]]
