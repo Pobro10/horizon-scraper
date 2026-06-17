@@ -752,58 +752,62 @@ def run_realitica() -> tuple[list[dict], list[dict]]:
     log.info("  REALITICA.COM")
     log.info("═" * 60)
 
-    leads:        list[dict] = []
-    review_leads: list[dict] = []
+    leads:        list[dict]     = []
+    review_leads: list[dict]     = []
+    raw:          list[dict]     = []
+    name_count:   dict[str, int] = {}
 
-    try:
-        raw:        list[dict]      = []
-        name_count: dict[str, int]  = {}
+    for for_param, label in [("Prodaja", "prodaja"), ("DuziNajam", "najam")]:
+        try:
+            for page in range(1, REALITICA_PAGES + 1):
+                if page == 1:
+                    url = (
+                        f"{REALITICA_BASE}/index.php?for={for_param}"
+                        f"&lng=hr&opa=Podgorica&qob=p-new&since-day=p-7day"
+                    )
+                else:
+                    url = (
+                        f"{REALITICA_BASE}/?cur_page={page - 1}&for={for_param}"
+                        f"&lng=hr&opa=Podgorica&qob=p-new&since-day=p-7day"
+                    )
+                r = get(url)
+                if r is None:
+                    log.warning("  Realitica [%s] str. %d: HTTP greška, preskačem.",
+                                label, page)
+                    continue
 
-        for page in range(1, REALITICA_PAGES + 1):
-            if page == 1:
-                url = f"{REALITICA_BASE}/prodaja/stanova/podgorica/Crna-Gora/"
-            else:
-                url = (
-                    f"{REALITICA_BASE}/?cur_page={page - 1}"
-                    f"&type=Apartment&for=Prodaja&lng=hr"
-                    f"&pZpa=Crna+Gora&opa=podgorica"
-                )
-            r = get(url)
-            if r is None:
-                log.warning("  Realitica.com str. %d: HTTP greška, preskačem.", page)
-                continue
+                soup   = BeautifulSoup(r.text, "lxml")
+                thumbs = soup.select("div.thumb_div")
+                log.info("  [%s] str. %d: %d kartica", label, page, len(thumbs))
 
-            soup   = BeautifulSoup(r.text, "lxml")
-            thumbs = soup.select("div.thumb_div")
-            log.info("  str. %d: %d kartica", page, len(thumbs))
+                for thumb in thumbs:
+                    card = _realitica_parse_card(thumb)
+                    if card:
+                        card["izvor"] = f"Realitica.com ({label})"
+                        raw.append(card)
+                        name_count[card["ime"]] = name_count.get(card["ime"], 0) + 1
 
-            for thumb in thumbs:
-                card = _realitica_parse_card(thumb)
-                if card:
-                    raw.append(card)
-                    name_count[card["ime"]] = name_count.get(card["ime"], 0) + 1
+                time.sleep(DELAY_LISTING)
 
-            time.sleep(DELAY_LISTING)
+        except Exception as e:
+            log.error("Realitica.com [%s] greška — preskačem: %s", label, e)
 
-        for lead in raw:
-            log.debug("  [raw] %-30s | %s | %s",
-                      lead["ime"], lead["cijena"], lead["lokacija"])
+    for lead in raw:
+        log.debug("  [raw] %-30s | %s | %s",
+                  lead["ime"], lead["cijena"], lead["lokacija"])
 
-        for lead in raw:
-            count = name_count[lead["ime"]]
-            status, razlog = is_broker(lead["ime"], count)
-            if status == "posrednik":
-                log.info("  [posrednik] %-28s (%s)", lead["ime"], razlog)
-            elif status == "provjeri":
-                lead["_razlog"] = razlog
-                review_leads.append(lead)
-                log.info("  [provjeri]  %-28s (%s)", lead["ime"], razlog)
-            else:
-                leads.append(lead)
-
-    except Exception as e:
-        log.error("Realitica.com greška — preskačem: %s", e)
-        return [], []
+    for lead in raw:
+        count = name_count[lead["ime"]]
+        status, razlog = is_broker(lead["ime"], count)
+        if status == "posrednik":
+            log.info("  [posrednik] %-28s (%s)", lead["ime"], razlog)
+        elif status == "provjeri":
+            lead["_razlog"] = razlog
+            review_leads.append(lead)
+            log.info("  [provjeri]  %-28s (%s)", lead["ime"], razlog)
+        else:
+            leads.append(lead)
+            log.info("  [vlasnik]   %-28s (%s)", lead["ime"], lead["izvor"])
 
     log.info("Realitica.com → %d vlasnika, %d za provjeru", len(leads), len(review_leads))
     return leads, review_leads
