@@ -139,15 +139,18 @@ def is_recent(text: str) -> bool | None:
 # POMOĆNE FUNKCIJE
 # ──────────────────────────────────────────────────────────────
 
-def is_broker(name: str, listing_count: int, phone: str = "") -> bool:
+def is_broker(name: str, listing_count: int, phone: str = "") -> tuple[str, str]:
     name_l = name.lower().strip()
     if name_l in BROKER_NAMES:
-        return True
-    if any(kw in name_l for kw in BROKER_KEYWORDS):
-        return True
+        return ("posrednik", "ime na listi")
     if phone and phone.replace(" ", "") in {p.replace(" ", "") for p in BROKER_PHONES}:
-        return True
-    return listing_count >= BROKER_MIN_LISTINGS
+        return ("posrednik", "telefon na listi")
+    matched_kw = next((kw for kw in BROKER_KEYWORDS if kw in name_l), None)
+    if matched_kw:
+        return ("provjeri", f"keyword: {matched_kw}")
+    if listing_count >= BROKER_MIN_LISTINGS:
+        return ("provjeri", f"{listing_count} oglasa")
+    return ("vlasnik", "")
 
 
 def clean_price(raw: str) -> str:
@@ -195,14 +198,14 @@ def _resend_post(subject: str, html: str, text: str) -> bool:
     return resp.ok
 
 
-def send_email(leads: list[dict]) -> None:
+def send_email(leads: list[dict], review_leads: list[dict] = []) -> None:
     if not SEND_EMAIL:
         log.info("SEND_EMAIL=false — email se preskače (artifact sačuvan).")
         return
 
     datum = datetime.now().strftime("%d.%m.%Y")
 
-    if not leads:
+    if not leads and not review_leads:
         log.info("Nema novih vlasnika — email se ne šalje.")
         return
 
@@ -217,6 +220,37 @@ def send_email(leads: list[dict]) -> None:
         </tr>"""
         for lead in leads
     )
+
+    review_block = ""
+    if review_leads:
+        review_rows = "\n".join(
+            f"""        <tr>
+          <td style="padding:8px;border:1px solid #ddd">{lead['ime']}</td>
+          <td style="padding:8px;border:1px solid #ddd">{lead['cijena']}</td>
+          <td style="padding:8px;border:1px solid #ddd">{lead['lokacija']}</td>
+          <td style="padding:8px;border:1px solid #ddd">
+            <a href="{lead['oglas_link']}">{lead['oglas_link']}</a>
+          </td>
+          <td style="padding:8px;border:1px solid #ddd">{lead.get('_razlog','')}</td>
+        </tr>"""
+            for lead in review_leads
+        )
+        review_block = f"""
+<h3 style="color:#b8860b;margin-top:32px">Za ručnu provjeru ({len(review_leads)})</h3>
+<table style="border-collapse:collapse;width:100%;font-size:14px">
+  <thead>
+    <tr style="background:#fff3cd">
+      <th style="padding:10px;border:1px solid #ddd;text-align:left">Ime</th>
+      <th style="padding:10px;border:1px solid #ddd;text-align:left">Cijena</th>
+      <th style="padding:10px;border:1px solid #ddd;text-align:left">Lokacija</th>
+      <th style="padding:10px;border:1px solid #ddd;text-align:left">Link oglasa</th>
+      <th style="padding:10px;border:1px solid #ddd;text-align:left">Razlog</th>
+    </tr>
+  </thead>
+  <tbody>
+{review_rows}
+  </tbody>
+</table>"""
 
     html = f"""<!DOCTYPE html>
 <html lang="bs"><body style="font-family:Arial,sans-serif;color:#333">
@@ -235,6 +269,7 @@ def send_email(leads: list[dict]) -> None:
 {rows}
   </tbody>
 </table>
+{review_block}
 <p style="color:#888;font-size:12px;margin-top:24px">
   Izvor: Oglasi.me + Patuljak.me &nbsp;|&nbsp; Horizon Scraper
 </p>
@@ -250,14 +285,27 @@ def send_email(leads: list[dict]) -> None:
             f"Oglas:    {lead['oglas_link']}",
             "",
         ]
+    if review_leads:
+        text_lines += [f"--- Za ručnu provjeru ({len(review_leads)}) ---", ""]
+        for lead in review_leads:
+            text_lines += [
+                f"Ime:      {lead['ime']}",
+                f"Cijena:   {lead['cijena']}",
+                f"Lokacija: {lead['lokacija']}",
+                f"Oglas:    {lead['oglas_link']}",
+                f"Razlog:   {lead.get('_razlog','')}",
+                "",
+            ]
 
-    ok = _resend_post(
-        subject=f"Horizon Scraper — {len(leads)} vlasnik(a) — {datum}",
-        html=html,
-        text="\n".join(text_lines),
-    )
+    subject = f"Horizon Scraper — {len(leads)} vlasnik(a)"
+    if review_leads:
+        subject += f" + {len(review_leads)} provjera"
+    subject += f" — {datum}"
+
+    ok = _resend_post(subject=subject, html=html, text="\n".join(text_lines))
     if ok:
-        log.info("✓  Email poslan na %s  (%d vlasnika).", EMAIL_TO, len(leads))
+        log.info("✓  Email poslan na %s  (%d vlasnika, %d provjera).",
+                 EMAIL_TO, len(leads), len(review_leads))
     else:
         log.error("✗  Greška pri slanju emaila.")
 
@@ -390,7 +438,7 @@ def _parse_oglasi_listing(url: str) -> dict | str | None:
     }
 
 
-def run_oglasi() -> list[dict]:
+def run_oglasi() -> tuple[list[dict], list[dict]]:
     log.info("═" * 60)
     log.info("  OGLASI.ME  (od %s)", CUTOFF.strftime("%d.%m.%Y %H:%M"))
     log.info("═" * 60)
@@ -459,17 +507,23 @@ def run_oglasi() -> list[dict]:
                 uid_count[uid] = max(cnt, _oglasi_user_count(uid))
                 time.sleep(DELAY_PROFILE)
 
-    leads = []
+    leads:        list[dict] = []
+    review_leads: list[dict] = []
     for lead in raw:
         uid   = lead.pop("_uid", None) or lead["ime"]
         count = uid_count[uid]
-        if is_broker(lead["ime"], count):
-            log.info("  [posrednik] %-28s (%d oglasa)", lead["ime"], count)
+        status, razlog = is_broker(lead["ime"], count)
+        if status == "posrednik":
+            log.info("  [posrednik] %-28s (%s)", lead["ime"], razlog)
+        elif status == "provjeri":
+            lead["_razlog"] = razlog
+            review_leads.append(lead)
+            log.info("  [provjeri]  %-28s (%s)", lead["ime"], razlog)
         else:
             leads.append(lead)
 
-    log.info("Oglasi.me → %d vlasnika prošlo filter", len(leads))
-    return leads
+    log.info("Oglasi.me → %d vlasnika, %d za provjeru", len(leads), len(review_leads))
+    return leads, review_leads
 
 # ──────────────────────────────────────────────────────────────
 # PATULJAK.ME
@@ -577,7 +631,7 @@ def _parse_patuljak_listing(url: str) -> dict | str | None:
     }
 
 
-def run_patuljak() -> list[dict]:
+def run_patuljak() -> tuple[list[dict], list[dict]]:
     log.info("═" * 60)
     log.info("  PATULJAK.ME  (od %s)", CUTOFF.strftime("%d.%m.%Y %H:%M"))
     log.info("═" * 60)
@@ -597,6 +651,7 @@ def run_patuljak() -> list[dict]:
     log.info("URLs za obraditi: %d", len(queue))
 
     leads:          list[dict] = []
+    review_leads:   list[dict] = []
     selector_fails: int        = 0
 
     for i, url in enumerate(queue, 1):
@@ -612,8 +667,13 @@ def run_patuljak() -> list[dict]:
         else:
             old_in_row = 0
             count = result.pop("_count", 1)
-            if is_broker(result["ime"], count):
-                log.info("  [posrednik] %-28s (%d oglasa)", result["ime"], count)
+            status, razlog = is_broker(result["ime"], count)
+            if status == "posrednik":
+                log.info("  [posrednik] %-28s (%s)", result["ime"], razlog)
+            elif status == "provjeri":
+                result["_razlog"] = razlog
+                review_leads.append(result)
+                log.info("  [provjeri]  %-28s (%s)", result["ime"], razlog)
             else:
                 leads.append(result)
 
@@ -628,8 +688,8 @@ def run_patuljak() -> list[dict]:
                     selector_fails)
         send_warning_email("Patuljak.me", selector_fails, len(queue))
 
-    log.info("Patuljak.me → %d vlasnika prošlo filter", len(leads))
-    return leads
+    log.info("Patuljak.me → %d vlasnika, %d za provjeru", len(leads), len(review_leads))
+    return leads, review_leads
 
 # ──────────────────────────────────────────────────────────────
 # MAIN
@@ -638,7 +698,10 @@ def run_patuljak() -> list[dict]:
 def main() -> None:
     log.info("▶  Horizon Scraper  %s", datetime.now().strftime("%Y-%m-%d %H:%M"))
 
-    all_leads = run_oglasi() + run_patuljak()
+    leads_o, review_o = run_oglasi()
+    leads_p, review_p = run_patuljak()
+    all_leads    = leads_o + leads_p
+    all_review   = review_o + review_p
 
     # Deduplikacija po linku oglasa
     seen:         set[str]   = set()
@@ -649,16 +712,24 @@ def main() -> None:
             seen.add(link)
             unique_leads.append(lead)
 
+    seen_r:        set[str]   = set()
+    unique_review: list[dict] = []
+    for lead in all_review:
+        link = lead.get("oglas_link", "")
+        if link not in seen_r:
+            seen_r.add(link)
+            unique_review.append(lead)
+
     dupes = len(all_leads) - len(unique_leads)
     if dupes:
         log.info("Deduplikacija: uklonjeno %d duplikata.", dupes)
 
     log.info("═" * 60)
-    log.info("  Ukupno vlasnika: %d", len(unique_leads))
+    log.info("  Ukupno vlasnika: %d  |  Za provjeru: %d", len(unique_leads), len(unique_review))
     log.info("═" * 60)
 
     save_leads_json(unique_leads)
-    send_email(unique_leads)
+    send_email(unique_leads, unique_review)
 
     log.info("■  Gotovo.")
 
