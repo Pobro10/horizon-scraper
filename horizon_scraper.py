@@ -18,7 +18,7 @@ from collections import defaultdict
 from urllib.parse import urljoin
 
 import requests
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup, NavigableString
 
 # ──────────────────────────────────────────────────────────────
 # KONFIGURACIJA
@@ -53,8 +53,9 @@ BROKER_NAMES        = {n.lower() for n in _B.get("names", ["nemanja krstović"])
 BROKER_MIN_LISTINGS = _B.get("min_listings", 3)
 
 # ── Opšte postavke ─────────────────────────────────────────────
-FILTER_CITY    = "Podgorica"
-MAX_PAGES      = 15
+FILTER_CITY      = "Podgorica"
+MAX_PAGES        = 15
+REALITICA_PAGES  = 2
 DELAY_LISTING  = 1.5
 DELAY_PROFILE  = 1.0
 MAX_OLD_IN_ROW = 5
@@ -697,6 +698,120 @@ def run_patuljak() -> tuple[list[dict], list[dict]]:
     return leads, review_leads
 
 # ──────────────────────────────────────────────────────────────
+# REALITICA.COM
+# ──────────────────────────────────────────────────────────────
+
+REALITICA_BASE = "https://www.realitica.com"
+
+
+def _realitica_parse_card(thumb) -> dict | None:
+    info_div = thumb.find_next_sibling("div")
+    if not info_div:
+        return None
+
+    a = thumb.find("a", href=True)
+    if not a:
+        return None
+    link = a["href"]
+    if not link.startswith("http"):
+        link = REALITICA_BASE + link
+
+    name = ""
+    for child in info_div.children:
+        if isinstance(child, NavigableString) and child.strip():
+            name = child.strip()
+            break
+
+    cijena = ""
+    for strong in info_div.find_all("strong"):
+        if "€" in strong.text:
+            cijena = strong.text.strip()
+            break
+
+    lines, current = [], []
+    for child in info_div.children:
+        if getattr(child, "name", None) == "br":
+            lines.append("".join(current).strip())
+            current = []
+        elif hasattr(child, "get_text"):
+            current.append(child.get_text(strip=True))
+        else:
+            current.append(str(child).strip())
+    lines.append("".join(current).strip())
+    lines = [l for l in lines if l]
+    lokacija = next((l for l in lines if "Podgorica" in l or "Crna Gora" in l), "")
+
+    if not name:
+        return None
+    return {"ime": name, "oglas_link": link, "lokacija": lokacija,
+            "cijena": cijena, "izvor": "Realitica.com"}
+
+
+def run_realitica() -> tuple[list[dict], list[dict]]:
+    log.info("═" * 60)
+    log.info("  REALITICA.COM")
+    log.info("═" * 60)
+
+    leads:        list[dict] = []
+    review_leads: list[dict] = []
+
+    try:
+        raw:        list[dict]      = []
+        name_count: dict[str, int]  = {}
+
+        for page in range(1, REALITICA_PAGES + 1):
+            if page == 1:
+                url = f"{REALITICA_BASE}/prodaja/stanova/podgorica/Crna-Gora/"
+            else:
+                url = (
+                    f"{REALITICA_BASE}/?cur_page={page - 1}"
+                    f"&type=Apartment&for=Prodaja&lng=hr"
+                    f"&pZpa=Crna+Gora&opa=podgorica"
+                )
+            r = get(url)
+            if r is None:
+                log.warning("  Realitica.com str. %d: HTTP greška, preskačem.", page)
+                continue
+
+            soup   = BeautifulSoup(r.text, "lxml")
+            thumbs = soup.select("div.thumb_div")
+            log.info("  str. %d: %d kartica", page, len(thumbs))
+
+            for thumb in thumbs:
+                card = _realitica_parse_card(thumb)
+                if card:
+                    raw.append(card)
+                    name_count[card["ime"]] = name_count.get(card["ime"], 0) + 1
+
+            time.sleep(DELAY_LISTING)
+
+        log.info("  --- Raw oglašivači sa Realitice ---")
+        for lead in raw:
+            log.info("  IME: %-30s | %s | %s",
+                     lead["ime"], lead["cijena"], lead["lokacija"])
+        log.info("  --- Kraj raw liste ---")
+
+        for lead in raw:
+            count = name_count[lead["ime"]]
+            status, razlog = is_broker(lead["ime"], count)
+            if status == "posrednik":
+                log.info("  [posrednik] %-28s (%s)", lead["ime"], razlog)
+            elif status == "provjeri":
+                lead["_razlog"] = razlog
+                review_leads.append(lead)
+                log.info("  [provjeri]  %-28s (%s)", lead["ime"], razlog)
+            else:
+                leads.append(lead)
+
+    except Exception as e:
+        log.error("Realitica.com greška — preskačem: %s", e)
+        return [], []
+
+    log.info("Realitica.com → %d vlasnika, %d za provjeru", len(leads), len(review_leads))
+    return leads, review_leads
+
+
+# ──────────────────────────────────────────────────────────────
 # MAIN
 # ──────────────────────────────────────────────────────────────
 
@@ -705,8 +820,9 @@ def main() -> None:
 
     leads_o, review_o = run_oglasi()
     leads_p, review_p = run_patuljak()
-    all_leads    = leads_o + leads_p
-    all_review   = review_o + review_p
+    leads_r, review_r = run_realitica()
+    all_leads    = leads_o + leads_p + leads_r
+    all_review   = review_o + review_p + review_r
 
     # Deduplikacija po linku oglasa
     seen:         set[str]   = set()
