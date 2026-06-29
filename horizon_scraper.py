@@ -62,8 +62,8 @@ MAX_OLD_IN_ROW = 5
 RETRY_COUNT    = 3    # HTTP retry pokušaji po zahtjevu
 RETRY_BACKOFF  = 2    # eksponencijalni backoff (sek)
 
-# Upozorenje ako ≥ N oglasa vrati grešku selektora (HTML se promijenio)
-SELECTOR_FAIL_THRESHOLD = 5
+# Upozorenje ako udio neparsiranih oglasa pređe prag (ili queue prazan)
+SELECTOR_FAIL_RATIO = 0.20
 
 # ──────────────────────────────────────────────────────────────
 # CUTOFF DATUM  (zadnjih 24 sata)
@@ -502,10 +502,16 @@ def run_oglasi() -> tuple[list[dict], list[dict]]:
             raw.append(result)
         time.sleep(DELAY_LISTING)
 
-    if selector_fails >= SELECTOR_FAIL_THRESHOLD:
-        log.warning("⚠  Oglasi.me: %d oglasa nije moglo biti parsirano — selektori pokvareni!",
-                    selector_fails)
+    if len(queue) == 0:
+        log.warning("⚠  Oglasi.me: 0 oglasa pronađeno — stranica vjerovatno promijenjena!")
+        send_warning_email("Oglasi.me", 0, 0)
+    elif selector_fails / len(queue) > SELECTOR_FAIL_RATIO:
+        log.warning("⚠  Oglasi.me: %d/%d oglasa nije moglo biti parsirano — selektori pokvareni!",
+                    selector_fails, len(queue))
         send_warning_email("Oglasi.me", selector_fails, len(queue))
+    elif selector_fails > 0:
+        log.info("ℹ  Oglasi.me: %d/%d oglasa nije parsirano (ispod praga, bez mejla).",
+                 selector_fails, len(queue))
 
     for uid, cnt in list(uid_count.items()):
         if BROKER_MIN_LISTINGS - 1 <= cnt <= BROKER_MIN_LISTINGS + 1:
@@ -689,10 +695,16 @@ def run_patuljak() -> tuple[list[dict], list[dict]]:
 
         time.sleep(DELAY_LISTING)
 
-    if selector_fails >= SELECTOR_FAIL_THRESHOLD:
-        log.warning("⚠  Patuljak.me: %d oglasa nije moglo biti parsirano — selektori pokvareni!",
-                    selector_fails)
+    if len(queue) == 0:
+        log.warning("⚠  Patuljak.me: 0 oglasa pronađeno — stranica vjerovatno promijenjena!")
+        send_warning_email("Patuljak.me", 0, 0)
+    elif selector_fails / len(queue) > SELECTOR_FAIL_RATIO:
+        log.warning("⚠  Patuljak.me: %d/%d oglasa nije moglo biti parsirano — selektori pokvareni!",
+                    selector_fails, len(queue))
         send_warning_email("Patuljak.me", selector_fails, len(queue))
+    elif selector_fails > 0:
+        log.info("ℹ  Patuljak.me: %d/%d oglasa nije parsirano (ispod praga, bez mejla).",
+                 selector_fails, len(queue))
 
     log.info("Patuljak.me → %d vlasnika, %d za provjeru", len(leads), len(review_leads))
     return leads, review_leads
