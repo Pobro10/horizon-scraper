@@ -9,6 +9,7 @@ Pokretanje  : python horizon_scraper.py
 """
 
 import re
+import csv
 import time
 import json
 import logging
@@ -86,6 +87,22 @@ logging.basicConfig(
 log = logging.getLogger(__name__)
 log.info("Cutoff datum : %s (zadnjih 24h)", CUTOFF.strftime("%d.%m.%Y %H:%M"))
 log.info("SEND_EMAIL   : %s", SEND_EMAIL)
+
+# ──────────────────────────────────────────────────────────────
+# AUDIT LOG
+# ──────────────────────────────────────────────────────────────
+
+_AUDIT_FILE  = os.path.join(os.path.dirname(os.path.abspath(__file__)), "audit_log.csv")
+_AUDIT_COLS  = ["datum_pokretanja", "izvor", "ime", "link", "status", "razlog"]
+_RUN_START   = datetime.now().strftime("%Y-%m-%d %H:%M")
+
+def _audit_log(izvor: str, ime: str, link: str, status: str, razlog: str = "") -> None:
+    write_header = not os.path.exists(_AUDIT_FILE)
+    with open(_AUDIT_FILE, "a", newline="", encoding="utf-8") as f:
+        w = csv.writer(f)
+        if write_header:
+            w.writerow(_AUDIT_COLS)
+        w.writerow([_RUN_START, izvor, ime, link, status, razlog])
 
 http = requests.Session()
 http.headers.update({
@@ -496,10 +513,13 @@ def run_oglasi() -> tuple[list[dict], list[dict]]:
         result = _parse_oglasi_listing(url)
         if result == "selector_fail":
             selector_fails += 1
+            _audit_log("Oglasi.me", "", url, "neparsiran", "selector_fail")
         elif result is not None:
             uid = result["_uid"] or result["ime"]
             uid_count[uid] += 1
             raw.append(result)
+        else:
+            _audit_log("Oglasi.me", "", url, "star", "van cutoffa ili HTTP greška")
         time.sleep(DELAY_LISTING)
 
     if len(queue) == 0:
@@ -527,12 +547,15 @@ def run_oglasi() -> tuple[list[dict], list[dict]]:
         status, razlog = is_broker(lead["ime"], count)
         if status == "posrednik":
             log.info("  [posrednik] %-28s (%s)", lead["ime"], razlog)
+            _audit_log("Oglasi.me", lead["ime"], lead["oglas_link"], "posrednik", razlog)
         elif status == "provjeri":
             lead["_razlog"] = razlog
             review_leads.append(lead)
             log.info("  [provjeri]  %-28s (%s)", lead["ime"], razlog)
+            _audit_log("Oglasi.me", lead["ime"], lead["oglas_link"], "provjeri", razlog)
         else:
             leads.append(lead)
+            _audit_log("Oglasi.me", lead["ime"], lead["oglas_link"], "poslat", "")
 
     log.info("Oglasi.me → %d vlasnika, %d za provjeru", len(leads), len(review_leads))
     return leads, review_leads
@@ -672,22 +695,27 @@ def run_patuljak() -> tuple[list[dict], list[dict]]:
 
         if result == "old":
             old_in_row += 1
+            _audit_log("Patuljak.me", "", url, "star", "van cutoffa")
         elif result == "selector_fail":
             selector_fails += 1
+            _audit_log("Patuljak.me", "", url, "neparsiran", "selector_fail")
         elif result is None:
-            pass
+            _audit_log("Patuljak.me", "", url, "skip", "HTTP greška ili drugi grad")
         else:
             old_in_row = 0
             count = result.pop("_count", 1)
             status, razlog = is_broker(result["ime"], count)
             if status == "posrednik":
                 log.info("  [posrednik] %-28s (%s)", result["ime"], razlog)
+                _audit_log("Patuljak.me", result["ime"], result["oglas_link"], "posrednik", razlog)
             elif status == "provjeri":
                 result["_razlog"] = razlog
                 review_leads.append(result)
                 log.info("  [provjeri]  %-28s (%s)", result["ime"], razlog)
+                _audit_log("Patuljak.me", result["ime"], result["oglas_link"], "provjeri", razlog)
             else:
                 leads.append(result)
+                _audit_log("Patuljak.me", result["ime"], result["oglas_link"], "poslat", "")
 
         if old_in_row >= MAX_OLD_IN_ROW:
             log.info("  %d uzastopnih starih oglasa, završavam.", old_in_row)
@@ -813,13 +841,16 @@ def run_realitica() -> tuple[list[dict], list[dict]]:
         status, razlog = is_broker(lead["ime"], count)
         if status == "posrednik":
             log.info("  [posrednik] %-28s (%s)", lead["ime"], razlog)
+            _audit_log(lead["izvor"], lead["ime"], lead["oglas_link"], "posrednik", razlog)
         elif status == "provjeri":
             lead["_razlog"] = razlog
             review_leads.append(lead)
             log.info("  [provjeri]  %-28s (%s)", lead["ime"], razlog)
+            _audit_log(lead["izvor"], lead["ime"], lead["oglas_link"], "provjeri", razlog)
         else:
             leads.append(lead)
             log.info("  [vlasnik]   %-28s (%s)", lead["ime"], lead["izvor"])
+            _audit_log(lead["izvor"], lead["ime"], lead["oglas_link"], "poslat", "")
 
     log.info("Realitica.com → %d vlasnika, %d za provjeru", len(leads), len(review_leads))
     return leads, review_leads
