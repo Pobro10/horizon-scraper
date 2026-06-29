@@ -408,7 +408,8 @@ def _parse_oglasi_listing(url: str) -> dict | str | None:
     """
     Vraća:
       dict            — uspješno parsirani oglas
-      None            — oglas je star ili iz drugog grada
+      "old"           — oglas je stariji od cutoff datuma
+      None            — HTTP greška (stranica nedostupna)
       "selector_fail" — selektori više ne rade (HTML se promijenio)
     """
     r = get(url)
@@ -418,12 +419,13 @@ def _parse_oglasi_listing(url: str) -> dict | str | None:
     soup      = BeautifulSoup(r.text, "lxml")
     page_text = soup.get_text(" ")
 
+    # Oglasi.me daje samo datum bez sata — poredimo po datumu, bez vremenske komponente
     date_m = _ABSOLUTE.search(page_text)
     if date_m:
         listing_dt = parse_date(date_m.group(0))
-        if listing_dt is not None and listing_dt < CUTOFF:
+        if listing_dt is not None and listing_dt.date() < CUTOFF.date():
             log.debug("  [star oglas] %s  datum: %s", url, date_m.group(0))
-            return None
+            return "old"
 
     # ── Ime oglašivača — probaj više selektora ──────────────────
     name_tag = (
@@ -514,12 +516,14 @@ def run_oglasi() -> tuple[list[dict], list[dict]]:
         if result == "selector_fail":
             selector_fails += 1
             _audit_log("Oglasi.me", "", url, "neparsiran", "selector_fail")
-        elif result is not None:
+        elif result == "old":
+            _audit_log("Oglasi.me", "", url, "star", "van cutoffa")
+        elif result is None:
+            _audit_log("Oglasi.me", "", url, "skip", "HTTP greška")
+        else:
             uid = result["_uid"] or result["ime"]
             uid_count[uid] += 1
             raw.append(result)
-        else:
-            _audit_log("Oglasi.me", "", url, "star", "van cutoffa ili HTTP greška")
         time.sleep(DELAY_LISTING)
 
     if len(queue) == 0:
