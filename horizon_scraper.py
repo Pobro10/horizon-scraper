@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Horizon Scraper
-Skenira oglase nekretnina sa Oglasi.me i Patuljak.me (zadnjih 24h),
+Skenira oglase nekretnina sa Oglasi.me i Patuljak.me (zadnjih 48h),
 filtrira posrednike i šalje email sa vlasnicima.
 
 Instalacija : pip install requests beautifulsoup4 lxml
@@ -67,10 +67,10 @@ RETRY_BACKOFF  = 2    # eksponencijalni backoff (sek)
 SELECTOR_FAIL_RATIO = 0.20
 
 # ──────────────────────────────────────────────────────────────
-# CUTOFF DATUM  (zadnjih 24 sata)
+# CUTOFF DATUM  (zadnjih 48 sati)
 # ──────────────────────────────────────────────────────────────
 
-CUTOFF = datetime.now() - timedelta(hours=24)
+CUTOFF = datetime.now() - timedelta(hours=48)
 
 # ──────────────────────────────────────────────────────────────
 # LOGGING
@@ -85,7 +85,7 @@ logging.basicConfig(
     ],
 )
 log = logging.getLogger(__name__)
-log.info("Cutoff datum : %s (zadnjih 24h)", CUTOFF.strftime("%d.%m.%Y %H:%M"))
+log.info("Cutoff datum : %s (zadnjih 48h)", CUTOFF.strftime("%d.%m.%Y %H:%M"))
 log.info("SEND_EMAIL   : %s", SEND_EMAIL)
 
 # ──────────────────────────────────────────────────────────────
@@ -103,6 +103,37 @@ def _audit_log(izvor: str, ime: str, link: str, status: str, razlog: str = "") -
         if write_header:
             w.writerow(_AUDIT_COLS)
         w.writerow([_RUN_START, izvor, ime, link, status, razlog])
+
+# ──────────────────────────────────────────────────────────────
+# MEMORIJA POSLATIH OGLASA (sent.json)
+# ──────────────────────────────────────────────────────────────
+
+SENT_FILE     = os.path.join(os.path.dirname(os.path.abspath(__file__)), "sent.json")
+SENT_MAX_DAYS = 4   # zapisi stariji od ovoga se brišu pri svakom upisu
+
+
+def load_sent() -> dict[str, str]:
+    """Čita {link: iso_timestamp poslatog mejla}; prazan dict ako fajl ne postoji ili je neispravan."""
+    try:
+        with open(SENT_FILE, encoding="utf-8") as f:
+            data = json.load(f)
+        if isinstance(data, dict):
+            return data
+        log.warning("sent.json nije dict — krećem sa praznom memorijom.")
+    except FileNotFoundError:
+        pass
+    except (json.JSONDecodeError, OSError) as e:
+        log.warning("sent.json neispravan (%s) — krećem sa praznom memorijom.", e)
+    return {}
+
+
+def save_sent(sent: dict[str, str]) -> None:
+    tmp = SENT_FILE + ".tmp"
+    with open(tmp, "w", encoding="utf-8") as f:
+        json.dump(sent, f, ensure_ascii=False, indent=2)
+    os.replace(tmp, SENT_FILE)
+    log.info("Memorija poslatih sačuvana u sent.json (%d linkova).", len(sent))
+
 
 http = requests.Session()
 http.headers.update({
@@ -221,16 +252,17 @@ def _resend_post(subject: str, html: str, text: str) -> bool:
     return resp.ok
 
 
-def send_email(leads: list[dict], review_leads: list[dict] = []) -> None:
+def send_email(leads: list[dict], review_leads: list[dict] = []) -> bool:
+    """Vraća True samo ako je email stvarno poslan (Resend potvrdio uspjeh)."""
     if not SEND_EMAIL:
         log.info("SEND_EMAIL=false — email se preskače (artifact sačuvan).")
-        return
+        return False
 
     datum = datetime.now().strftime("%d.%m.%Y")
 
     if not leads and not review_leads:
         log.info("Nema novih vlasnika — email se ne šalje.")
-        return
+        return False
 
     rows = "\n".join(
         f"""        <tr>
@@ -278,7 +310,7 @@ def send_email(leads: list[dict], review_leads: list[dict] = []) -> None:
     html = f"""<!DOCTYPE html>
 <html lang="bs"><body style="font-family:Arial,sans-serif;color:#333">
 <h2 style="color:#1a1a1a">Horizon Scraper — {datum}</h2>
-<p>Pronađeno <strong>{len(leads)}</strong> vlasnik(a) u zadnjih 24 sata (od {CUTOFF.strftime('%d.%m.%Y %H:%M')}):</p>
+<p>Pronađeno <strong>{len(leads)}</strong> vlasnik(a) u zadnjih 48 sati (od {CUTOFF.strftime('%d.%m.%Y %H:%M')}):</p>
 <table style="border-collapse:collapse;width:100%;font-size:14px">
   <thead>
     <tr style="background:#f4f4f4">
@@ -331,6 +363,7 @@ def send_email(leads: list[dict], review_leads: list[dict] = []) -> None:
                  EMAIL_TO, len(leads), len(review_leads))
     else:
         log.error("✗  Greška pri slanju emaila.")
+    return ok
 
 
 def send_warning_email(sajt: str, fail_count: int, total: int) -> None:
@@ -894,12 +927,39 @@ def main() -> None:
     if dupes:
         log.info("Deduplikacija: uklonjeno %d duplikata.", dupes)
 
+    # ── Memorija poslatih: izbaci oglase koji su već bili u mejlu ──
+    sent    = load_sent()
+    pre_len = len(unique_leads) + len(unique_review)
+    unique_leads  = [l for l in unique_leads  if l["oglas_link"] not in sent]
+    unique_review = [l for l in unique_review if l["oglas_link"] not in sent]
+    skipped = pre_len - len(unique_leads) - len(unique_review)
+    if skipped:
+        log.info("Memorija: preskočeno %d već poslatih oglasa.", skipped)
+
     log.info("═" * 60)
     log.info("  Ukupno vlasnika: %d  |  Za provjeru: %d", len(unique_leads), len(unique_review))
     log.info("═" * 60)
 
     save_leads_json(unique_leads)
-    send_email(unique_leads, unique_review)
+    email_sent = send_email(unique_leads, unique_review)
+
+    # Memorija se upisuje SAMO nakon uspješno poslatog mejla — i samo
+    # ono što je stvarno bilo u mejlu. Pad slanja → memorija netaknuta.
+    if email_sent:
+        now_iso = datetime.now().isoformat()
+        for lead in unique_leads + unique_review:
+            sent[lead["oglas_link"]] = now_iso
+
+        granica = datetime.now() - timedelta(days=SENT_MAX_DAYS)
+
+        def _fresh(ts: str) -> bool:
+            try:
+                return datetime.fromisoformat(ts) >= granica
+            except ValueError:
+                return False
+
+        sent = {k: v for k, v in sent.items() if _fresh(v)}
+        save_sent(sent)
 
     log.info("■  Gotovo.")
 
