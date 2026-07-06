@@ -47,7 +47,7 @@ jobs:
           # Repo se mogao promijeniti između checkouta i pusha — rebase prije push.
           # Ako rebase ne prođe čisto, abortuj ga i nastavi bez obaranja workflowa.
           git pull --rebase || { git rebase --abort 2>/dev/null || true; }
-          git push || true
+          git push
 
       - name: Sačuvaj leads kao artifact
         if: always()
