@@ -930,8 +930,17 @@ def main() -> None:
     # ── Memorija poslatih: izbaci oglase koji su već bili u mejlu ──
     sent    = load_sent()
     pre_len = len(unique_leads) + len(unique_review)
-    unique_leads  = [l for l in unique_leads  if l["oglas_link"] not in sent]
-    unique_review = [l for l in unique_review if l["oglas_link"] not in sent]
+
+    def _u_memoriji(lead: dict) -> bool:
+        ts = sent.get(lead["oglas_link"])
+        if ts is None:
+            return False
+        _audit_log(lead["izvor"], lead["ime"], lead["oglas_link"],
+                   "preskocen_memorija", f"u sent.json od {ts[:16].replace('T', ' ')}")
+        return True
+
+    unique_leads  = [l for l in unique_leads  if not _u_memoriji(l)]
+    unique_review = [l for l in unique_review if not _u_memoriji(l)]
     skipped = pre_len - len(unique_leads) - len(unique_review)
     if skipped:
         log.info("Memorija: preskočeno %d već poslatih oglasa.", skipped)
