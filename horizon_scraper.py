@@ -51,11 +51,39 @@ BROKER_KEYWORDS_STRONG = _B.get("keywords_strong", [
     "globus", "dm nekretnine", "my place", "prizma s",
 ])
 BROKER_KEYWORDS_WEAK   = _B.get("keywords_weak", ["did", "doo", "toka"])
-BROKER_PHONES       = set(_B.get("phones", [
-    "+38267580584", "+38267447444", "+38268150115", "+38267347963",
-]))
 BROKER_NAMES        = {n.lower() for n in _B.get("names", ["nemanja krstović"])}
 BROKER_MIN_LISTINGS = _B.get("min_listings", 3)
+PHONE_MIN_LISTINGS  = _B.get("phone_min_listings", 3)   # broj na 3+ oglasa = sumnjiv
+
+
+def normalize_phone(raw: str) -> str | None:
+    """Svodi crnogorski broj na oblik 3826XXXXXXX (samo cifre).
+    Prihvata +382..., 382..., 06x..., 6x...; ostalo odbacuje."""
+    digits = re.sub(r"\D", "", raw or "")
+    if digits.startswith("382"):
+        rest = digits[3:]
+    elif digits.startswith("0"):
+        rest = digits[1:]
+    else:
+        rest = digits
+    # crnogorski mobilni/fiksni: 6-9 na početku, ukupno 8-9 cifara iza 382
+    if not (7 <= len(rest) <= 9 and rest[:1] in "23456789"):
+        return None
+    return "382" + rest
+
+
+def format_phone(p: str) -> str:
+    """3826XXXXXXX -> +382 6X XXX XXX (za mejl)."""
+    if p.startswith("382"):
+        rest = p[3:]
+        return f"+382 {rest[:2]} {rest[2:5]} {rest[5:]}".strip()
+    return p
+
+
+BROKER_PHONES = {np for p in _B.get("phones", []) if (np := normalize_phone(p))}
+
+# Regex za brojeve u slobodnom tekstu opisa (067 123 456, +382 67 123-456...)
+_PHONE_IN_TEXT = re.compile(r"(?:\+?\s*382|0)\s*6[0-9](?:[\s./-]?\d){5,7}")
 
 # ── Opšte postavke ─────────────────────────────────────────────
 FILTER_CITY      = "Podgorica"
@@ -196,7 +224,66 @@ def save_seen() -> None:
 
 def seen_get(url: str) -> dict | None:
     with _SEEN_LOCK:
-        return SEEN.get(url)
+        entry = SEEN.get(url)
+    # lead keširan starijom verzijom koda (bez polja "telefoni") se tretira
+    # kao nekeširan, da jednom bude skinut ponovo sa telefonom i opisom
+    if entry and entry.get("lead") is not None and "telefoni" not in entry["lead"]:
+        return None
+    return entry
+
+
+# ──────────────────────────────────────────────────────────────
+# REGISTAR TELEFONA (phones.json)
+# Broj viđen na PHONE_MIN_LISTINGS+ različitih oglasa (kroz sajtove i
+# vrijeme) = vrlo vjerovatno posrednik. Lista se sama gradi svakim runom.
+# ──────────────────────────────────────────────────────────────
+
+PHONES_FILE     = os.path.join(os.path.dirname(os.path.abspath(__file__)), "phones.json")
+PHONES_MAX_DAYS = 30
+
+_PHONES_LOCK = threading.Lock()
+PHONES: dict[str, dict] = {}   # {broj: {"urls": {url: iso_ts}, "imena": [..]}}
+
+
+def load_phones() -> dict[str, dict]:
+    try:
+        with open(PHONES_FILE, encoding="utf-8") as f:
+            data = json.load(f)
+        if isinstance(data, dict):
+            return data
+    except FileNotFoundError:
+        pass
+    except (json.JSONDecodeError, OSError) as e:
+        log.warning("phones.json neispravan (%s) — krećem sa praznim registrom.", e)
+    return {}
+
+
+def save_phones() -> None:
+    granica = (datetime.now() - timedelta(days=PHONES_MAX_DAYS)).isoformat()
+    with _PHONES_LOCK:
+        for entry in PHONES.values():
+            entry["urls"] = {u: ts for u, ts in entry["urls"].items() if ts >= granica}
+        pruned = {p: e for p, e in PHONES.items() if e["urls"]}
+        tmp = PHONES_FILE + ".tmp"
+        with open(tmp, "w", encoding="utf-8") as f:
+            json.dump(pruned, f, ensure_ascii=False, indent=2)
+        os.replace(tmp, PHONES_FILE)
+    log.info("Registar telefona sačuvan u phones.json (%d brojeva).", len(pruned))
+
+
+def phones_record(url: str, ime: str, phones: list[str]) -> None:
+    with _PHONES_LOCK:
+        for p in phones:
+            e = PHONES.setdefault(p, {"urls": {}, "imena": []})
+            e["urls"][url] = datetime.now().isoformat()
+            if ime and ime not in e["imena"]:
+                e["imena"] = (e["imena"] + [ime])[-5:]
+
+
+def phones_count(phone: str) -> int:
+    with _PHONES_LOCK:
+        e = PHONES.get(phone)
+        return len(e["urls"]) if e else 0
 
 
 _seen_dirty = 0
@@ -212,6 +299,15 @@ def seen_record(url: str, status: str, lead: dict | None = None) -> None:
         if _seen_dirty >= 50:
             _seen_dirty = 0
             _save_seen_locked()
+
+
+def seen_set_ai(url: str, ai: dict) -> None:
+    """Dopiše AI presudu u keširani lead, da se isti oglas ne klasifikuje
+    (i ne plaća) dvaput."""
+    with _SEEN_LOCK:
+        e = SEEN.get(url)
+        if e and e.get("lead"):
+            e["lead"]["_ai"] = ai
 
 
 # requests.Session nije garantovano thread-safe, pa svaki thread (sajt)
@@ -279,15 +375,23 @@ def is_recent(text: str) -> bool | None:
 # POMOĆNE FUNKCIJE
 # ──────────────────────────────────────────────────────────────
 
-def is_broker(name: str, listing_count: int, phone: str = "") -> tuple[str, str]:
+def is_broker(name: str, listing_count: int, phones: list[str] | None = None) -> tuple[str, str]:
     name_l = name.lower().strip()
+    phones = phones or []
     if name_l in BROKER_NAMES:
         return ("posrednik", "ime na listi")
     strong = next((kw for kw in BROKER_KEYWORDS_STRONG if kw in name_l), None)
     if strong:
         return ("posrednik", f"agencija: {strong}")
-    if phone and phone.replace(" ", "") in {p.replace(" ", "") for p in BROKER_PHONES}:
-        return ("posrednik", "telefon na listi")
+    hit = next((p for p in phones if p in BROKER_PHONES), None)
+    if hit:
+        return ("posrednik", f"telefon na listi ({format_phone(hit)})")
+    # broj viđen na više oglasa kroz sajtove/vrijeme -> sumnjiv, ali ne
+    # automatski posrednik (vlasnik legalno moze imati 2 oglasa)
+    for p in phones:
+        n = phones_count(p)
+        if n >= PHONE_MIN_LISTINGS:
+            return ("provjeri", f"telefon na {n} oglasa ({format_phone(p)})")
     weak = next((kw for kw in BROKER_KEYWORDS_WEAK if kw in name_l), None)
     if weak:
         return ("provjeri", f"možda agencija: {weak}")
@@ -319,6 +423,76 @@ def get(url: str) -> requests.Response | None:
                 return None
 
 # ──────────────────────────────────────────────────────────────
+# AI ČITANJE OPISA (Claude Haiku)
+# Čita opis oglasa kao čovjek i presuđuje vlasnik/agencija/nesigurno.
+# Radi samo ako postoji ANTHROPIC_API_KEY; bez ključa se tiho preskače.
+# ──────────────────────────────────────────────────────────────
+
+AI_MODEL = "claude-haiku-4-5"
+
+AI_SYSTEM = (
+    "Pomažeš agenciji za nekretnine u Podgorici da razdvoji oglase privatnih "
+    "vlasnika od oglasa agencija i posrednika. Na osnovu imena oglašivača i "
+    "teksta oglasa procijeni ko oglašava.\n"
+    "Znakovi agencije: šifra ili ID oglasa, 'u ponudi' / 'u našoj ponudi', "
+    "pominjanje provizije, profesionalno formatiran tekst sa mnogo stavki, "
+    "pominjanje više različitih nekretnina, poziv na kancelariju ili sajt, "
+    "naziv firme umjesto ličnog imena.\n"
+    "Znakovi vlasnika: 'bez posrednika', 'agencije isključene', 'prodajem "
+    "svoj stan', lični ton, običan neformalan tekst.\n"
+    "Ako nema dovoljno signala, presuda je 'nesigurno'. "
+    "Razlog napiši u JEDNOJ kratkoj rečenici na crnogorskom."
+)
+
+_AI_SCHEMA = {
+    "type": "object",
+    "properties": {
+        "presuda": {"type": "string", "enum": ["vlasnik", "agencija", "nesigurno"]},
+        "razlog":  {"type": "string"},
+    },
+    "required": ["presuda", "razlog"],
+    "additionalProperties": False,
+}
+
+
+def ai_classify(leads: list[dict]) -> None:
+    """Dopiše lead["_ai"] leadovima koji imaju opis, a još nemaju presudu.
+    Svaka greška se samo loguje — mejl ide i bez AI kolone."""
+    kandidati = [l for l in leads if l.get("_opis") and not l.get("_ai")]
+    if not kandidati:
+        return
+    if not os.environ.get("ANTHROPIC_API_KEY"):
+        log.info("AI čitač preskočen: ANTHROPIC_API_KEY nije postavljen.")
+        return
+    try:
+        import anthropic
+    except ImportError:
+        log.warning("AI čitač preskočen: paket 'anthropic' nije instaliran.")
+        return
+
+    client = anthropic.Anthropic()
+    uspjelo = 0
+    for lead in kandidati:
+        try:
+            resp = client.messages.create(
+                model=AI_MODEL,
+                max_tokens=200,
+                system=AI_SYSTEM,
+                messages=[{
+                    "role": "user",
+                    "content": (f"Ime oglašivača: {lead['ime']}\n"
+                                f"Opis oglasa:\n{lead['_opis']}"),
+                }],
+                output_config={"format": {"type": "json_schema", "schema": _AI_SCHEMA}},
+            )
+            text = next(b.text for b in resp.content if b.type == "text")
+            lead["_ai"] = json.loads(text)
+            uspjelo += 1
+        except Exception as e:
+            log.warning("AI klasifikacija nije uspjela za %s: %s", lead["oglas_link"], e)
+    log.info("AI čitač: klasifikovano %d/%d oglasa.", uspjelo, len(kandidati))
+
+# ──────────────────────────────────────────────────────────────
 # SLANJE EMAILA (Resend API)
 # ──────────────────────────────────────────────────────────────
 
@@ -344,6 +518,17 @@ def _resend_post(subject: str, html: str, text: str) -> bool:
     return resp.ok
 
 
+def _tel_cell(lead: dict) -> str:
+    return ", ".join(format_phone(p) for p in lead.get("telefoni") or [])
+
+
+def _ai_cell(lead: dict) -> str:
+    ai = lead.get("_ai") or {}
+    if not ai.get("presuda"):
+        return ""
+    return f"{ai['presuda']}: {ai.get('razlog', '')}".rstrip(": ")
+
+
 def send_email(leads: list[dict], review_leads: list[dict] = []) -> bool:
     """Vraća True samo ako je email stvarno poslan (Resend potvrdio uspjeh)."""
     if not SEND_EMAIL:
@@ -359,11 +544,13 @@ def send_email(leads: list[dict], review_leads: list[dict] = []) -> bool:
     rows = "\n".join(
         f"""        <tr>
           <td style="padding:8px;border:1px solid #ddd">{escape(lead['ime'])}</td>
+          <td style="padding:8px;border:1px solid #ddd;white-space:nowrap">{escape(_tel_cell(lead))}</td>
           <td style="padding:8px;border:1px solid #ddd">{escape(lead['cijena'])}</td>
           <td style="padding:8px;border:1px solid #ddd">{escape(lead['lokacija'])}</td>
           <td style="padding:8px;border:1px solid #ddd">
             <a href="{escape(lead['oglas_link'])}">{escape(lead['oglas_link'])}</a>
           </td>
+          <td style="padding:8px;border:1px solid #ddd">{escape(_ai_cell(lead))}</td>
         </tr>"""
         for lead in leads
     )
@@ -373,12 +560,14 @@ def send_email(leads: list[dict], review_leads: list[dict] = []) -> bool:
         review_rows = "\n".join(
             f"""        <tr>
           <td style="padding:8px;border:1px solid #ddd">{escape(lead['ime'])}</td>
+          <td style="padding:8px;border:1px solid #ddd;white-space:nowrap">{escape(_tel_cell(lead))}</td>
           <td style="padding:8px;border:1px solid #ddd">{escape(lead['cijena'])}</td>
           <td style="padding:8px;border:1px solid #ddd">{escape(lead['lokacija'])}</td>
           <td style="padding:8px;border:1px solid #ddd">
             <a href="{escape(lead['oglas_link'])}">{escape(lead['oglas_link'])}</a>
           </td>
           <td style="padding:8px;border:1px solid #ddd">{escape(lead.get('_razlog',''))}</td>
+          <td style="padding:8px;border:1px solid #ddd">{escape(_ai_cell(lead))}</td>
         </tr>"""
             for lead in review_leads
         )
@@ -388,10 +577,12 @@ def send_email(leads: list[dict], review_leads: list[dict] = []) -> bool:
   <thead>
     <tr style="background:#fff3cd">
       <th style="padding:10px;border:1px solid #ddd;text-align:left">Ime</th>
+      <th style="padding:10px;border:1px solid #ddd;text-align:left">Telefon</th>
       <th style="padding:10px;border:1px solid #ddd;text-align:left">Cijena</th>
       <th style="padding:10px;border:1px solid #ddd;text-align:left">Lokacija</th>
       <th style="padding:10px;border:1px solid #ddd;text-align:left">Link oglasa</th>
       <th style="padding:10px;border:1px solid #ddd;text-align:left">Razlog</th>
+      <th style="padding:10px;border:1px solid #ddd;text-align:left">AI</th>
     </tr>
   </thead>
   <tbody>
@@ -407,9 +598,11 @@ def send_email(leads: list[dict], review_leads: list[dict] = []) -> bool:
   <thead>
     <tr style="background:#f4f4f4">
       <th style="padding:10px;border:1px solid #ddd;text-align:left">Ime vlasnika</th>
+      <th style="padding:10px;border:1px solid #ddd;text-align:left">Telefon</th>
       <th style="padding:10px;border:1px solid #ddd;text-align:left">Cijena</th>
       <th style="padding:10px;border:1px solid #ddd;text-align:left">Lokacija</th>
       <th style="padding:10px;border:1px solid #ddd;text-align:left">Link oglasa</th>
+      <th style="padding:10px;border:1px solid #ddd;text-align:left">AI</th>
     </tr>
   </thead>
   <tbody>
@@ -427,9 +620,11 @@ def send_email(leads: list[dict], review_leads: list[dict] = []) -> bool:
     for lead in leads:
         text_lines += [
             f"Ime:      {lead['ime']}",
+            f"Telefon:  {_tel_cell(lead)}",
             f"Cijena:   {lead['cijena']}",
             f"Lokacija: {lead['lokacija']}",
             f"Oglas:    {lead['oglas_link']}",
+            f"AI:       {_ai_cell(lead)}",
             "",
         ]
     if review_leads:
@@ -437,10 +632,12 @@ def send_email(leads: list[dict], review_leads: list[dict] = []) -> bool:
         for lead in review_leads:
             text_lines += [
                 f"Ime:      {lead['ime']}",
+                f"Telefon:  {_tel_cell(lead)}",
                 f"Cijena:   {lead['cijena']}",
                 f"Lokacija: {lead['lokacija']}",
                 f"Oglas:    {lead['oglas_link']}",
                 f"Razlog:   {lead.get('_razlog','')}",
+                f"AI:       {_ai_cell(lead)}",
                 "",
             ]
 
@@ -588,12 +785,32 @@ def _parse_oglasi_listing(url: str) -> dict | str | None:
     price_tag = soup.select_one("div.cena p") or soup.select_one("div.cena")
     cijena    = clean_price(price_tag.get_text()) if price_tag else ""
 
+    # ── Telefon(i) — stranica nosi ugrađeni JSON oglašivača:
+    #    "phones":[{"phone":"38267015777","viber":true,...}]
+    telefoni: list[str] = []
+    pm = re.search(r'"phones"\s*:\s*\[(.*?)\]', r.text)
+    if pm:
+        for m in re.finditer(r'"phone"\s*:\s*"([^"]+)"', pm.group(1)):
+            np_ = normalize_phone(m.group(1))
+            if np_ and np_ not in telefoni:
+                telefoni.append(np_)
+
+    # ── Opis oglasa (za AI klasifikaciju + brojevi upisani u tekst) ──
+    opis_tag = soup.select_one("div.oglasi-opis-text") or soup.select_one("div.oglasi-opis")
+    opis = opis_tag.get_text(" ", strip=True)[:1500] if opis_tag else ""
+    for m in _PHONE_IN_TEXT.finditer(opis):
+        np_ = normalize_phone(m.group(0))
+        if np_ and np_ not in telefoni:
+            telefoni.append(np_)
+
     return {
         "ime":        name,
         "oglas_link": url,
         "lokacija":   lokacija,
         "cijena":     cijena,
         "izvor":      "Oglasi.me",
+        "telefoni":   telefoni,
+        "_opis":      opis,
         "_uid":       user_id,
     }
 
@@ -708,7 +925,9 @@ def run_oglasi() -> tuple[list[dict], list[dict]]:
         fresh = lead.pop("_fresh", False)
         uid   = lead.get("_uid") or lead["ime"]
         count = uid_count[uid]
-        status, razlog = is_broker(lead["ime"], count)
+        if fresh:
+            phones_record(lead["oglas_link"], lead["ime"], lead.get("telefoni") or [])
+        status, razlog = is_broker(lead["ime"], count, lead.get("telefoni"))
 
         # svježe skinut oglas ide u keš sa presudom; lead se čuva samo za
         # vlasnika/provjeru (posrednik se ubuduće preskače bez skidanja)
@@ -832,12 +1051,31 @@ def _parse_patuljak_listing(url: str) -> dict | str | None:
     else:
         cijena = ""
 
+    # ── Opis ("Detaljan opis:") — SAMO taj blok, ne cijela stranica:
+    #    u HTML-u postoji zakomentarisan stari popup sa tuđim brojem telefona
+    #    koji bi regex preko cijele stranice pokupio za svaki oglas.
+    opis = ""
+    h2 = soup.find("h2", string=re.compile(r"Detaljan opis", re.I))
+    if h2 is not None and h2.parent is not None:
+        opis = h2.parent.get_text(" ", strip=True)
+        opis = re.sub(r"^\s*Detaljan opis:\s*", "", opis)[:1500]
+
+    # Telefon prodavca je iza logina; hvatamo samo brojeve koje oglašivač
+    # sam napiše u tekstu opisa.
+    telefoni: list[str] = []
+    for m in _PHONE_IN_TEXT.finditer(opis):
+        np_ = normalize_phone(m.group(0))
+        if np_ and np_ not in telefoni:
+            telefoni.append(np_)
+
     return {
         "ime":        name,
         "oglas_link": url,
         "lokacija":   lokacija,
         "cijena":     cijena,
         "izvor":      "Patuljak.me",
+        "telefoni":   telefoni,
+        "_opis":      opis,
         "_count":     listing_count,
     }
 
@@ -872,7 +1110,9 @@ def run_patuljak() -> tuple[list[dict], list[dict]]:
     cache_hits:     int        = 0
 
     def _klasifikuj(lead: dict, count: int, fresh: bool) -> None:
-        status, razlog = is_broker(lead["ime"], count)
+        if fresh:
+            phones_record(lead["oglas_link"], lead["ime"], lead.get("telefoni") or [])
+        status, razlog = is_broker(lead["ime"], count, lead.get("telefoni"))
         if fresh:
             stored = None
             if status in ("vlasnik", "provjeri"):
@@ -1001,6 +1241,7 @@ def run_realitica() -> tuple[list[dict], list[dict]]:
     review_leads: list[dict]     = []
     raw:          list[dict]     = []
     name_count:   dict[str, int] = {}
+    total_thumbs: int            = 0
 
     for for_param, label in [("Prodaja", "prodaja"), ("DuziNajam", "najam")]:
         try:
@@ -1023,6 +1264,7 @@ def run_realitica() -> tuple[list[dict], list[dict]]:
 
                 soup   = BeautifulSoup(r.text, "lxml")
                 thumbs = soup.select("div.thumb_div")
+                total_thumbs += len(thumbs)
                 log.info("  [%s] str. %d: %d kartica", label, page, len(thumbs))
 
                 for thumb in thumbs:
@@ -1036,6 +1278,10 @@ def run_realitica() -> tuple[list[dict], list[dict]]:
 
         except Exception as e:
             log.error("Realitica.com [%s] greška — preskačem: %s", label, e)
+
+    if total_thumbs == 0:
+        log.warning("⚠  Realitica.com: 0 kartica na indexu — stranica vjerovatno promijenjena!")
+        send_warning_email("Realitica.com", 0, 0)
 
     for lead in raw:
         log.debug("  [raw] %-30s | %s | %s",
@@ -1068,9 +1314,11 @@ def run_realitica() -> tuple[list[dict], list[dict]]:
 def main() -> None:
     log.info("▶  Horizon Scraper  %s", datetime.now().strftime("%Y-%m-%d %H:%M"))
 
-    global SEEN
+    global SEEN, PHONES
     SEEN = load_seen()
-    log.info("Keš obrađenih: %d zapisa iz seen.json.", len(SEEN))
+    PHONES = load_phones()
+    log.info("Keš obrađenih: %d zapisa | registar telefona: %d brojeva.",
+             len(SEEN), len(PHONES))
 
     # Sva 3 sajta paralelno — svaki u svom threadu sa svojom HTTP sesijom.
     # Pad jednog sajta ne obara ostale.
@@ -1088,6 +1336,7 @@ def main() -> None:
                 rezultati[ime] = ([], [])
 
     save_seen()
+    save_phones()
 
     leads_o, review_o = rezultati["Oglasi.me"]
     leads_p, review_p = rezultati["Patuljak.me"]
@@ -1133,6 +1382,27 @@ def main() -> None:
     skipped = pre_len - len(unique_leads) - len(unique_review)
     if skipped:
         log.info("Memorija: preskočeno %d već poslatih oglasa.", skipped)
+
+    # ── AI čitanje opisa: samo oglasi koji stvarno idu u mejl ──────
+    ai_classify(unique_leads + unique_review)
+
+    # AI presuda "agencija" seli vlasnika u rubriku za ručnu provjeru
+    # (ne odbacuje se: AI može pogriješiti, Marko presuđuje).
+    jos_vlasnici: list[dict] = []
+    for l in unique_leads:
+        ai = l.get("_ai") or {}
+        if ai.get("presuda") == "agencija":
+            l["_razlog"] = "AI kaže agencija"
+            unique_review.append(l)
+        else:
+            jos_vlasnici.append(l)
+    unique_leads = jos_vlasnici
+
+    # presude u keš, da se isti oglas ne klasifikuje dvaput
+    for l in unique_leads + unique_review:
+        if l.get("_ai"):
+            seen_set_ai(l["oglas_link"], l["_ai"])
+    save_seen()
 
     log.info("═" * 60)
     log.info("  Ukupno vlasnika: %d  |  Za provjeru: %d", len(unique_leads), len(unique_review))

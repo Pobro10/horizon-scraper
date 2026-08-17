@@ -33,6 +33,7 @@ jobs:
         env:
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
           EMAIL_FROM: ${{ secrets.EMAIL_FROM }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           # Email šalje samo run u 08:47 UTC ili ručni trigger
           SEND_EMAIL: ${{ github.event.schedule == '47 8 * * *' || github.event_name == 'workflow_dispatch' }}
         run: python horizon_scraper.py
@@ -45,6 +46,7 @@ jobs:
           git add audit_log.csv || true
           git add sent.json || true
           git add seen.json || true
+          git add phones.json || true
           git diff --cached --quiet || git commit -m "audit log + sent $(date -u +%Y-%m-%dT%H:%M)"
           # Repo se mogao promijeniti između checkouta i pusha: rebase pa push,
           # do 3 pokušaja. Poslije neuspjelog rebasea OBAVEZNO abort, inače bi
