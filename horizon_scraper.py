@@ -423,12 +423,15 @@ def get(url: str) -> requests.Response | None:
                 return None
 
 # ──────────────────────────────────────────────────────────────
-# AI ČITANJE OPISA (Claude Haiku)
+# AI ČITANJE OPISA
 # Čita opis oglasa kao čovjek i presuđuje vlasnik/agencija/nesigurno.
-# Radi samo ako postoji ANTHROPIC_API_KEY; bez ključa se tiho preskače.
+# Dva provajdera: ANTHROPIC_API_KEY (Claude Haiku, plaćeni) ima prednost;
+# inače GEMINI_API_KEY (Google, besplatni nivo); bez ijednog se preskače.
 # ──────────────────────────────────────────────────────────────
 
-AI_MODEL = "claude-haiku-4-5"
+AI_MODEL     = "claude-haiku-4-5"
+GEMINI_MODEL = "gemini-2.5-flash"
+GEMINI_DELAY = 6.5   # besplatni nivo: ~10 zahtjeva u minuti
 
 AI_SYSTEM = (
     "Pomažeš agenciji za nekretnine u Podgorici da razdvoji oglase privatnih "
@@ -455,38 +458,91 @@ _AI_SCHEMA = {
 }
 
 
+def _ai_prompt(lead: dict) -> str:
+    return f"Ime oglašivača: {lead['ime']}\nOpis oglasa:\n{lead['_opis']}"
+
+
+def _ai_anthropic(client, lead: dict) -> dict:
+    resp = client.messages.create(
+        model=AI_MODEL,
+        max_tokens=200,
+        system=AI_SYSTEM,
+        messages=[{"role": "user", "content": _ai_prompt(lead)}],
+        output_config={"format": {"type": "json_schema", "schema": _AI_SCHEMA}},
+    )
+    text = next(b.text for b in resp.content if b.type == "text")
+    return json.loads(text)
+
+
+def _ai_gemini(api_key: str, lead: dict) -> dict:
+    url = (f"https://generativelanguage.googleapis.com/v1beta/models/"
+           f"{GEMINI_MODEL}:generateContent")
+    body = {
+        "systemInstruction": {"parts": [{"text": AI_SYSTEM}]},
+        "contents": [{"parts": [{"text": _ai_prompt(lead)}]}],
+        "generationConfig": {
+            "responseMimeType": "application/json",
+            "responseSchema": {
+                "type": "OBJECT",
+                "properties": {
+                    "presuda": {"type": "STRING",
+                                "enum": ["vlasnik", "agencija", "nesigurno"]},
+                    "razlog":  {"type": "STRING"},
+                },
+                "required": ["presuda", "razlog"],
+            },
+            # gasi "razmišljanje" (inače pojede maxOutputTokens pa tekst bude prazan)
+            "thinkingConfig": {"thinkingBudget": 0},
+            "maxOutputTokens": 300,
+        },
+    }
+    # ključ ide u header, NIKAD u URL (URL završava u logovima)
+    headers = {"x-goog-api-key": api_key}
+    r = requests.post(url, headers=headers, json=body, timeout=60)
+    if r.status_code == 429:
+        time.sleep(30)
+        r = requests.post(url, headers=headers, json=body, timeout=60)
+    r.raise_for_status()
+    text = r.json()["candidates"][0]["content"]["parts"][0]["text"]
+    return json.loads(text)
+
+
 def ai_classify(leads: list[dict]) -> None:
     """Dopiše lead["_ai"] leadovima koji imaju opis, a još nemaju presudu.
     Svaka greška se samo loguje — mejl ide i bez AI kolone."""
     kandidati = [l for l in leads if l.get("_opis") and not l.get("_ai")]
     if not kandidati:
         return
-    if not os.environ.get("ANTHROPIC_API_KEY"):
-        log.info("AI čitač preskočen: ANTHROPIC_API_KEY nije postavljen.")
-        return
-    try:
-        import anthropic
-    except ImportError:
-        log.warning("AI čitač preskočen: paket 'anthropic' nije instaliran.")
-        return
 
-    client = anthropic.Anthropic()
-    uspjelo = 0
-    for lead in kandidati:
+    anth_key = os.environ.get("ANTHROPIC_API_KEY", "")
+    gem_key  = os.environ.get("GEMINI_API_KEY", "")
+
+    client = None
+    if anth_key:
         try:
-            resp = client.messages.create(
-                model=AI_MODEL,
-                max_tokens=200,
-                system=AI_SYSTEM,
-                messages=[{
-                    "role": "user",
-                    "content": (f"Ime oglašivača: {lead['ime']}\n"
-                                f"Opis oglasa:\n{lead['_opis']}"),
-                }],
-                output_config={"format": {"type": "json_schema", "schema": _AI_SCHEMA}},
-            )
-            text = next(b.text for b in resp.content if b.type == "text")
-            lead["_ai"] = json.loads(text)
+            import anthropic
+            client = anthropic.Anthropic()
+            provider = "Claude Haiku"
+        except ImportError:
+            log.warning("Paket 'anthropic' nije instaliran — probam Gemini.")
+            anth_key = ""
+    if not anth_key:
+        if gem_key:
+            provider = "Gemini (besplatni)"
+        else:
+            log.info("AI čitač preskočen: ni ANTHROPIC_API_KEY ni GEMINI_API_KEY nisu postavljeni.")
+            return
+
+    log.info("AI čitač (%s): %d oglasa za klasifikaciju.", provider, len(kandidati))
+    uspjelo = 0
+    for i, lead in enumerate(kandidati):
+        try:
+            if anth_key:
+                lead["_ai"] = _ai_anthropic(client, lead)
+            else:
+                if i:
+                    time.sleep(GEMINI_DELAY)   # poštuj limit besplatnog nivoa
+                lead["_ai"] = _ai_gemini(gem_key, lead)
             uspjelo += 1
         except Exception as e:
             log.warning("AI klasifikacija nije uspjela za %s: %s", lead["oglas_link"], e)

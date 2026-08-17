@@ -34,6 +34,7 @@ jobs:
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
           EMAIL_FROM: ${{ secrets.EMAIL_FROM }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           # Email šalje samo run u 08:47 UTC ili ručni trigger
           SEND_EMAIL: ${{ github.event.schedule == '47 8 * * *' || github.event_name == 'workflow_dispatch' }}
         run: python horizon_scraper.py
