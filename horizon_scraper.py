@@ -499,7 +499,10 @@ _AI_SCHEMA = {
 
 
 def _ai_prompt(lead: dict) -> str:
-    return f"Ime oglašivača: {lead['ime']}\nOpis oglasa:\n{lead['_opis']}"
+    # brojevi telefona se maskiraju prije slanja AI provajderu (Gemini
+    # besplatni nivo koristi poslati tekst za treniranje)
+    opis = _PHONE_IN_TEXT.sub("[broj]", lead["_opis"])
+    return f"Ime oglašivača: {lead['ime']}\nOpis oglasa:\n{opis}"
 
 
 def _ai_anthropic(client, lead: dict) -> dict:
@@ -1399,9 +1402,14 @@ def run_realitica() -> tuple[list[dict], list[dict]]:
             log.error("Realitica.com [%s] greška — preskačem: %s", label, e)
 
     if total_thumbs == 0:
-        log.warning("⚠  Realitica.com: 0 kartica na indexu — stranica vjerovatno promijenjena!")
-        log.warning("Realitica odgovor (prvih 300): %r", zadnji_html[:300])
-        send_warning_email("Realitica.com", 0, 0, detalj=zadnji_html[:600])
+        if not zadnji_html:
+            # nijedna stranica nije ni stigla (Realitica 403-blokira serverske
+            # IP adrese, npr. GitHub Actions) — poznato stanje, bez mejla
+            log.warning("⚠  Realitica.com: HTTP blokada (vjerovatno serverski IP) — preskačem bez upozorenja.")
+        else:
+            log.warning("⚠  Realitica.com: 0 kartica na indexu — stranica vjerovatno promijenjena!")
+            log.warning("Realitica odgovor (prvih 300): %r", zadnji_html[:300])
+            send_warning_email("Realitica.com", 0, 0, detalj=zadnji_html[:600])
 
     for lead in raw:
         log.debug("  [raw] %-30s | %s | %s",
