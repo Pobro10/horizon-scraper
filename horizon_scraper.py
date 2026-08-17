@@ -16,6 +16,7 @@ import logging
 import os
 from datetime import datetime, timedelta
 from collections import defaultdict
+from html import escape
 from urllib.parse import urljoin
 
 import requests
@@ -25,7 +26,8 @@ from bs4 import BeautifulSoup, NavigableString
 # KONFIGURACIJA
 # ──────────────────────────────────────────────────────────────
 
-RESEND_API_KEY = os.environ.get("RESEND_API_KEY", "re_KKvP9n9w_4kuVE1Cjk2mvvEqn4sXfhcfm")
+# Ključ dolazi ISKLJUČIVO iz env varijable (GitHub Secrets) - nikad u kodu.
+RESEND_API_KEY = os.environ.get("RESEND_API_KEY", "")
 EMAIL_TO       = "officehorizon.nekretnine@gmail.com"
 EMAIL_FROM     = os.environ.get("EMAIL_FROM", "onboarding@resend.dev")
 
@@ -109,7 +111,7 @@ def _audit_log(izvor: str, ime: str, link: str, status: str, razlog: str = "") -
 # ──────────────────────────────────────────────────────────────
 
 SENT_FILE     = os.path.join(os.path.dirname(os.path.abspath(__file__)), "sent.json")
-SENT_MAX_DAYS = 4   # zapisi stariji od ovoga se brišu pri svakom upisu
+SENT_MAX_DAYS = 8   # mora biti > 7 (Realitica koristi since-day=p-7day), inače se stari oglasi ponovo šalju
 
 
 def load_sent() -> dict[str, str]:
@@ -234,6 +236,9 @@ def get(url: str) -> requests.Response | None:
 # ──────────────────────────────────────────────────────────────
 
 def _resend_post(subject: str, html: str, text: str) -> bool:
+    if not RESEND_API_KEY:
+        log.error("RESEND_API_KEY nije postavljen - email se ne šalje.")
+        return False
     resp = requests.post(
         "https://api.resend.com/emails",
         headers={
@@ -266,11 +271,11 @@ def send_email(leads: list[dict], review_leads: list[dict] = []) -> bool:
 
     rows = "\n".join(
         f"""        <tr>
-          <td style="padding:8px;border:1px solid #ddd">{lead['ime']}</td>
-          <td style="padding:8px;border:1px solid #ddd">{lead['cijena']}</td>
-          <td style="padding:8px;border:1px solid #ddd">{lead['lokacija']}</td>
+          <td style="padding:8px;border:1px solid #ddd">{escape(lead['ime'])}</td>
+          <td style="padding:8px;border:1px solid #ddd">{escape(lead['cijena'])}</td>
+          <td style="padding:8px;border:1px solid #ddd">{escape(lead['lokacija'])}</td>
           <td style="padding:8px;border:1px solid #ddd">
-            <a href="{lead['oglas_link']}">{lead['oglas_link']}</a>
+            <a href="{escape(lead['oglas_link'])}">{escape(lead['oglas_link'])}</a>
           </td>
         </tr>"""
         for lead in leads
@@ -280,13 +285,13 @@ def send_email(leads: list[dict], review_leads: list[dict] = []) -> bool:
     if review_leads:
         review_rows = "\n".join(
             f"""        <tr>
-          <td style="padding:8px;border:1px solid #ddd">{lead['ime']}</td>
-          <td style="padding:8px;border:1px solid #ddd">{lead['cijena']}</td>
-          <td style="padding:8px;border:1px solid #ddd">{lead['lokacija']}</td>
+          <td style="padding:8px;border:1px solid #ddd">{escape(lead['ime'])}</td>
+          <td style="padding:8px;border:1px solid #ddd">{escape(lead['cijena'])}</td>
+          <td style="padding:8px;border:1px solid #ddd">{escape(lead['lokacija'])}</td>
           <td style="padding:8px;border:1px solid #ddd">
-            <a href="{lead['oglas_link']}">{lead['oglas_link']}</a>
+            <a href="{escape(lead['oglas_link'])}">{escape(lead['oglas_link'])}</a>
           </td>
-          <td style="padding:8px;border:1px solid #ddd">{lead.get('_razlog','')}</td>
+          <td style="padding:8px;border:1px solid #ddd">{escape(lead.get('_razlog',''))}</td>
         </tr>"""
             for lead in review_leads
         )
@@ -449,16 +454,19 @@ def _parse_oglasi_listing(url: str) -> dict | str | None:
     if r is None:
         return None
 
-    soup      = BeautifulSoup(r.text, "lxml")
-    page_text = soup.get_text(" ")
+    soup = BeautifulSoup(r.text, "lxml")
 
-    # Oglasi.me daje samo datum bez sata — poredimo po datumu, bez vremenske komponente
-    date_m = _ABSOLUTE.search(page_text)
-    if date_m:
-        listing_dt = parse_date(date_m.group(0))
-        if listing_dt is not None and listing_dt.date() < CUTOFF.date():
-            log.debug("  [star oglas] %s  datum: %s", url, date_m.group(0))
-            return "old"
+    # ── Datum objave — ciljani element div.oglasi-datum, ne cijeli tekst
+    #    stranice (u opisu može stajati bilo koji datum i lažno oboriti oglas).
+    #    Oglasi.me daje samo datum bez sata — poredimo po datumu.
+    date_tag = soup.select_one("div.oglasi-datum p") or soup.select_one("div.oglasi-datum")
+    if date_tag:
+        date_m = _ABSOLUTE.search(date_tag.get_text(" ", strip=True))
+        if date_m:
+            listing_dt = parse_date(date_m.group(0))
+            if listing_dt is not None and listing_dt.date() < CUTOFF.date():
+                log.debug("  [star oglas] %s  datum: %s", url, date_m.group(0))
+                return "old"
 
     # ── Ime oglašivača — probaj više selektora ──────────────────
     name_tag = (
@@ -474,6 +482,13 @@ def _parse_oglasi_listing(url: str) -> dict | str | None:
     name     = re.sub(r"\s*\(.*?\)", "", raw_name).strip()
     uid_m    = re.search(r"\((\w+)\)", raw_name)
     user_id  = uid_m.group(1) if uid_m else None
+
+    # ID korisnika stoji u posebnom elementu (npr. "(HE7477)"), ne u imenu
+    if user_id is None:
+        uname_tag = soup.select_one("p.sidebar-user-status-username")
+        if uname_tag:
+            um = re.search(r"\((\w+)\)", uname_tag.get_text("", strip=True))
+            user_id = um.group(1) if um else None
 
     # ── Lokacija ────────────────────────────────────────────────
     loc_tag  = (
@@ -609,10 +624,12 @@ def _patuljak_index_urls(page: int) -> list[str]:
     if r is None:
         return []
     soup = BeautifulSoup(r.text, "lxml")
-    return list({
+    # dict.fromkeys: deduplikacija koja ČUVA redosljed sa stranice (set ga
+    # uništava, a logika "N uzastopnih starih -> stani" zavisi od redosljeda)
+    return list(dict.fromkeys(
         urljoin(PATULJAK_BASE, a["href"].split("?")[0])
         for a in soup.find_all("a", href=re.compile(r"^/oglas/"))
-    })
+    ))
 
 
 def _patuljak_count_from_href(href: str) -> int:

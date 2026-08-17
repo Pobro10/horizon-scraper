@@ -1,0 +1,4 @@
+# audit_log.csv je append-only: dva runa koja dodaju redove na kraj ne smiju
+# praviti merge konflikt - union spaja obje verzije (zadrzi sve redove).
+# NE primjenjivati na sent.json (union bi slomio JSON).
+audit_log.csv merge=union

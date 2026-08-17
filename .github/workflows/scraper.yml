@@ -45,10 +45,18 @@ jobs:
           git add audit_log.csv || true
           git add sent.json || true
           git diff --cached --quiet || git commit -m "audit log + sent $(date -u +%Y-%m-%dT%H:%M)"
-          # Repo se mogao promijeniti između checkouta i pusha — rebase prije push.
-          # Ako rebase ne prođe čisto, abortuj ga i nastavi bez obaranja workflowa.
-          git pull --rebase || { git rebase --abort 2>/dev/null || true; }
-          git push
+          # Repo se mogao promijeniti između checkouta i pusha: rebase pa push,
+          # do 3 pokušaja. Poslije neuspjelog rebasea OBAVEZNO abort, inače bi
+          # push sigurno pao. Ako ni treći pokušaj ne prođe, upiši upozorenje
+          # ali ne obaraj workflow (audit log nije kritičan za sljedeći run).
+          for i in 1 2 3; do
+            if git pull --rebase && git push; then
+              exit 0
+            fi
+            git rebase --abort 2>/dev/null || true
+            sleep 5
+          done
+          echo "::warning::Push audit loga nije uspio poslije 3 pokušaja"
 
       - name: Sačuvaj leads kao artifact
         if: always()
