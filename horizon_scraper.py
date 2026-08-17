@@ -14,6 +14,8 @@ import time
 import json
 import logging
 import os
+import threading
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timedelta
 from collections import defaultdict
 from html import escape
@@ -59,7 +61,7 @@ BROKER_MIN_LISTINGS = _B.get("min_listings", 3)
 FILTER_CITY      = "Podgorica"
 MAX_PAGES        = 15
 REALITICA_PAGES  = 2
-DELAY_LISTING  = 1.5
+DELAY_LISTING  = 1.0
 DELAY_PROFILE  = 1.0
 MAX_OLD_IN_ROW = 5
 RETRY_COUNT    = 3    # HTTP retry pokušaji po zahtjevu
@@ -98,13 +100,17 @@ _AUDIT_FILE  = os.path.join(os.path.dirname(os.path.abspath(__file__)), "audit_l
 _AUDIT_COLS  = ["datum_pokretanja", "izvor", "ime", "link", "status", "razlog"]
 _RUN_START   = datetime.now().strftime("%Y-%m-%d %H:%M")
 
+_AUDIT_LOCK = threading.Lock()
+
+
 def _audit_log(izvor: str, ime: str, link: str, status: str, razlog: str = "") -> None:
-    write_header = not os.path.exists(_AUDIT_FILE)
-    with open(_AUDIT_FILE, "a", newline="", encoding="utf-8") as f:
-        w = csv.writer(f)
-        if write_header:
-            w.writerow(_AUDIT_COLS)
-        w.writerow([_RUN_START, izvor, ime, link, status, razlog])
+    with _AUDIT_LOCK:
+        write_header = not os.path.exists(_AUDIT_FILE)
+        with open(_AUDIT_FILE, "a", newline="", encoding="utf-8") as f:
+            w = csv.writer(f)
+            if write_header:
+                w.writerow(_AUDIT_COLS)
+            w.writerow([_RUN_START, izvor, ime, link, status, razlog])
 
 # ──────────────────────────────────────────────────────────────
 # MEMORIJA POSLATIH OGLASA (sent.json)
@@ -136,16 +142,97 @@ def save_sent(sent: dict[str, str]) -> None:
     os.replace(tmp, SENT_FILE)
     log.info("Memorija poslatih sačuvana u sent.json (%d linkova).", len(sent))
 
+# ──────────────────────────────────────────────────────────────
+# KEŠ OBRAĐENIH OGLASA (seen.json)
+# Svaki obrađeni URL se pamti sa statusom, pa se detalj stranica skida
+# samo JEDNOM umjesto u sva 4 dnevna runa. Vlasnici i "provjeri" čuvaju
+# i lead podatke, da bi ušli u mejl i iz keša (mejl šalje samo 1 run).
+# ──────────────────────────────────────────────────────────────
 
-http = requests.Session()
-http.headers.update({
-    "User-Agent": (
-        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
-        "AppleWebKit/537.36 (KHTML, like Gecko) "
-        "Chrome/124.0.0.0 Safari/537.36"
-    ),
-    "Accept-Language": "bs,hr,sr;q=0.9,en;q=0.8",
-})
+SEEN_FILE     = os.path.join(os.path.dirname(os.path.abspath(__file__)), "seen.json")
+SEEN_MAX_DAYS = 8   # isto kao SENT_MAX_DAYS: > 7 zbog Realitice
+
+_SEEN_LOCK = threading.Lock()
+SEEN: dict[str, dict] = {}
+
+
+def load_seen() -> dict[str, dict]:
+    try:
+        with open(SEEN_FILE, encoding="utf-8") as f:
+            data = json.load(f)
+        if isinstance(data, dict):
+            return data
+        log.warning("seen.json nije dict — krećem sa praznim kešom.")
+    except FileNotFoundError:
+        pass
+    except (json.JSONDecodeError, OSError) as e:
+        log.warning("seen.json neispravan (%s) — krećem sa praznim kešom.", e)
+    return {}
+
+
+def _save_seen_locked() -> int:
+    """Snima keš na disk. Poziva se ISKLJUČIVO sa već držanim _SEEN_LOCK."""
+    granica = datetime.now() - timedelta(days=SEEN_MAX_DAYS)
+
+    def _fresh(entry: dict) -> bool:
+        try:
+            return datetime.fromisoformat(entry.get("ts", "")) >= granica
+        except ValueError:
+            return False
+
+    pruned = {k: v for k, v in SEEN.items() if _fresh(v)}
+    tmp = SEEN_FILE + ".tmp"
+    with open(tmp, "w", encoding="utf-8") as f:
+        json.dump(pruned, f, ensure_ascii=False, indent=2)
+    os.replace(tmp, SEEN_FILE)
+    return len(pruned)
+
+
+def save_seen() -> None:
+    with _SEEN_LOCK:
+        n = _save_seen_locked()
+    log.info("Keš obrađenih sačuvan u seen.json (%d zapisa).", n)
+
+
+def seen_get(url: str) -> dict | None:
+    with _SEEN_LOCK:
+        return SEEN.get(url)
+
+
+_seen_dirty = 0
+
+
+def seen_record(url: str, status: str, lead: dict | None = None) -> None:
+    """Upis u keš; na svakih 50 novih zapisa snima na disk, da prekinut
+    run (timeout, pad runnera) ne izgubi cio napredak."""
+    global _seen_dirty
+    with _SEEN_LOCK:
+        SEEN[url] = {"ts": datetime.now().isoformat(), "status": status, "lead": lead}
+        _seen_dirty += 1
+        if _seen_dirty >= 50:
+            _seen_dirty = 0
+            _save_seen_locked()
+
+
+# requests.Session nije garantovano thread-safe, pa svaki thread (sajt)
+# dobija svoju sesiju preko threading.local().
+_TLS = threading.local()
+
+
+def _session() -> requests.Session:
+    s = getattr(_TLS, "session", None)
+    if s is None:
+        s = requests.Session()
+        s.headers.update({
+            "User-Agent": (
+                "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+                "AppleWebKit/537.36 (KHTML, like Gecko) "
+                "Chrome/124.0.0.0 Safari/537.36"
+            ),
+            "Accept-Language": "bs,hr,sr;q=0.9,en;q=0.8",
+        })
+        _TLS.session = s
+    return s
 
 # ──────────────────────────────────────────────────────────────
 # PARSIRANJE DATUMA
@@ -217,7 +304,7 @@ def get(url: str) -> requests.Response | None:
     """HTTP GET sa automatskim retry (eksponencijalni backoff)."""
     for attempt in range(1, RETRY_COUNT + 1):
         try:
-            r = http.get(url, timeout=15)
+            r = _session().get(url, timeout=15)
             r.raise_for_status()
             return r
         except requests.RequestException as e:
@@ -516,9 +603,10 @@ def run_oglasi() -> tuple[list[dict], list[dict]]:
     log.info("  OGLASI.ME  (od %s)", CUTOFF.strftime("%d.%m.%Y %H:%M"))
     log.info("═" * 60)
 
-    queue:      list[str]      = []
-    old_in_row: int            = 0
-    uid_count:  dict[str, int] = defaultdict(int)
+    queue:       list[str]      = []
+    old_in_row:  int            = 0
+    total_cards: int            = 0
+    uid_count:   dict[str, int] = defaultdict(int)
 
     for page in range(1, MAX_PAGES + 1):
         r = get(f"{OGLASI_BASE}/nekretnine/all/{page}")
@@ -530,6 +618,7 @@ def run_oglasi() -> tuple[list[dict], list[dict]]:
         if not cards:
             log.info("  str. %d: prazno, zaustavljam.", page)
             break
+        total_cards += len(cards)
 
         page_new = 0
         for url, date_text, grad in cards:
@@ -557,33 +646,55 @@ def run_oglasi() -> tuple[list[dict], list[dict]]:
 
     raw:            list[dict] = []
     selector_fails: int        = 0
+    fetched:        int        = 0
+    cache_hits:     int        = 0
 
     for i, url in enumerate(queue, 1):
+        cached = seen_get(url)
+        if cached is not None:
+            # već obrađen u ranijem runu — bez skidanja i bez pauze
+            cache_hits += 1
+            if cached["status"] in ("vlasnik", "provjeri") and cached.get("lead"):
+                lead = dict(cached["lead"])
+                lead["_fresh"] = False
+                uid = lead.get("_uid") or lead["ime"]
+                uid_count[uid] += 1
+                raw.append(lead)
+            continue
+
         log.info("  [%4d/%d] %s", i, len(queue), url)
         result = _parse_oglasi_listing(url)
+        fetched += 1
         if result == "selector_fail":
             selector_fails += 1
             _audit_log("Oglasi.me", "", url, "neparsiran", "selector_fail")
         elif result == "old":
+            seen_record(url, "star")
             _audit_log("Oglasi.me", "", url, "star", "van cutoffa")
         elif result is None:
             _audit_log("Oglasi.me", "", url, "skip", "HTTP greška")
         else:
+            result["_fresh"] = True
             uid = result["_uid"] or result["ime"]
             uid_count[uid] += 1
             raw.append(result)
         time.sleep(DELAY_LISTING)
 
-    if len(queue) == 0:
-        log.warning("⚠  Oglasi.me: 0 oglasa pronađeno — stranica vjerovatno promijenjena!")
+    if cache_hits:
+        log.info("  keš: %d/%d oglasa preskočeno (već obrađeni).", cache_hits, len(queue))
+
+    # Upozorenje samo kad index NE DAJE NIJEDNU karticu (markup promijenjen).
+    # Prazan queue je normalan kad prosto nema novih oglasa iz Podgorice.
+    if total_cards == 0:
+        log.warning("⚠  Oglasi.me: 0 kartica na indexu — stranica vjerovatno promijenjena!")
         send_warning_email("Oglasi.me", 0, 0)
-    elif selector_fails / len(queue) > SELECTOR_FAIL_RATIO:
+    elif fetched and selector_fails / fetched > SELECTOR_FAIL_RATIO:
         log.warning("⚠  Oglasi.me: %d/%d oglasa nije moglo biti parsirano — selektori pokvareni!",
-                    selector_fails, len(queue))
-        send_warning_email("Oglasi.me", selector_fails, len(queue))
+                    selector_fails, fetched)
+        send_warning_email("Oglasi.me", selector_fails, fetched)
     elif selector_fails > 0:
         log.info("ℹ  Oglasi.me: %d/%d oglasa nije parsirano (ispod praga, bez mejla).",
-                 selector_fails, len(queue))
+                 selector_fails, fetched)
 
     for uid, cnt in list(uid_count.items()):
         if BROKER_MIN_LISTINGS - 1 <= cnt <= BROKER_MIN_LISTINGS + 1:
@@ -594,9 +705,18 @@ def run_oglasi() -> tuple[list[dict], list[dict]]:
     leads:        list[dict] = []
     review_leads: list[dict] = []
     for lead in raw:
-        uid   = lead.pop("_uid", None) or lead["ime"]
+        fresh = lead.pop("_fresh", False)
+        uid   = lead.get("_uid") or lead["ime"]
         count = uid_count[uid]
         status, razlog = is_broker(lead["ime"], count)
+
+        # svježe skinut oglas ide u keš sa presudom; lead se čuva samo za
+        # vlasnika/provjeru (posrednik se ubuduće preskače bez skidanja)
+        if fresh:
+            stored = dict(lead) if status in ("vlasnik", "provjeri") else None
+            seen_record(lead["oglas_link"], status, stored)
+
+        lead.pop("_uid", None)
         if status == "posrednik":
             log.info("  [posrednik] %-28s (%s)", lead["ime"], razlog)
             _audit_log("Oglasi.me", lead["ime"], lead["oglas_link"], "posrednik", razlog)
@@ -624,11 +744,12 @@ def _patuljak_index_urls(page: int) -> list[str]:
     if r is None:
         return []
     soup = BeautifulSoup(r.text, "lxml")
-    # dict.fromkeys: deduplikacija koja ČUVA redosljed sa stranice (set ga
-    # uništava, a logika "N uzastopnih starih -> stani" zavisi od redosljeda)
+    # dict.fromkeys: deduplikacija koja ČUVA redosljed sa stranice.
+    # Regex traži bar jedno slovo/broj u slugu: index sadrži i mrtav link
+    # "/oglas/--" koji bi inače trošio 3 HTTP pokušaja svakog runa.
     return list(dict.fromkeys(
         urljoin(PATULJAK_BASE, a["href"].split("?")[0])
-        for a in soup.find_all("a", href=re.compile(r"^/oglas/"))
+        for a in soup.find_all("a", href=re.compile(r"^/oglas/[^\"]*[a-z0-9]", re.I))
     ))
 
 
@@ -642,7 +763,8 @@ def _parse_patuljak_listing(url: str) -> dict | str | None:
     Vraća:
       dict            — uspješno parsirani oglas
       "old"           — oglas je stariji od CUTOFF
-      None            — oglas iz drugog grada ili HTTP greška
+      "drugi_grad"    — oglas nije iz FILTER_CITY (keširati, ne skidati opet)
+      None            — HTTP greška (pokušati opet u sljedećem runu)
       "selector_fail" — selektori više ne rade (HTML se promijenio)
     """
     r = get(url)
@@ -700,7 +822,7 @@ def _parse_patuljak_listing(url: str) -> dict | str | None:
 
     if FILTER_CITY and FILTER_CITY.lower() not in lokacija.lower():
         log.debug("  [drugi grad] %s  →  %s", url, lokacija)
-        return None
+        return "drugi_grad"
 
     # ── Cijena ──────────────────────────────────────────────────
     price_tag = soup.select_one("div.product_full__cijena")
@@ -725,16 +847,20 @@ def run_patuljak() -> tuple[list[dict], list[dict]]:
     log.info("  PATULJAK.ME  (od %s)", CUTOFF.strftime("%d.%m.%Y %H:%M"))
     log.info("═" * 60)
 
-    queue:      list[str] = []
-    old_in_row: int       = 0
+    queue: list[str] = []
 
     for page in range(1, MAX_PAGES + 1):
         urls = _patuljak_index_urls(page)
         if not urls:
             log.info("  str. %d: prazno, zaustavljam.", page)
             break
-        log.info("  str. %d: %d oglasa u listi", page, len(urls))
+        novi = sum(1 for u in urls if seen_get(u) is None)
+        log.info("  str. %d: %d oglasa u listi (%d novih)", page, len(urls), novi)
         queue.extend(urls)
+        # stranica bez ijednog novog oglasa: sve dalje je sigurno već viđeno
+        if novi == 0:
+            log.info("  str. %d: sve već obrađeno, prekidam paginaciju.", page)
+            break
         time.sleep(DELAY_LISTING)
 
     log.info("URLs za obraditi: %d", len(queue))
@@ -742,51 +868,76 @@ def run_patuljak() -> tuple[list[dict], list[dict]]:
     leads:          list[dict] = []
     review_leads:   list[dict] = []
     selector_fails: int        = 0
+    fetched:        int        = 0
+    cache_hits:     int        = 0
+
+    def _klasifikuj(lead: dict, count: int, fresh: bool) -> None:
+        status, razlog = is_broker(lead["ime"], count)
+        if fresh:
+            stored = None
+            if status in ("vlasnik", "provjeri"):
+                stored = dict(lead)
+                stored["_count"] = count
+            seen_record(lead["oglas_link"], status, stored)
+        if status == "posrednik":
+            log.info("  [posrednik] %-28s (%s)", lead["ime"], razlog)
+            _audit_log("Patuljak.me", lead["ime"], lead["oglas_link"], "posrednik", razlog)
+        elif status == "provjeri":
+            lead["_razlog"] = razlog
+            review_leads.append(lead)
+            log.info("  [provjeri]  %-28s (%s)", lead["ime"], razlog)
+            _audit_log("Patuljak.me", lead["ime"], lead["oglas_link"], "provjeri", razlog)
+        else:
+            leads.append(lead)
+            _audit_log("Patuljak.me", lead["ime"], lead["oglas_link"], "poslat", "")
 
     for i, url in enumerate(queue, 1):
+        cached = seen_get(url)
+        if cached is not None:
+            # već obrađen — bez skidanja i bez pauze
+            cache_hits += 1
+            if cached["status"] in ("vlasnik", "provjeri") and cached.get("lead"):
+                lead = dict(cached["lead"])
+                _klasifikuj(lead, lead.pop("_count", 1), fresh=False)
+            continue
+
         log.info("  [%4d/%d] %s", i, len(queue), url)
         result = _parse_patuljak_listing(url)
+        fetched += 1
 
         if result == "old":
-            old_in_row += 1
+            seen_record(url, "star")
             _audit_log("Patuljak.me", "", url, "star", "van cutoffa")
         elif result == "selector_fail":
             selector_fails += 1
             _audit_log("Patuljak.me", "", url, "neparsiran", "selector_fail")
+        elif result == "drugi_grad":
+            seen_record(url, "drugi_grad")
+            _audit_log("Patuljak.me", "", url, "skip", "drugi grad")
         elif result is None:
-            _audit_log("Patuljak.me", "", url, "skip", "HTTP greška ili drugi grad")
+            _audit_log("Patuljak.me", "", url, "skip", "HTTP greška")
         else:
-            old_in_row = 0
             count = result.pop("_count", 1)
-            status, razlog = is_broker(result["ime"], count)
-            if status == "posrednik":
-                log.info("  [posrednik] %-28s (%s)", result["ime"], razlog)
-                _audit_log("Patuljak.me", result["ime"], result["oglas_link"], "posrednik", razlog)
-            elif status == "provjeri":
-                result["_razlog"] = razlog
-                review_leads.append(result)
-                log.info("  [provjeri]  %-28s (%s)", result["ime"], razlog)
-                _audit_log("Patuljak.me", result["ime"], result["oglas_link"], "provjeri", razlog)
-            else:
-                leads.append(result)
-                _audit_log("Patuljak.me", result["ime"], result["oglas_link"], "poslat", "")
+            _klasifikuj(result, count, fresh=True)
 
-        if old_in_row >= MAX_OLD_IN_ROW:
-            log.info("  %d uzastopnih starih oglasa, završavam.", old_in_row)
-            break
-
+        # NEMA prekida na "N uzastopnih starih": na vrhu indexa stoje stari
+        # IZDVOJENI (plaćeni) oglasi pa bi prekid preskočio svježe ispod njih.
+        # Keš garantuje da se svaki oglas ionako skida samo jednom.
         time.sleep(DELAY_LISTING)
+
+    if cache_hits:
+        log.info("  keš: %d/%d oglasa preskočeno (već obrađeni).", cache_hits, len(queue))
 
     if len(queue) == 0:
         log.warning("⚠  Patuljak.me: 0 oglasa pronađeno — stranica vjerovatno promijenjena!")
         send_warning_email("Patuljak.me", 0, 0)
-    elif selector_fails / len(queue) > SELECTOR_FAIL_RATIO:
+    elif fetched and selector_fails / fetched > SELECTOR_FAIL_RATIO:
         log.warning("⚠  Patuljak.me: %d/%d oglasa nije moglo biti parsirano — selektori pokvareni!",
-                    selector_fails, len(queue))
-        send_warning_email("Patuljak.me", selector_fails, len(queue))
+                    selector_fails, fetched)
+        send_warning_email("Patuljak.me", selector_fails, fetched)
     elif selector_fails > 0:
         log.info("ℹ  Patuljak.me: %d/%d oglasa nije parsirano (ispod praga, bez mejla).",
-                 selector_fails, len(queue))
+                 selector_fails, fetched)
 
     log.info("Patuljak.me → %d vlasnika, %d za provjeru", len(leads), len(review_leads))
     return leads, review_leads
@@ -917,9 +1068,30 @@ def run_realitica() -> tuple[list[dict], list[dict]]:
 def main() -> None:
     log.info("▶  Horizon Scraper  %s", datetime.now().strftime("%Y-%m-%d %H:%M"))
 
-    leads_o, review_o = run_oglasi()
-    leads_p, review_p = run_patuljak()
-    leads_r, review_r = run_realitica()
+    global SEEN
+    SEEN = load_seen()
+    log.info("Keš obrađenih: %d zapisa iz seen.json.", len(SEEN))
+
+    # Sva 3 sajta paralelno — svaki u svom threadu sa svojom HTTP sesijom.
+    # Pad jednog sajta ne obara ostale.
+    rezultati: dict[str, tuple[list[dict], list[dict]]] = {}
+    poslovi = {"Oglasi.me": run_oglasi, "Patuljak.me": run_patuljak,
+               "Realitica.com": run_realitica}
+    with ThreadPoolExecutor(max_workers=len(poslovi)) as ex:
+        futures = {ex.submit(fn): ime for ime, fn in poslovi.items()}
+        for fut in as_completed(futures):
+            ime = futures[fut]
+            try:
+                rezultati[ime] = fut.result()
+            except Exception as e:
+                log.error("✗  %s: neočekivana greška — sajt preskočen: %s", ime, e)
+                rezultati[ime] = ([], [])
+
+    save_seen()
+
+    leads_o, review_o = rezultati["Oglasi.me"]
+    leads_p, review_p = rezultati["Patuljak.me"]
+    leads_r, review_r = rezultati["Realitica.com"]
     all_leads    = leads_o + leads_p + leads_r
     all_review   = review_o + review_p + review_r
 
