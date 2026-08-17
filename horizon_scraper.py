@@ -430,8 +430,48 @@ def get(url: str) -> requests.Response | None:
 # ──────────────────────────────────────────────────────────────
 
 AI_MODEL     = "claude-haiku-4-5"
-GEMINI_MODEL = "gemini-2.5-flash"
 GEMINI_DELAY = 6.5   # besplatni nivo: ~10 zahtjeva u minuti
+
+# Google povremeno penzioniše modele (2.5-flash je počeo vraćati 404), pa se
+# model bira DINAMIČKI iz liste dostupnih; ovo je redosljed želja + rezerva.
+_GEMINI_PREFERRED = ("gemini-3-flash", "gemini-3-flash-preview",
+                     "gemini-2.5-flash", "gemini-2.0-flash")
+GEMINI_FALLBACK   = "gemini-3-flash-preview"
+_gemini_model_cache: str | None = None
+
+
+def _gemini_model(api_key: str) -> str:
+    """Pita Google koje modele ključ smije da koristi i bira najbolji flash."""
+    global _gemini_model_cache
+    if _gemini_model_cache:
+        return _gemini_model_cache
+    try:
+        r = requests.get(
+            "https://generativelanguage.googleapis.com/v1beta/models",
+            headers={"x-goog-api-key": api_key},
+            params={"pageSize": 500},
+            timeout=30,
+        )
+        r.raise_for_status()
+        dostupni = {
+            m["name"].removeprefix("models/")
+            for m in r.json().get("models", [])
+            if "generateContent" in m.get("supportedGenerationMethods", [])
+        }
+        izbor = next((k for k in _GEMINI_PREFERRED if k in dostupni), None)
+        if izbor is None:
+            # rezerva: najnoviji "običan" flash po imenu
+            flash = sorted(d for d in dostupni
+                           if "flash" in d and not any(x in d for x in
+                              ("lite", "image", "tts", "live", "audio", "exp")))
+            izbor = flash[-1] if flash else GEMINI_FALLBACK
+        _gemini_model_cache = izbor
+        log.info("Gemini model: %s", izbor)
+    except Exception as e:
+        log.warning("Ne mogu izlistati Gemini modele (%s) — koristim %s.",
+                    e, GEMINI_FALLBACK)
+        _gemini_model_cache = GEMINI_FALLBACK
+    return _gemini_model_cache
 
 AI_SYSTEM = (
     "Pomažeš agenciji za nekretnine u Podgorici da razdvoji oglase privatnih "
@@ -476,7 +516,7 @@ def _ai_anthropic(client, lead: dict) -> dict:
 
 def _ai_gemini(api_key: str, lead: dict) -> dict:
     url = (f"https://generativelanguage.googleapis.com/v1beta/models/"
-           f"{GEMINI_MODEL}:generateContent")
+           f"{_gemini_model(api_key)}:generateContent")
     body = {
         "systemInstruction": {"parts": [{"text": AI_SYSTEM}]},
         "contents": [{"parts": [{"text": _ai_prompt(lead)}]}],
@@ -491,9 +531,9 @@ def _ai_gemini(api_key: str, lead: dict) -> dict:
                 },
                 "required": ["presuda", "razlog"],
             },
-            # gasi "razmišljanje" (inače pojede maxOutputTokens pa tekst bude prazan)
-            "thinkingConfig": {"thinkingBudget": 0},
-            "maxOutputTokens": 300,
+            # bez thinkingConfig: parametri "razmišljanja" se razlikuju po
+            # generaciji modela; velikodušan limit pokriva i thinking tokene
+            "maxOutputTokens": 2048,
         },
     }
     # ključ ide u header, NIKAD u URL (URL završava u logovima)
@@ -503,7 +543,8 @@ def _ai_gemini(api_key: str, lead: dict) -> dict:
         time.sleep(30)
         r = requests.post(url, headers=headers, json=body, timeout=60)
     r.raise_for_status()
-    text = r.json()["candidates"][0]["content"]["parts"][0]["text"]
+    parts = r.json()["candidates"][0]["content"]["parts"]
+    text  = "".join(p.get("text", "") for p in parts)
     return json.loads(text)
 
 
