@@ -2258,5 +2258,35 @@
     "ts": "2026-08-17T10:12:00.338220",
     "status": "posrednik",
     "lead": null
+  },
+  "https://www.oglasi.me/nekretnine/stanovi/izdaje-se-jednosoban-stan-povrsine-50m--u-stambeno-poslovnom-kompleksu-central-point--og81203564me": {
+    "ts": "2026-08-17T10:37:42.217837",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.oglasi.me/nekretnine/stanovi/prodaje-se-nov--neuseljavan-jednosoban-stan-povrsine-47m--u-momisicima--og81205255me": {
+    "ts": "2026-08-17T10:37:42.217837",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/dvosoban-43m2-centar-izdavanje--69970": {
+    "ts": "2026-08-17T10:37:53.379052",
+    "status": "neparsiran",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/dvosoban-stan-55m2-krivi-most-izdavanje--69965": {
+    "ts": "2026-08-17T10:37:55.231681",
+    "status": "neparsiran",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/izdaje-se-dvosoban-stan-71m2-city-kvart-id-h-040--75129": {
+    "ts": "2026-08-17T10:37:56.723709",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/izdaje-se-jednosoban-stan-50m2-blok-5-id-h-079--75128": {
+    "ts": "2026-08-17T10:37:58.229493",
+    "status": "posrednik",
+    "lead": null
   }
 }

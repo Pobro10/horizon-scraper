@@ -711,9 +711,16 @@ def send_email(leads: list[dict], review_leads: list[dict] = []) -> bool:
     return ok
 
 
-def send_warning_email(sajt: str, fail_count: int, total: int) -> None:
+def send_warning_email(sajt: str, fail_count: int, total: int, detalj: str = "") -> None:
+    # Upozorenja idu SAMO iz runa koji šalje dnevni mejl, inače ista uzbuna
+    # stiže do 4x dnevno (a i lokalni testovi bi je slali).
+    if not SEND_EMAIL:
+        log.info("Upozorenje za %s se ne šalje (SEND_EMAIL=false).", sajt)
+        return
     datum = datetime.now().strftime("%d.%m.%Y %H:%M")
     subject = f"⚠️ Horizon Scraper — selektori pokvareni na {sajt}"
+    detalj_html = (f"<p>Početak odgovora servera:</p><pre>{escape(detalj)}</pre>"
+                   if detalj else "")
     body = (
         f"<h3>Upozorenje — {sajt}</h3>"
         f"<p>Datum: {datum}</p>"
@@ -721,12 +728,14 @@ def send_warning_email(sajt: str, fail_count: int, total: int) -> None:
         f"selektori više ne pronalaze elemente na stranici.</p>"
         f"<p>HTML struktura sajta je vjerovatno promijenjena. "
         f"Molimo provjerite skriptu.</p>"
+        f"{detalj_html}"
     )
     text = (
         f"UPOZORENJE — {sajt}\n"
         f"Datum: {datum}\n"
         f"{fail_count}/{total} oglasa nije parsirano — selektori su pokvareni.\n"
-        f"Provjerite HTML strukturu sajta i ažurirajte skriptu."
+        f"Provjerite HTML strukturu sajta i ažurirajte skriptu.\n"
+        + (f"Početak odgovora servera:\n{detalj}\n" if detalj else "")
     )
     ok = _resend_post(subject=subject, html=body, text=text)
     if ok:
@@ -940,6 +949,9 @@ def run_oglasi() -> tuple[list[dict], list[dict]]:
         fetched += 1
         if result == "selector_fail":
             selector_fails += 1
+            # keširaj i neuspjeh: obrisani oglasi vraćaju 200 sa generičkom
+            # stranicom i inače bi se skidali iznova svaki run
+            seen_record(url, "neparsiran")
             _audit_log("Oglasi.me", "", url, "neparsiran", "selector_fail")
         elif result == "old":
             seen_record(url, "star")
@@ -1141,7 +1153,8 @@ def run_patuljak() -> tuple[list[dict], list[dict]]:
     log.info("  PATULJAK.ME  (od %s)", CUTOFF.strftime("%d.%m.%Y %H:%M"))
     log.info("═" * 60)
 
-    queue: list[str] = []
+    queue:   list[str] = []
+    u_queue: set[str]  = set()
 
     for page in range(1, MAX_PAGES + 1):
         urls = _patuljak_index_urls(page)
@@ -1150,7 +1163,12 @@ def run_patuljak() -> tuple[list[dict], list[dict]]:
             break
         novi = sum(1 for u in urls if seen_get(u) is None)
         log.info("  str. %d: %d oglasa u listi (%d novih)", page, len(urls), novi)
-        queue.extend(urls)
+        # dedup KROZ strane: izdvojeni (plaćeni) oglasi stoje na svakoj strani
+        # pa bi bez ovoga isti URL ušao u queue i po 15 puta
+        for u in urls:
+            if u not in u_queue:
+                u_queue.add(u)
+                queue.append(u)
         # stranica bez ijednog novog oglasa: sve dalje je sigurno već viđeno
         if novi == 0:
             log.info("  str. %d: sve već obrađeno, prekidam paginaciju.", page)
@@ -1206,6 +1224,8 @@ def run_patuljak() -> tuple[list[dict], list[dict]]:
             _audit_log("Patuljak.me", "", url, "star", "van cutoffa")
         elif result == "selector_fail":
             selector_fails += 1
+            # keširaj i neuspjeh (obrisani oglasi: 200 + generička stranica)
+            seen_record(url, "neparsiran")
             _audit_log("Patuljak.me", "", url, "neparsiran", "selector_fail")
         elif result == "drugi_grad":
             seen_record(url, "drugi_grad")
@@ -1298,6 +1318,7 @@ def run_realitica() -> tuple[list[dict], list[dict]]:
     raw:          list[dict]     = []
     name_count:   dict[str, int] = {}
     total_thumbs: int            = 0
+    zadnji_html:  str            = ""
 
     for for_param, label in [("Prodaja", "prodaja"), ("DuziNajam", "najam")]:
         try:
@@ -1318,6 +1339,7 @@ def run_realitica() -> tuple[list[dict], list[dict]]:
                                 label, page)
                     continue
 
+                zadnji_html = r.text
                 soup   = BeautifulSoup(r.text, "lxml")
                 thumbs = soup.select("div.thumb_div")
                 total_thumbs += len(thumbs)
@@ -1337,7 +1359,8 @@ def run_realitica() -> tuple[list[dict], list[dict]]:
 
     if total_thumbs == 0:
         log.warning("⚠  Realitica.com: 0 kartica na indexu — stranica vjerovatno promijenjena!")
-        send_warning_email("Realitica.com", 0, 0)
+        log.warning("Realitica odgovor (prvih 300): %r", zadnji_html[:300])
+        send_warning_email("Realitica.com", 0, 0, detalj=zadnji_html[:600])
 
     for lead in raw:
         log.debug("  [raw] %-30s | %s | %s",
