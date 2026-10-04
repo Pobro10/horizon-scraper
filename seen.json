@@ -45,7 +45,11 @@
       "izvor": "Patuljak.me",
       "telefoni": [],
       "_opis": "Izdajem sobu studentkinji, blizina Tehnickog fakulteta, blok 9, Podgorica. Pisati na viber.",
-      "_count": 1
+      "_count": 1,
+      "_ai": {
+        "presuda": "vlasnik",
+        "razlog": "Oglas je napisan u prvom licu uz lično ime i bez ikakvih elemenata koji ukazuju na profesionalno posredovanje."
+      }
     }
   },
   "https://www.patuljak.me/oglas/4-jednosobna-stana--82117": {
@@ -110,7 +114,11 @@
         "38268861561"
       ],
       "_opis": "IZDAJE SE NOV MAGACIN Izdaje se nov i funkcionalan magacin od 25 m² ulica Kraja Nikole. ✅ Visina 4 m ✅ Rolo vrata ✅ Nova trofazna struja ✅ Veliki parking – ✅ Direktan prilaz sa ulice ✅ Pogodan za magacin, opremu, materijal, servis i razne druge namjene ✅ Mogućnost postavljanja video-nadzora/kamera ???? Zabjelo  – Kraja Nikole, Podgorica Ozbiljan i uredan prostor, odličan prilaz i parking. ???? Kontakt: 068 861 561",
-      "_count": 1
+      "_count": 1,
+      "_ai": {
+        "presuda": "nesigurno",
+        "razlog": "Oglas ima profesionalno nabrajanje karakteristično za agencije, ali ime je lično i nedostaju identifikacioni kodovi ili nazivi firmi."
+      }
     }
   },
   "https://www.patuljak.me/oglas/izdavanjejednosoban-stanmaster-kvart--82089": {
@@ -131,7 +139,11 @@
         "38269320728"
       ],
       "_opis": "???? PRODAJA PLACEVA – VERUŠA | ODLIČNA I POVOLJNA INVESTICIJA Na prodaju placevi na Veruši, na veoma lijepoj i atraktivnoj lokaciji, udaljeni svega oko 500 metara vazdušne linije od odmarališta i u blizini Ribnjaka Vešović. ???? Odlična lokacija: placevi se nalaze uz glavni put struja je dovedena do placeva lijep prirodni ambijent, idealan za odmor, vikendicu ili ulaganje mirna lokacija, a istovremeno dobra pristupačnost ???? Placevi su uredno isparcelisani, površine od 450 m² do 600 m². ???? Papiri uredni – vlasništvo 1/1. ???? CIJENA: 35 € po m² ✨ Posebna prednost je cijena! Placevi se nude po veoma povoljnoj cijeni u odnosu na druge placeve na Veruši, što ovu ponudu čini odličnom prilikom za one koji žele da kupe plac na lijepoj lokaciji, a da ne plate previsoku cijenu. ➡️ Moguća je kupovina više placeva u cjelini, za one koji žele veću površinu i dodatni prostor. ???? Veruša je mjesto koje pruža pravi planinski ambijent, čist vazduh, prirodu i mir — odličan izbor za vikendicu, odmor ili dugoročnu investiciju. ???? Ozbiljni kupci mogu se javiti na broj: 069 320 728 Za dodatne informacije, sve je navedeno u oglasu. Povoljna cijena + lijepa lokacija + uredni papiri + struja + pristup glavnom putu. ???? Prilika koju vrijedi pogledati!",
-      "_count": 1
+      "_count": 1,
+      "_ai": {
+        "presuda": "nesigurno",
+        "razlog": "Tekst je profesionalno formatiran i prodaje se više parcela, ali lično ime bez naziva firme ostavlja sumnju."
+      }
     }
   },
   "https://www.patuljak.me/oglas/prodajem-jednosoban-stan-40-m-tivat--82084": {
@@ -166,7 +178,11 @@
         "38269852415"
       ],
       "_opis": "Izdajem dvosoban,namjesten stan na Malom brdu od 100m2,prvi sprat kuce sa zasebnim ulazom i parking mjestom-069 852-415",
-      "_count": 1
+      "_count": 1,
+      "_ai": {
+        "presuda": "vlasnik",
+        "razlog": "Oglas je napisan u prvom licu, koristi lično ime i ne sadrži elemente profesionalnog agencijskog oglašavanja."
+      }
     }
   },
   "https://www.patuljak.me/oglas/izdavanje-nov-stan-47-m2-garaza-new-city-podgori--82079": {
@@ -516,7 +532,11 @@
         "38267125123"
       ],
       "_opis": "Prodaje se u mirnom kraju Bera u Podgorici kuća 120m²i pomoćni objekat 40m² na plac 750m². Cijena 88000€ fixno Kontakt 067125123",
-      "_count": 1
+      "_count": 1,
+      "_ai": {
+        "presuda": "vlasnik",
+        "razlog": "Oglas je napisan jednostavnim i neformalnim tonom pod ličnim imenom, bez ikakvih elemenata tipičnih za agencije."
+      }
     }
   },
   "https://www.patuljak.me/oglas/prodaja-jednosoban-stan-48-m2-stari-aerodrom-podgo--82011": {
@@ -1969,6 +1989,46 @@
   },
   "https://www.patuljak.me/oglas/dvosoban-stan-63m2-ljubovic--81582": {
     "ts": "2026-10-04T08:38:16.524153",
+    "status": "star",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/jednosoban-stan-44m2-vezirov-most-izdavanje--69974": {
+    "ts": "2026-10-04T06:41:42.192172",
+    "status": "star",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/pobrezje-45m2-jednosoban-stan--69973": {
+    "ts": "2026-10-04T06:41:43.751893",
+    "status": "star",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/poslovni-prostor-211-m-na-izdavanje-central--69972": {
+    "ts": "2026-10-04T06:41:45.308681",
+    "status": "star",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/jednosoban-stan-43m2-krivi-most-izdavanje--69971": {
+    "ts": "2026-10-04T06:41:46.876952",
+    "status": "star",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/dvosoban-stan-100m2-grbalj--69969": {
+    "ts": "2026-10-04T06:41:48.433433",
+    "status": "star",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/stan-56-m-na-izdavanje-stara-varos-podgorica--69968": {
+    "ts": "2026-10-04T06:41:50.011693",
+    "status": "star",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/stan-48-m-na-prodaju-central-point-podgorica--69967": {
+    "ts": "2026-10-04T06:41:51.604335",
+    "status": "star",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/dvosoban-stan-84m2-njegoseva-izdavanje--69966": {
+    "ts": "2026-10-04T06:41:53.161414",
     "status": "star",
     "lead": null
   }
