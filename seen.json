@@ -2031,5 +2031,542 @@
     "ts": "2026-10-04T06:41:53.161414",
     "status": "star",
     "lead": null
+  },
+  "https://www.oglasi.me/nekretnine/stanovi/izdajem-stan-u-podgorici-og22380131me": {
+    "ts": "2026-10-04T10:39:28.676248",
+    "status": "star",
+    "lead": null
+  },
+  "https://www.oglasi.me/nekretnine/stanovi/izdajem-stan-u-zagoricu-og84051771me": {
+    "ts": "2026-10-04T10:40:24.321382",
+    "status": "vlasnik",
+    "lead": {
+      "ime": "Radun",
+      "oglas_link": "https://www.oglasi.me/nekretnine/stanovi/izdajem-stan-u-zagoricu-og84051771me",
+      "lokacija": "Podgorica",
+      "cijena": "230.00 € mjesec",
+      "izvor": "Oglasi.me",
+      "telefoni": [
+        "38269450290"
+      ],
+      "_opis": "Opis oglasa Izdajem stan u Zagoriču, 70% namješten, 230 eura",
+      "_uid": null,
+      "_ai": {
+        "presuda": "vlasnik",
+        "razlog": "Lično ime oglašivača i kratak, neformalan tekst bez agencijskih obilježja."
+      }
+    }
+  },
+  "https://www.oglasi.me/nekretnine/poslovni-prostori/izdaje-se-poslovni-prostor--podgorica-og83875248me": {
+    "ts": "2026-10-04T10:40:24.321566",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.oglasi.me/nekretnine/stanovi/jednosoban-stan-41m2--ljubovic-og83041570me": {
+    "ts": "2026-10-04T10:40:24.321856",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.oglasi.me/nekretnine/poslovni-prostori/izdavanje-magacinskog-prostora-kontenjerskog-tipa-og72138579me": {
+    "ts": "2026-10-04T10:40:24.322030",
+    "status": "vlasnik",
+    "lead": {
+      "ime": "Filip",
+      "oglas_link": "https://www.oglasi.me/nekretnine/poslovni-prostori/izdavanje-magacinskog-prostora-kontenjerskog-tipa-og72138579me",
+      "lokacija": "Podgorica",
+      "cijena": "Cijena na upit",
+      "izvor": "Oglasi.me",
+      "telefoni": [
+        "38267628918"
+      ],
+      "_opis": "Opis oglasa izdavanje magacinskog prostora za vas biznis,namjestaj ili vozilo. dostupno 24 sata.",
+      "_uid": null,
+      "_ai": {
+        "presuda": "nesigurno",
+        "razlog": "Ime je lično i tekst je neformalan, ali nema dovoljno jasnih signala poput 'bez posrednika' da bi se sa sigurnošću potvrdio vlasnik."
+      }
+    }
+  },
+  "https://www.oglasi.me/nekretnine/poslovni-prostori/poslovni-prostor--170m2--centar--podgorica-og62684750me": {
+    "ts": "2026-10-04T10:40:24.322120",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.oglasi.me/nekretnine/zemljiste/gradjevinsko-zemljiste--6951m2--podgorica-og57018862me": {
+    "ts": "2026-10-04T10:40:24.322273",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.oglasi.me/nekretnine/stanovi/prodajem-garsonjeru-og83187486me": {
+    "ts": "2026-10-04T10:40:24.322391",
+    "status": "vlasnik",
+    "lead": {
+      "ime": "Željka",
+      "oglas_link": "https://www.oglasi.me/nekretnine/stanovi/prodajem-garsonjeru-og83187486me",
+      "lokacija": "Podgorica",
+      "cijena": "Cijena na upit",
+      "izvor": "Oglasi.me",
+      "telefoni": [
+        "38268415809"
+      ],
+      "_opis": "Opis oglasa U neposrednoj blizini se nalaze vrtic, skola, autobuska i zeljeznicka stanica. Odlicna investicija za izdavanje.",
+      "_uid": null,
+      "_ai": {
+        "presuda": "nesigurno",
+        "razlog": "Ime je lično, ali tekst oglasa je suviše kratak i ne sadrži specifične ključne riječi koje bi potvrdile vlasništvo ili agencijsku prodaju."
+      }
+    }
+  },
+  "https://www.oglasi.me/nekretnine/stanovi/prodajem-jednoiposoban-stan-na-zabjelo--og84043022me": {
+    "ts": "2026-10-04T10:40:24.322484",
+    "status": "vlasnik",
+    "lead": {
+      "ime": "ivan",
+      "oglas_link": "https://www.oglasi.me/nekretnine/stanovi/prodajem-jednoiposoban-stan-na-zabjelo--og84043022me",
+      "lokacija": "Podgorica",
+      "cijena": "115000€",
+      "izvor": "Oglasi.me",
+      "telefoni": [
+        "38268383164"
+      ],
+      "_opis": "Opis oglasa stan se nalazi na Zabjelo , ulica Ksenije Cicvaric ,  50 kvadrata plus 6 kvadrata terase koja ima eloksiranu bravariju moze biti i zatvorena zimi , miran kraj , za vise informacija nazvati ..",
+      "_uid": null,
+      "_ai": {
+        "presuda": "vlasnik",
+        "razlog": "Neformalan stil pisanja i lično ime bez ijednog znaka agencijskog oglašavanja."
+      }
+    }
+  },
+  "https://www.oglasi.me/nekretnine/kuce/izdajem-garsonjeru-og84042329me": {
+    "ts": "2026-10-04T10:40:24.322540",
+    "status": "vlasnik",
+    "lead": {
+      "ime": "Ilija",
+      "oglas_link": "https://www.oglasi.me/nekretnine/kuce/izdajem-garsonjeru-og84042329me",
+      "lokacija": "Podgorica",
+      "cijena": "200.00 € mjesec",
+      "izvor": "Oglasi.me",
+      "telefoni": [
+        "38267371166"
+      ],
+      "_opis": "Opis oglasa Mala namjestena garsonjera za jednu žensku osobu u kuci iza Ekonomskog fakulteta, sve novo , zasebno.",
+      "_uid": null,
+      "_ai": {
+        "presuda": "vlasnik",
+        "razlog": "Oglas ima ličan ton sa specifičnim uslovima za stanara i nema elemenata profesionalnog agencijskog oglašavanja."
+      }
+    }
+  },
+  "https://www.oglasi.me/nekretnine/zemljiste/prodajem-poljoprivredno-zemljiste-ukupne-povrsine-placa-8000m2-og62152773me": {
+    "ts": "2026-10-04T10:40:24.322588",
+    "status": "vlasnik",
+    "lead": {
+      "ime": "goran",
+      "oglas_link": "https://www.oglasi.me/nekretnine/zemljiste/prodajem-poljoprivredno-zemljiste-ukupne-povrsine-placa-8000m2-og62152773me",
+      "lokacija": "Podgorica",
+      "cijena": "9.00€",
+      "izvor": "Oglasi.me",
+      "telefoni": [
+        "38268409930"
+      ],
+      "_opis": "Opis oglasa Prodajem zemljiste ukupne površine placa 8000m2 udaljenost od centra pg 13km put rogama ili poslije restorana djedovina pricelje opstina Podgorica -CEROVICA-Crnci sve informacije na broj telefona 068-409-930.. cijena je 1m2-9e",
+      "_uid": null,
+      "_ai": {
+        "presuda": "vlasnik",
+        "razlog": "Lično ime oglašivača, direktan ton prodaje i neformalan tekst bez agencijskih oznaka."
+      }
+    }
+  },
+  "https://www.oglasi.me/nekretnine/stanovi/izdaje-se-garsonjera---30m----zabjelo--podgorica-og74135232me": {
+    "ts": "2026-10-04T10:40:24.322634",
+    "status": "vlasnik",
+    "lead": {
+      "ime": "Petar",
+      "oglas_link": "https://www.oglasi.me/nekretnine/stanovi/izdaje-se-garsonjera---30m----zabjelo--podgorica-og74135232me",
+      "lokacija": "Podgorica",
+      "cijena": "300.00 € mjesec",
+      "izvor": "Oglasi.me",
+      "telefoni": [
+        "38268146916"
+      ],
+      "_opis": "",
+      "_uid": null
+    }
+  },
+  "https://www.oglasi.me/nekretnine/stanovi/jednosoban-stan--44m2--zagoric--podgorica-og80282264me": {
+    "ts": "2026-10-04T10:40:24.322682",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.oglasi.me/nekretnine/garaze-parking/izdajem-magacin-og84013270me": {
+    "ts": "2026-10-04T10:40:24.322867",
+    "status": "vlasnik",
+    "lead": {
+      "ime": "Nina",
+      "oglas_link": "https://www.oglasi.me/nekretnine/garaze-parking/izdajem-magacin-og84013270me",
+      "lokacija": "Podgorica",
+      "cijena": "Cijena na upit",
+      "izvor": "Oglasi.me",
+      "telefoni": [
+        "38268351214"
+      ],
+      "_opis": "",
+      "_uid": null
+    }
+  },
+  "https://www.oglasi.me/nekretnine/zemljiste/prodajem-plac-sa-ut-uslovima-og62024257me": {
+    "ts": "2026-10-04T10:40:24.322938",
+    "status": "vlasnik",
+    "lead": {
+      "ime": "Nina",
+      "oglas_link": "https://www.oglasi.me/nekretnine/zemljiste/prodajem-plac-sa-ut-uslovima-og62024257me",
+      "lokacija": "Podgorica",
+      "cijena": "300000€",
+      "izvor": "Oglasi.me",
+      "telefoni": [
+        "38268351214",
+        "38268861561"
+      ],
+      "_opis": "Opis oglasa Prodaj se plac (ulaz sa puta)  povrsine 1761m2 u naselju Dajbabe, u Podgorici. Na placu su dva postojeca objekta od toga jedan zavrsen namjene magacin a povrsine 80m2 dok je drugi povrsine 120m2 u sivoj fazi ne zavrsen. \n\nPlac ima UT uslove P+2 u osnovi 200m2 Sto cini ukupno po parcelama 500m2 \n\nodnosno 1000m2 \n\nStruja i voda na placu .\n\nSvi papiri novog datuma 1/1 od vlasnika.\n\nMogucnost kompezacije.\n\n068 861 561",
+      "_uid": null,
+      "_ai": {
+        "presuda": "vlasnik",
+        "razlog": "Oglas je napisan neformalnim tonom uz lično ime i direktno navođenje da su papiri od vlasnika."
+      }
+    }
+  },
+  "https://www.oglasi.me/nekretnine/stanovi/trosoban-stan--podgorica-og77115658me": {
+    "ts": "2026-10-04T10:40:24.323008",
+    "status": "vlasnik",
+    "lead": {
+      "ime": "Goran",
+      "oglas_link": "https://www.oglasi.me/nekretnine/stanovi/trosoban-stan--podgorica-og77115658me",
+      "lokacija": "Podgorica",
+      "cijena": "320000€",
+      "izvor": "Oglasi.me",
+      "telefoni": [
+        "38267637977"
+      ],
+      "_opis": "Opis oglasa stan je useljiv odma, prodaja zbog preseljenja u drugi grada. moguca zamejna za jednosoban uz doplatu, namjeste",
+      "_uid": null,
+      "_ai": {
+        "presuda": "vlasnik",
+        "razlog": "Lično ime, navođenje razloga prodaje i neformalan stil pisanja sa tipografskim greškama ukazuju na privatnog vlasnika."
+      }
+    }
+  },
+  "https://www.oglasi.me/nekretnine/stanovi/-jednosoban-stan-49-m2-pored-big-fashion-og81364079me": {
+    "ts": "2026-10-04T10:40:24.323104",
+    "status": "vlasnik",
+    "lead": {
+      "ime": "Andrei",
+      "oglas_link": "https://www.oglasi.me/nekretnine/stanovi/-jednosoban-stan-49-m2-pored-big-fashion-og81364079me",
+      "lokacija": "Podgorica",
+      "cijena": "82000€",
+      "izvor": "Oglasi.me",
+      "telefoni": [
+        "38268397276"
+      ],
+      "_opis": "Opis oglasa jednosoban stan 49 m2, zgrada 2023, parking, Cetinski put, pored trgovačkog centra Big Fashion, namještaj i uređaji uključeni u cijenu.",
+      "_uid": null,
+      "_ai": {
+        "presuda": "nesigurno",
+        "razlog": "Tekst oglasa je informativan i neutralan, bez jasnih ključnih riječi koje bi ga povezale isključivo sa vlasnikom ili agencijom."
+      }
+    }
+  },
+  "https://www.oglasi.me/nekretnine/stanovi/izdajem-dvosoban-stan-kod-gintasa--podgorica-og52348688me": {
+    "ts": "2026-10-04T10:40:24.323207",
+    "status": "vlasnik",
+    "lead": {
+      "ime": "Ljubica",
+      "oglas_link": "https://www.oglasi.me/nekretnine/stanovi/izdajem-dvosoban-stan-kod-gintasa--podgorica-og52348688me",
+      "lokacija": "Podgorica",
+      "cijena": "600.00 € mjesec",
+      "izvor": "Oglasi.me",
+      "telefoni": [
+        "38268027080"
+      ],
+      "_opis": "Opis oglasa Izdajem dvosoban stan kod Mall-a of Montenegro (Gintaš) od 1. oktobra 2026. Mogućnost kratkoročnog najma, do minimum 3 mjeseca. Mogućnost prijave boravka za strane državljane.",
+      "_uid": null,
+      "_ai": {
+        "presuda": "vlasnik",
+        "razlog": "Oglas je napisan u prvom licu uz korišćenje ličnog imena i bez ikakvih agencijskih obilježja."
+      }
+    }
+  },
+  "https://www.oglasi.me/nekretnine/stanovi/moderna--udobna-garsonjera-u-novogradnji--tuski-put--og84006447me": {
+    "ts": "2026-10-04T10:40:24.323293",
+    "status": "vlasnik",
+    "lead": {
+      "ime": "Sergei",
+      "oglas_link": "https://www.oglasi.me/nekretnine/stanovi/moderna--udobna-garsonjera-u-novogradnji--tuski-put--og84006447me",
+      "lokacija": "Podgorica",
+      "cijena": "72000€",
+      "izvor": "Oglasi.me",
+      "telefoni": [
+        "38268610834"
+      ],
+      "_opis": "Opis oglasa Za prodaju garsonjera 24m2, Tuški put.\n  Nalazi se na 4. spratu šestospratnice, zgrade koja posjeduje lift. Nova zgrada. Stan je klimatizovan, ima novi, visokokvalitetni namještaj, prodaje se namješten.\n  Orijentisn je južno.\n  Struktura stana: ulazni hodnik, dnevni boravak, kuhinja, trepezarija, kupatilo i terasa.\nOko zgrade ima dovoljno parking mjesta, a parking je obezbijeđen.\nKontakt +38268610834",
+      "_uid": null,
+      "_ai": {
+        "presuda": "nesigurno",
+        "razlog": "Ime je lično, ali tekst je neutralan i ne sadrži specifične oznake agencije niti eksplicitnu potvrdu vlasništva."
+      }
+    }
+  },
+  "https://www.oglasi.me/nekretnine/stanovi/izdajem-jednosoban-nenamjesten-stan-na-zabjelu-og80186812me": {
+    "ts": "2026-10-04T10:40:24.323369",
+    "status": "vlasnik",
+    "lead": {
+      "ime": "Simo",
+      "oglas_link": "https://www.oglasi.me/nekretnine/stanovi/izdajem-jednosoban-nenamjesten-stan-na-zabjelu-og80186812me",
+      "lokacija": "Podgorica",
+      "cijena": "300.00 € mjesec",
+      "izvor": "Oglasi.me",
+      "telefoni": [
+        "38267478577"
+      ],
+      "_opis": "",
+      "_uid": null
+    }
+  },
+  "https://www.oglasi.me/nekretnine/stanovi/izdajem-dva-stana-potpuno-nova-og83878449me": {
+    "ts": "2026-10-04T10:40:24.323440",
+    "status": "vlasnik",
+    "lead": {
+      "ime": "Anja",
+      "oglas_link": "https://www.oglasi.me/nekretnine/stanovi/izdajem-dva-stana-potpuno-nova-og83878449me",
+      "lokacija": "Podgorica",
+      "cijena": "500.00 € mjesec",
+      "izvor": "Oglasi.me",
+      "telefoni": [
+        "38267036356",
+        "38267288699"
+      ],
+      "_opis": "Opis oglasa Pozvati na broj 067288699",
+      "_uid": null,
+      "_ai": {
+        "presuda": "nesigurno",
+        "razlog": "Tekst oglasa je previše kratak i ne sadrži indikatore koji bi jasno ukazali na to da li je oglašivač vlasnik ili agencija."
+      }
+    }
+  },
+  "https://www.oglasi.me/nekretnine/stanovi/namjesten-trosoban-stan-u-kuci-og27751561me": {
+    "ts": "2026-10-04T10:40:24.323510",
+    "status": "vlasnik",
+    "lead": {
+      "ime": "David",
+      "oglas_link": "https://www.oglasi.me/nekretnine/stanovi/namjesten-trosoban-stan-u-kuci-og27751561me",
+      "lokacija": "Podgorica",
+      "cijena": "Cijena na upit",
+      "izvor": "Oglasi.me",
+      "telefoni": [
+        "38269488886",
+        "38269091889"
+      ],
+      "_opis": "Opis oglasa Izdajem namjesten trosoban stan u kuci(za radnike) u Zagoricu,blizu MUPa.Smjestaj pored osnovnog posjeduje wifi i parking mjesto.Izdavanje po krevetu na minimum pola godine.\nZa vise informacija pozvati na broj 069091889",
+      "_uid": null,
+      "_ai": {
+        "presuda": "vlasnik",
+        "razlog": "Lični ton oglasa i specifičan način izdavanja po krevetu bez ikakvih elemenata profesionalnog posredovanja."
+      }
+    }
+  },
+  "https://www.oglasi.me/nekretnine/poslovni-prostori/idaje-se-restoran-og82816180me": {
+    "ts": "2026-10-04T10:40:24.323576",
+    "status": "vlasnik",
+    "lead": {
+      "ime": "Djordje",
+      "oglas_link": "https://www.oglasi.me/nekretnine/poslovni-prostori/idaje-se-restoran-og82816180me",
+      "lokacija": "Podgorica",
+      "cijena": "Cijena na upit",
+      "izvor": "Oglasi.me",
+      "telefoni": [
+        "38269053575"
+      ],
+      "_opis": "Opis oglasa IZDAJE SE NAMJESTEN RESTORAN \nMM BAR TRATTORIA , U Podgorici na Zabjelu , ulica Dusana Milutinovica bb,  kod tarinih garaza.\nSve informacije dostupne na broj telefona \n069053575\n\nZvati izmedju 12-15h",
+      "_uid": null,
+      "_ai": {
+        "presuda": "vlasnik",
+        "razlog": "Lično ime, direktan opis specifičnog ugostiteljskog objekta i specifično vrijeme za pozive ukazuju na privatnog vlasnika."
+      }
+    }
+  },
+  "https://www.oglasi.me/nekretnine/kuce/izdavanje-garsonjere-og83873338me": {
+    "ts": "2026-10-04T10:40:24.323640",
+    "status": "vlasnik",
+    "lead": {
+      "ime": "Danica",
+      "oglas_link": "https://www.oglasi.me/nekretnine/kuce/izdavanje-garsonjere-og83873338me",
+      "lokacija": "Podgorica",
+      "cijena": "170.00 € mjesec",
+      "izvor": "Oglasi.me",
+      "telefoni": [
+        "38269815082"
+      ],
+      "_opis": "Opis oglasa Garsonjera sa izlazom na terasu koja gpeda na sjever",
+      "_uid": null,
+      "_ai": {
+        "presuda": "nesigurno",
+        "razlog": "Oglas je veoma kratak i sadrži samo lično ime bez jasnih indikatora koji bi potvrdili da li je oglašivač vlasnik ili agent."
+      }
+    }
+  },
+  "https://www.oglasi.me/nekretnine/stanovi/jednosoban-stan-30m2--stari-aerodrom-og83871061me": {
+    "ts": "2026-10-04T10:40:24.323704",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.oglasi.me/nekretnine/stanovi/izdaje-se-luksuzno-opremljen-jednosoban-stan-povrsine-50m--na-starom-aerodromu--u-novoj-zgradi-dadi-plaza--og83871512me": {
+    "ts": "2026-10-04T10:40:24.323901",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.oglasi.me/nekretnine/stanovi/jednosoban-stan-37m2--city-kvart-og83872084me": {
+    "ts": "2026-10-04T10:40:24.324044",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.oglasi.me/nekretnine/stanovi/izdaje-se-nov--neuseljavan-dvosoban-stan-povrsine-75m--u-kompleksu-green-level--u-neposrednoj-blizini-toloske-sume--og83871853me": {
+    "ts": "2026-10-04T10:40:24.324170",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.oglasi.me/nekretnine/stanovi/izdajem-dizajnersku-garsonjeru-namjestenu--idealna-za-studente-i-mladje-poslovne-ljude--og83872458me": {
+    "ts": "2026-10-04T10:40:24.324298",
+    "status": "vlasnik",
+    "lead": {
+      "ime": "Balsa",
+      "oglas_link": "https://www.oglasi.me/nekretnine/stanovi/izdajem-dizajnersku-garsonjeru-namjestenu--idealna-za-studente-i-mladje-poslovne-ljude--og83872458me",
+      "lokacija": "Podgorica",
+      "cijena": "Cijena na upit",
+      "izvor": "Oglasi.me",
+      "telefoni": [
+        "38267217670"
+      ],
+      "_opis": "Opis oglasa Ozbiljna osoba za duži period.",
+      "_uid": null,
+      "_ai": {
+        "presuda": "vlasnik",
+        "razlog": "Oglas je objavljen pod ličnim imenom uz kratak i neformalan opis bez ikakvih agencijskih obilježja."
+      }
+    }
+  },
+  "https://www.oglasi.me/nekretnine/stanovi/izdaje-se-nov--neuseljavan-i-luksuzno-opremljen-jednosoban-stan-povrsine-45m2-u-premium-kvartu-og83872748me": {
+    "ts": "2026-10-04T10:40:24.324345",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.oglasi.me/nekretnine/stanovi/dvosoban-stan-66m2--stari-aerodrom-og83867514me": {
+    "ts": "2026-10-04T10:40:24.324473",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.oglasi.me/nekretnine/stanovi/izdaje-se-trosoban-stan-povrsine-109m--u-city-kvartu--u-profesorskim-zgradama--u-studentskoj-ulici--og83867692me": {
+    "ts": "2026-10-04T10:40:24.324596",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.oglasi.me/nekretnine/stanovi/prodaje-se-namjesten-jednosoban-stan-povrsine-44m--u-stambenom-kompleksu-new-city--u-okviru-city-kvarta--u-zgradi-kips-gradnje--og83868337me": {
+    "ts": "2026-10-04T10:40:24.324719",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.oglasi.me/nekretnine/stanovi/prodaje-se-namjesten-jednosoban-stan-povrsine-47m--u-stambenom-kompleksu-new-city--u-okviru-city-kvarta--u-zgradi-kips-gradnje--og83868837me": {
+    "ts": "2026-10-04T10:40:24.324877",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.oglasi.me/nekretnine/stanovi/dvosoban-stan-56m2--konik-og83866463me": {
+    "ts": "2026-10-04T10:40:24.324997",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.oglasi.me/nekretnine/stanovi/izdaje-se-dvosoban-stan-povrsine-70m--u-master-kvartu--og83863364me": {
+    "ts": "2026-10-04T10:40:24.325119",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.oglasi.me/nekretnine/stanovi/izdaje-se-dvosoban-stan-povrsine-68m--u-city-kvartu--u-zgradi-kia--og83861703me": {
+    "ts": "2026-10-04T10:40:24.325320",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.oglasi.me/nekretnine/poslovni-prostori/dva-pp-po-45m2-izdaju-se-zasebno-og75017223me": {
+    "ts": "2026-10-04T10:40:24.325453",
+    "status": "vlasnik",
+    "lead": {
+      "ime": "m.t",
+      "oglas_link": "https://www.oglasi.me/nekretnine/poslovni-prostori/dva-pp-po-45m2-izdaju-se-zasebno-og75017223me",
+      "lokacija": "Podgorica",
+      "cijena": "450.00 € mjesec",
+      "izvor": "Oglasi.me",
+      "telefoni": [
+        "38267225087"
+      ],
+      "_opis": "Opis oglasa dva poslovna prostora po 45m2,masline ulica v.bogisica-glavni ulaz kasarna, izdaju se zasebno, ispred veci parking, izuzetno prometna ulica, blizu idea marketa, glavi ulaz u kasarnu,..iskljucivo na duzi period...cijena mjesecnog zakupa 450e-45m2",
+      "_uid": null,
+      "_ai": {
+        "presuda": "nesigurno",
+        "razlog": "Ime su inicijali i tekst je neformalan, ali nema direktne potvrde o vlasništvu niti prepoznatljivih znakova agencije."
+      }
+    }
+  },
+  "https://www.oglasi.me/nekretnine/stanovi/izdaje-se-dvosoban-stan--podgorica-og83860780me": {
+    "ts": "2026-10-04T10:40:24.325499",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.oglasi.me/nekretnine/stanovi/izdaje-se-lijepo-opremljen-jednosoban-stan-povrsine-46m2-u-premium-kvartu--og83861018me": {
+    "ts": "2026-10-04T10:40:24.325622",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.oglasi.me/nekretnine/stanovi/izdaje-se-dvosoban-stan--podgorica-og83802291me": {
+    "ts": "2026-10-04T10:40:24.325773",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.oglasi.me/nekretnine/stanovi/izdaje-se-luksuzno-opremljen-jednosoban-stan-povrsine-57m--u-zgradi-linea--u-neposrednoj-blizini-capital-plaze--og83860421me": {
+    "ts": "2026-10-04T10:40:24.325908",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.oglasi.me/nekretnine/stanovi/izdaje-se-nov--neuseljavan-i-luksuzno-opremljen-jednosoban-stan-povrsine-50m--u-central-pointu--og83857665me": {
+    "ts": "2026-10-04T10:40:24.326084",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.oglasi.me/nekretnine/poslovni-prostori/poslovni-prostor-63m2--centar-podgorica-og83854787me": {
+    "ts": "2026-10-04T10:40:24.326277",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.oglasi.me/nekretnine/poslovni-prostori/poslovni-prostor-63m2--centar-podgorica-og83855722me": {
+    "ts": "2026-10-04T10:40:24.326457",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.oglasi.me/nekretnine/poslovni-prostori/-magacinski-prostor-300-m-og83444367me": {
+    "ts": "2026-10-04T10:40:24.326639",
+    "status": "vlasnik",
+    "lead": {
+      "ime": "Pavle",
+      "oglas_link": "https://www.oglasi.me/nekretnine/poslovni-prostori/-magacinski-prostor-300-m-og83444367me",
+      "lokacija": "Podgorica",
+      "cijena": "Cijena na upit",
+      "izvor": "Oglasi.me",
+      "telefoni": [
+        "38269435673",
+        "38269579939"
+      ],
+      "_opis": "Opis oglasa MAGACINSKI PROSTOR 300 m\n Tološi, put prema Marezi - preko puta groblja.\nDostupan od 1.decembra.\nSve ostale informacije na broj telefona 069-579-939",
+      "_uid": null,
+      "_ai": {
+        "presuda": "nesigurno",
+        "razlog": "Oglas je kratak i neformalan, ali ne sadrži jasne ključne riječi koje bi potvrdile da je u pitanju vlasnik ili agencija."
+      }
+    }
   }
 }
