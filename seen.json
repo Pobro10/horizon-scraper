@@ -2647,5 +2647,70 @@
       "_opis": "Opis oglasa Priključak za vodu i struju, asfalt .",
       "_uid": null
     }
+  },
+  "https://www.patuljak.me/oglas/prodaje-se-dvosoban-stan--82150": {
+    "ts": "2026-10-04T17:50:36.043369",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/garsonjera-25-m2-dobra-voda-bar--82148": {
+    "ts": "2026-10-04T17:50:37.609932",
+    "status": "drugi_grad",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/plac-3880m2-spuz-martinici-kod-ciglane--82146": {
+    "ts": "2026-10-04T17:50:39.150491",
+    "status": "drugi_grad",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/izdavanje-kuca-120-m-brajici-budva--82145": {
+    "ts": "2026-10-04T17:50:40.696163",
+    "status": "drugi_grad",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/prodaje-se-jednosoban-stan--82144": {
+    "ts": "2026-10-04T17:50:42.292971",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/prodaje-se-jednosoban-stan--82143": {
+    "ts": "2026-10-04T17:50:43.892836",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/prodaje-se-garsonjera--82142": {
+    "ts": "2026-10-04T17:50:45.467883",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/urbanizovani-plac-2000-m2-zagoric-brdo-gorica--82141": {
+    "ts": "2026-10-04T17:50:47.018345",
+    "status": "provjeri",
+    "lead": {
+      "ime": "Toka",
+      "oglas_link": "https://www.patuljak.me/oglas/urbanizovani-plac-2000-m2-zagoric-brdo-gorica--82141",
+      "lokacija": "Podgorica",
+      "cijena": "530.00€",
+      "izvor": "Patuljak.me",
+      "telefoni": [
+        "382691551950"
+      ],
+      "_opis": "SUNCE NEKRETNINE - prodaja - Plac 2000m2 u Zagoriču na brdu Goriica. Po UT uslovima može da se izgradi zgrada P+2 1900m2 BGP. Blizu NATAL klinike. Cijena 530€/m2 Sunce nekretnine 069 155 195 069 600 085",
+      "_count": 1,
+      "_ai": {
+        "presuda": "agencija",
+        "razlog": "U tekstu oglasa se eksplicitno pominje naziv agencije Sunce nekretnine."
+      }
+    }
+  },
+  "https://www.patuljak.me/oglas/prodaje-se-dvosoban-stan--82140": {
+    "ts": "2026-10-04T17:50:48.585957",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/jednosoban-stan-new-city--82139": {
+    "ts": "2026-10-04T17:50:50.185450",
+    "status": "posrednik",
+    "lead": null
   }
 }
