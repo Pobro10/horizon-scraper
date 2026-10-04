@@ -2568,5 +2568,84 @@
         "razlog": "Oglas je kratak i neformalan, ali ne sadrži jasne ključne riječi koje bi potvrdile da je u pitanju vlasnik ili agencija."
       }
     }
+  },
+  "https://www.patuljak.me/oglas/izdajem-jednosoban-stan--82135": {
+    "ts": "2026-10-04T14:24:32.206258",
+    "status": "drugi_grad",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/izdavanje-jednosoban-stan-58-m2-zagoric-podgorica--82134": {
+    "ts": "2026-10-04T14:24:33.887634",
+    "status": "vlasnik",
+    "lead": {
+      "ime": "sasa",
+      "oglas_link": "https://www.patuljak.me/oglas/izdavanje-jednosoban-stan-58-m2-zagoric-podgorica--82134",
+      "lokacija": "Podgorica",
+      "cijena": "400.00€",
+      "izvor": "Patuljak.me",
+      "telefoni": [
+        "38267321681",
+        "38269063363"
+      ],
+      "_opis": "IZDAJE SE  VECI NAMJESTEN JEDNOSOBAN STAN U STAMBENOJ ZGRADI NA TRECEM SPRATU. NALAYI SE PREKO PUTA MUP-a U  ZAGORCU NA 400 METARA OD VEZIROVOG MOSTA (ZGRADA CIJEVNA KOMERC  SITI KEJ ) VES MASINA, KLIMA UREDJAJ I SPORET SU KUPLJENI PROSLE GODINE. CIJENA 400E, KONTAKT SA VLASNIKOM 067321681 ILI 069063363",
+      "_count": 1
+    }
+  },
+  "https://www.oglasi.me/nekretnine/stanovi/izdajem-jednosoban-stan-blok-5--og83814495me": {
+    "ts": "2026-10-04T14:24:47.390590",
+    "status": "vlasnik",
+    "lead": {
+      "ime": "Nikola",
+      "oglas_link": "https://www.oglasi.me/nekretnine/stanovi/izdajem-jednosoban-stan-blok-5--og83814495me",
+      "lokacija": "Podgorica",
+      "cijena": "400.00 € mjesec",
+      "izvor": "Oglasi.me",
+      "telefoni": [
+        "38268809620",
+        "38268814640"
+      ],
+      "_opis": "Opis oglasa IZDAVANJE  Jednosoban stan Blok 5 -ulica Meše Selimovića , Podgorica\nIzdaje se kompletno namješten i renoviran jednosoban stan površine 40m, smješten na 2. spratu stambene zgrade koja posjeduje lift.\nNalazi se na izuzetno atraktivnoj i mirnoj lokaciji,  u neposrednoj blizini škola, vrtića, studentskih domova i Tehničkog fakulteta. Javni parking je dostupan ispred i oko same zgrade. \nStruktura stana obuhvata:\n• Ulazni hodnik \n• Dnevni boravak sa kuhinjom i trpezarijom\n• Spavaću sobu\n• Kupatilo\n• Terasu\n\n Cijena: 400  mjesečno (obavezan depozit) \n Za više informacija : 068-814/640",
+      "_uid": null,
+      "_ai": {
+        "presuda": "nesigurno",
+        "razlog": "Iako je tekst strukturiran, nema specifičnih elemenata agencije niti direktne potvrde da je oglas postavio vlasnik."
+      }
+    }
+  },
+  "https://www.oglasi.me/nekretnine/stanovi/izdajem-dvosoban-stan-og81802465me": {
+    "ts": "2026-10-04T14:24:47.390794",
+    "status": "vlasnik",
+    "lead": {
+      "ime": "Jasmin",
+      "oglas_link": "https://www.oglasi.me/nekretnine/stanovi/izdajem-dvosoban-stan-og81802465me",
+      "lokacija": "Podgorica",
+      "cijena": "300.00 € mjesec",
+      "izvor": "Oglasi.me",
+      "telefoni": [
+        "38269222090"
+      ],
+      "_opis": "Opis oglasa Izdaje se polunamjesten stan na duzi vremenski period",
+      "_uid": null,
+      "_ai": {
+        "presuda": "nesigurno",
+        "razlog": "Oglas sadrži lično ime i kratak, neutralan tekst bez specifičnih ključnih riječi koje bi potvrdile vlasnika ili agenciju."
+      }
+    }
+  },
+  "https://www.oglasi.me/nekretnine/zemljiste/zemljiste-bandici-2000m2-og24007823me": {
+    "ts": "2026-10-04T14:24:47.390868",
+    "status": "vlasnik",
+    "lead": {
+      "ime": "Bbb",
+      "oglas_link": "https://www.oglasi.me/nekretnine/zemljiste/zemljiste-bandici-2000m2-og24007823me",
+      "lokacija": "Podgorica",
+      "cijena": "Cijena na upit",
+      "izvor": "Oglasi.me",
+      "telefoni": [
+        "38267382923"
+      ],
+      "_opis": "Opis oglasa Priključak za vodu i struju, asfalt .",
+      "_uid": null
+    }
   }
 }
