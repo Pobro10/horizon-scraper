@@ -2712,5 +2712,44 @@
     "ts": "2026-10-04T17:50:50.185450",
     "status": "posrednik",
     "lead": null
+  },
+  "https://www.patuljak.me/oglas/izdavanje-jednosoban-stan-44-m2-stari-aerodrom-pod--82153": {
+    "ts": "2026-10-04T20:12:49.269372",
+    "status": "vlasnik",
+    "lead": {
+      "ime": "Ljubisa",
+      "oglas_link": "https://www.patuljak.me/oglas/izdavanje-jednosoban-stan-44-m2-stari-aerodrom-pod--82153",
+      "lokacija": "Podgorica",
+      "cijena": "450.00€",
+      "izvor": "Patuljak.me",
+      "telefoni": [],
+      "_opis": "Iznajmljujem jednosoban stan 44 m2  450 € na duži period. Izdaje se potpuno moderno opremljen u novoj zgradi \"Zetagradnje \" na odličnoj lokaciji.  Ulaz pored \"Monte puta. Stan se nalazi na 3. spratu stambene zgrade koja poseduje lift.  Stan je odmah useljiv. Drzanje kucnih ljubimaca nije dozvoljeno. Depozit u visini jedne stanarine je obavezan.",
+      "_count": 1,
+      "_ai": {
+        "presuda": "vlasnik",
+        "razlog": "Oglas je napisan u prvom licu uz lično ime i bez tipičnih oznaka agencijskog posredovanja."
+      }
+    }
+  },
+  "https://www.patuljak.me/oglas/prodaje-se-dvosoban-stan--82151": {
+    "ts": "2026-10-04T20:12:50.782585",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.oglasi.me/nekretnine/poslovni-prostori/izdaje-se-magacinski-prostor--1000m2-og84055238me": {
+    "ts": "2026-10-04T20:13:00.790616",
+    "status": "vlasnik",
+    "lead": {
+      "ime": "Milica",
+      "oglas_link": "https://www.oglasi.me/nekretnine/poslovni-prostori/izdaje-se-magacinski-prostor--1000m2-og84055238me",
+      "lokacija": "Podgorica",
+      "cijena": "Cijena na upit",
+      "izvor": "Oglasi.me",
+      "telefoni": [
+        "38267245989"
+      ],
+      "_opis": "",
+      "_uid": null
+    }
   }
 }
