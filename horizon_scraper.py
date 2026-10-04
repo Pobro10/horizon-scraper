@@ -579,6 +579,7 @@ def ai_classify(leads: list[dict]) -> None:
 
     log.info("AI čitač (%s): %d oglasa za klasifikaciju.", provider, len(kandidati))
     uspjelo = 0
+    uzastopno_429 = 0
     for i, lead in enumerate(kandidati):
         try:
             if anth_key:
@@ -588,8 +589,18 @@ def ai_classify(leads: list[dict]) -> None:
                     time.sleep(GEMINI_DELAY)   # poštuj limit besplatnog nivoa
                 lead["_ai"] = _ai_gemini(gem_key, lead)
             uspjelo += 1
+            uzastopno_429 = 0
         except Exception as e:
             log.warning("AI klasifikacija nije uspjela za %s: %s", lead["oglas_link"], e)
+            # dnevna kvota potrošena: ne troši vrijeme na preostale oglase,
+            # neklasifikovani ostaju bez _ai pa ih sljedeći run pokupi
+            if "429" in str(e):
+                uzastopno_429 += 1
+                if uzastopno_429 >= 3:
+                    log.warning("AI čitač: 3x uzastopno 429 — kvota potrošena, prekidam za ovaj run.")
+                    break
+            else:
+                uzastopno_429 = 0
     log.info("AI čitač: klasifikovano %d/%d oglasa.", uspjelo, len(kandidati))
 
 # ──────────────────────────────────────────────────────────────
