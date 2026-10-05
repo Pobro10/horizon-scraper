@@ -3452,5 +3452,82 @@
     "ts": "2026-10-05T17:26:30.957520",
     "status": "drugi_grad",
     "lead": null
+  },
+  "https://www.patuljak.me/oglas/ljubavic-jednosoban-stan-sa-garaznim-parking-mjest--82300": {
+    "ts": "2026-10-05T21:18:43.671491",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/prodaja-plac-donji-kokoti--82297": {
+    "ts": "2026-10-05T21:18:45.249569",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/izdavanjejednosoban-stancentral-point--82296": {
+    "ts": "2026-10-05T21:18:46.835784",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/centar-dvosoban-stan-sa-garaznim-parking-mjestom--82295": {
+    "ts": "2026-10-05T21:18:48.417221",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/izdaje-se-dvosoban-stan-povrsine-70m-u-master-kvar--82292": {
+    "ts": "2026-10-05T21:18:50.016041",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/zagoric-opremljen-jednosoban-stan-sa-dva-garazna-p--82291": {
+    "ts": "2026-10-05T21:18:51.603969",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/izdavanje-garsonjera-28-m2-preko-morace-podgorica--82290": {
+    "ts": "2026-10-05T21:18:53.194337",
+    "status": "vlasnik",
+    "lead": {
+      "ime": "Rajna",
+      "oglas_link": "https://www.patuljak.me/oglas/izdavanje-garsonjera-28-m2-preko-morace-podgorica--82290",
+      "lokacija": "Podgorica",
+      "cijena": "Cijena na upit",
+      "izvor": "Patuljak.me",
+      "telefoni": [
+        "382673526200"
+      ],
+      "_opis": "Izdaje se namjestena garsonjera preko Morace ul. Moskovska. Osnovne karakteristike: Povrsina: 28m2 1 kupatilo Polovno/dobro stanje (renoviran) Sprat: 2 Lift: Da Klima uredjaj Orijentacija: Zapad Balkon: Ne Ugovor: Na minimum godinu dana uz obavezan depozit 067 352 620 067 478 498",
+      "_count": 1
+    }
+  },
+  "https://www.patuljak.me/oglas/vezirov-most-opremljen-jednosoban-stan-40m2--82288": {
+    "ts": "2026-10-05T21:18:54.781022",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.oglasi.me/nekretnine/kuce/kuca-og84064368me": {
+    "ts": "2026-10-05T21:18:55.607739",
+    "status": "vlasnik",
+    "lead": {
+      "ime": "zlatko",
+      "oglas_link": "https://www.oglasi.me/nekretnine/kuce/kuca-og84064368me",
+      "lokacija": "Podgorica",
+      "cijena": "Cijena na upit",
+      "izvor": "Oglasi.me",
+      "telefoni": [
+        "38268004664"
+      ],
+      "_opis": "Opis oglasa Kuća potpuno opremljena, u cijenu izdavanja su uračunate sve režije (struja, internet, voda, komunalije)",
+      "_uid": null
+    }
+  },
+  "https://www.patuljak.me/oglas/izdaje-se-jednosoban-stan-povrsine-46m-u-city-kvar--82287": {
+    "ts": "2026-10-05T21:18:56.408221",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/city-kej-opremljen-jednosoban-stan-45m2--82286": {
+    "ts": "2026-10-05T21:18:58.009138",
+    "status": "posrednik",
+    "lead": null
   }
 }
