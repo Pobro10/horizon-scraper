@@ -1,0 +1,28 @@
+name: Probe sajtova
+# Rucna proba: da li kandidat-sajtovi serviraju sadrzaj GitHub runnerima.
+# Pokrece se iskljucivo rucno, ne dira scraper.
+
+on:
+  workflow_dispatch:
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Probaj sajtove
+        run: |
+          UA="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+          probe() {
+            out=$(curl -sL --max-time 25 -A "$UA" -w "\n%{http_code} %{size_download}" "$2" 2>/dev/null)
+            code=$(echo "$out" | tail -1)
+            body=$(echo "$out" | head -c 300 | tr '\n' ' ')
+            echo "PROBE|$1|$code|${body:0:160}"
+          }
+          probe "estitor-index"  "https://estitor.com/me/nekretnine/namjena-prodaja/grad-podgorica"
+          probe "estitor-detalj" "https://estitor.com/me/nekretnine/namjena-prodaja/tip-stan/grad-podgorica/id-625315"
+          probe "pazar3-index"   "https://www.pazar3.me/oglasi/nekretnine/stanovi/podgorica"
+          probe "pazar3-detalj"  "https://www.pazar3.me/oglas/izdavanje-jednosoban-stan-38m-preko-morace-podgorica/3273788"
+          probe "oglasicg"       "https://www.oglasicg.me/nekretnine-kupovina-i-prodaja-30/"
+          probe "oglasi.me-kontrola"  "https://www.oglasi.me/nekretnine/all/1"
+          probe "patuljak-kontrola"   "https://www.patuljak.me/c/nekretnine/namjena-sve/strana-1"
+          probe "realitica-kontrola"  "https://www.realitica.com/index.php?for=Prodaja&lng=hr&opa=Podgorica&qob=p-new&since-day=p-7day"
