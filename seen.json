@@ -4545,5 +4545,64 @@
       "_opis": "Opis oglasa Izdaje se stan povrsine 54m2. Posjeduje parking mjesto. Smjesten je u suterenu manje zgrade od tri sprata i nalazi se iza O Skole Radoica Perovic.\nSastoji se 1. Jednog wc-a,\n2. Jedna spavaca soba,\n3 Dnevni boravak sa kuhinjom.\nIzdaje se prazan i potrebno je renovirati stan, moze da sluzi za vise namjena, kao poslovni objekat, magacinski prostor ili jedinica za stanovanje.",
       "_uid": null
     }
+  },
+  "https://www.patuljak.me/oglas/jednosoban-stan-39m2-tolosi--82466": {
+    "ts": "2026-10-06T20:55:43.361931",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.pazar3.me/oglas/prodajem-imanje/3283920": {
+    "ts": "2026-10-06T20:55:43.694749",
+    "status": "vlasnik",
+    "lead": {
+      "ime": "Aна Витовски",
+      "oglas_link": "https://www.pazar3.me/oglas/prodajem-imanje/3283920",
+      "lokacija": "Podgorica",
+      "cijena": "",
+      "izvor": "Pazar3.me",
+      "telefoni": [],
+      "_opis": "FANTASTIČNA INVESTICIONA PRILIKA: 17.5 HEKTARA NETAKNUTE PRIRODE NA SAMO 35 MINUTA OD PODGORICE! 🌟 Prodaje se ogromno, prelijepo imanje u Lijevoj Rijeci (Opština Podgorica) ukupne površine 175.000 m² (17.5 hektara). Vlasništvo je uredno, 1/1, bez tereta i ograničenja! 📄✅ Ovo je savršeno parče zemlje za vizionare, investitore ili ljude koji žele sopstveni raj na zemlji, idealno za: 🏡 Izgradnju etno sela / Turistički kompleks ☀️ Postavljanje solarnih panela (velika površina i odlična insolacija) 🚜 Poljoprivredu i voćarstvo 🐄 Stočarstvo 🏞️ ŠTA SVE POSJEDUJE IMANJE? Raznovrstan teren: Prelijepe livade, bogati pašnjaci i visoka šuma 🌲🌾 Stari porodični posjed: Na placu se nalaze dva stara, oronula objekta u kojima se nekada stanovalo (odličan temelj za rekonstrukciju i autentičan etno stil) 🏚️✨ Infrastruktura: Na imanju već postoje voda i struja! ⚡💧 Bogatstvo prirode: Na zemljištu se nalazi veliki, stari voćnjak koji obilno rađa – šljive, kruške, jabuke i trešnje 🍏🍐🍒 🚗 LOKACIJA I PRISTUP Imanje je udaljeno svega 35 minuta vožnje od Podgorice zahvaljujući novom auto-putu Bar-Boljare 🛣️ Isključenje je na rampi Veruša, od koje do samog imanja ima ukupno 7 km 📍 Od tih 7 km, čak 5 km je odličan asfalt, dok je preostalih 1.5 do 2 km šumski makadam koji je potpuno prohodan za automobile 🚗💨 💰 ZBOG ČEGA JE CIJENA POVOLJNA? (⚠️ ŠANSA ZA KUPCE!) Imanje je trenutno dosta zapušteno i zahtijeva krčenje, a poslednji dio puta je makadam. Zbog ove dvije \"falinke\", cijena je maksimalno spuštena i pr"
+    }
+  },
+  "https://www.patuljak.me/oglas/prodaja-dvosoban-stan-malo-brdo--82463": {
+    "ts": "2026-10-06T20:55:44.811426",
+    "status": "vlasnik",
+    "lead": {
+      "ime": "Komfor",
+      "oglas_link": "https://www.patuljak.me/oglas/prodaja-dvosoban-stan-malo-brdo--82463",
+      "lokacija": "Podgorica",
+      "cijena": "210000.00€",
+      "izvor": "Patuljak.me",
+      "telefoni": [],
+      "_opis": "Komforan dvosoban stan u naselju Malo brdo, unutrasnje povrsine 77m2 + 13m2 terase. Sastoji se od dnevnog boravka, kuhinje, trepezarije, 2 spavace sobe, kupatilo+toalet, ostave i terase. Kupatila i kuhinja su kompletno renovirani.",
+      "_count": 1
+    }
+  },
+  "https://www.patuljak.me/oglas/izdaje-se-luksuzno-opremljen-jednosoban-stan-povrs--82462": {
+    "ts": "2026-10-06T20:55:46.398507",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/izdajem-poslovni-prostor-bjelisi-bar--82461": {
+    "ts": "2026-10-06T20:55:47.789968",
+    "status": "drugi_grad",
+    "lead": null
+  },
+  "https://www.oglasi.me/nekretnine/stanovi/izdajem-garsonjeru-og84073692me": {
+    "ts": "2026-10-06T20:55:53.060494",
+    "status": "vlasnik",
+    "lead": {
+      "ime": "Mihajlo",
+      "oglas_link": "https://www.oglasi.me/nekretnine/stanovi/izdajem-garsonjeru-og84073692me",
+      "lokacija": "Podgorica",
+      "cijena": "Cijena na upit",
+      "izvor": "Oglasi.me",
+      "telefoni": [
+        "38267285562",
+        "38267578193"
+      ],
+      "_opis": "Opis oglasa Izdajem namjestenu garsonjeru 26 m2. Kontak telefon 067 578 193",
+      "_uid": null
+    }
   }
 }

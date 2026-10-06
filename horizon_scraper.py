@@ -722,7 +722,7 @@ def send_email(leads: list[dict], review_leads: list[dict] = []) -> bool:
 </table>
 {review_block}
 <p style="color:#888;font-size:12px;margin-top:24px">
-  Izvor: Oglasi.me + Patuljak.me &nbsp;|&nbsp; Horizon Scraper
+  Izvor: Oglasi.me + Patuljak.me + Pazar3.me &nbsp;|&nbsp; Horizon Scraper
 </p>
 </body></html>"""
 
@@ -1314,6 +1314,303 @@ def run_patuljak() -> tuple[list[dict], list[dict]]:
     return leads, review_leads
 
 # ──────────────────────────────────────────────────────────────
+# PAZAR3.ME
+# Index ima filter Private=True (fizička lica), datum i oznaku
+# "Prodavnica" na kartici; detalj nosi Tip oglasa / Oglašivač / telefon.
+# Marko: samo mjesečna renta i prodaja, bez "stan na dan".
+# ──────────────────────────────────────────────────────────────
+
+PAZAR3_BASE        = "https://www.pazar3.me"
+PAZAR3_KATEGORIJE  = ("stanovi", "kuce-vile", "placevi-njive-farme")
+PAZAR3_GRAD        = "podgorica"
+PAZAR3_TIPOVI_OK   = ("iznajmljuje se", "prodaje se")
+
+_P3_MJESECI = {"jan": 1, "feb": 2, "mar": 3, "mart": 3, "apr": 4, "maj": 5,
+               "jun": 6, "jul": 7, "avg": 8, "aug": 8, "sep": 9, "sept": 9,
+               "okt": 10, "nov": 11, "dec": 12}
+# u naslovu: sve što miriše na turistički/dnevni najam
+_P3_NA_DAN_NASLOV = re.compile(r"(?i)na\s+dan\b|dnevn|po\s+danu|no[cć]enj|kratkoro[cč]n|turist")
+# u opisu: samo jasni signali (opis dugoročnog najma zna pomenuti turiste)
+_P3_NA_DAN_OPIS   = re.compile(r"(?i)\bna\s+dan\b|po\s+danu|no[cć]enj|dnevni\s+najam|dnevno\s+izdavanje")
+
+
+def _p3_parse_date(text: str) -> datetime | None:
+    """Index: 'Danas 10:05', 'Juče 15:01', '04 okt 18:13'. Detalj: 'okt 04 2026'."""
+    t = text.strip().lower()
+    now = datetime.now()
+    if t.startswith("danas"):
+        return now.replace(hour=0, minute=0, second=0, microsecond=0)
+    if t.startswith("ju"):
+        return (now - timedelta(days=1)).replace(hour=0, minute=0, second=0, microsecond=0)
+    m = re.match(r"(\d{1,2})\s+([a-zčć]+)\s+(\d{1,2}):(\d{2})", t)
+    if m:
+        d, mon = int(m.group(1)), _P3_MJESECI.get(m.group(2))
+        if mon:
+            # bez godine na indexu: mjesec/dan u budućnosti = prošla godina
+            y = now.year if (mon, d) <= (now.month, now.day) else now.year - 1
+            try:
+                return datetime(y, mon, d, int(m.group(3)), int(m.group(4)))
+            except ValueError:
+                return None
+    m = re.match(r"([a-zčć]+)\s+(\d{1,2})\s+(\d{4})", t)
+    if m:
+        mon = _P3_MJESECI.get(m.group(1))
+        if mon:
+            try:
+                return datetime(int(m.group(3)), mon, int(m.group(2)))
+            except ValueError:
+                return None
+    return None
+
+
+def _p3_index_cards(kategorija: str, page: int) -> list[tuple[str, str, str, bool]] | None:
+    """Vraća [(link, naslov, datum_tekst, prodavnica)] ili None na HTTP grešku."""
+    url = (f"{PAZAR3_BASE}/oglasi/nekretnine/{kategorija}/{PAZAR3_GRAD}"
+           f"?Private=True&Page={page}")
+    r = get(url)
+    if r is None:
+        return None
+    soup = BeautifulSoup(r.text, "lxml")
+    out: list[tuple[str, str, str, bool]] = []
+    for card in soup.select("div.row-listing[data-product-id]"):
+        a = card.select_one("a.Link_vis[href]")
+        if not a:
+            continue
+        link   = urljoin(PAZAR3_BASE, a["href"].split("?")[0])
+        naslov = (a.get("title") or a.get_text(" ", strip=True)).strip()
+        dt_tag = card.select_one("span.pull-right.ci-text-right")
+        datum  = dt_tag.get_text(" ", strip=True) if dt_tag else ""
+        store  = card.select_one("span.label.isstore") is not None
+        out.append((link, naslov, datum, store))
+    return out
+
+
+def _parse_pazar3_listing(url: str) -> dict | str | None:
+    """
+    Vraća:
+      dict            — uspješno parsirani oglas (polje _prodavnica ako nije fizičko lice)
+      "old"           — stariji od CUTOFF
+      "drugi_grad"    — lokacija nije FILTER_CITY
+      "drugi_tip"     — nije prodaja ni mjesečni najam (kupujem, traži se, zamjena)
+      "na_dan"        — dnevni/turistički najam
+      None            — HTTP greška
+      "selector_fail" — selektori ne rade
+    """
+    r = get(url)
+    if r is None:
+        return None
+    soup = BeautifulSoup(r.text, "lxml")
+
+    h1 = soup.find("h1")
+    naslov = h1.get_text(" ", strip=True) if h1 else ""
+
+    tags: dict[str, str] = {}
+    for a in soup.select("a.tag-item"):
+        sp, bd = a.find("span"), a.find("bdi")
+        if sp and bd:
+            tags[sp.get_text(strip=True).rstrip(":").lower()] = bd.get_text(" ", strip=True)
+
+    d_tag = soup.select_one(".ad-publish-info-area .published-date")
+    if not naslov or (not tags and not d_tag):
+        log.debug("  [selector_fail/pazar3] %s", url)
+        return "selector_fail"
+
+    if d_tag:
+        listing_dt = _p3_parse_date(d_tag.get_text(" ", strip=True))
+        if listing_dt is not None and listing_dt.date() < CUTOFF.date():
+            return "old"
+
+    tip = tags.get("tip oglasa", "").lower()
+    if tip and tip not in PAZAR3_TIPOVI_OK:
+        return "drugi_tip"
+
+    lokacija = tags.get("lokacija", "")
+    if FILTER_CITY and FILTER_CITY.lower() not in lokacija.lower():
+        return "drugi_grad"
+
+    opis_tag = soup.select_one("div.description-area")
+    opis = opis_tag.get_text(" ", strip=True) if opis_tag else ""
+    if not opis:
+        meta = soup.find("meta", attrs={"name": "description"})
+        opis = meta["content"] if meta and meta.get("content") else ""
+    opis = opis[:1500]
+
+    if _P3_NA_DAN_NASLOV.search(naslov) or _P3_NA_DAN_OPIS.search(opis):
+        return "na_dan"
+
+    oglasivac = tags.get("oglašivač", "") or tags.get("oglasivac", "")
+    name_tag  = soup.select_one("div.user-name")
+    name      = name_tag.get_text(" ", strip=True) if name_tag else (oglasivac or "Nepoznat")
+
+    # cijena: .ad-price se puni JS-om (prazan u HTML-u), pa čitamo JSON-LD
+    # Offer blok ONOG oglasa čiji url nosi ovaj id (stranica ima i slične oglase)
+    price_tag = soup.select_one(".ad-price")
+    cijena    = clean_price(price_tag.get_text(" ", strip=True)) if price_tag else ""
+    if not cijena:
+        pid = url.rstrip("/").rsplit("/", 1)[-1]
+        for sc in soup.find_all("script", type="application/ld+json"):
+            try:
+                data = json.loads(sc.string or "")
+            except (json.JSONDecodeError, TypeError):
+                continue
+            stack = [data]
+            while stack and not cijena:
+                node = stack.pop()
+                if isinstance(node, dict):
+                    if str(node.get("url", "")).endswith("/" + pid) and isinstance(node.get("offers"), dict):
+                        try:
+                            iznos = float(node["offers"].get("price", 0))
+                        except (TypeError, ValueError):
+                            iznos = 0
+                        if iznos > 1:
+                            cijena = f"{int(iznos)} €"
+                    stack.extend(node.values())
+                elif isinstance(node, list):
+                    stack.extend(node)
+            if cijena:
+                break
+
+    # telefon je javan na stranici (samo oglašivačev, sajt nema svoje brojeve u tijelu)
+    telefoni: list[str] = []
+    info = soup.select_one("div.info-area")
+    for izvor_txt in ((info.get_text(" ", strip=True) if info else ""), opis, soup.get_text(" ")):
+        for m in _PHONE_IN_TEXT.finditer(izvor_txt):
+            np_ = normalize_phone(m.group(0))
+            if np_ and np_ not in telefoni:
+                telefoni.append(np_)
+        if telefoni:
+            break
+
+    return {
+        "ime":         name,
+        "oglas_link":  url,
+        "lokacija":    lokacija,
+        "cijena":      cijena,
+        "izvor":       "Pazar3.me",
+        "telefoni":    telefoni,
+        "_opis":       opis,
+        "_prodavnica": bool(oglasivac) and "fizi" not in oglasivac.lower(),
+    }
+
+
+def run_pazar3() -> tuple[list[dict], list[dict]]:
+    log.info("═" * 60)
+    log.info("  PAZAR3.ME  (od %s)", CUTOFF.strftime("%d.%m.%Y %H:%M"))
+    log.info("═" * 60)
+
+    queue:       list[str] = []
+    u_queue:     set[str]  = set()
+    total_cards: int       = 0
+
+    for kat in PAZAR3_KATEGORIJE:
+        old_in_row = 0
+        for page in range(1, MAX_PAGES + 1):
+            cards = _p3_index_cards(kat, page)
+            if cards is None:
+                break
+            if not cards:
+                log.info("  %s str. %d: prazno, zaustavljam.", kat, page)
+                break
+            total_cards += len(cards)
+            page_new = 0
+            for link, naslov, datum, store in cards:
+                if store:
+                    continue                     # agencijski/promo nalozi, i na Private=True
+                if link in u_queue:
+                    continue
+                if _P3_NA_DAN_NASLOV.search(naslov):
+                    _audit_log("Pazar3.me", "", link, "skip", "na dan (naslov)")
+                    continue
+                dt = _p3_parse_date(datum)
+                if dt is not None and dt < CUTOFF:
+                    old_in_row += 1
+                    continue
+                old_in_row = 0
+                u_queue.add(link)
+                queue.append(link)
+                page_new += 1
+            log.info("  %s str. %d: %d novih od %d kartica", kat, page, page_new, len(cards))
+            # lista je po datumu opadajuća (poslije promo kartica na vrhu)
+            if old_in_row >= MAX_OLD_IN_ROW:
+                break
+            time.sleep(DELAY_LISTING)
+
+    log.info("URLs za obraditi: %d", len(queue))
+
+    leads:          list[dict] = []
+    review_leads:   list[dict] = []
+    selector_fails: int        = 0
+    fetched:        int        = 0
+    cache_hits:     int        = 0
+
+    def _klasifikuj(lead: dict, fresh: bool) -> None:
+        if fresh:
+            phones_record(lead["oglas_link"], lead["ime"], lead.get("telefoni") or [])
+        if lead.pop("_prodavnica", False):
+            status, razlog = "posrednik", "prodavnica/agencijski nalog"
+        else:
+            status, razlog = is_broker(lead["ime"], 1, lead.get("telefoni"))
+        if fresh:
+            stored = dict(lead) if status in ("vlasnik", "provjeri") else None
+            seen_record(lead["oglas_link"], status, stored)
+        if status == "posrednik":
+            log.info("  [posrednik] %-28s (%s)", lead["ime"], razlog)
+            _audit_log("Pazar3.me", lead["ime"], lead["oglas_link"], "posrednik", razlog)
+        elif status == "provjeri":
+            lead["_razlog"] = razlog
+            review_leads.append(lead)
+            log.info("  [provjeri]  %-28s (%s)", lead["ime"], razlog)
+            _audit_log("Pazar3.me", lead["ime"], lead["oglas_link"], "provjeri", razlog)
+        else:
+            leads.append(lead)
+            _audit_log("Pazar3.me", lead["ime"], lead["oglas_link"], "poslat", "")
+
+    for i, url in enumerate(queue, 1):
+        cached = seen_get(url)
+        if cached is not None:
+            cache_hits += 1
+            if cached["status"] in ("vlasnik", "provjeri") and cached.get("lead"):
+                _klasifikuj(dict(cached["lead"]), fresh=False)
+            continue
+
+        log.info("  [%4d/%d] %s", i, len(queue), url)
+        result = _parse_pazar3_listing(url)
+        fetched += 1
+
+        if result == "old":
+            seen_record(url, "star")
+            _audit_log("Pazar3.me", "", url, "star", "van cutoffa")
+        elif result == "selector_fail":
+            selector_fails += 1
+            seen_record(url, "neparsiran")
+            _audit_log("Pazar3.me", "", url, "neparsiran", "selector_fail")
+        elif result in ("drugi_grad", "drugi_tip", "na_dan"):
+            seen_record(url, result)
+            _audit_log("Pazar3.me", "", url, "skip", result.replace("_", " "))
+        elif result is None:
+            _audit_log("Pazar3.me", "", url, "skip", "HTTP greška")
+        else:
+            _klasifikuj(result, fresh=True)
+        time.sleep(DELAY_LISTING)
+
+    if cache_hits:
+        log.info("  keš: %d/%d oglasa preskočeno (već obrađeni).", cache_hits, len(queue))
+
+    if total_cards == 0:
+        log.warning("⚠  Pazar3.me: 0 kartica na indexu — stranica vjerovatno promijenjena!")
+        send_warning_email("Pazar3.me", 0, 0)
+    elif fetched and selector_fails / fetched > SELECTOR_FAIL_RATIO:
+        log.warning("⚠  Pazar3.me: %d/%d oglasa nije moglo biti parsirano — selektori pokvareni!",
+                    selector_fails, fetched)
+        send_warning_email("Pazar3.me", selector_fails, fetched)
+    elif selector_fails > 0:
+        log.info("ℹ  Pazar3.me: %d/%d oglasa nije parsirano (ispod praga, bez mejla).",
+                 selector_fails, fetched)
+
+    log.info("Pazar3.me → %d vlasnika, %d za provjeru", len(leads), len(review_leads))
+    return leads, review_leads
+
+# ──────────────────────────────────────────────────────────────
 # REALITICA.COM
 # ──────────────────────────────────────────────────────────────
 
@@ -1459,11 +1756,11 @@ def main() -> None:
     log.info("Keš obrađenih: %d zapisa | registar telefona: %d brojeva.",
              len(SEEN), len(PHONES))
 
-    # Sva 3 sajta paralelno — svaki u svom threadu sa svojom HTTP sesijom.
+    # Svi sajtovi paralelno — svaki u svom threadu sa svojom HTTP sesijom.
     # Pad jednog sajta ne obara ostale.
     rezultati: dict[str, tuple[list[dict], list[dict]]] = {}
     poslovi = {"Oglasi.me": run_oglasi, "Patuljak.me": run_patuljak,
-               "Realitica.com": run_realitica}
+               "Pazar3.me": run_pazar3, "Realitica.com": run_realitica}
     with ThreadPoolExecutor(max_workers=len(poslovi)) as ex:
         futures = {ex.submit(fn): ime for ime, fn in poslovi.items()}
         for fut in as_completed(futures):
@@ -1480,8 +1777,9 @@ def main() -> None:
     leads_o, review_o = rezultati["Oglasi.me"]
     leads_p, review_p = rezultati["Patuljak.me"]
     leads_r, review_r = rezultati["Realitica.com"]
-    all_leads    = leads_o + leads_p + leads_r
-    all_review   = review_o + review_p + review_r
+    leads_z, review_z = rezultati["Pazar3.me"]
+    all_leads    = leads_o + leads_p + leads_z + leads_r
+    all_review   = review_o + review_p + review_z + review_r
 
     # Deduplikacija po linku oglasa
     seen:         set[str]   = set()
