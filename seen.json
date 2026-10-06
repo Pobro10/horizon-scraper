@@ -4604,5 +4604,45 @@
       "_opis": "Opis oglasa Izdajem namjestenu garsonjeru 26 m2. Kontak telefon 067 578 193",
       "_uid": null
     }
+  },
+  "https://www.patuljak.me/oglas/jednosoban-stan-stari-aerodrom--82475": {
+    "ts": "2026-10-06T21:40:28.851956",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/izdajem-jednosoban-namjesten-stan-47-m2-city-kvart--82474": {
+    "ts": "2026-10-06T21:40:30.477972",
+    "status": "vlasnik",
+    "lead": {
+      "ime": "Filip",
+      "oglas_link": "https://www.patuljak.me/oglas/izdajem-jednosoban-namjesten-stan-47-m2-city-kvart--82474",
+      "lokacija": "Podgorica",
+      "cijena": "600.00€",
+      "izvor": "Patuljak.me",
+      "telefoni": [
+        "38267240088"
+      ],
+      "_opis": "Izdajem potpuno namjesten stan u City kvart, zgrada dje je Sicilija. Stan je na 5.spratu. Garazno mjesto ukljuceno u cijenu. Vlasnik +38267240088",
+      "_count": 1,
+      "_ai": {
+        "presuda": "vlasnik",
+        "razlog": "Oglašivač se eksplicitno izjašnjava kao vlasnik i koristi neformalan stil pisanja bez agencijskih oznaka."
+      }
+    }
+  },
+  "https://www.patuljak.me/oglas/izdaje-se-jednosoban-stan-povrsine-36m-na-zabjelu--82469": {
+    "ts": "2026-10-06T21:40:32.152352",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/prodaja-jednosoban-stan-city-kvart--82467": {
+    "ts": "2026-10-06T21:40:33.798639",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.oglasi.me/nekretnine/stanovi/izdavanje--dvosoban-stan--74m---city-kvart--podgorica-og84074831me": {
+    "ts": "2026-10-06T21:40:41.092743",
+    "status": "posrednik",
+    "lead": null
   }
 }
