@@ -5518,5 +5518,25 @@
     "ts": "2026-10-07T15:48:17.245698",
     "status": "posrednik",
     "lead": null
+  },
+  "https://www.patuljak.me/oglas/izdaje-se-dvosoban-stan-67m2-master-kvart-podgoric--82666": {
+    "ts": "2026-10-07T22:02:22.799918",
+    "status": "vlasnik",
+    "lead": {
+      "ime": "Leonid",
+      "oglas_link": "https://www.patuljak.me/oglas/izdaje-se-dvosoban-stan-67m2-master-kvart-podgoric--82666",
+      "lokacija": "Podgorica",
+      "cijena": "850.00€",
+      "izvor": "Patuljak.me",
+      "telefoni": [
+        "38267193660"
+      ],
+      "_opis": "• potpuno namješten i opremljen kućnim aparatima • dosta plakara i prostora za odlaganje • velika terasa • 2 kupatila: jedno sa kadom, drugo sa tuš kabinom • 3 klima uređaja • uređeno dvorište i prostor oko zgrade • u blizini BIG Fashion centra • Cijena: 850 € mjesečno + režije • Prilikom useljenja plaćaju se prva kirija + depozit. • Direktno od vlasnika, bez agencije i provizije. • Stan je slobodan i useljenje je moguće odmah. • Pušenje i kućni ljubimci nijesu dozvoljeni. Kontakt: +382 67 193 660",
+      "_count": 1,
+      "_ai": {
+        "presuda": "vlasnik",
+        "razlog": "Oglašivač eksplicitno navodi da izdaje direktno bez agencije i provizije."
+      }
+    }
   }
 }
