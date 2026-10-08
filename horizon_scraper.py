@@ -16,7 +16,8 @@ import logging
 import os
 import threading
 from concurrent.futures import ThreadPoolExecutor, as_completed
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
+from zoneinfo import ZoneInfo
 from collections import defaultdict
 from html import escape
 from urllib.parse import urljoin
@@ -34,7 +35,15 @@ EMAIL_TO       = "officehorizon.nekretnine@gmail.com"
 EMAIL_FROM     = os.environ.get("EMAIL_FROM", "onboarding@resend.dev")
 
 # True samo za run u 10:30 UTC (GitHub Actions postavlja ovu varijablu)
-SEND_EMAIL = os.environ.get("SEND_EMAIL", "true").lower() in ("1", "true", "yes")
+# SEND_EMAIL: "true" = mejl iz svakog runa (ručno pokretanje, testovi),
+# "false" = nikad, "prozor" = mejl samo u dnevnim prozorima (MAIL_PROZORI),
+# a između prozora se vlasnici nakupljaju. Runovi su na svaki sat, pa bar
+# jedan upadne u prozor i kad GitHub preskoči pojedine termine.
+SEND_MODE   = os.environ.get("SEND_EMAIL", "true").lower()
+SEND_EMAIL  = SEND_MODE in ("1", "true", "yes")
+MAIL_PROZOR = SEND_MODE == "prozor"
+MAIL_PROZORI = ((7, 30), (15, 30))      # lokalno vrijeme (Podgorica)
+TZ_LOKALNO   = ZoneInfo("Europe/Podgorica")
 
 # ── Broker blacklista (učitava se iz brokers.json) ─────────────
 _BROKERS_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "brokers.json")
@@ -118,7 +127,7 @@ logging.basicConfig(
 )
 log = logging.getLogger(__name__)
 log.info("Cutoff datum : %s (zadnjih 48h)", CUTOFF.strftime("%d.%m.%Y %H:%M"))
-log.info("SEND_EMAIL   : %s", SEND_EMAIL)
+log.info("SEND_EMAIL   : %s", SEND_MODE)
 
 # ──────────────────────────────────────────────────────────────
 # AUDIT LOG
@@ -169,6 +178,44 @@ def save_sent(sent: dict[str, str]) -> None:
         json.dump(sent, f, ensure_ascii=False, indent=2)
     os.replace(tmp, SENT_FILE)
     log.info("Memorija poslatih sačuvana u sent.json (%d linkova).", len(sent))
+
+
+def _parse_ts(ts: str) -> datetime | None:
+    """ISO vrijeme iz sent.json kao UTC; stari zapisi bez zone su sa GitHub
+    runnera, dakle UTC."""
+    try:
+        d = datetime.fromisoformat(ts)
+    except (ValueError, TypeError):
+        return None
+    if d.tzinfo is None:
+        d = d.replace(tzinfo=timezone.utc)
+    return d.astimezone(timezone.utc)
+
+
+def _prozor_granice(now_local: datetime) -> tuple[datetime, datetime]:
+    """(početak tekućeg prozora, početak sljedećeg) u lokalnom vremenu.
+    Prozor se otvara u zadato vrijeme i traje do sljedećeg prozora."""
+    def _na(dan: datetime, h: int, m: int) -> datetime:
+        return dan.replace(hour=h, minute=m, second=0, microsecond=0)
+    danas  = [_na(now_local, h, m) for h, m in MAIL_PROZORI]
+    prosli = [p for p in danas if p <= now_local]
+    budu   = [p for p in danas if p > now_local]
+    h, m = MAIL_PROZORI[-1]
+    start = max(prosli) if prosli else _na(now_local - timedelta(days=1), h, m)
+    h0, m0 = MAIL_PROZORI[0]
+    kraj = min(budu) if budu else _na(now_local + timedelta(days=1), h0, m0)
+    return start, kraj
+
+
+def prozor_otvoren(sent: dict[str, str]) -> tuple[bool, str]:
+    """True ako u tekućem prozoru još nije poslat mejl (zadnje slanje se
+    čita iz sent.json, bez posebnog fajla). Inače vrijeme sljedećeg prozora."""
+    now_local = datetime.now(TZ_LOKALNO)
+    start, kraj = _prozor_granice(now_local)
+    zadnji = max((d for d in map(_parse_ts, sent.values()) if d), default=None)
+    if zadnji is None or zadnji < start.astimezone(timezone.utc):
+        return True, ""
+    return False, kraj.strftime("%d.%m. %H:%M")
 
 # ──────────────────────────────────────────────────────────────
 # KEŠ OBRAĐENIH OGLASA (seen.json)
@@ -437,14 +484,18 @@ GEMINI_DELAY = 6.5   # besplatni nivo: ~10 zahtjeva u minuti
 _GEMINI_PREFERRED = ("gemini-3-flash", "gemini-3-flash-preview",
                      "gemini-2.5-flash", "gemini-2.0-flash")
 GEMINI_FALLBACK   = "gemini-3-flash-preview"
-_gemini_model_cache: str | None = None
+GEMINI_TIMEOUT    = 45   # preview modeli znaju "visiti": 15 od 28 padova (5-7.10)
+                         # bio je istek od 60 s, 13 je bilo 503 Service Unavailable
+_gemini_kandidati_cache: list[str] | None = None
+_gemini_idx = 0          # tekući model u listi kandidata (raste kad model zaglavi)
 
 
-def _gemini_model(api_key: str) -> str:
-    """Pita Google koje modele ključ smije da koristi i bira najbolji flash."""
-    global _gemini_model_cache
-    if _gemini_model_cache:
-        return _gemini_model_cache
+def _gemini_kandidati(api_key: str) -> list[str]:
+    """Pita Google koje modele ključ smije da koristi; vraća flash modele po
+    redu želja, da se na 503/istek pređe na sljedeći bez pada AI kolone."""
+    global _gemini_kandidati_cache
+    if _gemini_kandidati_cache:
+        return _gemini_kandidati_cache
     try:
         r = requests.get(
             "https://generativelanguage.googleapis.com/v1beta/models",
@@ -458,20 +509,22 @@ def _gemini_model(api_key: str) -> str:
             for m in r.json().get("models", [])
             if "generateContent" in m.get("supportedGenerationMethods", [])
         }
-        izbor = next((k for k in _GEMINI_PREFERRED if k in dostupni), None)
-        if izbor is None:
-            # rezerva: najnoviji "običan" flash po imenu
-            flash = sorted(d for d in dostupni
-                           if "flash" in d and not any(x in d for x in
-                              ("lite", "image", "tts", "live", "audio", "exp")))
-            izbor = flash[-1] if flash else GEMINI_FALLBACK
-        _gemini_model_cache = izbor
-        log.info("Gemini model: %s", izbor)
+        lista = [k for k in _GEMINI_PREFERRED if k in dostupni]
+        # ostali "obični" flash modeli kao dodatna rezerva, najnoviji prvi
+        ostali = sorted((d for d in dostupni
+                         if "flash" in d and d not in lista and not any(x in d for x in
+                            ("lite", "image", "tts", "live", "audio", "exp"))),
+                        reverse=True)
+        lista += ostali
+        if not lista:
+            lista = [GEMINI_FALLBACK]
+        _gemini_kandidati_cache = lista
+        log.info("Gemini model: %s (rezerve: %s)", lista[0], ", ".join(lista[1:4]) or "nema")
     except Exception as e:
         log.warning("Ne mogu izlistati Gemini modele (%s) — koristim %s.",
                     e, GEMINI_FALLBACK)
-        _gemini_model_cache = GEMINI_FALLBACK
-    return _gemini_model_cache
+        _gemini_kandidati_cache = [GEMINI_FALLBACK]
+    return _gemini_kandidati_cache
 
 AI_SYSTEM = (
     "Pomažeš agenciji za nekretnine u Podgorici da razdvoji oglase privatnih "
@@ -517,9 +570,12 @@ def _ai_anthropic(client, lead: dict) -> dict:
     return json.loads(text)
 
 
+_GEMINI_PRIVREMENE = (500, 502, 503, 504)   # preopterećenje, pomaže ponavljanje
+
+
 def _ai_gemini(api_key: str, lead: dict) -> dict:
-    url = (f"https://generativelanguage.googleapis.com/v1beta/models/"
-           f"{_gemini_model(api_key)}:generateContent")
+    global _gemini_idx
+    kandidati = _gemini_kandidati(api_key)
     body = {
         "systemInstruction": {"parts": [{"text": AI_SYSTEM}]},
         "contents": [{"parts": [{"text": _ai_prompt(lead)}]}],
@@ -541,14 +597,38 @@ def _ai_gemini(api_key: str, lead: dict) -> dict:
     }
     # ključ ide u header, NIKAD u URL (URL završava u logovima)
     headers = {"x-goog-api-key": api_key}
-    r = requests.post(url, headers=headers, json=body, timeout=60)
-    if r.status_code == 429:
-        time.sleep(30)
-        r = requests.post(url, headers=headers, json=body, timeout=60)
-    r.raise_for_status()
-    parts = r.json()["candidates"][0]["content"]["parts"]
-    text  = "".join(p.get("text", "") for p in parts)
-    return json.loads(text)
+    greska: Exception | None = None
+    for pokusaj in range(3):
+        model = kandidati[min(_gemini_idx, len(kandidati) - 1)]
+        url = (f"https://generativelanguage.googleapis.com/v1beta/models/"
+               f"{model}:generateContent")
+        try:
+            r = requests.post(url, headers=headers, json=body, timeout=GEMINI_TIMEOUT)
+            if r.status_code == 429:
+                time.sleep(30)
+                r = requests.post(url, headers=headers, json=body, timeout=GEMINI_TIMEOUT)
+            if r.status_code in _GEMINI_PRIVREMENE:
+                raise requests.HTTPError(f"{r.status_code} {r.reason}", response=r)
+            r.raise_for_status()
+            parts = r.json()["candidates"][0]["content"]["parts"]
+            text  = "".join(p.get("text", "") for p in parts)
+            return json.loads(text)
+        except (requests.Timeout, requests.ConnectionError, requests.HTTPError) as e:
+            kod = getattr(getattr(e, "response", None), "status_code", None)
+            if kod is not None and kod not in _GEMINI_PRIVREMENE:
+                raise          # 400/403/404/429: ponavljanje ne pomaže
+            greska = e
+            kratko = f"{kod}" if kod else "istek/veza"
+            if pokusaj >= 1 and _gemini_idx < len(kandidati) - 1:
+                # dva puta zaredom ne odgovara: do kraja runa rezervni model
+                _gemini_idx += 1
+                log.warning("Gemini %s ne odgovara (%s) — prelazim na %s.",
+                            model, kratko, kandidati[_gemini_idx])
+            else:
+                log.info("Gemini %s: %s, ponavljam za 5 s.", model, kratko)
+                time.sleep(5)
+    assert greska is not None
+    raise greska
 
 
 def ai_classify(leads: list[dict]) -> None:
@@ -642,7 +722,7 @@ def _ai_cell(lead: dict) -> str:
 
 def send_email(leads: list[dict], review_leads: list[dict] = []) -> bool:
     """Vraća True samo ako je email stvarno poslan (Resend potvrdio uspjeh)."""
-    if not SEND_EMAIL:
+    if not (SEND_EMAIL or MAIL_PROZOR):
         log.info("SEND_EMAIL=false — email se preskače (artifact sačuvan).")
         return False
 
@@ -769,7 +849,7 @@ def send_email(leads: list[dict], review_leads: list[dict] = []) -> bool:
 def send_warning_email(sajt: str, fail_count: int, total: int, detalj: str = "") -> None:
     # Upozorenja idu SAMO iz runa koji šalje dnevni mejl, inače ista uzbuna
     # stiže do 4x dnevno (a i lokalni testovi bi je slali).
-    if not SEND_EMAIL:
+    if not (SEND_EMAIL or MAIL_PROZOR):
         log.info("Upozorenje za %s se ne šalje (SEND_EMAIL=false).", sajt)
         return
     datum = datetime.now().strftime("%d.%m.%Y %H:%M")
@@ -1846,22 +1926,27 @@ def main() -> None:
     log.info("═" * 60)
 
     save_leads_json(unique_leads)
-    email_sent = send_email(unique_leads, unique_review)
+
+    email_sent = False
+    otvoren, sljedeci = (prozor_otvoren(sent) if MAIL_PROZOR else (True, ""))
+    if not otvoren and (unique_leads or unique_review):
+        log.info("Mejl prozor zatvoren: nakupljeno %d vlasnika + %d za provjeru, "
+                 "šalju se u prozoru %s.", len(unique_leads), len(unique_review), sljedeci)
+    elif otvoren:
+        email_sent = send_email(unique_leads, unique_review)
 
     # Memorija se upisuje SAMO nakon uspješno poslatog mejla — i samo
     # ono što je stvarno bilo u mejlu. Pad slanja → memorija netaknuta.
     if email_sent:
-        now_iso = datetime.now().isoformat()
+        now_iso = datetime.now(timezone.utc).isoformat()
         for lead in unique_leads + unique_review:
             sent[lead["oglas_link"]] = now_iso
 
-        granica = datetime.now() - timedelta(days=SENT_MAX_DAYS)
+        granica = datetime.now(timezone.utc) - timedelta(days=SENT_MAX_DAYS)
 
         def _fresh(ts: str) -> bool:
-            try:
-                return datetime.fromisoformat(ts) >= granica
-            except ValueError:
-                return False
+            d = _parse_ts(ts)
+            return d is not None and d >= granica
 
         sent = {k: v for k, v in sent.items() if _fresh(v)}
         save_sent(sent)

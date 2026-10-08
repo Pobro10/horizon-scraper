@@ -2,12 +2,13 @@ name: Horizon Scraper
 
 on:
   schedule:
-    # Neokrugli minuti — okrugli termini su najzagušeniji na GitHubu (kašnjenja 2-4h)
-    - cron: '23 4 * * *'    # 04:23 UTC = 06:23 CEST
-    - cron: '47 8 * * *'    # 08:47 UTC = 10:47 CEST  ← jedini run koji šalje email
-    - cron: '41 13 * * *'   # 13:41 UTC = 15:41 CEST
-    - cron: '19 17 * * *'   # 17:19 UTC = 19:19 CEST
-  workflow_dispatch:         # ručno pokretanje (uvijek šalje email)
+    # Svaki sat (neokrugli minut: okrugli termini su najzagušeniji). Skupljanje
+    # je jeftino (~1 min, keš), a mejl ide samo u prozorima 07:30 i 15:30 po
+    # lokalnom vremenu (MAIL_PROZORI u skripti). GitHub redovno preskače ili
+    # kasni 2-3 h sa pojedinim terminima (04:23 UTC nije izvršen ni 6. ni
+    # 7.10.), pa satni raspored garantuje da bar jedan run upadne u prozor.
+    - cron: '17 * * * *'
+  workflow_dispatch:         # ručno pokretanje: šalje email odmah, bez čekanja prozora
 
 permissions:
   contents: write
@@ -35,11 +36,10 @@ jobs:
           EMAIL_FROM: ${{ secrets.EMAIL_FROM }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          # Email ide iz SVAKOG runa: sent.json garantuje da isti oglas ne
-          # ide dvaput, a run bez novih vlasnika ionako ne šalje ništa.
-          # (Ranija veza za tačan cron termin je pukla kad je GitHub počeo
-          # preskakati termin 08:47 zbog zagušenja.)
-          SEND_EMAIL: "true"
+          # schedule: "prozor" = vlasnici se nakupljaju, mejl ide u prozorima
+          # 07:30 i 15:30 (lokalno). Ručno pokretanje šalje odmah ("true").
+          # sent.json garantuje da isti oglas ne ide dvaput.
+          SEND_EMAIL: ${{ github.event_name == 'workflow_dispatch' && 'true' || 'prozor' }}
         run: python horizon_scraper.py
 
       - name: Sačuvaj audit log i memoriju u repo
