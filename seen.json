@@ -5538,5 +5538,419 @@
         "razlog": "Oglašivač eksplicitno navodi da izdaje direktno bez agencije i provizije."
       }
     }
+  },
+  "https://www.patuljak.me/oglas/izdavanje-jednosoban-stan-podgorica-ljubovic-49m2--82737": {
+    "ts": "2026-10-08T06:26:04.231605",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/prodaja-kuca-danilovgrad-spuz-90m2--82736": {
+    "ts": "2026-10-08T06:26:05.986197",
+    "status": "drugi_grad",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/p�p--82735": {
+    "ts": "2026-10-08T06:26:07.965863",
+    "status": "drugi_grad",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/p�p--82734": {
+    "ts": "2026-10-08T06:26:09.778979",
+    "status": "drugi_grad",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/pizdaje-se�strongjednosoban-namjesten-stanst--82733": {
+    "ts": "2026-10-08T06:26:11.586271",
+    "status": "drugi_grad",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/pizdaje-se-strongdvosoban-namjesten-stanstron--82732": {
+    "ts": "2026-10-08T06:26:13.291284",
+    "status": "drugi_grad",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/pprodaje-se-strongdvosoban-namjesten-stanstro--82731": {
+    "ts": "2026-10-08T06:26:14.968402",
+    "status": "drugi_grad",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/pprodaje-se-strongjednosoban-lijepo-namjesten--82730": {
+    "ts": "2026-10-08T06:26:16.634605",
+    "status": "drugi_grad",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/izdaje-se-jednosoban-stan-40m2-stari-aerodrom-id--82729": {
+    "ts": "2026-10-08T06:26:18.304199",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/prodaja-dvosoban-stan-57m2-podgorica-tuski-p--82728": {
+    "ts": "2026-10-08T06:26:19.975550",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.oglasi.me/nekretnine/stanovi/izdaje-se-dvosoban-stan--podgorica-og84087654me": {
+    "ts": "2026-10-08T06:26:21.127925",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.oglasi.me/nekretnine/stanovi/izdaje-se-garsonjera--podgorica-og84087729me": {
+    "ts": "2026-10-08T06:26:21.128219",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.oglasi.me/nekretnine/stanovi/jednosoban-stan-40m2--momisici-og84088167me": {
+    "ts": "2026-10-08T06:26:21.128355",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/najamizdavanje-cetvorosoban-stan-100m2-podgo--82727": {
+    "ts": "2026-10-08T06:26:21.661159",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/najamizdavanje-kuca-250m2-podgorica-tolosi--82726": {
+    "ts": "2026-10-08T06:26:23.334926",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/najamizdavanje-poslovni-prostor-100m2-podgor--82725": {
+    "ts": "2026-10-08T06:26:24.996237",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/najamizdavanje-cetvorosoban-stan-100m2-podgo--82724": {
+    "ts": "2026-10-08T06:26:26.659933",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/najamizdavanje-jednosoban-stan-45m2-podgoric--82723": {
+    "ts": "2026-10-08T06:26:28.310511",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/najamizdavanje-jednosoban-stan-35m2-podgoric--82722": {
+    "ts": "2026-10-08T06:26:29.991805",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/najamizdavanje-dvosoban-stan-65m2-podgorica--82721": {
+    "ts": "2026-10-08T06:26:31.648553",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/najamizdavanje-garsonjera-25m2-podgorica-cen--82720": {
+    "ts": "2026-10-08T06:26:33.307893",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/najamizdavanje-jednosoban-stan-47m2-podgoric--82719": {
+    "ts": "2026-10-08T06:26:34.960895",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/gradjevinsko-zemljiste-592-m2-filindar-danilovgrad--82717": {
+    "ts": "2026-10-08T06:26:36.598379",
+    "status": "drugi_grad",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/centar-poslovni-prostor-1500e--82699": {
+    "ts": "2026-10-08T06:26:38.270258",
+    "status": "vlasnik",
+    "lead": {
+      "ime": "Ivan",
+      "oglas_link": "https://www.patuljak.me/oglas/centar-poslovni-prostor-1500e--82699",
+      "lokacija": "Podgorica",
+      "cijena": "1500.00€",
+      "izvor": "Patuljak.me",
+      "telefoni": [
+        "38268044973"
+      ],
+      "_opis": "Izdajem poslovni prostor u širem centru grada. Prostor je površine 150 kvadrata i pozicioniran je na prvom spratu kuće. Cijena zakupa na mjesečnom nivou je 1500e, prva kirija i depozit u visini jedne kirije su obavezni. Kontakt telefon 068044973.",
+      "_count": 1,
+      "_ai": {
+        "presuda": "vlasnik",
+        "razlog": "Lično ime i neformalan tekst bez agencijskih oznaka ili identifikacionih kodova."
+      }
+    }
+  },
+  "https://www.patuljak.me/oglas/masline-jednosoban-stan-250e--82697": {
+    "ts": "2026-10-08T06:26:39.920353",
+    "status": "vlasnik",
+    "lead": {
+      "ime": "Ivan",
+      "oglas_link": "https://www.patuljak.me/oglas/masline-jednosoban-stan-250e--82697",
+      "lokacija": "Podgorica",
+      "cijena": "250.00€",
+      "izvor": "Patuljak.me",
+      "telefoni": [
+        "38268044973"
+      ],
+      "_opis": "Izdajem prazan jednosoban stan na samom početku Maslina, u neposrednoj blizini osnovne škole Vladimir Nazor. Stan je površine 55 kvadrata i pozicioniran je u prizemlju kuće. Ispred kuće je obezbjeđeno jedno parking mjesto. Cijena zakupa na mjesečnom nivou je 250e, prva kirija i depozit u visini jedne kirije su obavezni. Kontakt telefon 068044973.",
+      "_count": 1,
+      "_ai": {
+        "presuda": "vlasnik",
+        "razlog": "Lično ime oglašivača, korišćenje prvog lica i jednostavan opis bez agencijskih oznaka ukazuju na privatnog vlasnika."
+      }
+    }
+  },
+  "https://www.patuljak.me/oglas/izdaje-se-jednosoban-stan-44-m2-vezirov-most-podgo--82696": {
+    "ts": "2026-10-08T06:26:41.568760",
+    "status": "vlasnik",
+    "lead": {
+      "ime": "Vladimir",
+      "oglas_link": "https://www.patuljak.me/oglas/izdaje-se-jednosoban-stan-44-m2-vezirov-most-podgo--82696",
+      "lokacija": "Podgorica",
+      "cijena": "380.00€",
+      "izvor": "Patuljak.me",
+      "telefoni": [],
+      "_opis": "Izdaje se jednosoban (duplex) kompletno namjesten stan naduzi period. Mirna lokacija pored brda Gorica. Zapadno orijentisan. Depozit uvisini jedne mjesecne kirije. Bez agencija. Useljiv od 10. oktobra 2026.",
+      "_count": 1,
+      "_ai": {
+        "presuda": "vlasnik",
+        "razlog": "Oglašivač koristi lično ime i izričito navodi da ne želi saradnju sa agencijama."
+      }
+    }
+  },
+  "https://www.patuljak.me/oglas/prodaje-se-jednosoban-stan--82695": {
+    "ts": "2026-10-08T06:26:43.225543",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/donji-kokoti-80e--82693": {
+    "ts": "2026-10-08T06:26:44.855007",
+    "status": "provjeri",
+    "lead": {
+      "ime": "Ivan",
+      "oglas_link": "https://www.patuljak.me/oglas/donji-kokoti-80e--82693",
+      "lokacija": "Podgorica",
+      "cijena": "80.00€",
+      "izvor": "Patuljak.me",
+      "telefoni": [
+        "38268044973"
+      ],
+      "_opis": "Prodajem urbanizovan plac sa UT uslovima u Donje Kokote. Površina placa je 707 kvadrata, od Reno Alijansa je udaljen nepun kilometar. Prilaz placu je asfaltirana ulica sa uličnom rasvjetom. Na placu se nalaze priključci za struju i vodu. Cijena 80e po metru kvadratnom. Kontakt telefon 068044973",
+      "_count": 1,
+      "_ai": {
+        "presuda": "vlasnik",
+        "razlog": "Oglas je napisan ličnim tonom uz lično ime i bez ikakvih agencijskih oznaka ili šifri."
+      }
+    }
+  },
+  "https://www.patuljak.me/oglas/prodaje-se-dvosoban-stan--82692": {
+    "ts": "2026-10-08T06:26:46.509587",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/prodaje-se-jednosoban-stan--82691": {
+    "ts": "2026-10-08T06:26:48.173396",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/konik-poslovni-prostor-450e--82690": {
+    "ts": "2026-10-08T06:26:49.805308",
+    "status": "provjeri",
+    "lead": {
+      "ime": "Ivan",
+      "oglas_link": "https://www.patuljak.me/oglas/konik-poslovni-prostor-450e--82690",
+      "lokacija": "Podgorica",
+      "cijena": "450.00€",
+      "izvor": "Patuljak.me",
+      "telefoni": [
+        "38268044973"
+      ],
+      "_opis": "Izdajem poslovni prostor na Konik, u neposrednoj blizini policije. Poslovni prostor je površine 45 kvadrata i nalazi se na prometnoj lokaciji. Cijena zakupa na mjesečnom nivou je 450e, prva kirija i depozit u visini jedne kirije su obavezni. Kontakt telefon 068044973.",
+      "_count": 1,
+      "_ai": {
+        "presuda": "vlasnik",
+        "razlog": "Oglas je napisan jednostavnim tonom uz lično ime i bez elemenata karakterističnih za agencije."
+      }
+    }
+  },
+  "https://www.patuljak.me/oglas/prodaje-se-jednosoban-stan--82689": {
+    "ts": "2026-10-08T06:26:51.458729",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/prodaje-se-jednosoban-stan--82688": {
+    "ts": "2026-10-08T06:26:53.113521",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/prodaje-se-garsonjera--82687": {
+    "ts": "2026-10-08T06:26:54.769956",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/izdavanje-poslovni-prostor-116-m2-baston-podgorica--82686": {
+    "ts": "2026-10-08T06:26:56.414654",
+    "status": "provjeri",
+    "lead": {
+      "ime": "Ivan",
+      "oglas_link": "https://www.patuljak.me/oglas/izdavanje-poslovni-prostor-116-m2-baston-podgorica--82686",
+      "lokacija": "Podgorica",
+      "cijena": "1500.00€",
+      "izvor": "Patuljak.me",
+      "telefoni": [
+        "38268044973"
+      ],
+      "_opis": "Izdajem poslovni prostor na bulevaru Save Kovačevića, zgrada Baston. Prostor je površine 116 kvadrata i pozicioniran je na visokom prizemlju zgrade. Prostor je idealan za kancelarije, ordinaciju ili neku sličnu djelatnost. Cijena zakupa na mjesečnom nivou je 1500e, prva kirija i depozit u visini jedne kirije su obavezni. Kontakt telefon 068044973.",
+      "_count": 1,
+      "_ai": {
+        "presuda": "vlasnik",
+        "razlog": "Oglas je napisan u prvom licu uz lično ime i bez prisustva agencijskih oznaka ili profesionalnog formatiranja."
+      }
+    }
+  },
+  "https://www.patuljak.me/oglas/preko-morace-jednosoban-stan-125000e--82685": {
+    "ts": "2026-10-08T06:26:58.060428",
+    "status": "provjeri",
+    "lead": {
+      "ime": "Ivan",
+      "oglas_link": "https://www.patuljak.me/oglas/preko-morace-jednosoban-stan-125000e--82685",
+      "lokacija": "Podgorica",
+      "cijena": "125000.00€",
+      "izvor": "Patuljak.me",
+      "telefoni": [
+        "38268044973"
+      ],
+      "_opis": "Prodajem jednosoban stan Preko Morače, u neposrednoj blizini osnovne škole Maksim Gorki. Stan je površine 45 kvadrata i pozicioniran je na prvom spratu zgrade. Stan je u izvornom stanju i komplet je za renoviranje. Cijena stana je 125000e. Kontakt telefon 068044973.",
+      "_count": 1,
+      "_ai": {
+        "presuda": "vlasnik",
+        "razlog": "Lično ime i jednostavan stil pisanja bez agencijskih oznaka ukazuju na privatnog vlasnika."
+      }
+    }
+  },
+  "https://www.patuljak.me/oglas/prodaje-se-jednosoban-stan--82684": {
+    "ts": "2026-10-08T06:26:59.734566",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/prodaje-se-dvosoban-stan--82683": {
+    "ts": "2026-10-08T06:27:01.391190",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/zabjelo-trosoban-stan-210000e--82682": {
+    "ts": "2026-10-08T06:27:03.078460",
+    "status": "provjeri",
+    "lead": {
+      "ime": "Ivan",
+      "oglas_link": "https://www.patuljak.me/oglas/zabjelo-trosoban-stan-210000e--82682",
+      "lokacija": "Podgorica",
+      "cijena": "210000.00€",
+      "izvor": "Patuljak.me",
+      "telefoni": [
+        "38268044973"
+      ],
+      "_opis": "Prodajem trosoban namješten stan na Zabjelo, u Jerevanskoj ulici. Stan je površine 98 kvadrata i pozicioniran je na visokom prizemlju zgrade. Sama pozicija stana je idealna za eventualnu prenamjenu u poslovni prostor. Stan takođe posjeduje i pripadajući podrum od 10 kvadrata. Cijena stana je 210000e. Kontakt telefon 068044973.",
+      "_count": 1,
+      "_ai": {
+        "presuda": "vlasnik",
+        "razlog": "Korišćenje ličnog imena, direktan ton prodaje bez navođenja agencijskih šifri ili profesionalne terminologije."
+      }
+    }
+  },
+  "https://www.patuljak.me/oglas/prodaje-se-dvosoban-stan--82680": {
+    "ts": "2026-10-08T06:27:04.737207",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/izdavanje-dvosoban-stan-70-m2-central-point-podgor--82679": {
+    "ts": "2026-10-08T06:27:06.398252",
+    "status": "provjeri",
+    "lead": {
+      "ime": "Ivan",
+      "oglas_link": "https://www.patuljak.me/oglas/izdavanje-dvosoban-stan-70-m2-central-point-podgor--82679",
+      "lokacija": "Podgorica",
+      "cijena": "800.00€",
+      "izvor": "Patuljak.me",
+      "telefoni": [
+        "38268044973"
+      ],
+      "_opis": "Izdajem neuseljavan dvosoban polunamješten stan sa garažnim mjestom u Central Point. Stan je površine 70 kvadrata i pozicioniran je na četvrtom spratu zgrade. U stanu su kuhinja i kupatilo opremljeni BOSCH aparatima poslednje generacije. Stan posjeduje i ostavu koja se nalazi pored garažnog mjesta u podzemnoj garaži zgrade. Cijena zakupa na mjesečnom nivou je 800e, prva kirija i depozit u visini jedne kirije su obavezni. Kontakt telefon 068044973.",
+      "_count": 1,
+      "_ai": {
+        "presuda": "vlasnik",
+        "razlog": "Lično ime i direktan ton oglasa bez agencijskih oznaka ili šifri ukazuju na privatnog vlasnika."
+      }
+    }
+  },
+  "https://www.patuljak.me/oglas/konik-zasebna-kuca-450e--82676": {
+    "ts": "2026-10-08T06:27:08.041644",
+    "status": "provjeri",
+    "lead": {
+      "ime": "Ivan",
+      "oglas_link": "https://www.patuljak.me/oglas/konik-zasebna-kuca-450e--82676",
+      "lokacija": "Podgorica",
+      "cijena": "450.00€",
+      "izvor": "Patuljak.me",
+      "telefoni": [
+        "38268044973"
+      ],
+      "_opis": "Izdajem renoviranu prizemnu kuću na Konik, u neposrednoj blizini nekadašnjeg Haus majstora. Kuća je površine 90 kvadrata i posjeduje dnevni boravak sa trpezarijom i kuhinjom, hodnik, kupatilo, ostavu, dvije spavaće sobe i veliku natkrivenu terasu. Svaka prostorija u kući je klimatizovana. U dvorištu kuće je obezbjeđen parking za dva vozila. Cijena zakupa na mjesečnom nivou je 450e, prva kirija i depozit u visini jedne kirije su obavezni. Kontakt telefon 068044973.",
+      "_count": 1,
+      "_ai": {
+        "presuda": "vlasnik",
+        "razlog": "Oglas je napisan ličnim tonom uz korišćenje ličnog imena i bez ijednog elementa koji ukazuje na posredovanje agencije."
+      }
+    }
+  },
+  "https://www.patuljak.me/oglas/preko-morace-garsonjera-300e--82671": {
+    "ts": "2026-10-08T06:27:09.683886",
+    "status": "provjeri",
+    "lead": {
+      "ime": "Ivan",
+      "oglas_link": "https://www.patuljak.me/oglas/preko-morace-garsonjera-300e--82671",
+      "lokacija": "Podgorica",
+      "cijena": "300.00€",
+      "izvor": "Patuljak.me",
+      "telefoni": [
+        "38268044973"
+      ],
+      "_opis": "Izdajem namještenu garsonjeru Preko Morače, u ulici Svetozara Markovića. Garsonjera je površine 35 kvadrata i pozicionirana je na prvom spratu zgrade. Cijena zakupa na mjesečnom nivou je 300e, prva kirija i depozit u visini jedne kirije su obavezni. Kontakt telefon 068044973.",
+      "_count": 1,
+      "_ai": {
+        "presuda": "vlasnik",
+        "razlog": "Oglas je napisan jednostavnim i ličnim tonom bez ikakvih elemenata profesionalnog formatiranja ili agencijskih oznaka."
+      }
+    }
+  },
+  "https://www.patuljak.me/oglas/izdavanje-dvosoban-stan-66-m2-preko-morace-podgori--82669": {
+    "ts": "2026-10-08T06:27:11.323056",
+    "status": "provjeri",
+    "lead": {
+      "ime": "Ivan",
+      "oglas_link": "https://www.patuljak.me/oglas/izdavanje-dvosoban-stan-66-m2-preko-morace-podgori--82669",
+      "lokacija": "Podgorica",
+      "cijena": "480.00€",
+      "izvor": "Patuljak.me",
+      "telefoni": [
+        "38268044973"
+      ],
+      "_opis": "Izdajem dvosoban namješten stan Preko Morače, u ulici 13 Jula. Stan je površine 66 kvadrata i pozicioniran je na prvom spratu zgrade. Cijena zakupa na mjesečnom nivou je 480e, prva kirija i depozit u visini jedne kirije su obavezni. Kontakt telefon 068044973.",
+      "_count": 1,
+      "_ai": {
+        "presuda": "nesigurno",
+        "razlog": "Oglas je napisan u prvom licu uz lično ime, ali ne sadrži izričitu potvrdu vlasništva niti prepoznatljive elemente agencije."
+      }
+    }
+  },
+  "https://www.patuljak.me/oglas/dvosoban-stan-gornja-gorica-400e--82668": {
+    "ts": "2026-10-08T06:27:12.971839",
+    "status": "provjeri",
+    "lead": {
+      "ime": "Ivan",
+      "oglas_link": "https://www.patuljak.me/oglas/dvosoban-stan-gornja-gorica-400e--82668",
+      "lokacija": "Podgorica",
+      "cijena": "400.00€",
+      "izvor": "Patuljak.me",
+      "telefoni": [
+        "38268044973"
+      ],
+      "_opis": "Izdajem dvosoban namješten stan u Gornju Goricu, u neposrednoj blizini Vinskog podruma. Stan je površine 110 kvadrata i pozicioniran je na prvom spratu kuće. Ispred kuće je obezbjeđeno jedno parking mjesto. Cijena zakupa na mjesečnom nivou je 400e, prva kirija i depozit u visini jedne kirije su obavezni. Kontakt telefon 068044973.",
+      "_count": 1
+    }
   }
 }
