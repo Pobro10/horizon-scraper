@@ -6261,5 +6261,114 @@
     "ts": "2026-10-08T14:35:41.696246",
     "status": "posrednik",
     "lead": null
+  },
+  "https://www.patuljak.me/oglas/jednosoban-stan-39m2-blok-9--82801": {
+    "ts": "2026-10-08T20:41:47.554303",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/izdaje-se-nov-neuseljavan-dvosoban-stan-povrsine-5--82800": {
+    "ts": "2026-10-08T20:41:49.057070",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/izdavanjejednosoban-stanzagoric--82799": {
+    "ts": "2026-10-08T20:41:50.565712",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.pazar3.me/oglas/stan-na-izdavanje-400e/3284266": {
+    "ts": "2026-10-08T20:41:51.368863",
+    "status": "vlasnik",
+    "lead": {
+      "ime": "Milisav",
+      "oglas_link": "https://www.pazar3.me/oglas/stan-na-izdavanje-400e/3284266",
+      "lokacija": "Podgorica",
+      "cijena": "400 €",
+      "izvor": "Pazar3.me",
+      "telefoni": [
+        "38263445973"
+      ],
+      "_opis": "🏡 Izdaje se renoviran jednosoban stan – 48 m² Izdaje se renoviran jednosoban stan površine 48 m², idealan za porodice i one koji traže udoban i funkcionalan prostor za život. Stan se nalazi na samo 5 minuta od City Kvarta i shopping centra, u mirnom i veoma dobro povezanom delu grada. U neposrednoj blizini nalaze se vrtići, osnovne škole, pošta i autobuska stajališta, što ovu lokaciju čini posebno pogodnom za porodični život. Cena zakupa: 400 € mesečno, a u cenu je uključeno: 🚗 Parking mesto 🔑 Jedan depozit Stan je slobodan za useljenje. 📍 Odlična lokacija 🏠 48 m² 🛏️ Jednosoban ✨ Renoviran 🚗 Parking uključen 👨‍👩‍👧 Idealan za porodice 📅 Slobodan za useljenje",
+      "_ai": {
+        "presuda": "nesigurno",
+        "razlog": "Ime oglašivača je lično, ali je tekst oglasa profesionalno formatiran bez jasnih pokazatelja da li je u pitanju vlasnik ili posrednik."
+      }
+    }
+  },
+  "https://www.patuljak.me/oglas/izdavanjejednosoban-stanzabjelo--82796": {
+    "ts": "2026-10-08T20:41:52.062017",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.pazar3.me/oglas/izdavanje-dvosoban-stan-74m-city-kvart-podgorica/3284188": {
+    "ts": "2026-10-08T20:41:53.136475",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/izdaje-se-dvosoban-stan-povrsine-70m-u-master-kvar--82795": {
+    "ts": "2026-10-08T20:41:53.567597",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/jednosoban-stan-40m2-zabjelo--82794": {
+    "ts": "2026-10-08T20:41:55.058878",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/izdaje-se-dvosoban-stan-povrsine-68m-u-city-kvartu--82792": {
+    "ts": "2026-10-08T20:41:56.557966",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/izdaje-se-komforan-dvosoban-stan-povrsine-78m-u-na--82787": {
+    "ts": "2026-10-08T20:41:58.063501",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.oglasi.me/nekretnine/stanovi/izdajem-stan-gornja-gorica-og84105471me": {
+    "ts": "2026-10-08T20:41:58.503480",
+    "status": "vlasnik",
+    "lead": {
+      "ime": "Miki",
+      "oglas_link": "https://www.oglasi.me/nekretnine/stanovi/izdajem-stan-gornja-gorica-og84105471me",
+      "lokacija": "Podgorica",
+      "cijena": "400.00 € mjesec",
+      "izvor": "Oglasi.me",
+      "telefoni": [
+        "38263445973"
+      ],
+      "_opis": "Opis oglasa Izdaje se renoviran jednosoban stan – 48 m²\nIzdaje se renoviran jednosoban stan površine 48 m², idealan za porodice i one koji traže udoban i funkcionalan prostor za život.\n\nStan se nalazi na samo 5 minuta od City Kvarta i shopping centra, u mirnom i veoma dobro povezanom delu grada. U neposrednoj blizini nalaze se vrtići, osnovne škole, pošta i autobuska stajališta, što ovu lokaciju čini posebno pogodnom za porodični život.\n\nCena zakupa: 400 € mesečno, a u cenu je uključeno:\n\n Parking mesto\n Jedan depozit\nStan je slobodan za useljenje.\n\n Odlična lokacija\n 48 m²\n Jednosoban\n Renoviran\n Parking uključen\n Idealan za porodice\n Slobodan za useljenje",
+      "_uid": null,
+      "_ai": {
+        "presuda": "nesigurno",
+        "razlog": "Oglas ima profesionalnu strukturu, ali neformalno ime oglašivača i odsustvo jasnih agencijskih ili vlasničkih oznaka čine izvor nejasnim."
+      }
+    }
+  },
+  "https://www.patuljak.me/oglas/poslovni-prostor-120m2-centar-podgorica--82785": {
+    "ts": "2026-10-08T20:41:59.552155",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/izdavanjejednosoban-stan-city-key--82782": {
+    "ts": "2026-10-08T20:42:01.072433",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/izdaje-se-nov-neuseljavan-i-luksuzno-opremljen-jed--82777": {
+    "ts": "2026-10-08T20:42:02.579739",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/renovirana-namjestena-garsonjera-ulmoskovska--82776": {
+    "ts": "2026-10-08T20:42:04.078802",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/izdaje-se-luksuzno-opremljen-jednosoban-stan-povrs--82774": {
+    "ts": "2026-10-08T20:42:05.579003",
+    "status": "posrednik",
+    "lead": null
   }
 }
