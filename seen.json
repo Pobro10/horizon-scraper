@@ -6673,5 +6673,20 @@
     "ts": "2026-10-09T01:14:36.726989",
     "status": "drugi_grad",
     "lead": null
+  },
+  "https://www.patuljak.me/oglas/izdaje-se-jednosoban-stan-47m2-city-kvart-id-p-8--82892": {
+    "ts": "2026-10-09T06:29:33.581934",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/jednosoban-namesten-stan-u-budvi-izdavanje-na-duz--82891": {
+    "ts": "2026-10-09T06:29:35.072238",
+    "status": "drugi_grad",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/luksuzno-opremljen-dvosoban-stan-sa-panoramskim-po--82890": {
+    "ts": "2026-10-09T06:29:36.595270",
+    "status": "drugi_grad",
+    "lead": null
   }
 }
