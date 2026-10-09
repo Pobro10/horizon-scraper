@@ -6688,5 +6688,40 @@
     "ts": "2026-10-09T06:29:36.595270",
     "status": "drugi_grad",
     "lead": null
+  },
+  "https://www.patuljak.me/oglas/pizdaje-se�strongdvosoban-namjesten-stanstro--82893": {
+    "ts": "2026-10-09T07:24:22.503000",
+    "status": "drugi_grad",
+    "lead": null
+  },
+  "https://www.oglasi.me/nekretnine/stanovi/stambeni-kontenjer-og84107515me": {
+    "ts": "2026-10-09T07:24:39.742454",
+    "status": "vlasnik",
+    "lead": {
+      "ime": "xxx",
+      "oglas_link": "https://www.oglasi.me/nekretnine/stanovi/stambeni-kontenjer-og84107515me",
+      "lokacija": "Podgorica",
+      "cijena": "4800€",
+      "izvor": "Oglasi.me",
+      "telefoni": [
+        "38269997012"
+      ],
+      "_opis": "Opis oglasa Na prodjau stambeni kontenjer \n6x2.414,4m2\n3x2.4 je jedna prostorija \n3x2.4 dodju dva wc i jedno malo \nStruja voda sve razvedeno",
+      "_uid": null,
+      "_ai": {
+        "presuda": "vlasnik",
+        "razlog": "Neformalan tekst oglasa sa štamparskim greškama i bez ikakvih elemenata profesionalnog oglašavanja."
+      }
+    }
+  },
+  "https://www.oglasi.me/nekretnine/stanovi/jednosoban-stan-46m2--stari-aerodrom-og84107850me": {
+    "ts": "2026-10-09T07:24:39.742648",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.oglasi.me/nekretnine/stanovi/jednosoban-stan-55m2--centar-podgorica-og84108134me": {
+    "ts": "2026-10-09T07:24:39.742858",
+    "status": "posrednik",
+    "lead": null
   }
 }

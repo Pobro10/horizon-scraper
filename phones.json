@@ -543,7 +543,9 @@
       "https://www.oglasi.me/nekretnine/poslovni-prostori/poslovni-prostor-120m2--centar-podgorica-og84101459me": "2026-10-08T14:35:40.073955",
       "https://www.oglasi.me/nekretnine/stanovi/jednosoban-stan-40m2--zabjelo-og84102028me": "2026-10-08T14:35:40.074348",
       "https://www.oglasi.me/nekretnine/kuce/kuca-145m2--spuz-danilovgrad-og84100689me": "2026-10-08T14:35:40.074532",
-      "https://www.oglasi.me/nekretnine/stanovi/garsonjera-26m2--zabjelo-og84100184me": "2026-10-08T14:35:40.074987"
+      "https://www.oglasi.me/nekretnine/stanovi/garsonjera-26m2--zabjelo-og84100184me": "2026-10-08T14:35:40.074987",
+      "https://www.oglasi.me/nekretnine/stanovi/jednosoban-stan-46m2--stari-aerodrom-og84107850me": "2026-10-09T07:24:39.742632",
+      "https://www.oglasi.me/nekretnine/stanovi/jednosoban-stan-55m2--centar-podgorica-og84108134me": "2026-10-09T07:24:39.742845"
     },
     "imena": [
       "Kvart Nekretnine"
@@ -1307,6 +1309,14 @@
     },
     "imena": [
       "Aleksandra"
+    ]
+  },
+  "38269997012": {
+    "urls": {
+      "https://www.oglasi.me/nekretnine/stanovi/stambeni-kontenjer-og84107515me": "2026-10-09T07:24:39.742414"
+    },
+    "imena": [
+      "xxx"
     ]
   }
 }
