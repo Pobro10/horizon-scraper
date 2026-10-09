@@ -113,6 +113,11 @@ SELECTOR_FAIL_RATIO = 0.20
 
 CUTOFF = datetime.now() - timedelta(hours=48)
 
+# Osigurač za preskočene runove: GitHub zna danima ne izvršiti raspored
+# (8.10.2026: 2 od 24 termina). Pregledan vlasnik koji nije poslat, a sa
+# indexa je već ispao (stariji od 48 h), ide u prvi sljedeći mejl.
+PENDING_MAX_HOURS = 72
+
 # ──────────────────────────────────────────────────────────────
 # LOGGING
 # ──────────────────────────────────────────────────────────────
@@ -346,6 +351,33 @@ def seen_record(url: str, status: str, lead: dict | None = None) -> None:
         if _seen_dirty >= 50:
             _seen_dirty = 0
             _save_seen_locked()
+
+
+def dopuni_iz_kesa(leads: list[dict], review: list[dict], sent: dict[str, str]) -> int:
+    """Doda u mejl pregledane vlasnike/provjere iz keša koji nisu poslati i
+    nisu već u listama (ispali sa indexa jer run dugo nije bio). Vraća broj."""
+    u_mejlu = {l["oglas_link"] for l in leads + review}
+    granica = (datetime.now() - timedelta(hours=PENDING_MAX_HOURS)).isoformat()
+    dodato  = 0
+    with _SEEN_LOCK:
+        stavke = list(SEEN.items())
+    for url, e in stavke:
+        lead = e.get("lead")
+        if (not lead or url in u_mejlu or url in sent
+                or e.get("status") not in ("vlasnik", "provjeri")
+                or e.get("ts", "") < granica):
+            continue
+        lead = dict(lead)
+        for k in ("_count", "_uid", "_prodavnica", "_fresh"):
+            lead.pop(k, None)
+        if e["status"] == "provjeri":
+            lead.setdefault("_razlog", "ranije označen za provjeru")
+            review.append(lead)
+        else:
+            leads.append(lead)
+        u_mejlu.add(url)
+        dodato += 1
+    return dodato
 
 
 def seen_set_ai(url: str, ai: dict) -> None:
@@ -1899,6 +1931,10 @@ def main() -> None:
     skipped = pre_len - len(unique_leads) - len(unique_review)
     if skipped:
         log.info("Memorija: preskočeno %d već poslatih oglasa.", skipped)
+
+    dodato = dopuni_iz_kesa(unique_leads, unique_review, sent)
+    if dodato:
+        log.info("Osigurač: %d pregledanih a neposlatih oglasa iz keša dodato u mejl.", dodato)
 
     # ── AI čitanje opisa: samo oglasi koji stvarno idu u mejl ──────
     ai_classify(unique_leads + unique_review)
