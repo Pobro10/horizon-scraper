@@ -7733,5 +7733,126 @@
     "ts": "2026-10-10T07:06:25.310545",
     "status": "posrednik",
     "lead": null
+  },
+  "https://www.patuljak.me/oglas/jednosoban-stan-centar-54m2--83055": {
+    "ts": "2026-10-10T13:41:03.405791",
+    "status": "drugi_grad",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/jednosoban-stan-zagoric-48m2--83054": {
+    "ts": "2026-10-10T13:41:05.056469",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/garsonjera-budva-33m2--83053": {
+    "ts": "2026-10-10T13:41:06.700732",
+    "status": "drugi_grad",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/tivat-porto-montenegro-dvosoban-stan-175-m--83051": {
+    "ts": "2026-10-10T13:41:08.367649",
+    "status": "drugi_grad",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/tivat-porto-montenegro-dvosoban-stan-140-m--83050": {
+    "ts": "2026-10-10T13:41:10.015115",
+    "status": "drugi_grad",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/podgorica-central-point-jednosoban-stan-50-m--83049": {
+    "ts": "2026-10-10T13:41:11.648614",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/poslovni-prostor-24m2-centar-podgorica--83048": {
+    "ts": "2026-10-10T13:41:13.272075",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/jednosoban-stan-45m2-city-kvart-podgorica--83047": {
+    "ts": "2026-10-10T13:41:14.930440",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/jednosoban-stan-55m2-garaza-vezirov-most-podgor--83046": {
+    "ts": "2026-10-10T13:41:16.578464",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/jednosoban-stan-45m2-stari-aerodrom-podgorica--83045": {
+    "ts": "2026-10-10T13:41:18.290665",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/prodaja-garsonjera-podgorica-tuski-put-28m2--83044": {
+    "ts": "2026-10-10T13:41:19.929014",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.oglasi.me/nekretnine/stanovi/povoljno-prodajem-stan-na-dobroj-lokaciji-u-bloku-v-og84120835me": {
+    "ts": "2026-10-10T13:41:21.464510",
+    "status": "vlasnik",
+    "lead": {
+      "ime": "Nebojsa",
+      "oglas_link": "https://www.oglasi.me/nekretnine/stanovi/povoljno-prodajem-stan-na-dobroj-lokaciji-u-bloku-v-og84120835me",
+      "lokacija": "Podgorica",
+      "cijena": "130000€",
+      "izvor": "Oglasi.me",
+      "telefoni": [
+        "38267240986"
+      ],
+      "_opis": "",
+      "_uid": null
+    }
+  },
+  "https://www.oglasi.me/nekretnine/stanovi/prodaje-se-renovirana--opremljena-garsonjera-24m2--blizina-gintasa-i-autobuske-stanice-og84122024me": {
+    "ts": "2026-10-10T13:41:21.464633",
+    "status": "provjeri",
+    "lead": {
+      "ime": "Bane",
+      "oglas_link": "https://www.oglasi.me/nekretnine/stanovi/prodaje-se-renovirana--opremljena-garsonjera-24m2--blizina-gintasa-i-autobuske-stanice-og84122024me",
+      "lokacija": "Podgorica",
+      "cijena": "81000€",
+      "izvor": "Oglasi.me",
+      "telefoni": [
+        "38267070801"
+      ],
+      "_opis": "Opis oglasa Prodaje se garsonjera, 24m2. Potpuno renovirana i pažljivo opremljena.\n \nBez agencija.\n\nUlica Mitra Bakića, pozicija između Gintaša i Autobuske stanice.\nVisoko prizemlje.\nOdvojena kuhinja sa ugradnim elementima.\nBalkon, južna strana, video nadzor.\nBez dodatnih ulaganja.\n\nCijena: 81.000 €.\n\nKontakt: 067 070 801 (Viber, WhatsApp)",
+      "_uid": null,
+      "_ai": {
+        "presuda": "vlasnik",
+        "razlog": "Oglašivač je izričito naveo da prodaje bez agencija i koristi lično ime."
+      }
+    }
+  },
+  "https://www.oglasi.me/nekretnine/stanovi/prodajem-jednosoban-stan-u-central-pointu-og84116589me": {
+    "ts": "2026-10-10T13:41:21.464794",
+    "status": "vlasnik",
+    "lead": {
+      "ime": "Zdravko",
+      "oglas_link": "https://www.oglasi.me/nekretnine/stanovi/prodajem-jednosoban-stan-u-central-pointu-og84116589me",
+      "lokacija": "Podgorica",
+      "cijena": "176400€",
+      "izvor": "Oglasi.me",
+      "telefoni": [
+        "38267201766"
+      ],
+      "_opis": "Opis oglasa Stan namjesten i vrlo malo koristen. Navedena cijena je bez garaze. \nCijena garaze je jos dodatnih 15000€.",
+      "_uid": null,
+      "_ai": {
+        "presuda": "vlasnik",
+        "razlog": "Lično ime i kratak, neformalan tekst bez agencijskih elemenata ukazuju na privatnog vlasnika."
+      }
+    }
+  },
+  "https://www.patuljak.me/oglas/izdavanje-dvosoban-stan-podgorica-centar-64m2--83043": {
+    "ts": "2026-10-10T13:41:21.575922",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/prodaja-dvosoban-stan-podgorica-centar-68m2--83042": {
+    "ts": "2026-10-10T13:41:23.215254",
+    "status": "posrednik",
+    "lead": null
   }
 }
