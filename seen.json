@@ -7689,7 +7689,11 @@
         "38267564665"
       ],
       "_opis": "Tražim prostor/garažu, oko 20m2 za radionicu. Prednost Stari Aerodrom, Konik, Zabjelo, Zlatica, Murtovina Kontakt telefon 068 819 675; 067 564 665",
-      "_count": 1
+      "_count": 1,
+      "_ai": {
+        "presuda": "vlasnik",
+        "razlog": "Oglas je napisan u prvom licu sa ličnim imenom i specifičnim zahtjevom bez ikakvih elemenata agencijskog posredovanja."
+      }
     }
   },
   "https://www.patuljak.me/oglas/izdajem-namjestenu-garsonjeru-26-m2--82951": {
@@ -7703,7 +7707,11 @@
       "izvor": "Patuljak.me",
       "telefoni": [],
       "_opis": "У potpunosti opremljena garsonjera. Dnevna soba i ujedno spavaca. Kuhinja, hodnik i kupatilo sa prozorom. Terasa je siroka koliko i dnevna.  Sprat V. Miran kraj. Parking javni. Autobuska na 3 min i zeljeznička.",
-      "_count": 1
+      "_count": 1,
+      "_ai": {
+        "presuda": "vlasnik",
+        "razlog": "Lično ime oglašivača i jednostavan, neformalan opis bez agencijskih elemenata ukazuju na privatnog vlasnika."
+      }
     }
   },
   "https://www.patuljak.me/oglas/prodaju-se-stanovi-u-izgradnji-na-zabjelu-u-novom--82950": {
@@ -7718,6 +7726,11 @@
   },
   "https://www.patuljak.me/oglas/poslovni-prostor-13-jula-50m2--82912": {
     "ts": "2026-10-10T00:51:55.192969",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/izdavanje-jednosoban-stan-podgorica-centar-55m2--83041": {
+    "ts": "2026-10-10T07:06:25.310545",
     "status": "posrednik",
     "lead": null
   }
