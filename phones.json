@@ -161,7 +161,9 @@
       "https://www.patuljak.me/oglas/izdavanjejednosoban-stan-city-key--82782": "2026-10-08T20:42:01.072414",
       "https://www.patuljak.me/oglas/izdavanjedvosoban-stanzagoric--82811": "2026-10-09T01:14:23.821974",
       "https://www.patuljak.me/oglas/prodaja-jednosoban-stan-stari-aerodrom--82956": "2026-10-10T00:51:44.551438",
-      "https://www.patuljak.me/oglas/izdavanjejednosoban-stan-new-city--82955": "2026-10-10T00:51:46.120521"
+      "https://www.patuljak.me/oglas/izdavanjejednosoban-stan-new-city--82955": "2026-10-10T00:51:46.120521",
+      "https://www.patuljak.me/oglas/izdavanjeposlovni-prostor-stari-aerodrom--83077": "2026-10-10T18:35:22.523369",
+      "https://www.patuljak.me/oglas/vila-city-kvart--83076": "2026-10-10T18:35:24.107462"
     },
     "imena": [
       "Luxury Property Montenegro"
@@ -224,7 +226,8 @@
       "https://www.patuljak.me/oglas/stan-59-m-na-izdavanje-preko-morace-podgoric--82604": "2026-10-07T15:48:17.245680",
       "https://www.patuljak.me/oglas/poslovni-prostor-430m2-central-point-prodaja--82757": "2026-10-08T14:35:11.824793",
       "https://www.patuljak.me/oglas/kuca-55m2-zagoric-izdavanje--82756": "2026-10-08T14:35:13.394370",
-      "https://www.patuljak.me/oglas/jednosoban-46m2-blok-9-izdavanje--82911": "2026-10-09T15:18:39.094100"
+      "https://www.patuljak.me/oglas/jednosoban-46m2-blok-9-izdavanje--82911": "2026-10-09T15:18:39.094100",
+      "https://www.patuljak.me/oglas/jednosoban-45m2-city-key-izdavanje--83064": "2026-10-10T18:35:28.914108"
     },
     "imena": [
       "Concord Nekretnine"
@@ -233,7 +236,8 @@
   "38268321550": {
     "urls": {
       "https://www.patuljak.me/oglas/jednosoban-stan-51m2-zabjelo-izdavanje--82075": "2026-10-04T08:30:29.329190",
-      "https://www.patuljak.me/oglas/stan-43-m-na-prodaju-zagoric-podgorica--82601": "2026-10-07T11:09:28.526049"
+      "https://www.patuljak.me/oglas/stan-43-m-na-prodaju-zagoric-podgorica--82601": "2026-10-07T11:09:28.526049",
+      "https://www.patuljak.me/oglas/jednosoban-stan-40m2-central-point-izdavanje--83065": "2026-10-10T18:35:27.304863"
     },
     "imena": [
       "Concord Nekretnine"
@@ -266,7 +270,11 @@
       "https://www.patuljak.me/oglas/dvosoban-stan-80m2-preko-morace--82600": "2026-10-07T11:09:30.079100",
       "https://www.patuljak.me/oglas/plac-4364m2-donji-kokoti--82599": "2026-10-07T11:09:31.607619",
       "https://www.patuljak.me/oglas/dvosoban-stan-60m2-centar--82597": "2026-10-07T11:09:34.743836",
-      "https://www.patuljak.me/oglas/plac-4500m2-ljajkovici--82910": "2026-10-09T15:18:40.568228"
+      "https://www.patuljak.me/oglas/plac-4500m2-ljajkovici--82910": "2026-10-09T15:18:40.568228",
+      "https://www.patuljak.me/oglas/jednosoban-stan-49m2-green-level--83063": "2026-10-10T18:35:30.510139",
+      "https://www.patuljak.me/oglas/garsonjera-33m2-green-level--83062": "2026-10-10T18:35:32.095636",
+      "https://www.patuljak.me/oglas/jednosoban-stan-36m2-green-level--83061": "2026-10-10T18:35:33.683400",
+      "https://www.patuljak.me/oglas/jednosoban-stan-49m2-green-level--83060": "2026-10-10T18:35:35.293503"
     },
     "imena": [
       "Dom home Real Estate"
@@ -456,7 +464,9 @@
       "https://www.patuljak.me/oglas/izdavanjejednosoban-stan-city-kvart--82769": "2026-10-08T14:34:59.235205",
       "https://www.patuljak.me/oglas/izdavanjejednosoban-stan-city-key--82782": "2026-10-08T20:42:01.072422",
       "https://www.patuljak.me/oglas/prodaja-jednosoban-stan-stari-aerodrom--82956": "2026-10-10T00:51:44.551447",
-      "https://www.patuljak.me/oglas/izdavanjejednosoban-stan-new-city--82955": "2026-10-10T00:51:46.120531"
+      "https://www.patuljak.me/oglas/izdavanjejednosoban-stan-new-city--82955": "2026-10-10T00:51:46.120531",
+      "https://www.patuljak.me/oglas/izdavanjeposlovni-prostor-stari-aerodrom--83077": "2026-10-10T18:35:22.523379",
+      "https://www.patuljak.me/oglas/vila-city-kvart--83076": "2026-10-10T18:35:24.107472"
     },
     "imena": [
       "Luxury Property Montenegro"
@@ -1501,6 +1511,14 @@
     },
     "imena": [
       "Zdravko"
+    ]
+  },
+  "38267211010": {
+    "urls": {
+      "https://www.oglasi.me/nekretnine/stanovi/prodajem-dvosoban-stan-u-podgorici--u-bloku-9--luksuzno-opremljen--sa-garaznim-mjestom--og64165646me": "2026-10-10T18:35:36.482420"
+    },
+    "imena": [
+      "Dea"
     ]
   }
 }
