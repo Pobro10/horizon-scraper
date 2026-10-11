@@ -8071,5 +8071,69 @@
     "ts": "2026-10-11T01:53:33.460456",
     "status": "drugi_grad",
     "lead": null
+  },
+  "https://www.patuljak.me/oglas/povoljno-prodajem-72m2-stan-u-bloku-v--83122": {
+    "ts": "2026-10-11T08:49:49.492163",
+    "status": "vlasnik",
+    "lead": {
+      "ime": "Nebojsa",
+      "oglas_link": "https://www.patuljak.me/oglas/povoljno-prodajem-72m2-stan-u-bloku-v--83122",
+      "lokacija": "Podgorica",
+      "cijena": "130000.00€",
+      "izvor": "Patuljak.me",
+      "telefoni": [],
+      "_opis": "",
+      "_count": 1
+    }
+  },
+  "https://www.patuljak.me/oglas/prodaje-se-jednosoban-stan--83121": {
+    "ts": "2026-10-11T08:49:51.068209",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/prodaje-se-jednosoban-stan--83119": {
+    "ts": "2026-10-11T08:49:52.625087",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.oglasi.me/nekretnine/garaze-parking/garaza-u-zgradi-gradnja-promet--ul--ilije-plamenca--zabjelo-og83637115me": {
+    "ts": "2026-10-11T08:50:31.988613",
+    "status": "vlasnik",
+    "lead": {
+      "ime": "Deniz",
+      "oglas_link": "https://www.oglasi.me/nekretnine/garaze-parking/garaza-u-zgradi-gradnja-promet--ul--ilije-plamenca--zabjelo-og83637115me",
+      "lokacija": "Podgorica",
+      "cijena": "15000€",
+      "izvor": "Oglasi.me",
+      "telefoni": [
+        "38268073877"
+      ],
+      "_opis": "Opis oglasa Garaza u zgradi pored kafica Dijagonala",
+      "_uid": null,
+      "_ai": {
+        "presuda": "nesigurno",
+        "razlog": "Tekst oglasa je previše kratak i ne sadrži jasne indikatore niti za vlasnika niti za agenciju."
+      }
+    }
+  },
+  "https://www.oglasi.me/nekretnine/stanovi/izdaje-se-jednosoban-stan--zgrada-linea-og84127084me": {
+    "ts": "2026-10-11T08:50:31.988680",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.oglasi.me/nekretnine/garaze-parking/garaza--zgrada-linea--podgorica-og84126512me": {
+    "ts": "2026-10-11T08:50:31.988837",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.oglasi.me/nekretnine/stanovi/prodaja---jednosoban-stan-50-m2--centar--zgrada-nikic--kings-park-hotel--og84126350me": {
+    "ts": "2026-10-11T08:50:31.989005",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.oglasi.me/nekretnine/stanovi/prodaja---jednosoban-stan-50-m----zabjelo--zgrada-amfora-og84126061me": {
+    "ts": "2026-10-11T08:50:31.989158",
+    "status": "posrednik",
+    "lead": null
   }
 }

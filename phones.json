@@ -84,7 +84,9 @@
       "https://www.patuljak.me/oglas/prodaje-se-jednosoban-stan--83114": "2026-10-11T01:53:14.134410",
       "https://www.patuljak.me/oglas/prodaje-se-dvosoban-stan--83113": "2026-10-11T01:53:15.754201",
       "https://www.patuljak.me/oglas/prodaje-se-jednosoban-stan--83104": "2026-10-11T01:53:20.595839",
-      "https://www.patuljak.me/oglas/prodaje-se-jednosoban-stan--83103": "2026-10-11T01:53:22.203839"
+      "https://www.patuljak.me/oglas/prodaje-se-jednosoban-stan--83103": "2026-10-11T01:53:22.203839",
+      "https://www.patuljak.me/oglas/prodaje-se-jednosoban-stan--83121": "2026-10-11T08:49:51.068192",
+      "https://www.patuljak.me/oglas/prodaje-se-jednosoban-stan--83119": "2026-10-11T08:49:52.625072"
     },
     "imena": [
       "Tvoj agent"
@@ -566,7 +568,8 @@
       "https://www.oglasi.me/nekretnine/stanovi/izdaje-se-jednosoban-stan--podgorica-og84101695me": "2026-10-08T14:35:40.074256",
       "https://www.oglasi.me/nekretnine/stanovi/izdaje-se-dvosoban-stan--zagoric-og84113652me": "2026-10-09T15:19:25.262951",
       "https://www.oglasi.me/nekretnine/stanovi/izdaje-se-jednosoban-stan--cental-point-og84112088me": "2026-10-09T15:19:25.263329",
-      "https://www.oglasi.me/nekretnine/stanovi/prodaje-se-jednosoban-stan--podgorica-og84111577me": "2026-10-09T15:19:25.265465"
+      "https://www.oglasi.me/nekretnine/stanovi/prodaje-se-jednosoban-stan--podgorica-og84111577me": "2026-10-09T15:19:25.265465",
+      "https://www.oglasi.me/nekretnine/stanovi/izdaje-se-jednosoban-stan--zgrada-linea-og84127084me": "2026-10-11T08:50:31.988665"
     },
     "imena": [
       "Living nekretnine"
@@ -1547,6 +1550,34 @@
     },
     "imena": [
       "Nebojša"
+    ]
+  },
+  "38268073877": {
+    "urls": {
+      "https://www.oglasi.me/nekretnine/garaze-parking/garaza-u-zgradi-gradnja-promet--ul--ilije-plamenca--zabjelo-og83637115me": "2026-10-11T08:50:31.988591"
+    },
+    "imena": [
+      "Deniz"
+    ]
+  },
+  "38267749723": {
+    "urls": {
+      "https://www.oglasi.me/nekretnine/garaze-parking/garaza--zgrada-linea--podgorica-og84126512me": "2026-10-11T08:50:31.988804",
+      "https://www.oglasi.me/nekretnine/stanovi/prodaja---jednosoban-stan-50-m2--centar--zgrada-nikic--kings-park-hotel--og84126350me": "2026-10-11T08:50:31.988985",
+      "https://www.oglasi.me/nekretnine/stanovi/prodaja---jednosoban-stan-50-m----zabjelo--zgrada-amfora-og84126061me": "2026-10-11T08:50:31.989141"
+    },
+    "imena": [
+      "zoran"
+    ]
+  },
+  "38267444900": {
+    "urls": {
+      "https://www.oglasi.me/nekretnine/garaze-parking/garaza--zgrada-linea--podgorica-og84126512me": "2026-10-11T08:50:31.988816",
+      "https://www.oglasi.me/nekretnine/stanovi/prodaja---jednosoban-stan-50-m2--centar--zgrada-nikic--kings-park-hotel--og84126350me": "2026-10-11T08:50:31.988991",
+      "https://www.oglasi.me/nekretnine/stanovi/prodaja---jednosoban-stan-50-m----zabjelo--zgrada-amfora-og84126061me": "2026-10-11T08:50:31.989145"
+    },
+    "imena": [
+      "zoran"
     ]
   }
 }
