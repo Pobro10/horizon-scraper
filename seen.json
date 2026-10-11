@@ -8305,5 +8305,10 @@
         "razlog": "Oglas je napisan u prvom licu, sadrži lično ime oglašivača i eksplicitnu potvrdu o vlasništvu 1/1 bez agencijskih obilježja."
       }
     }
+  },
+  "https://www.patuljak.me/oglas/dvosoban-stan-radanovici-64m2--83163": {
+    "ts": "2026-10-11T23:43:07.440633",
+    "status": "drugi_grad",
+    "lead": null
   }
 }
