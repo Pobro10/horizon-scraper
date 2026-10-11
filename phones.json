@@ -86,7 +86,10 @@
       "https://www.patuljak.me/oglas/prodaje-se-jednosoban-stan--83104": "2026-10-11T01:53:20.595839",
       "https://www.patuljak.me/oglas/prodaje-se-jednosoban-stan--83103": "2026-10-11T01:53:22.203839",
       "https://www.patuljak.me/oglas/prodaje-se-jednosoban-stan--83121": "2026-10-11T08:49:51.068192",
-      "https://www.patuljak.me/oglas/prodaje-se-jednosoban-stan--83119": "2026-10-11T08:49:52.625072"
+      "https://www.patuljak.me/oglas/prodaje-se-jednosoban-stan--83119": "2026-10-11T08:49:52.625072",
+      "https://www.patuljak.me/oglas/prodaje-se-jednosoban-stan--83141": "2026-10-11T15:40:38.595566",
+      "https://www.patuljak.me/oglas/prodaje-se-dvosoban-stan--83124": "2026-10-11T15:40:44.901123",
+      "https://www.patuljak.me/oglas/prodaje-se-jednosoban-stan--83123": "2026-10-11T15:40:46.466887"
     },
     "imena": [
       "Tvoj agent"
@@ -408,7 +411,8 @@
       "https://www.patuljak.me/oglas/prodaja-trosoban-stan-91m2-podgorica-1-maj--82876": "2026-10-09T01:13:51.415036",
       "https://www.patuljak.me/oglas/prodaja-trosoban-stan-93m2-podgorica-city-kv--82874": "2026-10-09T01:13:54.637777",
       "https://www.patuljak.me/oglas/prodaja-stan-33m-podgorica-zagoric--82873": "2026-10-09T01:13:56.305151",
-      "https://www.patuljak.me/oglas/prodaja-garsonjera-30m2-podgorica-preko-mora--83012": "2026-10-10T00:51:12.399175"
+      "https://www.patuljak.me/oglas/prodaja-garsonjera-30m2-podgorica-preko-mora--83012": "2026-10-10T00:51:12.399175",
+      "https://www.patuljak.me/oglas/prodaja-jednosoban-stan-43m2-podgorica-zabje--83152": "2026-10-11T15:40:37.004489"
     },
     "imena": [
       "Nemanja Krstović"
@@ -1578,6 +1582,46 @@
     },
     "imena": [
       "zoran"
+    ]
+  },
+  "38267533595": {
+    "urls": {
+      "https://www.patuljak.me/oglas/izdajem-stan-na-zabjelu--83137": "2026-10-11T15:40:40.174040"
+    },
+    "imena": [
+      "Gligor"
+    ]
+  },
+  "38268670692": {
+    "urls": {
+      "https://www.oglasi.me/nekretnine/stanovi/izdajem-dvosoban-stan--og84131198me": "2026-10-11T15:40:44.754919"
+    },
+    "imena": [
+      "Ruske"
+    ]
+  },
+  "38267617018": {
+    "urls": {
+      "https://www.oglasi.me/nekretnine/stanovi/izdaje-se-jednosoban-stan-uzi-dio-podgorice-og84128114me": "2026-10-11T15:40:44.754981"
+    },
+    "imena": [
+      "Rijad"
+    ]
+  },
+  "38267131244": {
+    "urls": {
+      "https://www.oglasi.me/nekretnine/stanovi/prodaje-se-jednosoban-namjesten-stan-povrsine-49m---smjesten-u-blizini-big-fashion-a--preko-puta-eko-pumpe--cetinjski-put--og84127666me": "2026-10-11T15:40:44.755023"
+    },
+    "imena": [
+      "DIEM NEKRETNINE"
+    ]
+  },
+  "38267033399": {
+    "urls": {
+      "https://www.oglasi.me/nekretnine/stanovi/prodaje-se-jednosoban-namjesten-stan-povrsine-49m---smjesten-u-blizini-big-fashion-a--preko-puta-eko-pumpe--cetinjski-put--og84127666me": "2026-10-11T15:40:44.755026"
+    },
+    "imena": [
+      "DIEM NEKRETNINE"
     ]
   }
 }
