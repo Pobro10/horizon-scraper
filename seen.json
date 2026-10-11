@@ -7943,5 +7943,133 @@
     "ts": "2026-10-10T18:35:40.064854",
     "status": "drugi_grad",
     "lead": null
+  },
+  "https://www.patuljak.me/oglas/prodaje-se-dvosoban-stan--83116": {
+    "ts": "2026-10-11T01:53:12.498369",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/prodaje-se-jednosoban-stan--83114": {
+    "ts": "2026-10-11T01:53:14.134433",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/prodaje-se-dvosoban-stan--83113": {
+    "ts": "2026-10-11T01:53:15.754223",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/prodaja-trosobnog-stana-zabjelo--83107": {
+    "ts": "2026-10-11T01:53:17.370955",
+    "status": "vlasnik",
+    "lead": {
+      "ime": "Milica",
+      "oglas_link": "https://www.patuljak.me/oglas/prodaja-trosobnog-stana-zabjelo--83107",
+      "lokacija": "Podgorica",
+      "cijena": "210000.00€",
+      "izvor": "Patuljak.me",
+      "telefoni": [
+        "38267512882"
+      ],
+      "_opis": "Prodaje se trosoban stan površine 98 m² na visokom prizemlju , sa pripadajućom podrumskom ostavom od 10 m² . Stan se nalazi na odličnoj lokaciji na Zabjelu, u neposrednoj blizini osnovne škole, vrtića i marketa. Zbog svoje pozicije, prostranosti i rasporeda, nekretnina je idealna za komforan porodični život, ali i veoma pogodna za prenamjenu u poslovni prostor (kancelarije, ordinacije, saloni). Ključne informacije o nekretnini Struktura: Trosoban stan Površina stana: 98 m² Dodatni prostor: Podrumska ostava od 10 m² Pozicija: Visoko prizemlje Lokacija: Jerevanska 26, Zabjelo, Podgorica Cijena: 210.000 € Za sve dodatne detalje i zakazivanje obilaska stana, možete direktno kontaktirati vlasnika na broj telefona: ???? 067 512 882",
+      "_count": 1,
+      "_ai": {
+        "presuda": "vlasnik",
+        "razlog": "Oglas je postavljen pod ličnim imenom i sadrži direktan poziv na kontaktiranje vlasnika bez elemenata agencijskog posredovanja."
+      }
+    }
+  },
+  "https://www.patuljak.me/oglas/prodaje-se-renovirana-opremljena-garsonjera-24m2-k--83106": {
+    "ts": "2026-10-11T01:53:18.982554",
+    "status": "provjeri",
+    "lead": {
+      "ime": "M",
+      "oglas_link": "https://www.patuljak.me/oglas/prodaje-se-renovirana-opremljena-garsonjera-24m2-k--83106",
+      "lokacija": "Podgorica",
+      "cijena": "81000.00€",
+      "izvor": "Patuljak.me",
+      "telefoni": [
+        "38267070801"
+      ],
+      "_opis": "Prodaje se renovirana, lijepo namještena garsonjera 24m2 u ulici Mitra Bakića. Bez agencija. Zgrada je pozicionirana između Gintaša i Autobuske stanice u Podgorici. Stan je renoviran i u potpunosti opremljen novim namještajem i uređajima, kao takav se i prodaje. Kuhinja je odvojena. Ima balkon. Parking ispred zgrade. Video nadzor. Cijena: 81.000 €. Kontakt: 067 070 801 (Viber, WhatsApp)",
+      "_count": 1,
+      "_ai": {
+        "presuda": "vlasnik",
+        "razlog": "Oglašivač je izričito naveo 'bez agencija' i koristi neformalno ime uz direktan opis nekretnine."
+      }
+    }
+  },
+  "https://www.patuljak.me/oglas/prodaje-se-jednosoban-stan--83104": {
+    "ts": "2026-10-11T01:53:20.595861",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/prodaje-se-jednosoban-stan--83103": {
+    "ts": "2026-10-11T01:53:22.203858",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/garsonjera-izdavanje--83093": {
+    "ts": "2026-10-11T01:53:23.789581",
+    "status": "vlasnik",
+    "lead": {
+      "ime": "Nebojša",
+      "oglas_link": "https://www.patuljak.me/oglas/garsonjera-izdavanje--83093",
+      "lokacija": "Podgorica",
+      "cijena": "300.00€",
+      "izvor": "Patuljak.me",
+      "telefoni": [
+        "38267222199"
+      ],
+      "_opis": "Garsonjera na orvom spratu, sa prostranom terasom, izdaje se. Zgrada Lipa. Zvati na 067 222 199",
+      "_count": 1,
+      "_ai": {
+        "presuda": "nesigurno",
+        "razlog": "Oglas sadrži lično ime i neformalan tekst, ali nema izričite potvrde da je oglašivač vlasnik niti prepoznatljivih znakova agencije."
+      }
+    }
+  },
+  "https://www.patuljak.me/oglas/prodaja-jednosoban-stan-35-m-centar-bar--83091": {
+    "ts": "2026-10-11T01:53:25.384644",
+    "status": "drugi_grad",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/prodajajednosoban-stanstari-aerodrom--83090": {
+    "ts": "2026-10-11T01:53:26.994800",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/izdajem-jednosoban-stan--83089": {
+    "ts": "2026-10-11T01:53:28.625031",
+    "status": "vlasnik",
+    "lead": {
+      "ime": "Ggghhh",
+      "oglas_link": "https://www.patuljak.me/oglas/izdajem-jednosoban-stan--83089",
+      "lokacija": "Podgorica",
+      "cijena": "400.00€",
+      "izvor": "Patuljak.me",
+      "telefoni": [],
+      "_opis": "Izdaje se namješten jednosoban stan površine 35m2 u naselju Stari aerodrom (u neposrednoj blizini škole, vrtića i Doma zdravlja). Stan je smješten na II spratu stambene zgrade sa liftom. Cijena:400€",
+      "_count": 1,
+      "_ai": {
+        "presuda": "nesigurno",
+        "razlog": "Ime je nasumično a tekst oglasa je neutralan bez specifičnih termina koji bi jasno ukazali na vlasnika ili agenciju."
+      }
+    }
+  },
+  "https://www.patuljak.me/oglas/prodajajednosoban-stancentral-point--83088": {
+    "ts": "2026-10-11T01:53:30.242306",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/izdavanjejednosoban-stan-zabjelo--83086": {
+    "ts": "2026-10-11T01:53:31.858182",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/prodaja-jednosoban-stan-42-m2-lazi-budva--83080": {
+    "ts": "2026-10-11T01:53:33.460456",
+    "status": "drugi_grad",
+    "lead": null
   }
 }
