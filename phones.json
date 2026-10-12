@@ -89,7 +89,10 @@
       "https://www.patuljak.me/oglas/prodaje-se-jednosoban-stan--83119": "2026-10-11T08:49:52.625072",
       "https://www.patuljak.me/oglas/prodaje-se-jednosoban-stan--83141": "2026-10-11T15:40:38.595566",
       "https://www.patuljak.me/oglas/prodaje-se-dvosoban-stan--83124": "2026-10-11T15:40:44.901123",
-      "https://www.patuljak.me/oglas/prodaje-se-jednosoban-stan--83123": "2026-10-11T15:40:46.466887"
+      "https://www.patuljak.me/oglas/prodaje-se-jednosoban-stan--83123": "2026-10-11T15:40:46.466887",
+      "https://www.patuljak.me/oglas/prodaje-se-garsonjera--83213": "2026-10-12T05:56:49.729732",
+      "https://www.patuljak.me/oglas/prodaje-se-trosoban-stan--83212": "2026-10-12T05:56:51.415730",
+      "https://www.patuljak.me/oglas/prodaje-se-jednosoban-stan--83211": "2026-10-12T05:56:53.100833"
     },
     "imena": [
       "Tvoj agent"
@@ -202,7 +205,8 @@
   },
   "38269320728": {
     "urls": {
-      "https://www.patuljak.me/oglas/prodajem-plac-na-verusu--82085": "2026-10-04T08:30:16.928774"
+      "https://www.patuljak.me/oglas/prodajem-plac-na-verusu--82085": "2026-10-04T08:30:16.928774",
+      "https://www.patuljak.me/oglas/prodajem-plac-na-verusu--83174": "2026-10-12T05:57:06.391368"
     },
     "imena": [
       "Milka"
@@ -240,7 +244,8 @@
       "https://www.patuljak.me/oglas/poslovni-prostor-430m2-central-point-prodaja--82757": "2026-10-08T14:35:11.824793",
       "https://www.patuljak.me/oglas/kuca-55m2-zagoric-izdavanje--82756": "2026-10-08T14:35:13.394370",
       "https://www.patuljak.me/oglas/jednosoban-46m2-blok-9-izdavanje--82911": "2026-10-09T15:18:39.094100",
-      "https://www.patuljak.me/oglas/jednosoban-45m2-city-key-izdavanje--83064": "2026-10-10T18:35:28.914108"
+      "https://www.patuljak.me/oglas/jednosoban-45m2-city-key-izdavanje--83064": "2026-10-10T18:35:28.914108",
+      "https://www.patuljak.me/oglas/kuca-67m2-doljani-izdavanje--83165": "2026-10-12T05:57:09.766919"
     },
     "imena": [
       "Concord Nekretnine"
@@ -1594,7 +1599,8 @@
   },
   "38268670692": {
     "urls": {
-      "https://www.oglasi.me/nekretnine/stanovi/izdajem-dvosoban-stan--og84131198me": "2026-10-11T15:40:44.754919"
+      "https://www.oglasi.me/nekretnine/stanovi/izdajem-dvosoban-stan--og84131198me": "2026-10-11T15:40:44.754919",
+      "https://www.patuljak.me/oglas/izdajem-dvosoban-stan--83198": "2026-10-12T05:56:56.420628"
     },
     "imena": [
       "Ruske"
@@ -1630,6 +1636,14 @@
     },
     "imena": [
       "Zlata"
+    ]
+  },
+  "38267008708": {
+    "urls": {
+      "https://www.patuljak.me/oglas/izdajem-stan-49-m2-ljubovic-podgorica--83217": "2026-10-12T05:56:46.359197"
+    },
+    "imena": [
+      "Marko"
     ]
   }
 }
