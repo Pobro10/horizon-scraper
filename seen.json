@@ -6767,7 +6767,11 @@
         "38269617690"
       ],
       "_opis": "Stan se nalazi iza Lamela ulica AVNOJ-a kod Kikine teretane,ima 5 ogromnih prozora i nije podrum već Visoki suteren. Вideo nadzor rampa parking mesto Уseljiv 27.11.2026. Мože zamjena za Garsonjeru uz doplatu prekomorače ili blok 5-6. Кontakt telefon 069-617-690",
-      "_count": 1
+      "_count": 1,
+      "_ai": {
+        "presuda": "vlasnik",
+        "razlog": "Lični ton oglasa, ponuda za zamjenu i neformalan opis bez agencijskih oznaka ukazuju na privatnog vlasnika."
+      }
     }
   },
   "https://www.patuljak.me/oglas/prodaje-se-jednosoban-stan--83745": {
@@ -6913,5 +6917,45 @@
     "ts": "2026-10-15T01:31:09.642633",
     "status": "posrednik",
     "lead": null
+  },
+  "https://www.patuljak.me/oglas/prodaja-jednosoban-stan-podgorica-preko-morace-60m--83776": {
+    "ts": "2026-10-15T07:26:10.150945",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/izdavanje-jednosoban-stan-podgorica-zagoric-46m2--83775": {
+    "ts": "2026-10-15T07:26:11.834685",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/prodaja-trosoban-stan-podgorica-zabjelo-98m2--83774": {
+    "ts": "2026-10-15T07:26:13.528412",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/pprodaje-se-strongjednosoban-namjesten-stanst--83773": {
+    "ts": "2026-10-15T07:26:15.217071",
+    "status": "drugi_grad",
+    "lead": null
+  },
+  "https://www.oglasi.me/nekretnine/poslovni-prostori/prodajem-poslovni-prostor-u-sivoj-fazi-na-starom-aerodromu-og66865104me": {
+    "ts": "2026-10-15T07:26:23.463486",
+    "status": "vlasnik",
+    "lead": {
+      "ime": "Mirsad",
+      "oglas_link": "https://www.oglasi.me/nekretnine/poslovni-prostori/prodajem-poslovni-prostor-u-sivoj-fazi-na-starom-aerodromu-og66865104me",
+      "lokacija": "Podgorica",
+      "cijena": "100000€",
+      "izvor": "Oglasi.me",
+      "telefoni": [
+        "38269510600"
+      ],
+      "_opis": "Opis oglasa Prodaje se poslovni prostor u sivoj fazi, površine 44m2. Poslovni prostor se nalazi u dvorišnoj strani. Posjeduje zaštitnu roletnu. Moguća zamjena za stan u Podgorici.",
+      "_uid": null,
+      "_ai": {
+        "presuda": "vlasnik",
+        "razlog": "Oglas je napisan jednostavnim tonom pod ličnim imenom uz pominjanje mogućnosti zamjene što je tipično za privatne vlasnike."
+      }
+    }
   }
 }
