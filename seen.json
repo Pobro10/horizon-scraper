@@ -1,24 +1,4 @@
 {
-  "https://www.patuljak.me/oglas/izdaje-se-dvosoban-stan-67m2-master-kvart-podgoric--82666": {
-    "ts": "2026-10-07T22:02:22.799918",
-    "status": "vlasnik",
-    "lead": {
-      "ime": "Leonid",
-      "oglas_link": "https://www.patuljak.me/oglas/izdaje-se-dvosoban-stan-67m2-master-kvart-podgoric--82666",
-      "lokacija": "Podgorica",
-      "cijena": "850.00€",
-      "izvor": "Patuljak.me",
-      "telefoni": [
-        "38267193660"
-      ],
-      "_opis": "• potpuno namješten i opremljen kućnim aparatima • dosta plakara i prostora za odlaganje • velika terasa • 2 kupatila: jedno sa kadom, drugo sa tuš kabinom • 3 klima uređaja • uređeno dvorište i prostor oko zgrade • u blizini BIG Fashion centra • Cijena: 850 € mjesečno + režije • Prilikom useljenja plaćaju se prva kirija + depozit. • Direktno od vlasnika, bez agencije i provizije. • Stan je slobodan i useljenje je moguće odmah. • Pušenje i kućni ljubimci nijesu dozvoljeni. Kontakt: +382 67 193 660",
-      "_count": 1,
-      "_ai": {
-        "presuda": "vlasnik",
-        "razlog": "Oglašivač eksplicitno navodi da izdaje direktno bez agencije i provizije."
-      }
-    }
-  },
   "https://www.patuljak.me/oglas/izdavanje-jednosoban-stan-podgorica-ljubovic-49m2--82737": {
     "ts": "2026-10-08T06:26:04.231605",
     "status": "posrednik",
@@ -6488,5 +6468,67 @@
       "_opis": "",
       "_uid": null
     }
+  },
+  "https://www.patuljak.me/oglas/izdavanjejednosoban-stanstari-aerodrom--83823": {
+    "ts": "2026-10-15T22:17:12.100913",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/izdavanjejednosoban-stan-preko-morace--83822": {
+    "ts": "2026-10-15T22:17:13.754499",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/prodaje-se-jednosoban-stan-povrsine-48-m-na-trecem--83821": {
+    "ts": "2026-10-15T22:17:15.407551",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/lux-trosoban-stan-preko-morace--83820": {
+    "ts": "2026-10-15T22:17:17.080353",
+    "status": "vlasnik",
+    "lead": {
+      "ime": "Stefan",
+      "oglas_link": "https://www.patuljak.me/oglas/lux-trosoban-stan-preko-morace--83820",
+      "lokacija": "Podgorica",
+      "cijena": "1500.00€",
+      "izvor": "Patuljak.me",
+      "telefoni": [
+        "382676051301"
+      ],
+      "_opis": "Luksuzan apartman 140 m2 sa 3 spavaće sobe, Preko Morače preko puta Hrama na mjestu gdje se spajaju Dalmatinska i Moskovska ulica. Stan se nalazi na drugom spratu u jednom od naljepših djelova Podgorice. Stan je kompletno renoviran i opremljen veoma luksuzno. Dnevna soba izuzetno komforna i prostrana sa kaminom, spojena sa trpezarijom i kuhinjom. U svim prostorijama ugrađen Daikin Inverter Multi split sistem klimatizacije. Posebnu draž stanu daju dvije terase na koje se izlazi iz dnevnog boravka i iz soba. Sa terasa se pruža divan pogled na Hram. Gotovo cijeli apartman je opremljen modernim i funkcionalnim italijanskim Calligaris namještajem. Razne stolice, trpezarijski inventar, stolovi, namještaj u dnevnoj sobi, kožni kreveti u spavaćim sobama, fotelja za opuštanje, police, umjetnička ogledala i sl. Plakari u svim sobama. Oko 40m 2 plakara koje je radio Mirai House. Kuhinja Ariston italijanska sa svim pratećim elementima. Sanitarije u kupatilima opremljena uglavnom Hansgrohe brendom. Bijeli hrastov parket u dnevnom boravku, sobama i hodnicima. Stan posjeduje i bezbjednosni alarmni sistem sa senzorima, blindirana ulazna vrata, spuštanje roletni na prozorima daljinskim putem. 067 605 130 1.500 €",
+      "_count": 1
+    }
+  },
+  "https://www.patuljak.me/oglas/prodaje-se-jednosoban-stan-povrsine-50-m-na-drugom--83819": {
+    "ts": "2026-10-15T22:17:18.729440",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/izdavanjedvosoban-stancity-kvart--83818": {
+    "ts": "2026-10-15T22:17:20.383639",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/dvosoban-stan-city-kvart--83817": {
+    "ts": "2026-10-15T22:17:22.033992",
+    "status": "provjeri",
+    "lead": {
+      "ime": "DM",
+      "oglas_link": "https://www.patuljak.me/oglas/dvosoban-stan-city-kvart--83817",
+      "lokacija": "Podgorica",
+      "cijena": "800.00€",
+      "izvor": "Patuljak.me",
+      "telefoni": [
+        "38269988752"
+      ],
+      "_opis": "???? Izdaje se dvosoban stan – City Kvart, Podgorica ???? 74 m² ????️ Lijepo opremljen, prostran i funkcionalan ❄️ Klimatizovan ???? 800 € mjesečno ✨ Komforan i lijepo opremljen stan na atraktivnoj lokaciji u City Kvartu, idealan za udoban život. ???? +382 69 988 752 (Viber | WhatsApp | Telegram) ???? DM Real Estate – Ključ vašeg doma! ????",
+      "_count": 1
+    }
+  },
+  "https://www.oglasi.me/nekretnine/stanovi/izdavanje--jednosoban-stan--46m---donja-gorica--podgorica-og84172204me": {
+    "ts": "2026-10-15T22:17:24.891069",
+    "status": "posrednik",
+    "lead": null
   }
 }
