@@ -6619,5 +6619,35 @@
     "ts": "2026-10-16T16:39:46.708449",
     "status": "posrednik",
     "lead": null
+  },
+  "https://www.patuljak.me/oglas/dvosoban-stan-56m2-preko-morace--84004": {
+    "ts": "2026-10-16T19:58:00.569240",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/prodajatrosoban-stancity-kvart--84003": {
+    "ts": "2026-10-16T19:58:02.141848",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.oglasi.me/nekretnine/stanovi/izdavanje-troiposoban-stan-100m2-podgorica-og70061550me": {
+    "ts": "2026-10-16T19:58:11.317333",
+    "status": "vlasnik",
+    "lead": {
+      "ime": "Nikola",
+      "oglas_link": "https://www.oglasi.me/nekretnine/stanovi/izdavanje-troiposoban-stan-100m2-podgorica-og70061550me",
+      "lokacija": "Podgorica",
+      "cijena": "850.00 € mjesec",
+      "izvor": "Oglasi.me",
+      "telefoni": [
+        "38267548810"
+      ],
+      "_opis": "Opis oglasa Izdaje se troiposoban namjesten stan 100 m2 u zgradi Peyton u blizini Sahat kule  na duzi vremenski period.  Stan ima veliki dnevni boravak, 3 spavace dobe, kuhinju sa trpezarijom, kupatilo, wc , hodnik, predsoblje i terasu.Nalazi se na sestom spratu u mirnom ulazu koji ima 12 stanova. Iznad se nalazi garsonjera. Obavezan depozit u visini jedne kirije.",
+      "_uid": null,
+      "_ai": {
+        "presuda": "nesigurno",
+        "razlog": "Oglas sadrži lično ime i nema agencijskih obilježja, ali nedostaju jasne fraze koje potvrđuju da je u pitanju vlasnik."
+      }
+    }
   }
 }
