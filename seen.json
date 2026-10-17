@@ -1,19 +1,4 @@
 {
-  "https://www.patuljak.me/oglas/izdaje-se-jednosoban-stan-47m2-city-kvart-id-p-8--82892": {
-    "ts": "2026-10-09T06:29:33.581934",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://www.patuljak.me/oglas/jednosoban-namesten-stan-u-budvi-izdavanje-na-duz--82891": {
-    "ts": "2026-10-09T06:29:35.072238",
-    "status": "drugi_grad",
-    "lead": null
-  },
-  "https://www.patuljak.me/oglas/luksuzno-opremljen-dvosoban-stan-sa-panoramskim-po--82890": {
-    "ts": "2026-10-09T06:29:36.595270",
-    "status": "drugi_grad",
-    "lead": null
-  },
   "https://www.patuljak.me/oglas/pizdaje-se�strongdvosoban-namjesten-stanstro--82893": {
     "ts": "2026-10-09T07:24:22.503000",
     "status": "drugi_grad",
@@ -6588,6 +6573,21 @@
   "https://www.patuljak.me/oglas/jednosoban-stan-52m-makedonsko-naselje-bar-i--83960": {
     "ts": "2026-10-17T01:20:24.653094",
     "status": "drugi_grad",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/pizdaje-se-strongjednosoban-lijepo-namjesten-s--84121": {
+    "ts": "2026-10-17T06:57:04.144489",
+    "status": "drugi_grad",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/izdaje-se-kuca-223m2-masline-id-ml-1769--84120": {
+    "ts": "2026-10-17T06:57:05.737346",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/izdaje-se-dvosoban-stan-62m2-donja-gorica-id-p-8--84119": {
+    "ts": "2026-10-17T06:57:07.233790",
+    "status": "posrednik",
     "lead": null
   }
 }
