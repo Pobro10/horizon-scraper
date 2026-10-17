@@ -878,36 +878,59 @@ def send_email(leads: list[dict], review_leads: list[dict] = []) -> bool:
     return ok
 
 
-def send_warning_email(sajt: str, fail_count: int, total: int, detalj: str = "") -> None:
-    # Upozorenja idu SAMO iz runa koji šalje dnevni mejl, inače ista uzbuna
-    # stiže do 4x dnevno (a i lokalni testovi bi je slali).
+UPOZORENJE_PAUZA_H = 24   # isto upozorenje najviše jednom dnevno (runovi su satni)
+
+
+def send_warning_email(sajt: str, fail_count: int, total: int, detalj: str = "",
+                       vrsta: str = "selektori") -> None:
+    """vrsta: "selektori" (sajt odgovara, ali markup ne prepoznajemo) ili
+    "http" (sajt ne odgovara / odbija GitHub; 15-16.10 Pazar3 je 30 h vraćao
+    403 pa se vratio sam). Isto upozorenje ide najviše jednom u 24 h, inače
+    ista uzbuna stigne iz svakog satnog runa (6x dnevno)."""
     if not (SEND_EMAIL or MAIL_PROZOR):
         log.info("Upozorenje za %s se ne šalje (SEND_EMAIL=false).", sajt)
         return
+    kljuc   = f"__upozorenje__{sajt}__{vrsta}"
+    granica = (datetime.now() - timedelta(hours=UPOZORENJE_PAUZA_H)).isoformat()
+    with _SEEN_LOCK:
+        zadnje = (SEEN.get(kljuc) or {}).get("ts", "")
+    if zadnje >= granica:
+        log.warning("⚠  Upozorenje %s/%s već poslato u zadnja %d h, ne ponavljam.",
+                    sajt, vrsta, UPOZORENJE_PAUZA_H)
+        return
     datum = datetime.now().strftime("%d.%m.%Y %H:%M")
-    subject = f"⚠️ Horizon Scraper — selektori pokvareni na {sajt}"
     detalj_html = (f"<p>Početak odgovora servera:</p><pre>{escape(detalj)}</pre>"
                    if detalj else "")
+    if vrsta == "http":
+        subject = f"⚠️ Horizon Scraper — {sajt} ne odgovara"
+        poruka  = (f"{sajt} ne odgovara ili odbija zahtjeve sa GitHub servera "
+                   f"(HTTP greška ili blokada). Ostali sajtovi rade normalno. "
+                   f"Privremene blokade prolaze same; ako ovo upozorenje stiže "
+                   f"više dana zaredom, treba provjeriti.")
+    else:
+        subject = f"⚠️ Horizon Scraper — selektori pokvareni na {sajt}"
+        poruka  = (f"{fail_count} od {total} oglasa nije moglo biti parsirano jer "
+                   f"selektori više ne pronalaze elemente na stranici. "
+                   f"HTML struktura sajta je vjerovatno promijenjena, treba "
+                   f"provjeriti skriptu.")
     body = (
         f"<h3>Upozorenje — {sajt}</h3>"
         f"<p>Datum: {datum}</p>"
-        f"<p>{fail_count} od {total} oglasa nije moglo biti parsirano jer "
-        f"selektori više ne pronalaze elemente na stranici.</p>"
-        f"<p>HTML struktura sajta je vjerovatno promijenjena. "
-        f"Molimo provjerite skriptu.</p>"
+        f"<p>{escape(poruka)}</p>"
+        f"<p>Sljedeće isto upozorenje najranije za {UPOZORENJE_PAUZA_H} h.</p>"
         f"{detalj_html}"
     )
     text = (
         f"UPOZORENJE — {sajt}\n"
         f"Datum: {datum}\n"
-        f"{fail_count}/{total} oglasa nije parsirano — selektori su pokvareni.\n"
-        f"Provjerite HTML strukturu sajta i ažurirajte skriptu.\n"
+        f"{poruka}\n"
         + (f"Početak odgovora servera:\n{detalj}\n" if detalj else "")
     )
     ok = _resend_post(subject=subject, html=body, text=text)
     if ok:
-        log.warning("⚠  Upozorenje email poslan: %s (%d/%d selector grešaka).",
-                    sajt, fail_count, total)
+        seen_record(kljuc, "upozorenje")
+        log.warning("⚠  Upozorenje email poslan: %s (%s, %d/%d).",
+                    sajt, vrsta, fail_count, total)
     else:
         log.error("✗  Greška pri slanju upozorenja za %s.", sajt)
 
@@ -1056,10 +1079,12 @@ def run_oglasi() -> tuple[list[dict], list[dict]]:
     old_in_row:  int            = 0
     total_cards: int            = 0
     uid_count:   dict[str, int] = defaultdict(int)
+    http_fail:   bool           = False
 
     for page in range(1, MAX_PAGES + 1):
         r = get(f"{OGLASI_BASE}/nekretnine/all/{page}")
         if r is None:
+            http_fail = True
             break
 
         soup  = BeautifulSoup(r.text, "lxml")
@@ -1137,7 +1162,10 @@ def run_oglasi() -> tuple[list[dict], list[dict]]:
 
     # Upozorenje samo kad index NE DAJE NIJEDNU karticu (markup promijenjen).
     # Prazan queue je normalan kad prosto nema novih oglasa iz Podgorice.
-    if total_cards == 0:
+    if total_cards == 0 and http_fail:
+        log.warning("⚠  Oglasi.me: index ne odgovara (HTTP greška/blokada).")
+        send_warning_email("Oglasi.me", 0, 0, vrsta="http")
+    elif total_cards == 0:
         log.warning("⚠  Oglasi.me: 0 kartica na indexu — stranica vjerovatno promijenjena!")
         send_warning_email("Oglasi.me", 0, 0)
     elif fetched and selector_fails / fetched > SELECTOR_FAIL_RATIO:
@@ -1193,10 +1221,11 @@ def run_oglasi() -> tuple[list[dict], list[dict]]:
 PATULJAK_BASE = "https://www.patuljak.me"
 
 
-def _patuljak_index_urls(page: int) -> list[str]:
+def _patuljak_index_urls(page: int) -> list[str] | None:
+    """None = HTTP greška (razlikuje se od prazne strane)."""
     r = get(f"{PATULJAK_BASE}/c/nekretnine/namjena-sve/strana-{page}")
     if r is None:
-        return []
+        return None
     soup = BeautifulSoup(r.text, "lxml")
     # dict.fromkeys: deduplikacija koja ČUVA redosljed sa stranice.
     # Regex traži bar jedno slovo/broj u slugu: index sadrži i mrtav link
@@ -1320,11 +1349,15 @@ def run_patuljak() -> tuple[list[dict], list[dict]]:
     log.info("  PATULJAK.ME  (od %s)", CUTOFF.strftime("%d.%m.%Y %H:%M"))
     log.info("═" * 60)
 
-    queue:   list[str] = []
-    u_queue: set[str]  = set()
+    queue:     list[str] = []
+    u_queue:   set[str]  = set()
+    http_fail: bool      = False
 
     for page in range(1, MAX_PAGES + 1):
         urls = _patuljak_index_urls(page)
+        if urls is None:
+            http_fail = True
+            break
         if not urls:
             log.info("  str. %d: prazno, zaustavljam.", page)
             break
@@ -1411,7 +1444,10 @@ def run_patuljak() -> tuple[list[dict], list[dict]]:
     if cache_hits:
         log.info("  keš: %d/%d oglasa preskočeno (već obrađeni).", cache_hits, len(queue))
 
-    if len(queue) == 0:
+    if len(queue) == 0 and http_fail:
+        log.warning("⚠  Patuljak.me: index ne odgovara (HTTP greška/blokada).")
+        send_warning_email("Patuljak.me", 0, 0, vrsta="http")
+    elif len(queue) == 0:
         log.warning("⚠  Patuljak.me: 0 oglasa pronađeno — stranica vjerovatno promijenjena!")
         send_warning_email("Patuljak.me", 0, 0)
     elif fetched and selector_fails / fetched > SELECTOR_FAIL_RATIO:
@@ -1613,12 +1649,14 @@ def run_pazar3() -> tuple[list[dict], list[dict]]:
     queue:       list[str] = []
     u_queue:     set[str]  = set()
     total_cards: int       = 0
+    http_fail:   bool      = False
 
     for kat in PAZAR3_KATEGORIJE:
         old_in_row = 0
         for page in range(1, MAX_PAGES + 1):
             cards = _p3_index_cards(kat, page)
             if cards is None:
+                http_fail = True
                 break
             if not cards:
                 log.info("  %s str. %d: prazno, zaustavljam.", kat, page)
@@ -1708,7 +1746,10 @@ def run_pazar3() -> tuple[list[dict], list[dict]]:
     if cache_hits:
         log.info("  keš: %d/%d oglasa preskočeno (već obrađeni).", cache_hits, len(queue))
 
-    if total_cards == 0:
+    if total_cards == 0 and http_fail:
+        log.warning("⚠  Pazar3.me: index ne odgovara (HTTP greška/blokada).")
+        send_warning_email("Pazar3.me", 0, 0, vrsta="http")
+    elif total_cards == 0:
         log.warning("⚠  Pazar3.me: 0 kartica na indexu — stranica vjerovatno promijenjena!")
         send_warning_email("Pazar3.me", 0, 0)
     elif fetched and selector_fails / fetched > SELECTOR_FAIL_RATIO:
