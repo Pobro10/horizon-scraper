@@ -1,39 +1,4 @@
 {
-  "https://www.patuljak.me/oglas/pizdaje-se�strongdvosoban-namjesten-stanstro--82893": {
-    "ts": "2026-10-09T07:24:22.503000",
-    "status": "drugi_grad",
-    "lead": null
-  },
-  "https://www.oglasi.me/nekretnine/stanovi/stambeni-kontenjer-og84107515me": {
-    "ts": "2026-10-09T07:24:39.742454",
-    "status": "vlasnik",
-    "lead": {
-      "ime": "xxx",
-      "oglas_link": "https://www.oglasi.me/nekretnine/stanovi/stambeni-kontenjer-og84107515me",
-      "lokacija": "Podgorica",
-      "cijena": "4800€",
-      "izvor": "Oglasi.me",
-      "telefoni": [
-        "38269997012"
-      ],
-      "_opis": "Opis oglasa Na prodjau stambeni kontenjer \n6x2.414,4m2\n3x2.4 je jedna prostorija \n3x2.4 dodju dva wc i jedno malo \nStruja voda sve razvedeno",
-      "_uid": null,
-      "_ai": {
-        "presuda": "vlasnik",
-        "razlog": "Neformalan tekst oglasa sa štamparskim greškama i bez ikakvih elemenata profesionalnog oglašavanja."
-      }
-    }
-  },
-  "https://www.oglasi.me/nekretnine/stanovi/jednosoban-stan-46m2--stari-aerodrom-og84107850me": {
-    "ts": "2026-10-09T07:24:39.742648",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://www.oglasi.me/nekretnine/stanovi/jednosoban-stan-55m2--centar-podgorica-og84108134me": {
-    "ts": "2026-10-09T07:24:39.742858",
-    "status": "posrednik",
-    "lead": null
-  },
   "https://www.patuljak.me/oglas/prodaje-se-dvosoban-namjesten-stan-povrsine-65-m--82926": {
     "ts": "2026-10-09T15:18:22.653530",
     "status": "posrednik",
@@ -6588,6 +6553,81 @@
   "https://www.patuljak.me/oglas/izdaje-se-dvosoban-stan-62m2-donja-gorica-id-p-8--84119": {
     "ts": "2026-10-17T06:57:07.233790",
     "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/jednosoban-stan-35m2-stari-aerodrom-podgorica--84132": {
+    "ts": "2026-10-17T11:37:48.856831",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/jednosoban-namjesten-stan-50m2-ljubovic-podgorica--84131": {
+    "ts": "2026-10-17T11:37:50.417591",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/dvosoban-stan-70m2-parking-gorica-c-podgorica--84130": {
+    "ts": "2026-10-17T11:37:51.981390",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/dvosoban-stan-75m2-garaza-ljubovic-podgorica--84129": {
+    "ts": "2026-10-17T11:37:53.543027",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/dvosoban-stan-95m2-garaza-central-point-podgori--84128": {
+    "ts": "2026-10-17T11:37:55.101418",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.oglasi.me/nekretnine/stanovi/izdajem-stan-u-podgorici-og22380131me": {
+    "ts": "2026-10-17T11:37:55.166785",
+    "status": "vlasnik",
+    "lead": {
+      "ime": "perica",
+      "oglas_link": "https://www.oglasi.me/nekretnine/stanovi/izdajem-stan-u-podgorici-og22380131me",
+      "lokacija": "Podgorica",
+      "cijena": "600.00 € mjesec",
+      "izvor": "Oglasi.me",
+      "telefoni": [
+        "38268024959"
+      ],
+      "_opis": "Opis oglasa dvoso.stan sa terasom i fr.balkonima,prozracan,komarnici,prelijepa lokacija sa terenima za igru i blizina Ljubovic brda za setnju i rekreaciju.Mirno i izvojeno od gr.guzve.Visoka izolacija stam.prostora sto daje toplinu i totalnu tisinu stana.Dostupan od 25 oktobra 2026.",
+      "_uid": null,
+      "_ai": {
+        "presuda": "vlasnik",
+        "razlog": "Lično ime oglašivača i neformalan stil pisanja sa specifičnim skraćenicama bez elemenata agencijskog oglašavanja."
+      }
+    }
+  },
+  "https://www.patuljak.me/oglas/dvosoban-namjesten-stan-60m2-preko-morace-podgori--84127": {
+    "ts": "2026-10-17T11:37:56.670001",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/prodaja-jednosoban-stan-podgorica-pobrezje-44m2--84126": {
+    "ts": "2026-10-17T11:37:58.231410",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/izdavanje-trosoban-stan-podgorica-central-point-93--84125": {
+    "ts": "2026-10-17T11:37:59.806711",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/prodaja-trosoban-stan-podgorica-zabjelo-82m2--84124": {
+    "ts": "2026-10-17T11:38:01.386725",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/prodaja-dvosoban-stan-podgorica-gornja-gorica-70m2--84123": {
+    "ts": "2026-10-17T11:38:02.973567",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/pizdaje-se�strongjednosoban-namjesten-stanst--84122": {
+    "ts": "2026-10-17T11:38:04.849538",
+    "status": "drugi_grad",
     "lead": null
   }
 }
