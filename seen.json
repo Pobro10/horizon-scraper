@@ -1,9 +1,4 @@
 {
-  "https://www.patuljak.me/oglas/izdavanje-jednosoban-stan-podgorica-centar-55m2--83041": {
-    "ts": "2026-10-10T07:06:25.310545",
-    "status": "posrednik",
-    "lead": null
-  },
   "https://www.patuljak.me/oglas/jednosoban-stan-centar-54m2--83055": {
     "ts": "2026-10-10T13:41:03.405791",
     "status": "drugi_grad",
@@ -5911,6 +5906,16 @@
   },
   "https://www.patuljak.me/oglas/izdavanjetrosoban-stanpreko-morace--84153": {
     "ts": "2026-10-18T04:32:52.342269",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/prodaje-se-dvosoban-stan--84173": {
+    "ts": "2026-10-18T09:37:21.862388",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/prodaje-se-dvosoban-stan--84172": {
+    "ts": "2026-10-18T09:37:23.437820",
     "status": "posrednik",
     "lead": null
   }
