@@ -5832,5 +5832,55 @@
         "razlog": "Oglas je postavljen pod ličnim imenom i ne sadrži agencijsku terminologiju niti profesionalne šifre."
       }
     }
+  },
+  "https://www.patuljak.me/oglas/operating-aparthotel-with-15-apartments-in-budva--84188": {
+    "ts": "2026-10-18T17:23:24.154833",
+    "status": "drugi_grad",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/prodaje-se-trosoban-stan-povrsine-82-m--84184": {
+    "ts": "2026-10-18T17:23:25.668373",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/prodaje-se-dvosoban-stan--84183": {
+    "ts": "2026-10-18T17:23:27.196869",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/izdaje-se-dvosoban-namjesten-stan-povrsine-55-m--84182": {
+    "ts": "2026-10-18T17:23:28.702701",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/prodaje-se-garsonjera--84181": {
+    "ts": "2026-10-18T17:23:30.211241",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/prodaje-se-zemlja-9848-m2--84180": {
+    "ts": "2026-10-18T17:23:31.675937",
+    "status": "drugi_grad",
+    "lead": null
+  },
+  "https://www.oglasi.me/nekretnine/poslovni-prostori/izdaje-se-poslovni-prostor-na-starom-aerodromu-iza-volija--og77330303me": {
+    "ts": "2026-10-18T17:23:37.621005",
+    "status": "vlasnik",
+    "lead": {
+      "ime": "VRomandic",
+      "oglas_link": "https://www.oglasi.me/nekretnine/poslovni-prostori/izdaje-se-poslovni-prostor-na-starom-aerodromu-iza-volija--og77330303me",
+      "lokacija": "Podgorica",
+      "cijena": "390.00 € mjesec",
+      "izvor": "Oglasi.me",
+      "telefoni": [
+        "38268102410"
+      ],
+      "_opis": "Opis oglasa Lokal je pogodan za različite delatnosti, kancelarije, salon ljepote frizerski salon. u blizini su marketi Voli i Aroma kao i bulevar. 068 102 410 Za duži period dogovor oko cijene",
+      "_uid": null,
+      "_ai": {
+        "presuda": "nesigurno",
+        "razlog": "Oglas nema jasne agencijske oznake, ali ni direktne potvrde da je vlasnik u pitanju poput fraze 'bez posrednika'."
+      }
+    }
   }
 }
