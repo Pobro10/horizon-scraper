@@ -1,49 +1,4 @@
 {
-  "https://www.patuljak.me/oglas/jednosoban-stan-gospostina-51m2--83162": {
-    "ts": "2026-10-11T20:16:21.206099",
-    "status": "drugi_grad",
-    "lead": null
-  },
-  "https://www.patuljak.me/oglas/kuca-doljani-67m2--83161": {
-    "ts": "2026-10-11T20:16:22.686063",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://www.patuljak.me/oglas/prodaje-se-plac-5678m2-glavica-id-ml-1623--83160": {
-    "ts": "2026-10-11T20:16:24.154259",
-    "status": "drugi_grad",
-    "lead": null
-  },
-  "https://www.patuljak.me/oglas/izdaje-se-dvosoban-stan-60m2-momisici-id-ml-1726--83159": {
-    "ts": "2026-10-11T20:16:25.654489",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://www.patuljak.me/oglas/prodaje-se-kuca-200m21290m2-donji-kokoti-id-p-8--83158": {
-    "ts": "2026-10-11T20:16:27.139535",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://www.oglasi.me/nekretnine/stanovi/prodaja--dvosobnog-stana-532-m-u-mirnom-dijelu-maslina---ul--nikole-djurkovica---------og75710436me": {
-    "ts": "2026-10-11T20:16:31.859037",
-    "status": "vlasnik",
-    "lead": {
-      "ime": "Zlata",
-      "oglas_link": "https://www.oglasi.me/nekretnine/stanovi/prodaja--dvosobnog-stana-532-m-u-mirnom-dijelu-maslina---ul--nikole-djurkovica---------og75710436me",
-      "lokacija": "Podgorica",
-      "cijena": "98000€",
-      "izvor": "Oglasi.me",
-      "telefoni": [
-        "38269778471"
-      ],
-      "_opis": "Opis oglasa Prodajem dvosoban, komforan stan, 53 kvadrata u Masline u ulici \"Nikole Djurkovića 30A\" smješten na drugom (poslednjem) spratu manje stambene zgrade sa novom termo fasadom uradjenom prije 4 godine. Stan ne posjeduje lift. \nStruktura: Hodnik, kupatilo, dnevni boravak, kuhinja sa špajzom i dvije spavaće sobe. Stan je klimatizovan. \nUgradjena je nova,  PVC stolarija, sa roletnama na svim prozorima i ulaznim vratima.\nTerase: Stan posjeduje novu, potpuno sredjenu, natkrivenu i PVC zastakljenu terasu na koju se izlazi iz dnevnog boravka  kroz dvokrilna vrata. Takodje, stan ima zajedničku ulaznu terasu i stepenište. Unutrašnja vrata su sredjena i bravarija zamijenjena. Stan ima pravo korišćenja parkinga ispred zgrade. \nZgrada se nalazi na dobroj lokaciji. Postoji dobra povezanost sa svim bitnim sadržajima (škola, marketi, vrtić...). Takodje ima dobru povezanost sa centrom grada i naseljima. Stan je pogodan porodični život. Uredni papiri. Vlasnik 1/1. Cijena stana je 93 000 evra. Dostupna sam za obilazak stana uz prethodnu najavu.",
-      "_uid": null,
-      "_ai": {
-        "presuda": "vlasnik",
-        "razlog": "Oglas je napisan u prvom licu, sadrži lično ime oglašivača i eksplicitnu potvrdu o vlasništvu 1/1 bez agencijskih obilježja."
-      }
-    }
-  },
   "https://www.patuljak.me/oglas/dvosoban-stan-radanovici-64m2--83163": {
     "ts": "2026-10-11T23:43:07.440633",
     "status": "drugi_grad",
@@ -6263,6 +6218,141 @@
   },
   "https://www.oglasi.me/nekretnine/stanovi/jednosoban-stan-60m2--preko-morace-og84221290me": {
     "ts": "2026-10-19T19:56:24.111074",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/izdaje-se-nov-jednosoban-stan-povrsine-45m2-na-zab--84360": {
+    "ts": "2026-10-19T23:40:58.281526",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/prodajatrosoban-stanzabjelo--84358": {
+    "ts": "2026-10-19T23:40:59.803446",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/dvosoban-stan-48m2-kava--84357": {
+    "ts": "2026-10-19T23:41:01.301338",
+    "status": "drugi_grad",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/izdavanje-kuca-city-kvart--84356": {
+    "ts": "2026-10-19T23:41:02.810666",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/dvosoban-stan-100m2-donja-gorica--84354": {
+    "ts": "2026-10-19T23:41:04.339636",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/izdaje-se-luksuzno-opremljen-dvosoban-stan-povrsin--84353": {
+    "ts": "2026-10-19T23:41:05.838025",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/izdaje-se-jednosoban-stan-povrsine-36m-na-zabjelu--84352": {
+    "ts": "2026-10-19T23:41:07.358472",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/izdavanjedvosoban-stanblok-9--84351": {
+    "ts": "2026-10-19T23:41:08.884647",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/trosoban-stan-140-m2-pg--84350": {
+    "ts": "2026-10-19T23:41:10.385828",
+    "status": "provjeri",
+    "lead": {
+      "ime": "Stefan",
+      "oglas_link": "https://www.patuljak.me/oglas/trosoban-stan-140-m2-pg--84350",
+      "lokacija": "Podgorica",
+      "cijena": "1500.00€",
+      "izvor": "Patuljak.me",
+      "telefoni": [
+        "38267605130"
+      ],
+      "_opis": "Luksuzan apartman 140 m2 sa 3 spavaće sobe, Preko Morače preko puta Hrama na mjestu gdje se spajaju Dalmatinska i Moskovska ulica. Stan se nalazi na drugom spratu u jednom od naljepših djelova Podgorice. Stan je kompletno renoviran i opremljen veoma luksuzno. Dnevna soba izuzetno komforna i prostrana sa kaminom, spojena sa trpezarijom i kuhinjom. U svim prostorijama ugrađen Daikin Inverter Multi split sistem klimatizacije. Posebnu draž stanu daju dvije terase na koje se izlazi iz dnevnog boravka i iz soba. Sa terasa se pruža divan pogled na Hram. Gotovo cijeli apartman je opremljen modernim i funkcionalnim italijanskim Calligaris namještajem. Razne stolice, trpezarijski inventar, stolovi, namještaj u dnevnoj sobi, kožni kreveti u spavaćim sobama, fotelja za opuštanje, police, umjetnička ogledala i sl. Plakari u svim sobama. Oko 40m 2 plakara koje je radio Mirai House. Kuhinja Ariston italijanska sa svim pratećim elementima. Sanitarije u kupatilima opremljena uglavnom Hansgrohe brendom. Bijeli hrastov parket u dnevnom boravku, sobama i hodnicima. Stan posjeduje i bezbjednosni alarmni sistem sa senzorima, blindirana ulazna vrata, spuštanje roletni na prozorima daljinskim putem. Kontakt telefon 067 605 130",
+      "_count": 1,
+      "_ai": {
+        "presuda": "nesigurno",
+        "razlog": "Oglas je veoma detaljan i profesionalan, ali nema jasnih indikatora agencije niti eksplicitne potvrde da prodaje vlasnik."
+      }
+    }
+  },
+  "https://www.oglasi.me/nekretnine/stanovi/dvosoban--65m2--4-jul--novogradnja--og84225264me": {
+    "ts": "2026-10-19T23:41:10.962636",
+    "status": "vlasnik",
+    "lead": {
+      "ime": "Jelena",
+      "oglas_link": "https://www.oglasi.me/nekretnine/stanovi/dvosoban--65m2--4-jul--novogradnja--og84225264me",
+      "lokacija": "Podgorica",
+      "cijena": "190000€",
+      "izvor": "Oglasi.me",
+      "telefoni": [
+        "38267337372"
+      ],
+      "_opis": "Opis oglasa Rijetka i odlična ponuda.",
+      "_uid": null,
+      "_ai": {
+        "presuda": "nesigurno",
+        "razlog": "Tekst oglasa je previše kratak i ne sadrži jasne indikatore koji bi potvrdili da li je oglašivač privatno lice ili agencija."
+      }
+    }
+  },
+  "https://www.oglasi.me/nekretnine/stanovi/izdaje-jednosoban-sta-s-aerodrom-og84224261me": {
+    "ts": "2026-10-19T23:41:10.962695",
+    "status": "vlasnik",
+    "lead": {
+      "ime": "Miroslav",
+      "oglas_link": "https://www.oglasi.me/nekretnine/stanovi/izdaje-jednosoban-sta-s-aerodrom-og84224261me",
+      "lokacija": "Podgorica",
+      "cijena": "250.00 € mjesec",
+      "izvor": "Oglasi.me",
+      "telefoni": [
+        "38267172986"
+      ],
+      "_opis": "Opis oglasa Izdajem jednosoban stan na S.Aerodromu 46 m2 drugi sprat Milosa Obilica 18/7",
+      "_uid": null,
+      "_ai": {
+        "presuda": "vlasnik",
+        "razlog": "Oglašivač koristi lično ime, a tekst je kratak i sadrži preciznu adresu sa brojem stana što je tipično za vlasnike."
+      }
+    }
+  },
+  "https://www.patuljak.me/oglas/prodaje-se-trosoban-stan-povrsine-11112m-sa-pripad--84349": {
+    "ts": "2026-10-19T23:41:11.920072",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/dvosoban-stan-centar-pg--84348": {
+    "ts": "2026-10-19T23:41:13.420928",
+    "status": "provjeri",
+    "lead": {
+      "ime": "Stefan",
+      "oglas_link": "https://www.patuljak.me/oglas/dvosoban-stan-centar-pg--84348",
+      "lokacija": "Podgorica",
+      "cijena": "900.00€",
+      "izvor": "Patuljak.me",
+      "telefoni": [
+        "38267605130"
+      ],
+      "_opis": "Izdajem lux namješten dvoiposoban stan od 92 m2 (ima 100 m2 nijesu sve terase ušle u ukupnu kvadraturu) u zgradi hotela Nikić. Stan se nalazi na 5. spratu (nije poslednji) u jednoj od kvalitetnijih zgrada u Podgorici. Podno grijanje u kupatilu i kuhinji, 4 inverterske klime, prozori i bravarija vrhunski drvo-aluminijum, blind vrata, kuhinja komplet opremljena, spavaće sobe opremljene, video nadzor u ulazu. Stan je izuzetno komforan. Pogled sa terase pruža se na Kraljev park, centar grada, Hilton… Cijena 900 eura. Depozit obavezan. Kontakt tel. 067 605 130 (viber, whatsapp).",
+      "_count": 1,
+      "_ai": {
+        "presuda": "vlasnik",
+        "razlog": "Oglas je napisan u prvom licu, sadrži lično ime i nema prepoznatljivih agencijskih oznaka poput šifre ili provizije."
+      }
+    }
+  },
+  "__upozorenje__Pazar3.me__http": {
+    "ts": "2026-10-19T23:41:13.746602",
+    "status": "upozorenje",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/izdavanjejednosoban-stancentral-point--84347": {
+    "ts": "2026-10-19T23:41:14.928309",
     "status": "posrednik",
     "lead": null
   }

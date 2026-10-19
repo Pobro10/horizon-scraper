@@ -219,7 +219,10 @@
       "https://www.patuljak.me/oglas/izdavanjejednosoban-stanstari-aerodrom--84156": "2026-10-18T04:32:47.876554",
       "https://www.patuljak.me/oglas/izdavanjedvosoban-stanstari-aerodrom--84155": "2026-10-18T04:32:49.373000",
       "https://www.patuljak.me/oglas/izdavanjedvosoban-stanpreko-morace--84154": "2026-10-18T04:32:50.856496",
-      "https://www.patuljak.me/oglas/izdavanjetrosoban-stanpreko-morace--84153": "2026-10-18T04:32:52.342249"
+      "https://www.patuljak.me/oglas/izdavanjetrosoban-stanpreko-morace--84153": "2026-10-18T04:32:52.342249",
+      "https://www.patuljak.me/oglas/prodajatrosoban-stanzabjelo--84358": "2026-10-19T23:40:59.803421",
+      "https://www.patuljak.me/oglas/izdavanjedvosoban-stanblok-9--84351": "2026-10-19T23:41:08.884620",
+      "https://www.patuljak.me/oglas/izdavanjejednosoban-stancentral-point--84347": "2026-10-19T23:41:14.928289"
     },
     "imena": [
       "Luxury Property Montenegro"
@@ -327,7 +330,11 @@
       "https://www.patuljak.me/oglas/izdavanjejednosoban-stanstari-aerodrom--84156": "2026-10-18T04:32:47.876565",
       "https://www.patuljak.me/oglas/izdavanjedvosoban-stanstari-aerodrom--84155": "2026-10-18T04:32:49.373010",
       "https://www.patuljak.me/oglas/izdavanjedvosoban-stanpreko-morace--84154": "2026-10-18T04:32:50.856506",
-      "https://www.patuljak.me/oglas/izdavanjetrosoban-stanpreko-morace--84153": "2026-10-18T04:32:52.342259"
+      "https://www.patuljak.me/oglas/izdavanjetrosoban-stanpreko-morace--84153": "2026-10-18T04:32:52.342259",
+      "https://www.patuljak.me/oglas/prodajatrosoban-stanzabjelo--84358": "2026-10-19T23:40:59.803433",
+      "https://www.patuljak.me/oglas/izdavanje-kuca-city-kvart--84356": "2026-10-19T23:41:02.810640",
+      "https://www.patuljak.me/oglas/izdavanjedvosoban-stanblok-9--84351": "2026-10-19T23:41:08.884634",
+      "https://www.patuljak.me/oglas/izdavanjejednosoban-stancentral-point--84347": "2026-10-19T23:41:14.928298"
     },
     "imena": [
       "Luxury Property Montenegro"
@@ -770,7 +777,8 @@
       "https://www.patuljak.me/oglas/izdavanjegarsonjera-preko-morace--83870": "2026-10-16T00:29:35.744516",
       "https://www.patuljak.me/oglas/izdavanje-dvosoban-stan-zagoric--83869": "2026-10-16T00:29:37.242056",
       "https://www.patuljak.me/oglas/izdavanje-dvosoban-stan-donja-gorica--84002": "2026-10-16T16:39:05.905964",
-      "https://www.patuljak.me/oglas/izdavanjejednosoban-stan-zabjelo--84000": "2026-10-16T16:39:08.937310"
+      "https://www.patuljak.me/oglas/izdavanjejednosoban-stan-zabjelo--84000": "2026-10-16T16:39:08.937310",
+      "https://www.patuljak.me/oglas/izdavanje-kuca-city-kvart--84356": "2026-10-19T23:41:02.810653"
     },
     "imena": [
       "Luxury Property Montenegro"
@@ -1395,7 +1403,9 @@
       "https://www.patuljak.me/oglas/lux-dvosoban-centar-pg--82246": "2026-10-05T11:37:43.199918",
       "https://www.patuljak.me/oglas/lux-jednosoban-centar-pg--82243": "2026-10-05T11:37:47.634546",
       "https://www.patuljak.me/oglas/izdavanje-trosoban-stan-140-m2-preko-morace-podgor--82449": "2026-10-06T15:28:44.985067",
-      "https://www.patuljak.me/oglas/lux-dvosoban-stan-centar-pg--83476": "2026-10-13T19:17:47.182291"
+      "https://www.patuljak.me/oglas/lux-dvosoban-stan-centar-pg--83476": "2026-10-13T19:17:47.182291",
+      "https://www.patuljak.me/oglas/trosoban-stan-140-m2-pg--84350": "2026-10-19T23:41:10.385799",
+      "https://www.patuljak.me/oglas/dvosoban-stan-centar-pg--84348": "2026-10-19T23:41:13.420887"
     },
     "imena": [
       "Stefan"
@@ -2628,6 +2638,22 @@
     },
     "imena": [
       "Olivera"
+    ]
+  },
+  "38267337372": {
+    "urls": {
+      "https://www.oglasi.me/nekretnine/stanovi/dvosoban--65m2--4-jul--novogradnja--og84225264me": "2026-10-19T23:41:10.962613"
+    },
+    "imena": [
+      "Jelena"
+    ]
+  },
+  "38267172986": {
+    "urls": {
+      "https://www.oglasi.me/nekretnine/stanovi/izdaje-jednosoban-sta-s-aerodrom-og84224261me": "2026-10-19T23:41:10.962684"
+    },
+    "imena": [
+      "Miroslav"
     ]
   }
 }
