@@ -5895,7 +5895,71 @@
         "38267403762"
       ],
       "_opis": "Opis oglasa Prodaje se Polovina dvojne kuce u Momisice preko puta Ars Medike.\n\n\nKuca ima 180m2 stambenog prostora,  na placu od 287m2.\n\nDvojna kuca je podijeljena po vertikali i ima odvojeni ulaz i dvoriste \n( u DUP u je to urbana parcela UP10b Dupa ,Momisici A-dio zone 1PG.\n\nTakodje dozvoljena je gradnja na parceli SU+P+2PK na osnovu UTU br.08-352/21-526 od 24.06.2021g.\n\nAdresa je VII omladinske br.30.\n\nKuca ima duplex stan na 2 sprata sa 4 terase 2 kupatila, stan u suteren, veliko dvoriste i garazu.\n\nStara kvalitetna gradnja sa heps nosacima,moze da izdrzi zemljotres 9 rihtera.\n\nCijena 330 000\n\n067 403 762",
-      "_uid": "EQ749"
+      "_uid": "EQ749",
+      "_ai": {
+        "presuda": "vlasnik",
+        "razlog": "Oglas je postavljen pod ličnim imenom, sadrži tačnu adresu i specifične tehničke detalje o gradnji bez agencijskih oznaka."
+      }
     }
+  },
+  "https://www.patuljak.me/oglas/stan-u-budvi--84265": {
+    "ts": "2026-10-19T01:16:12.877656",
+    "status": "drugi_grad",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/na-prodaju-kuca-u-sutomoru--84253": {
+    "ts": "2026-10-19T01:16:14.341819",
+    "status": "drugi_grad",
+    "lead": null
+  },
+  "https://www.pazar3.me/oglas/smjestaj-za-radnike-podgorica/2236020": {
+    "ts": "2026-10-19T01:16:14.723318",
+    "status": "star",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/na-prodaju-stan-u-centru-sutomora--84252": {
+    "ts": "2026-10-19T01:16:15.829686",
+    "status": "drugi_grad",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/stanposlovni-prostor-za-izdavanje-njegoseva-ulica--84246": {
+    "ts": "2026-10-19T01:16:17.332525",
+    "status": "vlasnik",
+    "lead": {
+      "ime": "Sladja",
+      "oglas_link": "https://www.patuljak.me/oglas/stanposlovni-prostor-za-izdavanje-njegoseva-ulica--84246",
+      "lokacija": "Podgorica",
+      "cijena": "600.00€",
+      "izvor": "Patuljak.me",
+      "telefoni": [
+        "38267231420"
+      ],
+      "_opis": "Prostor je moguće iznajmiti potpuno opremljen kao i polunamješten ukoliko se iznajmljuje za kancelarijski prostor. Tel. 067231420",
+      "_count": 1,
+      "_ai": {
+        "presuda": "nesigurno",
+        "razlog": "Ime je lično, ali je tekst suviše kratak i neutralan za sigurnu procjenu."
+      }
+    }
+  },
+  "https://www.patuljak.me/oglas/poslovni-prostor--84224": {
+    "ts": "2026-10-19T01:16:18.786089",
+    "status": "drugi_grad",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/izdaje-se-poslovni-prostor-kolasin-40m-kvadratnih--84220": {
+    "ts": "2026-10-19T01:16:20.316569",
+    "status": "drugi_grad",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/plac-njegusi-1998m2-prodaja--84218": {
+    "ts": "2026-10-19T01:16:21.779093",
+    "status": "drugi_grad",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/plac-dolovi-12326m2-prodaja--84217": {
+    "ts": "2026-10-19T01:16:23.256302",
+    "status": "drugi_grad",
+    "lead": null
   }
 }
