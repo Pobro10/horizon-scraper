@@ -6528,5 +6528,25 @@
     "ts": "2026-10-20T19:16:44.376323",
     "status": "posrednik",
     "lead": null
+  },
+  "https://www.patuljak.me/oglas/prodajem-zemljiste-u-lastvi-grbaljskoj--84543": {
+    "ts": "2026-10-20T22:21:35.083336",
+    "status": "drugi_grad",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/budva-poslovni-prostor-35-m2--84542": {
+    "ts": "2026-10-20T22:21:36.714572",
+    "status": "drugi_grad",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/placevi-na-zabljaku--84540": {
+    "ts": "2026-10-20T22:21:38.341610",
+    "status": "drugi_grad",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/prodaje-se-luksuzno-opremljen-jednosoban-stan-povr--84539": {
+    "ts": "2026-10-20T22:21:40.019854",
+    "status": "posrednik",
+    "lead": null
   }
 }
