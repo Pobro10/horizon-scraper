@@ -879,6 +879,16 @@ def send_email(leads: list[dict], review_leads: list[dict] = []) -> bool:
 
 
 UPOZORENJE_PAUZA_H = 24   # isto upozorenje najviše jednom dnevno (runovi su satni)
+BLOKADA_STRPLJENJE_H = 72 # HTTP blokada se prijavljuje tek kad traje duže od ovoga:
+                          # Pazar3 povremeno odbija GitHub 1-2 dana pa se sam vrati
+                          # (15-16.10 ~30 h, 19-20.10), nema smisla uzbunjivati odmah
+
+
+def _blokada_reset(sajt: str) -> None:
+    """Sajt opet odgovara: zaboravi početak blokade."""
+    with _SEEN_LOCK:
+        if SEEN.pop(f"__blokada__{sajt}", None):
+            log.info("ℹ  %s opet odgovara, blokada prošla.", sajt)
 
 
 def send_warning_email(sajt: str, fail_count: int, total: int, detalj: str = "",
@@ -890,6 +900,24 @@ def send_warning_email(sajt: str, fail_count: int, total: int, detalj: str = "",
     if not (SEND_EMAIL or MAIL_PROZOR):
         log.info("Upozorenje za %s se ne šalje (SEND_EMAIL=false).", sajt)
         return
+    od = ""
+    if vrsta == "http":
+        k_blok = f"__blokada__{sajt}"
+        with _SEEN_LOCK:
+            start = (SEEN.get(k_blok) or {}).get("ts")
+        if not start:
+            seen_record(k_blok, "blokada")
+            start = datetime.now().isoformat()
+        try:
+            traje = datetime.now() - datetime.fromisoformat(start)
+        except ValueError:
+            traje = timedelta(0)
+        if traje < timedelta(hours=BLOKADA_STRPLJENJE_H):
+            log.warning("⚠  %s ne odgovara od %s (%.0f h); mejl tek poslije %d h bez odgovora.",
+                        sajt, start[:16].replace("T", " "), traje.total_seconds() / 3600,
+                        BLOKADA_STRPLJENJE_H)
+            return
+        od = start[:16].replace("T", " ")
     kljuc   = f"__upozorenje__{sajt}__{vrsta}"
     granica = (datetime.now() - timedelta(hours=UPOZORENJE_PAUZA_H)).isoformat()
     with _SEEN_LOCK:
@@ -904,9 +932,9 @@ def send_warning_email(sajt: str, fail_count: int, total: int, detalj: str = "",
     if vrsta == "http":
         subject = f"⚠️ Horizon Scraper — {sajt} ne odgovara"
         poruka  = (f"{sajt} ne odgovara ili odbija zahtjeve sa GitHub servera "
-                   f"(HTTP greška ili blokada). Ostali sajtovi rade normalno. "
-                   f"Privremene blokade prolaze same; ako ovo upozorenje stiže "
-                   f"više dana zaredom, treba provjeriti.")
+                   f"(HTTP greška ili blokada) bez prekida od {od}, dakle duže od "
+                   f"{BLOKADA_STRPLJENJE_H} h. Ostali sajtovi rade normalno. "
+                   f"Kraće blokade prolaze same i ne prijavljuju se.")
     else:
         subject = f"⚠️ Horizon Scraper — selektori pokvareni na {sajt}"
         poruka  = (f"{fail_count} od {total} oglasa nije moglo biti parsirano jer "
@@ -1162,6 +1190,8 @@ def run_oglasi() -> tuple[list[dict], list[dict]]:
 
     # Upozorenje samo kad index NE DAJE NIJEDNU karticu (markup promijenjen).
     # Prazan queue je normalan kad prosto nema novih oglasa iz Podgorice.
+    if total_cards > 0:
+        _blokada_reset("Oglasi.me")
     if total_cards == 0 and http_fail:
         log.warning("⚠  Oglasi.me: index ne odgovara (HTTP greška/blokada).")
         send_warning_email("Oglasi.me", 0, 0, vrsta="http")
@@ -1444,6 +1474,8 @@ def run_patuljak() -> tuple[list[dict], list[dict]]:
     if cache_hits:
         log.info("  keš: %d/%d oglasa preskočeno (već obrađeni).", cache_hits, len(queue))
 
+    if queue:
+        _blokada_reset("Patuljak.me")
     if len(queue) == 0 and http_fail:
         log.warning("⚠  Patuljak.me: index ne odgovara (HTTP greška/blokada).")
         send_warning_email("Patuljak.me", 0, 0, vrsta="http")
@@ -1746,6 +1778,8 @@ def run_pazar3() -> tuple[list[dict], list[dict]]:
     if cache_hits:
         log.info("  keš: %d/%d oglasa preskočeno (već obrađeni).", cache_hits, len(queue))
 
+    if total_cards > 0:
+        _blokada_reset("Pazar3.me")
     if total_cards == 0 and http_fail:
         log.warning("⚠  Pazar3.me: index ne odgovara (HTTP greška/blokada).")
         send_warning_email("Pazar3.me", 0, 0, vrsta="http")
@@ -1902,6 +1936,11 @@ def run_realitica() -> tuple[list[dict], list[dict]]:
 
 def main() -> None:
     log.info("▶  Horizon Scraper  %s", datetime.now().strftime("%Y-%m-%d %H:%M"))
+    try:
+        log.info("Javna adresa runnera: %s",
+                 requests.get("https://api.ipify.org", timeout=10).text.strip())
+    except Exception as e:
+        log.info("Javna adresa runnera: nepoznata (%s)", e)
 
     global SEEN, PHONES
     SEEN = load_seen()
