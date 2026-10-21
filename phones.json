@@ -248,7 +248,10 @@
       "https://www.patuljak.me/oglas/izdavanjeposlovni-prostordonja-gorica--84555": "2026-10-21T01:37:03.123991",
       "https://www.patuljak.me/oglas/izdavanjeposlovni-prostordonja-gorica--84553": "2026-10-21T01:37:06.408975",
       "https://www.patuljak.me/oglas/izdavanjeposlovni-prostorcity-kvart--84551": "2026-10-21T01:37:09.718689",
-      "https://www.patuljak.me/oglas/izdavanjetrosoban-standalmatinska--84550": "2026-10-21T01:37:11.390766"
+      "https://www.patuljak.me/oglas/izdavanjetrosoban-standalmatinska--84550": "2026-10-21T01:37:11.390766",
+      "https://www.patuljak.me/oglas/izdavanjejednosoban-stanpobrezje--84696": "2026-10-21T22:20:41.737084",
+      "https://www.patuljak.me/oglas/izdavanjejednosoban-stanstari-aerodrom--84694": "2026-10-21T22:20:44.976314",
+      "https://www.patuljak.me/oglas/izdavanjedvosoban-stanstari-aerodrom--84690": "2026-10-21T22:20:49.868612"
     },
     "imena": [
       "Luxury Property Montenegro"
@@ -372,7 +375,10 @@
       "https://www.patuljak.me/oglas/izdavanje-magacin-stari-aerodrom--84554": "2026-10-21T01:37:04.772528",
       "https://www.patuljak.me/oglas/izdavanjeposlovni-prostordonja-gorica--84553": "2026-10-21T01:37:06.408985",
       "https://www.patuljak.me/oglas/izdavanjejednosoban-stan-stari-aerodrom--84552": "2026-10-21T01:37:08.067875",
-      "https://www.patuljak.me/oglas/izdavanjetrosoban-standalmatinska--84550": "2026-10-21T01:37:11.390776"
+      "https://www.patuljak.me/oglas/izdavanjetrosoban-standalmatinska--84550": "2026-10-21T01:37:11.390776",
+      "https://www.patuljak.me/oglas/izdavanjejednosoban-stanpobrezje--84696": "2026-10-21T22:20:41.737096",
+      "https://www.patuljak.me/oglas/izdavanjejednosoban-stanstari-aerodrom--84694": "2026-10-21T22:20:44.976324",
+      "https://www.patuljak.me/oglas/izdavanjedvosoban-stanstari-aerodrom--84690": "2026-10-21T22:20:49.868624"
     },
     "imena": [
       "Luxury Property Montenegro"
@@ -2971,6 +2977,22 @@
     },
     "imena": [
       "Multitask nekretnine"
+    ]
+  },
+  "382694593000": {
+    "urls": {
+      "https://www.patuljak.me/oglas/manji-dvosoban-stan--84693": "2026-10-21T22:20:46.585746"
+    },
+    "imena": [
+      "Millennium"
+    ]
+  },
+  "38267835624": {
+    "urls": {
+      "https://www.oglasi.me/nekretnine/zemljiste/prodaja-vise-imanja-u-lijevoj-rijeci---od-500-m2--og84246350me": "2026-10-21T22:20:50.917479"
+    },
+    "imena": [
+      "DND CONNECT"
     ]
   }
 }
