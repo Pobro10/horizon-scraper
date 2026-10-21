@@ -6174,7 +6174,11 @@
         "38269222090"
       ],
       "_opis": "Opis oglasa Izdaje se polunamjesten stan na duzi vremenski period",
-      "_uid": null
+      "_uid": null,
+      "_ai": {
+        "presuda": "nesigurno",
+        "razlog": "Oglas je previše kratak i neutralan, bez jasnih indikatora koji bi potvrdili da li se radi o vlasniku ili agenciji."
+      }
     }
   },
   "https://www.oglasi.me/nekretnine/zemljiste/gradjevinsko-zemljiste--6951m2--podgorica-og57018862me": {
@@ -6196,7 +6200,11 @@
         "38269579939"
       ],
       "_opis": "Opis oglasa MAGACINSKI PROSTOR 300 m\n Tološi, put prema Marezi - preko puta groblja.\nDostupan od 1.decembra.\nSve ostale informacije na broj telefona 069-579-939",
-      "_uid": null
+      "_uid": null,
+      "_ai": {
+        "presuda": "nesigurno",
+        "razlog": "Oglas je veoma kratak i ne sadrži ni ključne riječi vlasnika niti profesionalne elemente agencije."
+      }
     }
   },
   "https://www.oglasi.me/nekretnine/stanovi/jednosoban-stan--44m2--zagoric--podgorica-og80282264me": {
@@ -6217,7 +6225,11 @@
         "38267225087"
       ],
       "_opis": "Opis oglasa dva poslovna prostora po 45m2,masline ulica v.bogisica-glavni ulaz kasarna, izdaju se zasebno, ispred veci parking, izuzetno prometna ulica, blizu idea marketa, glavi ulaz u kasarnu,..iskljucivo na duzi period...cijena mjesecnog zakupa 450e-45m2",
-      "_uid": null
+      "_uid": null,
+      "_ai": {
+        "presuda": "vlasnik",
+        "razlog": "Oglas je napisan neformalnim stilom bez profesionalnog formatiranja i agencijskih oznaka poput šifre."
+      }
     }
   },
   "https://www.patuljak.me/oglas/jednosoban-stan-44m2-vezirov-most-izdavanje--69974": {
@@ -6666,6 +6678,31 @@
   "https://www.patuljak.me/oglas/pprodaje-se-kompletno-renoviran-opremljen-trosob--84630": {
     "ts": "2026-10-21T13:48:57.134218",
     "status": "drugi_grad",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/prodaje-se-garsonjera-povrsine-29m--84689": {
+    "ts": "2026-10-21T18:38:36.475910",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/prodaje-se-polunamjesten-dvosoban-stan-u-zgradi-ma--84688": {
+    "ts": "2026-10-21T18:38:37.977507",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/na-prodaju-useljiva-stambena-kuca-80-m2-jastreb-da--84687": {
+    "ts": "2026-10-21T18:38:39.447337",
+    "status": "drugi_grad",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/izdaje-se-trosoban-duplex-stan-povrsine-120m-na-ve--84686": {
+    "ts": "2026-10-21T18:38:40.937513",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/izdaje-se-dvosoban-nenamjesten-stan-povrsine-69-m--84685": {
+    "ts": "2026-10-21T18:38:42.421180",
+    "status": "posrednik",
     "lead": null
   }
 }
