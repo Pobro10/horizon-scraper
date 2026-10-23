@@ -3518,11 +3518,6 @@
     "status": "posrednik",
     "lead": null
   },
-  "__blokada__Pazar3.me": {
-    "ts": "2026-10-20T19:16:39.337358",
-    "status": "blokada",
-    "lead": null
-  },
   "https://www.oglasi.me/nekretnine/stanovi/izdaje-se-dvosoban-stan--zagoric-og84233440me": {
     "ts": "2026-10-20T19:16:44.376323",
     "status": "posrednik",
@@ -6584,5 +6579,166 @@
     "ts": "2026-10-23T18:20:57.765540",
     "status": "posrednik",
     "lead": null
+  },
+  "https://www.patuljak.me/oglas/izdavanjedvosoban-stancentral-point--85027": {
+    "ts": "2026-10-23T22:10:02.279777",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/izdaje-se-stan-sa-1-spavacom-sobom-u-budvi-blizu-a--85026": {
+    "ts": "2026-10-23T22:10:03.855442",
+    "status": "drugi_grad",
+    "lead": null
+  },
+  "https://www.pazar3.me/oglas/izdavanje-jednosoban-stan-42m-tolosi-podgorica/3284779": {
+    "ts": "2026-10-23T22:10:04.135958",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/id-334-izdaje-se-stan-sa-2-spavace-sobe-u-kuci-rea--85025": {
+    "ts": "2026-10-23T22:10:05.443639",
+    "status": "drugi_grad",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/prodaje-se-jednosoban-stan-povrsine-50-m-u-novom-s--85024": {
+    "ts": "2026-10-23T22:10:07.024071",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/prodaje-se-jednosoban-stan-povrsine-56-m-u-novom-s--85021": {
+    "ts": "2026-10-23T22:10:08.632998",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/izdavanjejednosoban-stancentral-point--85020": {
+    "ts": "2026-10-23T22:10:10.208813",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/za-izdavanje-dvosoban-stan-62m2-stari-aerodrom--85019": {
+    "ts": "2026-10-23T22:10:11.783621",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/izdavanjejednosoban-stanstari-aerodrom--85018": {
+    "ts": "2026-10-23T22:10:13.357682",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.oglasi.me/nekretnine/stanovi/izdaje-se-namjesten-stan--stari-aerodrom-og84264380me": {
+    "ts": "2026-10-23T22:10:28.099130",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.oglasi.me/nekretnine/zemljiste/prodaje-se-plac--zeta---mataguzi---og84264535me": {
+    "ts": "2026-10-23T22:10:28.099387",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.oglasi.me/nekretnine/stanovi/izdaje-se-dvosoban-stan--tolosi-og84263682me": {
+    "ts": "2026-10-23T22:10:28.099527",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.oglasi.me/nekretnine/stanovi/prodajem-jednosoban-stan-u-podgorici-zabjelo-kod-texno-max-a--og84263347me": {
+    "ts": "2026-10-23T22:10:28.099685",
+    "status": "vlasnik",
+    "lead": {
+      "ime": "Marko",
+      "oglas_link": "https://www.oglasi.me/nekretnine/stanovi/prodajem-jednosoban-stan-u-podgorici-zabjelo-kod-texno-max-a--og84263347me",
+      "lokacija": "Podgorica",
+      "cijena": "115000€",
+      "izvor": "Oglasi.me",
+      "telefoni": [
+        "38268434373"
+      ],
+      "_opis": "Opis oglasa Jednosoban stan od 40 m2 u novoj zgradi Zetagradnje na Zabjelu pored Texno max-a u Podgorici. Stan se nalazi na 2. spratu i ima istocnu orijentaciju pruzajuci prijatnu jutarnju svjetlost i svijetao enterijer.",
+      "_uid": null,
+      "_ai": {
+        "presuda": "nesigurno",
+        "razlog": "Ime je lično, ali tekst ne sadrži ni jasne znake agencije niti eksplicitnu potvrdu da prodaje vlasnik."
+      }
+    }
+  },
+  "https://www.oglasi.me/nekretnine/kuce/izdajem-garsonheru-og84263217me": {
+    "ts": "2026-10-23T22:10:28.099729",
+    "status": "vlasnik",
+    "lead": {
+      "ime": "Ilija",
+      "oglas_link": "https://www.oglasi.me/nekretnine/kuce/izdajem-garsonheru-og84263217me",
+      "lokacija": "Podgorica",
+      "cijena": "200.00 € mjesec",
+      "izvor": "Oglasi.me",
+      "telefoni": [
+        "38267371166"
+      ],
+      "_opis": "Opis oglasa Mala namjestena garsonjera ,za jednu žensku osobu(student), u kuci iza ekonomskog fakulteta",
+      "_uid": null,
+      "_ai": {
+        "presuda": "vlasnik",
+        "razlog": "Oglas je kratak, neformalan i ličan, bez ikakvih elemenata koji bi ukazivali na posredovanje agencije."
+      }
+    }
+  },
+  "https://www.oglasi.me/nekretnine/stanovi/prodajem-jednosoban-stan-u-podgorici-og84263122me": {
+    "ts": "2026-10-23T22:10:28.099766",
+    "status": "vlasnik",
+    "lead": {
+      "ime": "Marko",
+      "oglas_link": "https://www.oglasi.me/nekretnine/stanovi/prodajem-jednosoban-stan-u-podgorici-og84263122me",
+      "lokacija": "Podgorica",
+      "cijena": "120000€",
+      "izvor": "Oglasi.me",
+      "telefoni": [
+        "38268434373"
+      ],
+      "_opis": "Opis oglasa Jednosoban stan od 40m2 u novoj zgradi Zetagradnje u izgradnji u Zabjelu,pored Texno max-a u Podgorici. Stan se nalazi na 2. spratu i ima istocnu orijentaciju pruzajuci prijatnu jutarnju svjetlost i svetao enterijer.",
+      "_uid": null,
+      "_ai": {
+        "presuda": "nesigurno",
+        "razlog": "Ime je lično a tekst je deskriptivan bez jasnih indikatora agencije ili potvrde da prodaje vlasnik."
+      }
+    }
+  },
+  "https://www.oglasi.me/nekretnine/stanovi/izdajem-namjestenu-garsonjeru-og84263763me": {
+    "ts": "2026-10-23T22:10:28.099805",
+    "status": "vlasnik",
+    "lead": {
+      "ime": "Ljubenko",
+      "oglas_link": "https://www.oglasi.me/nekretnine/stanovi/izdajem-namjestenu-garsonjeru-og84263763me",
+      "lokacija": "Podgorica",
+      "cijena": "300.00 € mjesec",
+      "izvor": "Oglasi.me",
+      "telefoni": [
+        "38268123495"
+      ],
+      "_opis": "Opis oglasa Izdajem namjestenu garsonjeru.\nUlica Iva Vizina 49",
+      "_uid": null,
+      "_ai": {
+        "presuda": "vlasnik",
+        "razlog": "Lično ime oglašivača i kratak, neformalan tekst bez agencijskih obilježja."
+      }
+    }
+  },
+  "https://www.oglasi.me/nekretnine/poslovni-prostori/izdajem-magacin-og32357111me": {
+    "ts": "2026-10-23T22:10:28.100491",
+    "status": "vlasnik",
+    "lead": {
+      "ime": "Dragana",
+      "oglas_link": "https://www.oglasi.me/nekretnine/poslovni-prostori/izdajem-magacin-og32357111me",
+      "lokacija": "Podgorica",
+      "cijena": "350.00 € mjesec",
+      "izvor": "Oglasi.me",
+      "telefoni": [
+        "38263436098",
+        "38268840671"
+      ],
+      "_opis": "Opis oglasa Izdajem halu 100 m2 za bravarsku stolarsku radnju ili magacin u Vranićima uliva Mašana Božovića broj 3 cijena 350€ kontakt Mijo 068/840-671",
+      "_uid": null,
+      "_ai": {
+        "presuda": "vlasnik",
+        "razlog": "Tekst je jednostavan, neformalan, sadrži tačnu lokaciju i direktno ime kontakta bez agencijskih obilježja."
+      }
+    }
   }
 }
