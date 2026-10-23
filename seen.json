@@ -1,44 +1,4 @@
 {
-  "https://www.patuljak.me/oglas/prodaja-jednosoban-stan-podgorica-preko-morace-60m--83776": {
-    "ts": "2026-10-15T07:26:10.150945",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://www.patuljak.me/oglas/izdavanje-jednosoban-stan-podgorica-zagoric-46m2--83775": {
-    "ts": "2026-10-15T07:26:11.834685",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://www.patuljak.me/oglas/prodaja-trosoban-stan-podgorica-zabjelo-98m2--83774": {
-    "ts": "2026-10-15T07:26:13.528412",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://www.patuljak.me/oglas/pprodaje-se-strongjednosoban-namjesten-stanst--83773": {
-    "ts": "2026-10-15T07:26:15.217071",
-    "status": "drugi_grad",
-    "lead": null
-  },
-  "https://www.oglasi.me/nekretnine/poslovni-prostori/prodajem-poslovni-prostor-u-sivoj-fazi-na-starom-aerodromu-og66865104me": {
-    "ts": "2026-10-15T07:26:23.463486",
-    "status": "vlasnik",
-    "lead": {
-      "ime": "Mirsad",
-      "oglas_link": "https://www.oglasi.me/nekretnine/poslovni-prostori/prodajem-poslovni-prostor-u-sivoj-fazi-na-starom-aerodromu-og66865104me",
-      "lokacija": "Podgorica",
-      "cijena": "100000€",
-      "izvor": "Oglasi.me",
-      "telefoni": [
-        "38269510600"
-      ],
-      "_opis": "Opis oglasa Prodaje se poslovni prostor u sivoj fazi, površine 44m2. Poslovni prostor se nalazi u dvorišnoj strani. Posjeduje zaštitnu roletnu. Moguća zamjena za stan u Podgorici.",
-      "_uid": null,
-      "_ai": {
-        "presuda": "vlasnik",
-        "razlog": "Oglas je napisan jednostavnim tonom pod ličnim imenom uz pominjanje mogućnosti zamjene što je tipično za privatne vlasnike."
-      }
-    }
-  },
   "https://www.patuljak.me/oglas/izdajem-jednosoban-stan-43-m2-centar-podgorica--83805": {
     "ts": "2026-10-15T13:25:52.139690",
     "status": "vlasnik",
@@ -6439,6 +6399,21 @@
   "https://www.patuljak.me/oglas/izdaje-se-trosoban-stan-povrsine-114m-u-stambenom--84864": {
     "ts": "2026-10-23T01:32:34.382879",
     "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/izdaje-se-poslovni-prostor-60m2-stari-aerodrom-i--84958": {
+    "ts": "2026-10-23T07:31:43.830000",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/prodaje-se-kuca-231m2-gornja-gorica-id-h-332--84957": {
+    "ts": "2026-10-23T07:31:45.341379",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/prodaje-se-plac-5435m2-pasina-voda-id-ml-1778--84956": {
+    "ts": "2026-10-23T07:31:46.834336",
+    "status": "drugi_grad",
     "lead": null
   }
 }
