@@ -6573,5 +6573,70 @@
         "razlog": "Ime oglašivača 'G1' djeluje kao šifra, ali u tekstu nema jasnih znakova agencije niti potvrde vlasništva."
       }
     }
+  },
+  "https://www.patuljak.me/oglas/pprodaje-se�-urbanizovan-placstrong-povrsine--85101": {
+    "ts": "2026-10-24T10:59:13.075910",
+    "status": "drugi_grad",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/nov-jednosoban-opremljen-stan-55m2-u-kompleksu-sa--85100": {
+    "ts": "2026-10-24T10:59:14.720444",
+    "status": "drugi_grad",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/prodaja-kuca-250m2-podgorica-stari-aerodrom--85099": {
+    "ts": "2026-10-24T10:59:16.368151",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/najamizdavanje-stan-54m-podgorica-ljubovic--85098": {
+    "ts": "2026-10-24T10:59:18.015310",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/najamizdavanje-jednosoban-stan-30m2-podgoric--85097": {
+    "ts": "2026-10-24T10:59:19.652629",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/najamizdavanje-garsonjera-30m2-podgorica-tol--85096": {
+    "ts": "2026-10-24T10:59:21.337351",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/najamizdavanje-dvosoban-stan-65m2-podgorica--85095": {
+    "ts": "2026-10-24T10:59:22.976683",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/najamizdavanje-stan-60m-podgorica-centar--85094": {
+    "ts": "2026-10-24T10:59:24.618978",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/najamizdavanje-dvosoban-stan-76m2-podgorica--85093": {
+    "ts": "2026-10-24T10:59:26.279664",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.oglasi.me/nekretnine/kuce/mijenjam-kucu-u-podgorici-u-naselju-tolosi-papiri-1-1--za-jednosoban-stan-u-baru-uz-doplatu-kupca--cijena-kuce-sa-placem-je-180-000-eur--tel---069-194-126-og84265666me": {
+    "ts": "2026-10-24T10:59:27.603680",
+    "status": "provjeri",
+    "lead": {
+      "ime": "Rašo",
+      "oglas_link": "https://www.oglasi.me/nekretnine/kuce/mijenjam-kucu-u-podgorici-u-naselju-tolosi-papiri-1-1--za-jednosoban-stan-u-baru-uz-doplatu-kupca--cijena-kuce-sa-placem-je-180-000-eur--tel---069-194-126-og84265666me",
+      "lokacija": "Podgorica",
+      "cijena": "180000€",
+      "izvor": "Oglasi.me",
+      "telefoni": [
+        "38269194126"
+      ],
+      "_opis": "Opis oglasa Mijenjam kuću u Podgorici u naselju Tološi,papiri 1/1, za jednosoban stan u Baru uz doplatu kupca. Cijena kuće sa placem je 180.000 EUR. Tel : 069 194 126",
+      "_uid": null,
+      "_ai": {
+        "presuda": "vlasnik",
+        "razlog": "Oglas koristi lično ime, napisan je u prvom licu i nudi zamjenu nekretnine, što je tipično za privatne vlasnike."
+      }
+    }
   }
 }
