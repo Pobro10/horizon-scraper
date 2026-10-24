@@ -6542,12 +6542,36 @@
       "izvor": "Patuljak.me",
       "telefoni": [],
       "_opis": "prodaje se kuca na zlatici, novogradnja, sve novo 200 kvadrata,plac od 500 kvadrata moze zamjena uz nesto i doplata, dogovor oko cijene",
-      "_count": 1
+      "_count": 1,
+      "_ai": {
+        "presuda": "vlasnik",
+        "razlog": "Lično ime, neformalan ton teksta i ponuda zamjene karakteristični su za privatnog prodavca."
+      }
     }
   },
   "https://www.patuljak.me/oglas/prodaje-se-jednosoban-stan-povrsine-55-m-na-drugom--85028": {
     "ts": "2026-10-24T00:42:39.786265",
     "status": "posrednik",
     "lead": null
+  },
+  "https://www.oglasi.me/nekretnine/stanovi/jednosoban-stan-50m2---zabjelo--podgorica-og84076099me": {
+    "ts": "2026-10-24T05:53:02.883633",
+    "status": "vlasnik",
+    "lead": {
+      "ime": "G1",
+      "oglas_link": "https://www.oglasi.me/nekretnine/stanovi/jednosoban-stan-50m2---zabjelo--podgorica-og84076099me",
+      "lokacija": "Podgorica",
+      "cijena": "550.00 € mjesec",
+      "izvor": "Oglasi.me",
+      "telefoni": [
+        "38269230120"
+      ],
+      "_opis": "Opis oglasa Izdaje se neuseljavan i namješten stan, površine 50 m2 na Zabjelu u Podgorici. Nalazi se u novom stambeno-poslovnom objektu \"Ventura Republika\" , ul. Ilije Plamenca (pored Mega Centra -MULTICOM). U potpunosti je opremljen sa svim neophodnim uredjajima. Stan je klimatizovan (Multi-Split Sistemom) i nalazi na trećem spratu a zgrada posjeduje 2 lifta.\nStan se sastoji od dnevnog boravka koji je povezan sa kuhinjom, spavaće sobe,hodnika, kupatila i terase.  Stan se nalazi u blizini marketa, škola, vrtića , igrališta, restorana, apoteka i drugih sadržaja uz dobru povezanost sa centrom i ostalim djelovima grada.\nStan se izdaje na duži vremenski period. Za više informacija  putem Vibera ili WhatsApp-a na broj 069-230-120.",
+      "_uid": null,
+      "_ai": {
+        "presuda": "nesigurno",
+        "razlog": "Ime oglašivača 'G1' djeluje kao šifra, ali u tekstu nema jasnih znakova agencije niti potvrde vlasništva."
+      }
+    }
   }
 }
