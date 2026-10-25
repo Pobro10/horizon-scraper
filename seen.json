@@ -6219,5 +6219,109 @@
     "ts": "2026-10-24T23:13:29.545318",
     "status": "drugi_grad",
     "lead": null
+  },
+  "https://www.patuljak.me/oglas/prodaje-se-dvosoban-stan--85157": {
+    "ts": "2026-10-25T01:11:12.009327",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/izadajem-sobe-za-radnike--85148": {
+    "ts": "2026-10-25T01:11:13.599780",
+    "status": "vlasnik",
+    "lead": {
+      "ime": "Aleksandra",
+      "oglas_link": "https://www.patuljak.me/oglas/izadajem-sobe-za-radnike--85148",
+      "lokacija": "Podgorica",
+      "cijena": "5.00€",
+      "izvor": "Patuljak.me",
+      "telefoni": [],
+      "_opis": "Izdajem sobe za radnike 5 e po krevetu. Veliki parking ispred kuce. Sobe se nalaze na gornjem spratu zajednicko kupatilo i kuhinja. Velika terasa, sve sobe imaju wf .",
+      "_count": 1,
+      "_ai": {
+        "presuda": "vlasnik",
+        "razlog": "Lično ime oglašivača, neformalan ton i opisivanje sopstvene kuće ukazuju na privatnog vlasnika."
+      }
+    }
+  },
+  "https://www.patuljak.me/oglas/urbanizovan-plac--85140": {
+    "ts": "2026-10-25T01:11:15.236379",
+    "status": "drugi_grad",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/dvosoban-stan-50-m2-igalo-herceg-novi--85135": {
+    "ts": "2026-10-25T01:11:16.908809",
+    "status": "drugi_grad",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/izdavanjetrosoban-stan-city-kvart--85133": {
+    "ts": "2026-10-25T01:11:18.573918",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/izdavanjedvosoban-stan-master-kvart--85132": {
+    "ts": "2026-10-25T01:11:20.238754",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/garsonjera-herceg-novi-topla-2--85130": {
+    "ts": "2026-10-25T01:11:21.908822",
+    "status": "drugi_grad",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/izdavanjejednosoban-stanmaster-kvart--85129": {
+    "ts": "2026-10-25T01:11:23.577677",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/izdavanjejednosoban-stan-pobrezje--85128": {
+    "ts": "2026-10-25T01:11:25.241817",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/stari-bar--85127": {
+    "ts": "2026-10-25T01:11:26.865091",
+    "status": "drugi_grad",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/izdavanjejednosoban-stan-centar--85126": {
+    "ts": "2026-10-25T01:11:28.530746",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/izdavanjejednosoban-stan-new-city--85125": {
+    "ts": "2026-10-25T01:11:30.205260",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/izdavanjekuca-ibricevina--85123": {
+    "ts": "2026-10-25T01:11:31.860567",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/izdajem-sobu-podgorica-kod-ekonomskog-fakulteta--85121": {
+    "ts": "2026-10-25T01:11:33.462403",
+    "status": "provjeri",
+    "lead": {
+      "ime": "Marija",
+      "oglas_link": "https://www.patuljak.me/oglas/izdajem-sobu-podgorica-kod-ekonomskog-fakulteta--85121",
+      "lokacija": "Podgorica",
+      "cijena": "170.00€",
+      "izvor": "Patuljak.me",
+      "telefoni": [
+        "38267554791",
+        "38267300565"
+      ],
+      "_opis": "Izdajem ženskoj osobi lijepo namještenu, klimatizovanu sobu, sa upotrebom kuhinje i kupatila, kod Ekonomskog i Pravnog fakulteta, Podgorica (kod škole Sutjeska). Provatni balkon sa pogledom na grad! Ekstra lokacija, novogradnja!!! Cijena 170e mjesečno. Tel: 067/554-791 i 067/300-565",
+      "_count": 1,
+      "_ai": {
+        "presuda": "vlasnik",
+        "razlog": "Oglas ima ličan ton i specifičan uslov izdavanja sobe ženskoj osobi bez profesionalnih oznaka."
+      }
+    }
+  },
+  "https://www.patuljak.me/oglas/plac-481-m-na-prodaju-centar-cetinje--85115": {
+    "ts": "2026-10-25T01:11:35.105794",
+    "status": "drugi_grad",
+    "lead": null
   }
 }
