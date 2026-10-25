@@ -1,19 +1,4 @@
 {
-  "https://www.patuljak.me/oglas/pizdaje-se-strongjednosoban-lijepo-namjesten-s--84121": {
-    "ts": "2026-10-17T06:57:04.144489",
-    "status": "drugi_grad",
-    "lead": null
-  },
-  "https://www.patuljak.me/oglas/izdaje-se-kuca-223m2-masline-id-ml-1769--84120": {
-    "ts": "2026-10-17T06:57:05.737346",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://www.patuljak.me/oglas/izdaje-se-dvosoban-stan-62m2-donja-gorica-id-p-8--84119": {
-    "ts": "2026-10-17T06:57:07.233790",
-    "status": "posrednik",
-    "lead": null
-  },
   "https://www.patuljak.me/oglas/jednosoban-stan-35m2-stari-aerodrom-podgorica--84132": {
     "ts": "2026-10-17T11:37:48.856831",
     "status": "posrednik",
@@ -6065,5 +6050,40 @@
       "_opis": "",
       "_uid": null
     }
+  },
+  "https://www.patuljak.me/oglas/prodaje-se-jednosoban-stan--85164": {
+    "ts": "2026-10-25T11:27:09.452493",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/prodaje-se-jednosoban-stan--85161": {
+    "ts": "2026-10-25T11:27:10.956183",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/prodaje-se-dvosoban-stan--85160": {
+    "ts": "2026-10-25T11:27:12.453223",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/prodaje-se-dvosoban-stan--85159": {
+    "ts": "2026-10-25T11:27:13.973939",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.oglasi.me/nekretnine/stanovi/izdaje-se-jednosoban-stan--central-point-og84274864me": {
+    "ts": "2026-10-25T11:27:27.506488",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.oglasi.me/nekretnine/stanovi/izdaje-se-dvosoban-stan--blok-9-og84275192me": {
+    "ts": "2026-10-25T11:27:27.506776",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.oglasi.me/nekretnine/stanovi/izdaje-se-jednosoban-stan--zabjelo-og84274484me": {
+    "ts": "2026-10-25T11:27:27.507084",
+    "status": "posrednik",
+    "lead": null
   }
 }
