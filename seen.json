@@ -1,54 +1,4 @@
 {
-  "https://www.patuljak.me/oglas/izdaje-se-trosoban-namjesten-stan-povrsine-125-m--84149": {
-    "ts": "2026-10-17T18:30:39.148927",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://www.patuljak.me/oglas/prodaje-se-poslovni-prostor-povrsine-101-m--84148": {
-    "ts": "2026-10-17T18:30:40.795468",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://www.oglasi.me/nekretnine/stanovi/izdajem-jednosoban-namjesten-stan---ventura--stari-aerodrom-og84186627me": {
-    "ts": "2026-10-17T18:30:58.973677",
-    "status": "vlasnik",
-    "lead": {
-      "ime": "Hana",
-      "oglas_link": "https://www.oglasi.me/nekretnine/stanovi/izdajem-jednosoban-namjesten-stan---ventura--stari-aerodrom-og84186627me",
-      "lokacija": "Podgorica",
-      "cijena": "450.00 € mjesec",
-      "izvor": "Oglasi.me",
-      "telefoni": [
-        "38267116159"
-      ],
-      "_opis": "Opis oglasa Izdaje se jednosoban namjesten stan na duzi vremenski period. Stan se nalazi na odlicnoj lokaciji, u blizini skola, vrtica i Doma zdravlja. Ima prikljucak za internet i tv. Cijena mjesecne stanarine 450 fiksno.\nTel. 067116159",
-      "_uid": null,
-      "_ai": {
-        "presuda": "vlasnik",
-        "razlog": "Oglas je napisan jednostavnim i neformalnim tonom pod ličnim imenom, bez agencijskih šifri i profesionalne terminologije."
-      }
-    }
-  },
-  "https://www.oglasi.me/nekretnine/kuce/prodajem-kucu-sa-tri-troiposobna-stana-blizu-centra-pg-og60238736me": {
-    "ts": "2026-10-17T18:30:58.974319",
-    "status": "vlasnik",
-    "lead": {
-      "ime": "Zoran",
-      "oglas_link": "https://www.oglasi.me/nekretnine/kuce/prodajem-kucu-sa-tri-troiposobna-stana-blizu-centra-pg-og60238736me",
-      "lokacija": "Podgorica",
-      "cijena": "750000€",
-      "izvor": "Oglasi.me",
-      "telefoni": [
-        "38267530853"
-      ],
-      "_opis": "Opis oglasa Prodajem tri troiposobna stana od po 100 m2 na samom početku Zagoriča, ul.Nikole Tesle br.22. Mogućnost pretvaranja u 3 dvosobna i 3 jednosobna stana.  Top lokacija, 6 parking mjesta. Blizina škole i vrtića, brda Gorice, kao i strogog centra grada i dijela grada Preko Morače! Moguća zamjena za placeve u industrijskoj zoni u okolini Pg uz vasu doplatu! Napomena: Nisu plaćene komunalije koje su uračunate u datu cijenu!",
-      "_uid": null,
-      "_ai": {
-        "presuda": "vlasnik",
-        "razlog": "Lično ime oglašivača, direktan ton i ponuda specifične zamjene za zemljište ukazuju na privatnog vlasnika."
-      }
-    }
-  },
   "https://www.patuljak.me/oglas/izdaje-se-dvosoban-namjesten-stan-povrsine-125-m--84150": {
     "ts": "2026-10-17T21:28:13.082475",
     "status": "posrednik",
@@ -6011,5 +5961,31 @@
     "ts": "2026-10-25T16:18:03.338604",
     "status": "posrednik",
     "lead": null
+  },
+  "https://www.patuljak.me/oglas/prodaje-se-dvosoban-stan--85189": {
+    "ts": "2026-10-25T19:36:39.568873",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/prodaje-se-dvosoban-stan--85187": {
+    "ts": "2026-10-25T19:36:41.163741",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.oglasi.me/nekretnine/stanovi/stambeni-kontenjer-og84107515me": {
+    "ts": "2026-10-25T19:36:54.280845",
+    "status": "vlasnik",
+    "lead": {
+      "ime": "xxx",
+      "oglas_link": "https://www.oglasi.me/nekretnine/stanovi/stambeni-kontenjer-og84107515me",
+      "lokacija": "Podgorica",
+      "cijena": "4800€",
+      "izvor": "Oglasi.me",
+      "telefoni": [
+        "38269997012"
+      ],
+      "_opis": "Opis oglasa Na prodjau stambeni kontenjer \n6x2.414,4m2\n3x2.4 je jedna prostorija \n3x2.4 dodju dva wc i jedno malo \nStruja voda sve razvedeno",
+      "_uid": null
+    }
   }
 }
