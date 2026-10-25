@@ -1,29 +1,4 @@
 {
-  "https://www.patuljak.me/oglas/izdaje-se-dvosoban-namjesten-stan-povrsine-125-m--84150": {
-    "ts": "2026-10-17T21:28:13.082475",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://www.oglasi.me/nekretnine/zemljiste/prodajem-poljoprivredno-zemljiste-ukupne-povrsine-placa-8000m2-og62152773me": {
-    "ts": "2026-10-17T21:28:26.166693",
-    "status": "vlasnik",
-    "lead": {
-      "ime": "goran",
-      "oglas_link": "https://www.oglasi.me/nekretnine/zemljiste/prodajem-poljoprivredno-zemljiste-ukupne-povrsine-placa-8000m2-og62152773me",
-      "lokacija": "Podgorica",
-      "cijena": "9.00€",
-      "izvor": "Oglasi.me",
-      "telefoni": [
-        "38268409930"
-      ],
-      "_opis": "Opis oglasa Prodajem zemljiste ukupne površine placa 8000m2 udaljenost od centra pg 13km put rogama ili poslije restorana djedovina pricelje opstina Podgorica -CEROVICA-Crnci sve informacije na broj telefona 068-409-930.. cijena je 1m2-9e",
-      "_uid": null,
-      "_ai": {
-        "presuda": "vlasnik",
-        "razlog": "Lično ime oglašivača i jednostavan, neformalan tekst bez agencijskih oznaka."
-      }
-    }
-  },
   "https://www.patuljak.me/oglas/prodaje-se-garsonjera--84171": {
     "ts": "2026-10-18T04:32:39.068181",
     "status": "posrednik",
@@ -5987,5 +5962,45 @@
       "_opis": "Opis oglasa Na prodjau stambeni kontenjer \n6x2.414,4m2\n3x2.4 je jedna prostorija \n3x2.4 dodju dva wc i jedno malo \nStruja voda sve razvedeno",
       "_uid": null
     }
+  },
+  "https://www.patuljak.me/oglas/prodaja-dvosoban-stan-podgorica-zabjelo-80m2--85197": {
+    "ts": "2026-10-25T22:33:04.420832",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/luksuzan-studio-apartman-sa-pogledom-na-more-u-wow--85196": {
+    "ts": "2026-10-25T22:33:06.094935",
+    "status": "drugi_grad",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/luksuzan-dvosoban-stan-sa-pogledom-na-more-na-prvo--85195": {
+    "ts": "2026-10-25T22:33:07.787958",
+    "status": "drugi_grad",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/luksuzan-jednosoban-stan-na-prvoj-liniji-u-budvi--85194": {
+    "ts": "2026-10-25T22:33:09.469949",
+    "status": "drugi_grad",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/luksuzan-dvosoban-stan-sa-pogledom-na-more-na-prvo--85193": {
+    "ts": "2026-10-25T22:33:11.143165",
+    "status": "drugi_grad",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/izdavanje-poslovnog-prostora-200-m-sa-terasom-od--85192": {
+    "ts": "2026-10-25T22:33:12.798688",
+    "status": "drugi_grad",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/jednosoban-opremljen-stan-na-duzi-period-budva--85191": {
+    "ts": "2026-10-25T22:33:14.482019",
+    "status": "drugi_grad",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/prodaja-garsonjera-24m2-podgorica-pejton--85190": {
+    "ts": "2026-10-25T22:33:16.145978",
+    "status": "posrednik",
+    "lead": null
   }
 }
