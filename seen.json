@@ -5949,5 +5949,63 @@
     "ts": "2026-10-26T01:09:38.005424",
     "status": "posrednik",
     "lead": null
+  },
+  "https://www.patuljak.me/oglas/izdajem-jednosoban-stan-46-m2-zabjelo-podgorica--85213": {
+    "ts": "2026-10-26T08:17:53.764443",
+    "status": "vlasnik",
+    "lead": {
+      "ime": "Rako",
+      "oglas_link": "https://www.patuljak.me/oglas/izdajem-jednosoban-stan-46-m2-zabjelo-podgorica--85213",
+      "lokacija": "Podgorica",
+      "cijena": "400.00€",
+      "izvor": "Patuljak.me",
+      "telefoni": [
+        "382676676310"
+      ],
+      "_opis": "Izdajem jednosoban stan na Zabjelu, 46 m2, namješten, na 3. spratu, južno orijentisan. Zgrada je novije gradnje i lift je u funkciji. Parking je dostupan ispred zgrade. Stan je slobodan od 01.11.2026. godine Cijena 400 €, obavezan depozit Kontakt telefon Viber & WhatsApp: 067667631 068667631",
+      "_count": 1,
+      "_ai": {
+        "presuda": "vlasnik",
+        "razlog": "Lično ime oglašivača i jednostavan, direktan opis bez agencijskih oznaka ili šifri ukazuju na privatnog vlasnika."
+      }
+    }
+  },
+  "https://www.patuljak.me/oglas/izdavanje-jednosoban-stan-60-m2-zabjelo-podgorica--85207": {
+    "ts": "2026-10-26T08:17:55.326171",
+    "status": "vlasnik",
+    "lead": {
+      "ime": "Jovana",
+      "oglas_link": "https://www.patuljak.me/oglas/izdavanje-jednosoban-stan-60-m2-zabjelo-podgorica--85207",
+      "lokacija": "Podgorica",
+      "cijena": "400.00€",
+      "izvor": "Patuljak.me",
+      "telefoni": [
+        "38267361744"
+      ],
+      "_opis": "Izdajem jednosoban stan za Zabjelu, sa parking mjestom. 400e 067361744",
+      "_count": 1,
+      "_ai": {
+        "presuda": "vlasnik",
+        "razlog": "Lično ime i kratak, neformalan tekst u prvom licu bez ikakvih oznaka agencije."
+      }
+    }
+  },
+  "https://www.patuljak.me/oglas/potreban-jednosoban-stan-za-kupovinu--85203": {
+    "ts": "2026-10-26T08:17:56.861532",
+    "status": "vlasnik",
+    "lead": {
+      "ime": "Dragana",
+      "oglas_link": "https://www.patuljak.me/oglas/potreban-jednosoban-stan-za-kupovinu--85203",
+      "lokacija": "Podgorica",
+      "cijena": "Cijena na upit",
+      "izvor": "Patuljak.me",
+      "telefoni": [],
+      "_opis": "Potreban jednosoban stan za kupovinu do 50m2. Pozeljne lokacije - uzi dio grada, Pobrezje, Ljubovic.",
+      "_count": 1,
+      "_ai": {
+        "presuda": "nesigurno",
+        "razlog": "Oglas je veoma kratak i koristi lično ime, što je uobičajeno i za privatne kupce i za agente koji potražuju stanove."
+      }
+    }
   }
 }
