@@ -1,112 +1,4 @@
 {
-  "https://www.patuljak.me/oglas/izdavanje-jednosobnog-apartmana-36-m-sa-bazenom--84210": {
-    "ts": "2026-10-18T20:42:29.391467",
-    "status": "drugi_grad",
-    "lead": null
-  },
-  "https://www.pazar3.me/oglas/izdavanje-dvosoban-stan-60m-konik-podgorica/3284502": {
-    "ts": "2026-10-18T20:42:30.614355",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://www.patuljak.me/oglas/prodaja-dvosobnog-stana-76-m-na-150-metara-od-mo--84209": {
-    "ts": "2026-10-18T20:42:30.961907",
-    "status": "drugi_grad",
-    "lead": null
-  },
-  "https://www.patuljak.me/oglas/sto--84203": {
-    "ts": "2026-10-18T20:42:32.427201",
-    "status": "vlasnik",
-    "lead": {
-      "ime": "Djordjije",
-      "oglas_link": "https://www.patuljak.me/oglas/sto--84203",
-      "lokacija": "Podgorica",
-      "cijena": "60.00€",
-      "izvor": "Patuljak.me",
-      "telefoni": [],
-      "_opis": "Sto je stariji Izblijedjen, ali u dobrom stanju",
-      "_count": 1,
-      "_ai": {
-        "presuda": "vlasnik",
-        "razlog": "Lično ime i kratak, neformalan tekst ukazuju na privatnog oglašivača."
-      }
-    }
-  },
-  "https://www.patuljak.me/oglas/operating-aparthotel-with-15-apartments-in-budva--84189": {
-    "ts": "2026-10-18T20:42:34.392363",
-    "status": "drugi_grad",
-    "lead": null
-  },
-  "https://www.oglasi.me/nekretnine/stanovi/dvosoban-stan-na-starom-aerodromu-og72031295me": {
-    "ts": "2026-10-18T20:42:39.954707",
-    "status": "provjeri",
-    "lead": {
-      "ime": "Sergei",
-      "oglas_link": "https://www.oglasi.me/nekretnine/stanovi/dvosoban-stan-na-starom-aerodromu-og72031295me",
-      "lokacija": "Podgorica",
-      "cijena": "185000€",
-      "izvor": "Oglasi.me",
-      "telefoni": [
-        "38268610834"
-      ],
-      "_opis": "Opis oglasa lijep i prostran dvosoban stan Tel/Viber 068610834",
-      "_uid": null,
-      "_ai": {
-        "presuda": "nesigurno",
-        "razlog": "Kratak i generički tekst oglasa ne sadrži jasne indikatore niti za agenciju niti za privatnog vlasnika."
-      }
-    }
-  },
-  "https://www.patuljak.me/oglas/zabjelo-54m2-dvosoban-stan--84216": {
-    "ts": "2026-10-18T23:11:35.186337",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://www.patuljak.me/oglas/jednosoban-50m2-radovici-izdavanje--84215": {
-    "ts": "2026-10-18T23:11:36.847332",
-    "status": "drugi_grad",
-    "lead": null
-  },
-  "https://www.patuljak.me/oglas/izdaje-se-jednosoban-stan-42m2-centar-id-ml-1770--84214": {
-    "ts": "2026-10-18T23:11:38.477742",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://www.patuljak.me/oglas/izdaje-se-jednosoban-stan-50m2-zabjelo-id-ml-177--84213": {
-    "ts": "2026-10-18T23:11:40.108134",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://www.patuljak.me/oglas/izdaje-se-kuca-223m2-masline-id-ml-1772--84212": {
-    "ts": "2026-10-18T23:11:41.764202",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://www.patuljak.me/oglas/prodaja-ekskluzivnog-dvosobnog-stana-96-m-sa-pan--84211": {
-    "ts": "2026-10-18T23:11:43.432592",
-    "status": "drugi_grad",
-    "lead": null
-  },
-  "https://www.oglasi.me/nekretnine/kuce/prodaje-se-polovina-dvojne-kuce-u-momisice-preko-puta-ars-medika-og84211242me": {
-    "ts": "2026-10-18T23:11:45.231759",
-    "status": "vlasnik",
-    "lead": {
-      "ime": "Dominik Moda",
-      "oglas_link": "https://www.oglasi.me/nekretnine/kuce/prodaje-se-polovina-dvojne-kuce-u-momisice-preko-puta-ars-medika-og84211242me",
-      "lokacija": "Podgorica",
-      "cijena": "330000€",
-      "izvor": "Oglasi.me",
-      "telefoni": [
-        "38267403762"
-      ],
-      "_opis": "Opis oglasa Prodaje se Polovina dvojne kuce u Momisice preko puta Ars Medike.\n\n\nKuca ima 180m2 stambenog prostora,  na placu od 287m2.\n\nDvojna kuca je podijeljena po vertikali i ima odvojeni ulaz i dvoriste \n( u DUP u je to urbana parcela UP10b Dupa ,Momisici A-dio zone 1PG.\n\nTakodje dozvoljena je gradnja na parceli SU+P+2PK na osnovu UTU br.08-352/21-526 od 24.06.2021g.\n\nAdresa je VII omladinske br.30.\n\nKuca ima duplex stan na 2 sprata sa 4 terase 2 kupatila, stan u suteren, veliko dvoriste i garazu.\n\nStara kvalitetna gradnja sa heps nosacima,moze da izdrzi zemljotres 9 rihtera.\n\nCijena 330 000\n\n067 403 762",
-      "_uid": "EQ749",
-      "_ai": {
-        "presuda": "vlasnik",
-        "razlog": "Oglas je postavljen pod ličnim imenom, sadrži tačnu adresu i specifične tehničke detalje o gradnji bez agencijskih oznaka."
-      }
-    }
-  },
   "https://www.patuljak.me/oglas/stan-u-budvi--84265": {
     "ts": "2026-10-19T01:16:12.877656",
     "status": "drugi_grad",
@@ -5787,7 +5679,11 @@
         "38269997012"
       ],
       "_opis": "Opis oglasa Na prodjau stambeni kontenjer \n6x2.414,4m2\n3x2.4 je jedna prostorija \n3x2.4 dodju dva wc i jedno malo \nStruja voda sve razvedeno",
-      "_uid": null
+      "_uid": null,
+      "_ai": {
+        "presuda": "vlasnik",
+        "razlog": "Tekst je kratak, neformalan, sadrži pravopisne greške i nema nikakvih obilježja agencijskog oglašavanja."
+      }
     }
   },
   "https://www.patuljak.me/oglas/prodaja-dvosoban-stan-podgorica-zabjelo-80m2--85197": {
@@ -6491,5 +6387,106 @@
     "ts": "2026-10-26T19:19:25.687210",
     "status": "posrednik",
     "lead": null
+  },
+  "https://www.patuljak.me/oglas/na-prodaju-drvena-kuca-60-m2-ada-bojana--85335": {
+    "ts": "2026-10-26T23:52:49.944632",
+    "status": "drugi_grad",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/izdaje-se-jednosoban-stan--85332": {
+    "ts": "2026-10-26T23:52:51.506472",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/izdaje-se-nov-neuseljavan-jednosoban-stan-povrsine--85329": {
+    "ts": "2026-10-26T23:52:53.081072",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/trosoban-stan-120m2-pobrezje--85328": {
+    "ts": "2026-10-26T23:52:54.641662",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/izdaje-se-luksuzno-opremljen-jednosoban-stan-povrs--85326": {
+    "ts": "2026-10-26T23:52:56.231388",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/dvosoban-stan-71m2-zagoric--85324": {
+    "ts": "2026-10-26T23:52:57.849839",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/dvosoban-stan-71m2-zagoric--85322": {
+    "ts": "2026-10-26T23:52:59.410225",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/izdavanje-garsonjera-vezirov-most--85319": {
+    "ts": "2026-10-26T23:53:00.975598",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/izdaje-se-nov-neuseljavan-i-luksuzno-opremljen-jed--85318": {
+    "ts": "2026-10-26T23:53:02.548588",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.oglasi.me/nekretnine/stanovi/prostran-dvosoban-stan-84-m2-na-2--spratu--blizu-delta-city--pored-krivog-mosta-og83441537me": {
+    "ts": "2026-10-26T23:53:06.562600",
+    "status": "provjeri",
+    "lead": {
+      "ime": "Sergei",
+      "oglas_link": "https://www.oglasi.me/nekretnine/stanovi/prostran-dvosoban-stan-84-m2-na-2--spratu--blizu-delta-city--pored-krivog-mosta-og83441537me",
+      "lokacija": "Podgorica",
+      "cijena": "730.00 € mjesec",
+      "izvor": "Oglasi.me",
+      "telefoni": [
+        "38268610834"
+      ],
+      "_opis": "Opis oglasa Blizu Delta City, pored Krivog mosta, Dvosoban stan 84 m2 na 2. spratu. Dvije terase, garderober, kupatilo i toalet. Podno grijanje u trpezariji, kuhinji i kupatilu, multisplit sistem. Cijena 730 €. Jedna mjesečna rata i depozit.\ntel viber 068610834",
+      "_uid": null
+    }
+  },
+  "https://www.oglasi.me/nekretnine/stanovi/izdajem-jednosoban-stan--drac-og84303589me": {
+    "ts": "2026-10-26T23:53:06.562876",
+    "status": "vlasnik",
+    "lead": {
+      "ime": "Korisnik",
+      "oglas_link": "https://www.oglasi.me/nekretnine/stanovi/izdajem-jednosoban-stan--drac-og84303589me",
+      "lokacija": "Podgorica",
+      "cijena": "350.00 € mjesec",
+      "izvor": "Oglasi.me",
+      "telefoni": [
+        "38267157924"
+      ],
+      "_opis": "Opis oglasa Izdajem renoviran jednosoban stan na Draču. \nDostupan veliki javni parking što je rijetkost za ovakvu lokaciju. \nU potpunosti renoviran i opremljen novim stvarima. \nIdealan za dvije osobe.\nUdaljenost od autobuske stanice i hotela Hilton svega 500 metara.\nCijena stanarine je 350e i depozit u visini jedne kirije.",
+      "_uid": null,
+      "_ai": {
+        "presuda": "nesigurno",
+        "razlog": "Tekst je neformalan i nema agencijskih oznaka, ali generičko ime 'Korisnik' ne pruža dovoljno informacija za sigurnu identifikaciju."
+      }
+    }
+  },
+  "https://www.oglasi.me/nekretnine/kuce/prodajem-kucu-sa-dvoristem-og84303674me": {
+    "ts": "2026-10-26T23:53:06.562934",
+    "status": "vlasnik",
+    "lead": {
+      "ime": "Ivana",
+      "oglas_link": "https://www.oglasi.me/nekretnine/kuce/prodajem-kucu-sa-dvoristem-og84303674me",
+      "lokacija": "Podgorica",
+      "cijena": "350.00€",
+      "izvor": "Oglasi.me",
+      "telefoni": [
+        "38267407009"
+      ],
+      "_opis": "Opis oglasa Prodaje se kuća površine 318m2, Zlatica. Kuća je pozicionirana na placu 800m2. Kuća je podijeljena na dvije etaže.\n\nPrvu etažu čine: ulazni hodnik, dnevni boravak, kuhinja, trpezarija, tri spavaće sobe, dva toaleta, dvije terase i ostava.\n\nDrugu etažu kuće čine: ulazni hodnik, dnevni boravak, kuhinja, trpezarija, tri spavaće sobe, dva toaleta i ostava.\nKuca takodje posjeduje potkrovlje povrsine 69,11m2.\n\nPored stambenog dijela, kuća raspolaže i garažom.\n\nIspred kuće je dostupno više parking mjesta.\n\nU blizini se nalazi Osnovna skola, dom zdravlja, posta, igraliste, park suma, 2hiper marketa itd..",
+      "_uid": null,
+      "_ai": {
+        "presuda": "nesigurno",
+        "razlog": "Oglas je informativan i strukturiran, ali nedostaju jasni znaci agencije poput šifre, kao i direktna potvrda vlasnika."
+      }
+    }
   }
 }
