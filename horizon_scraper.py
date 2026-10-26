@@ -963,6 +963,48 @@ def send_warning_email(sajt: str, fail_count: int, total: int, detalj: str = "",
         log.error("✗  Greška pri slanju upozorenja za %s.", sajt)
 
 
+def push_panel(leads: list[dict], review: list[dict]) -> None:
+    """Upisuje nove vlasnike u Horizon panel (Firestore, kolekcija scraper_leads).
+    Treba GitHub tajnu FIREBASE_SA (JSON service account naloga). Bez nje se samo preskače."""
+    sa = os.environ.get("FIREBASE_SA", "").strip()
+    if not sa or not (leads or review):
+        return
+    try:
+        import hashlib
+        import firebase_admin
+        from firebase_admin import credentials, firestore
+        if not firebase_admin._apps:
+            firebase_admin.initialize_app(credentials.Certificate(json.loads(sa)))
+        db = firestore.client()
+        novih = 0
+        for vrsta, lst in (("vlasnik", leads), ("provjeri", review)):
+            for l in lst:
+                link = l.get("oglas_link") or ""
+                if not link:
+                    continue
+                ref = db.collection("scraper_leads").document(hashlib.sha1(link.encode()).hexdigest()[:20])
+                if ref.get().exists:
+                    ref.update({"lastSeen": firestore.SERVER_TIMESTAMP})
+                    continue
+                ref.set({
+                    "ime": (l.get("ime") or "")[:120],
+                    "link": link,
+                    "lokacija": (l.get("lokacija") or "")[:160],
+                    "cijena": str(l.get("cijena") or "")[:60],
+                    "izvor": l.get("izvor") or "",
+                    "telefoni": list(l.get("telefoni") or [])[:4],
+                    "opis": (l.get("_opis") or "")[:900],
+                    "vrsta": vrsta,
+                    "status": "novo",
+                    "createdAt": firestore.SERVER_TIMESTAMP,
+                    "lastSeen": firestore.SERVER_TIMESTAMP,
+                })
+                novih += 1
+        log.info("Panel: upisano %d novih vlasnika.", novih)
+    except Exception as e:  # panel nije kritičan, mejl ide i dalje
+        log.error("Panel upis nije uspio: %s", e)
+
+
 def save_leads_json(leads: list[dict]) -> None:
     path = "leads_today.json"
     with open(path, "w", encoding="utf-8") as f:
@@ -2042,6 +2084,7 @@ def main() -> None:
     log.info("═" * 60)
 
     save_leads_json(unique_leads)
+    push_panel(unique_leads, unique_review)
 
     email_sent = False
     otvoren, sljedeci = (prozor_otvoren(sent) if MAIL_PROZOR else (True, ""))

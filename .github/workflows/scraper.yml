@@ -36,6 +36,7 @@ jobs:
           EMAIL_FROM: ${{ secrets.EMAIL_FROM }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          FIREBASE_SA: ${{ secrets.FIREBASE_SA }}
           # schedule: "prozor" = vlasnici se nakupljaju, mejl ide u prozorima
           # 07:30 i 15:30 (lokalno). Ručno pokretanje šalje odmah ("true").
           # sent.json garantuje da isti oglas ne ide dvaput.
