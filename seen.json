@@ -1,64 +1,4 @@
 {
-  "https://www.patuljak.me/oglas/prodaje-se-jednosoban-stan-povrsine-4762m-u-stambe--84346": {
-    "ts": "2026-10-19T19:56:09.029150",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://www.patuljak.me/oglas/prodaje-se-garsonjera-povrsine-2596m-u-stambenom-p--84344": {
-    "ts": "2026-10-19T19:56:10.828069",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://www.patuljak.me/oglas/prodaje-se-jednosoban-stan-povrsine-5081m-u-stambe--84340": {
-    "ts": "2026-10-19T19:56:12.585453",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://www.patuljak.me/oglas/dvosoban-stan-city-kvart--84338": {
-    "ts": "2026-10-19T19:56:14.407528",
-    "status": "provjeri",
-    "lead": {
-      "ime": "DM",
-      "oglas_link": "https://www.patuljak.me/oglas/dvosoban-stan-city-kvart--84338",
-      "lokacija": "Podgorica",
-      "cijena": "800.00€",
-      "izvor": "Patuljak.me",
-      "telefoni": [
-        "38269988752"
-      ],
-      "_opis": "???? Izdaje se dvosoban stan – City Kvart, Podgorica ???? 74 m² ????️ Lijepo opremljen, prostran i funkcionalan ❄️ Klimatizovan ???? 800 € mjesečno ✨ Komforan i lijepo opremljen stan na atraktivnoj lokaciji u City Kvartu, idealan za udoban život. ???? +382 69 988 752 (Viber | WhatsApp | Telegram) ???? DM Real Estate – Ključ vašeg doma! ????",
-      "_count": 1,
-      "_ai": {
-        "presuda": "agencija",
-        "razlog": "Oglas eksplicitno navodi naziv agencije DM Real Estate i sadrži profesionalno formatiran tekst sa sloganom."
-      }
-    }
-  },
-  "https://www.oglasi.me/nekretnine/stanovi/hitno-----og84115625me": {
-    "ts": "2026-10-19T19:56:24.110926",
-    "status": "vlasnik",
-    "lead": {
-      "ime": "Mia",
-      "oglas_link": "https://www.oglasi.me/nekretnine/stanovi/hitno-----og84115625me",
-      "lokacija": "Podgorica",
-      "cijena": "115000€",
-      "izvor": "Oglasi.me",
-      "telefoni": [
-        "38269226076"
-      ],
-      "_opis": "Opis oglasa HITNO!!!!!!!",
-      "_uid": null,
-      "_ai": {
-        "presuda": "nesigurno",
-        "razlog": "Oglas je previše kratak i ne sadrži dovoljno informacija ili specifičnih detalja za preciznu identifikaciju."
-      }
-    }
-  },
-  "https://www.oglasi.me/nekretnine/stanovi/jednosoban-stan-60m2--preko-morace-og84221290me": {
-    "ts": "2026-10-19T19:56:24.111074",
-    "status": "posrednik",
-    "lead": null
-  },
   "https://www.patuljak.me/oglas/izdaje-se-nov-jednosoban-stan-povrsine-45m2-na-zab--84360": {
     "ts": "2026-10-19T23:40:58.281526",
     "status": "posrednik",
@@ -6669,5 +6609,61 @@
     "ts": "2026-10-27T16:38:44.855107",
     "status": "posrednik",
     "lead": null
+  },
+  "https://www.patuljak.me/oglas/jednosoban-stan-41m2-tuski-pu--85470": {
+    "ts": "2026-10-27T21:18:52.906197",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/izdavanjekucadonji-kokoti--85469": {
+    "ts": "2026-10-27T21:18:54.465891",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/izdaje-se-nov-trosoban-stan-povrsine-112-m--85468": {
+    "ts": "2026-10-27T21:18:56.034995",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/izdaje-se-nov-trosoban-stan-povrsine-112-m--85467": {
+    "ts": "2026-10-27T21:18:57.617481",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/izdaje-se-jednosoban-stan-40m2-stari-aerodrom-podg--85465": {
+    "ts": "2026-10-27T21:18:59.196256",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/prodaje-se-jednosoban-stan-povrsine-53m-u-naselju--85464": {
+    "ts": "2026-10-27T21:19:00.776921",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/jednosoban-stan-42m2-pobrezje--85463": {
+    "ts": "2026-10-27T21:19:02.347003",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.oglasi.me/nekretnine/zemljiste/prodaja--zemljiste-u-dajbabama---mogucnost-parcelacije-po-zelji-kupca--min--500-m---og82762426me": {
+    "ts": "2026-10-27T21:19:05.523045",
+    "status": "vlasnik",
+    "lead": {
+      "ime": "Drazen",
+      "oglas_link": "https://www.oglasi.me/nekretnine/zemljiste/prodaja--zemljiste-u-dajbabama---mogucnost-parcelacije-po-zelji-kupca--min--500-m---og82762426me",
+      "lokacija": "Podgorica",
+      "cijena": "55000€",
+      "izvor": "Oglasi.me",
+      "telefoni": [
+        "38269827532",
+        "38267440803"
+      ],
+      "_opis": "Opis oglasa Na prodaju odlicno zemljiste u Dajbabama na oko 250m udaljenosti od zaobilaznice, u blizini mosta Luca.\nU pitanju je katastarska parcela 2295, KO Dajbabe.\nSama parcela ima oko 6000m2, a izvrsila bi se parcelacija u skladu s potrebama kupca, a minimalna povrsina zemljista moze biti 500m2.\nObezbijedjen je prilaz sirine 4m sa asfaltnog puta.\nZemljiste se nalazi u oblasti SMG, odnosno stanovanje male gustine.\n\nKontakt broj +38267440803. Pozivi i sms.",
+      "_uid": null,
+      "_ai": {
+        "presuda": "vlasnik",
+        "razlog": "Oglas je postavljen pod ličnim imenom, sadrži broj katastarske parcele i nudi fleksibilnu parcelaciju direktno od strane prodavca."
+      }
+    }
   }
 }
