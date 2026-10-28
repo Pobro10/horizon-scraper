@@ -42,6 +42,9 @@ EMAIL_FROM     = os.environ.get("EMAIL_FROM", "onboarding@resend.dev")
 SEND_MODE   = os.environ.get("SEND_EMAIL", "true").lower()
 SEND_EMAIL  = SEND_MODE in ("1", "true", "yes")
 MAIL_PROZOR = SEND_MODE == "prozor"
+# Mejl sa vlasnicima: ugašen (Okt 2026), vlasnici idu samo u panel. Mejl upozorenja
+# (blokada sajta, pokvareni selektori) radi i dalje. LEAD_MAIL=true ga vraća.
+LEAD_MAIL   = os.environ.get("LEAD_MAIL", "false").lower() in ("1", "true", "yes")
 MAIL_PROZORI = ((7, 30), (15, 30))      # lokalno vrijeme (Podgorica)
 TZ_LOKALNO   = ZoneInfo("Europe/Podgorica")
 
@@ -963,12 +966,16 @@ def send_warning_email(sajt: str, fail_count: int, total: int, detalj: str = "",
         log.error("✗  Greška pri slanju upozorenja za %s.", sajt)
 
 
-def push_panel(leads: list[dict], review: list[dict]) -> None:
-    """Upisuje nove vlasnike u Horizon panel (Firestore, kolekcija scraper_leads).
-    Treba GitHub tajnu FIREBASE_SA (JSON service account naloga). Bez nje se samo preskače."""
+def push_panel(leads: list[dict], review: list[dict]) -> bool:
+    """Upisuje vlasnike u Horizon panel (Firestore, kolekcija scraper_leads).
+    Pored vlasnika iz ovog runa dopunjava i vlasnike iz keša (zadnjih 7 dana) koji
+    još nisu potvrđeno upisani, pa nijedan ne propada. Postojeći dokument se ne
+    dira (status koji je Marko postavio, npr. "odbacen", ostaje), samo lastSeen.
+    Treba GitHub tajnu FIREBASE_SA. Vraća True ako su svi upisi prošli."""
     sa = os.environ.get("FIREBASE_SA", "").strip()
-    if not sa or not (leads or review):
-        return
+    if not sa:
+        log.warning("Panel: FIREBASE_SA nije postavljena, upis preskočen.")
+        return False
     try:
         import hashlib
         import firebase_admin
@@ -976,33 +983,58 @@ def push_panel(leads: list[dict], review: list[dict]) -> None:
         if not firebase_admin._apps:
             firebase_admin.initialize_app(credentials.Certificate(json.loads(sa)))
         db = firestore.client()
-        novih = 0
-        for vrsta, lst in (("vlasnik", leads), ("provjeri", review)):
-            for l in lst:
-                link = l.get("oglas_link") or ""
-                if not link:
-                    continue
-                ref = db.collection("scraper_leads").document(hashlib.sha1(link.encode()).hexdigest()[:20])
-                if ref.get().exists:
-                    ref.update({"lastSeen": firestore.SERVER_TIMESTAMP})
-                    continue
+    except Exception as e:
+        log.error("Panel: povezivanje nije uspjelo: %s", e)
+        return False
+
+    cand = [("vlasnik", l) for l in leads] + [("provjeri", l) for l in review]
+    have = {l.get("oglas_link") for _, l in cand}
+    granica = (datetime.now() - timedelta(days=7)).isoformat()
+    with _SEEN_LOCK:
+        stavke = list(SEEN.items())
+    dopuna = 0
+    for url, e in stavke:
+        if (e.get("p") or url in have or not e.get("lead")
+                or e.get("status") not in ("vlasnik", "provjeri") or e.get("ts", "") < granica):
+            continue
+        cand.append((e["status"], e["lead"]))
+        have.add(url)
+        dopuna += 1
+
+    novih, ok, n_run = 0, True, len(leads) + len(review)
+    for i, (vrsta, l) in enumerate(cand):
+        link = l.get("oglas_link") or ""
+        if not link:
+            continue
+        try:
+            ref = db.collection("scraper_leads").document(hashlib.sha1(link.encode()).hexdigest()[:20])
+            if ref.get().exists:
+                ref.update({"lastSeen": firestore.SERVER_TIMESTAMP})
+            else:
                 ref.set({
-                    "ime": (l.get("ime") or "")[:120],
+                    "ime": str(l.get("ime") or "")[:120],
                     "link": link,
-                    "lokacija": (l.get("lokacija") or "")[:160],
+                    "lokacija": str(l.get("lokacija") or "")[:160],
                     "cijena": str(l.get("cijena") or "")[:60],
-                    "izvor": l.get("izvor") or "",
-                    "telefoni": list(l.get("telefoni") or [])[:4],
-                    "opis": (l.get("_opis") or "")[:900],
+                    "izvor": str(l.get("izvor") or ""),
+                    "telefoni": [str(t) for t in (l.get("telefoni") or [])][:4],
+                    "opis": str(l.get("_opis") or "")[:900],
                     "vrsta": vrsta,
                     "status": "novo",
                     "createdAt": firestore.SERVER_TIMESTAMP,
                     "lastSeen": firestore.SERVER_TIMESTAMP,
                 })
                 novih += 1
-        log.info("Panel: upisano %d novih vlasnika.", novih)
-    except Exception as e:  # panel nije kritičan, mejl ide i dalje
-        log.error("Panel upis nije uspio: %s", e)
+            with _SEEN_LOCK:
+                if link in SEEN:
+                    SEEN[link]["p"] = 1
+        except Exception as e:  # jedan los oglas ne rusi ostale
+            if i < n_run:
+                ok = False
+            log.error("Panel: %s nije upisan: %s", link, e)
+    log.info("Panel: upisano %d novih vlasnika (provjereno %d, iz keša %d).", novih, len(cand), dopuna)
+    save_seen()
+    return ok
 
 
 def save_leads_json(leads: list[dict]) -> None:
@@ -2084,11 +2116,15 @@ def main() -> None:
     log.info("═" * 60)
 
     save_leads_json(unique_leads)
-    push_panel(unique_leads, unique_review)
+    panel_ok = push_panel(unique_leads, unique_review)
 
     email_sent = False
     otvoren, sljedeci = (prozor_otvoren(sent) if MAIL_PROZOR else (True, ""))
-    if not otvoren and (unique_leads or unique_review):
+    if not LEAD_MAIL:
+        # bez mejla: "poslato" znači upisano u panel (memorija se puni samo ako je upis prošao)
+        email_sent = panel_ok and bool(unique_leads or unique_review)
+        log.info("Mejl sa vlasnicima je isključen, vlasnici su u panelu.")
+    elif not otvoren and (unique_leads or unique_review):
         log.info("Mejl prozor zatvoren: nakupljeno %d vlasnika + %d za provjeru, "
                  "šalju se u prozoru %s.", len(unique_leads), len(unique_review), sljedeci)
     elif otvoren:
