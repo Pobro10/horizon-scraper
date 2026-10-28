@@ -1313,11 +1313,13 @@
       "https://www.oglasi.me/nekretnine/stanovi/izdaje-se-dvosoban-stan--gintas-og84276308me": "2026-10-25T16:18:03.338592",
       "https://www.oglasi.me/nekretnine/stanovi/izdaje-se-jednosoban-stan--stari-aerodrom-og84308220me": "2026-10-27T10:34:03.902668",
       "https://www.oglasi.me/nekretnine/stanovi/izdaje-se-jednosoban-stan--zabjelo-og84321876me": "2026-10-28T16:02:51.328970",
-      "https://www.oglasi.me/nekretnine/stanovi/prodaje-se-garsonjera--stari-aerodrom-og84320564me": "2026-10-28T16:02:51.329457"
+      "https://www.oglasi.me/nekretnine/stanovi/prodaje-se-garsonjera--stari-aerodrom-og84320564me": "2026-10-28T16:02:51.329457",
+      "https://www.patuljak.me/oglas/prodaje-se-garsonjera--85621": "2026-10-28T21:03:51.650930"
     },
     "imena": [
       "Living nekretnine",
-      "Milica"
+      "Milica",
+      "Living Real Estate"
     ]
   },
   "38268156405": {
@@ -3818,7 +3820,8 @@
   },
   "38268183193": {
     "urls": {
-      "https://www.oglasi.me/nekretnine/stanovi/izdavanje-jednosobnog-stana-preko-morace-og84321511me": "2026-10-28T16:02:51.329247"
+      "https://www.oglasi.me/nekretnine/stanovi/izdavanje-jednosobnog-stana-preko-morace-og84321511me": "2026-10-28T16:02:51.329247",
+      "https://www.oglasi.me/nekretnine/stanovi/izdavanje-jednosobnog-stana--zagoric--og84322653me": "2026-10-28T21:04:03.054164"
     },
     "imena": [
       "Dolce Vita"
@@ -3855,6 +3858,14 @@
     },
     "imena": [
       "Slobodan"
+    ]
+  },
+  "38269725222": {
+    "urls": {
+      "https://www.oglasi.me/nekretnine/poslovni-prostori/poslovni-prostor-mljekara-og84323349me": "2026-10-28T21:04:03.054089"
+    },
+    "imena": [
+      "Janko"
     ]
   }
 }

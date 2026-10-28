@@ -1,34 +1,4 @@
 {
-  "https://www.patuljak.me/oglas/prodaje-se-trosoban-stan-povrsine-105m-u-stambenom--84536": {
-    "ts": "2026-10-20T19:16:23.347710",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://www.patuljak.me/oglas/dvosoban-stan-68m2-stari-aerodrom--84535": {
-    "ts": "2026-10-20T19:16:24.843608",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://www.patuljak.me/oglas/izdavanjejednosoban-stan-city-kvart--84531": {
-    "ts": "2026-10-20T19:16:26.341482",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://www.patuljak.me/oglas/izdavanjejednosoban-stan-pobrezje--84527": {
-    "ts": "2026-10-20T19:16:27.837896",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://www.patuljak.me/oglas/dvosoban-stan-56m2-konik-na-200m-od-katolicke-crkv--84526": {
-    "ts": "2026-10-20T19:16:29.349964",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://www.oglasi.me/nekretnine/stanovi/izdaje-se-dvosoban-stan--zagoric-og84233440me": {
-    "ts": "2026-10-20T19:16:44.376323",
-    "status": "posrednik",
-    "lead": null
-  },
   "https://www.patuljak.me/oglas/prodajem-zemljiste-u-lastvi-grbaljskoj--84543": {
     "ts": "2026-10-20T22:21:35.083336",
     "status": "drugi_grad",
@@ -5890,7 +5860,11 @@
         "38269226076"
       ],
       "_opis": "Opis oglasa HITNO!!!!!!!",
-      "_uid": null
+      "_uid": null,
+      "_ai": {
+        "presuda": "nesigurno",
+        "razlog": "Kratak tekst oglasa i lično ime bez dodatnih indikatora nijesu dovoljni za pouzdanu procjenu."
+      }
     },
     "p": 1
   },
@@ -6725,5 +6699,111 @@
     "ts": "2026-10-28T16:02:51.331586",
     "status": "posrednik",
     "lead": null
+  },
+  "https://www.patuljak.me/oglas/dvosoban-duplex-stan-83m2-zabjelo--85628": {
+    "ts": "2026-10-28T21:03:43.738881",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/izdaje-se-nov-neuseljavan-jednosoban-stan-povrsine--85625": {
+    "ts": "2026-10-28T21:03:45.241867",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/zabjelo-opremljen-jednosoban-stan-46m2--85624": {
+    "ts": "2026-10-28T21:03:46.748279",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/prodaje-se-namjestena-kuca-povrsine-90m-smjestena--85623": {
+    "ts": "2026-10-28T21:03:48.240606",
+    "status": "drugi_grad",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/master-kvart-opremljen-jednosoban-stan-50m2--85622": {
+    "ts": "2026-10-28T21:03:49.739200",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/prodaje-se-garsonjera--85621": {
+    "ts": "2026-10-28T21:03:51.650953",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/pobrezje-opremljen-jednosoban-stan-55m2--85620": {
+    "ts": "2026-10-28T21:03:53.152270",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/city-kvart-opremljen-jednosoban-stan-sa-garaznim-p--85619": {
+    "ts": "2026-10-28T21:03:54.644901",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/top-prilika-za-investitore--85618": {
+    "ts": "2026-10-28T21:03:56.112206",
+    "status": "vlasnik",
+    "lead": {
+      "ime": "Sladja",
+      "oglas_link": "https://www.patuljak.me/oglas/top-prilika-za-investitore--85618",
+      "lokacija": "Podgorica",
+      "cijena": "800.00€",
+      "izvor": "Patuljak.me",
+      "telefoni": [],
+      "_opis": "Na prodaju urbanizovan gradjevinski plac na top lokaciji sa odličnom povezanošću prema svim važnim sadržajima neophodnim za život - Atinska ulica . Plac je površine 751m2. Posjeduje UTU uslove i predstavlja odličnu investicionu priliku za izgradnju stambenog ili stambeno-poslovnog objekta. Dozvoljena je izgradnja podzemnih etaža i garažnih prostora, a podzemne garaže i tehničke prostorije ne ulaze u obračun bruto gradjevinske površine. Prema važećim urbanističkim parametrima mogu da se grade 4 etaže + podrum/garaža ... cca. 1,000m2 bruto + podrum. CIJENA: 800€/m2",
+      "_count": 1,
+      "_ai": {
+        "presuda": "nesigurno",
+        "razlog": "Ime oglašivača je lično, ali je tekst oglasa vrlo profesionalan i tehnički detaljan bez jasnih odrednica vlasnika ili agencije."
+      }
+    },
+    "p": 1
+  },
+  "https://www.patuljak.me/oglas/zabjelo-opremljen-jednosoban-stan-sa-garazom--85617": {
+    "ts": "2026-10-28T21:03:57.612170",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.oglasi.me/nekretnine/poslovni-prostori/poslovni-prostor-mljekara-og84323349me": {
+    "ts": "2026-10-28T21:04:03.054118",
+    "status": "vlasnik",
+    "lead": {
+      "ime": "Janko",
+      "oglas_link": "https://www.oglasi.me/nekretnine/poslovni-prostori/poslovni-prostor-mljekara-og84323349me",
+      "lokacija": "Podgorica",
+      "cijena": "600.00 € mjesec",
+      "izvor": "Oglasi.me",
+      "telefoni": [
+        "38269725222"
+      ],
+      "_opis": "Opis oglasa Izadjem poslovni prostor u zgradi Mljekara, Zetagranja.\n22m2 gleda na ulicu. Prometna lokacija. \n069725222",
+      "_uid": null,
+      "_ai": {
+        "presuda": "vlasnik",
+        "razlog": "Kratak i neformalan tekst oglasa uz lično ime oglašivača bez ikakvih elemenata profesionalnog posredovanja."
+      }
+    },
+    "p": 1
+  },
+  "https://www.oglasi.me/nekretnine/stanovi/izdavanje-jednosobnog-stana--zagoric--og84322653me": {
+    "ts": "2026-10-28T21:04:03.054175",
+    "status": "vlasnik",
+    "lead": {
+      "ime": "Dolce Vita",
+      "oglas_link": "https://www.oglasi.me/nekretnine/stanovi/izdavanje-jednosobnog-stana--zagoric--og84322653me",
+      "lokacija": "Podgorica",
+      "cijena": "400.00 € mjesec",
+      "izvor": "Oglasi.me",
+      "telefoni": [
+        "38268183193"
+      ],
+      "_opis": "Opis oglasa Izdavanje jednosobnog stana u Zagoriču - ulica Nikole Tesle \nPovrsina 45m2 \nCijena 400eura \nIma svoje parking mjesto \n068 183 193",
+      "_uid": null,
+      "_ai": {
+        "presuda": "agencija",
+        "razlog": "Ime oglašivača Dolce Vita ukazuje na naziv firme ili agencije umjesto ličnog imena."
+      }
+    },
+    "p": 1
   }
 }
