@@ -1,24 +1,4 @@
 {
-  "https://www.patuljak.me/oglas/prodajem-zemljiste-u-lastvi-grbaljskoj--84543": {
-    "ts": "2026-10-20T22:21:35.083336",
-    "status": "drugi_grad",
-    "lead": null
-  },
-  "https://www.patuljak.me/oglas/budva-poslovni-prostor-35-m2--84542": {
-    "ts": "2026-10-20T22:21:36.714572",
-    "status": "drugi_grad",
-    "lead": null
-  },
-  "https://www.patuljak.me/oglas/placevi-na-zabljaku--84540": {
-    "ts": "2026-10-20T22:21:38.341610",
-    "status": "drugi_grad",
-    "lead": null
-  },
-  "https://www.patuljak.me/oglas/prodaje-se-luksuzno-opremljen-jednosoban-stan-povr--84539": {
-    "ts": "2026-10-20T22:21:40.019854",
-    "status": "posrednik",
-    "lead": null
-  },
   "https://www.patuljak.me/oglas/pprodaje-se-dvosoban-stan-povrsine-strong67m--84626": {
     "ts": "2026-10-21T01:35:34.198418",
     "status": "drugi_grad",
@@ -6805,5 +6785,15 @@
       }
     },
     "p": 1
+  },
+  "https://www.pazar3.me/oglas/prodaja-placeva-raznih-kvadratura/2919952": {
+    "ts": "2026-10-29T00:55:48.560265",
+    "status": "star",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/izdaje-se-dvosoban-stan-povrsine-70m-u-master-kvar--85633": {
+    "ts": "2026-10-29T00:55:48.800582",
+    "status": "posrednik",
+    "lead": null
   }
 }
