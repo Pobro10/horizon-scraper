@@ -666,6 +666,58 @@ def _ai_gemini(api_key: str, lead: dict) -> dict:
     raise greska
 
 
+OPIS_SYSTEM = """Ti si agent agencije za nekretnine Horizon Real Estate iz Podgorice. Od teksta oglasa vlasnika napiši opis za naš oglas.
+Jezik: crnogorski, latinica, ijekavica. Ako je original na ćirilici, prebaci u latinicu.
+Format (tačno ovim redom, prazan red između dijelova):
+1. Naslov u jednom redu: struktura i vrsta, kvadratura, ulica ili naselje i orijentir ako postoji. Npr: Jednosoban stan 40m², ul. 4. jula, kod Tehnomaksa
+2. Uvodna rečenica: "Na ponudi ..." za prodaju, "Izdaje se ..." za izdavanje, sa površinom, lokacijom i zgradom ako je navedena.
+3. Jedan do tri kratka pasusa sa činjenicama iz oglasa: sprat i spratnost, lift, opremljenost, grijanje, terasa, ostava, parking, stanje, papiri, uslovi zakupa.
+4. Red sa cijenom: "Cijena: 137.000 €" za prodaju ili "Cijena: 450 € mjesečno" za izdavanje. Ako cijene nema, izostavi taj red.
+5. Zadnji red: Za više informacija i razgledanje kontaktirajte nas.
+Pravila: samo činjenice koje stoje u oglasu, ništa ne izmišljaj i ne uljepšavaj. Bez telefona, imena, linkova, emotikona, uzvičnika i velikih slova. Bez crtica (—). Piši kratko i jasno. Vrati samo tekst opisa.
+
+Primjer izlaza:
+Jednosoban stan 40m², ul. 4. jula, kod Tehnomaksa
+
+Na ponudi jednosoban stan površine 40m² u ulici 4. jula, u zgradi Zetagradnje.
+
+Stan se nalazi na petom spratu zgrade od sedam spratova. Zgrada ima dva lifta.
+
+Uz stan ide ostava od 4m² i zajednički parking pod rampom.
+
+Cijena: 105.000 €
+
+Za više informacija i razgledanje kontaktirajte nas."""
+
+
+def ai_opis(lead: dict) -> str:
+    """Naš opis oglasa (za copy-paste u panelu). Prazan string ako AI nije dostupan ili ne uspije."""
+    src = (lead.get("_opis") or "").strip()
+    if len(src) < 20:
+        return ""
+    user = (f"Lokacija: {lead.get('lokacija') or ''}\nCijena: {lead.get('cijena') or ''}\n"
+            f"Link (samo za vrstu ponude): {lead.get('oglas_link') or ''}\n\nTekst oglasa:\n{src[:3000]}")
+    try:
+        if os.environ.get("ANTHROPIC_API_KEY"):
+            import anthropic
+            resp = anthropic.Anthropic().messages.create(model=AI_MODEL, max_tokens=700, system=OPIS_SYSTEM,
+                                                          messages=[{"role": "user", "content": user}])
+            return next(b.text for b in resp.content if b.type == "text").strip()
+        key = os.environ.get("GEMINI_API_KEY", "")
+        if not key:
+            return ""
+        model = _gemini_kandidati(key)[0]
+        r = requests.post(f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent",
+                          headers={"x-goog-api-key": key}, timeout=GEMINI_TIMEOUT,
+                          json={"systemInstruction": {"parts": [{"text": OPIS_SYSTEM}]},
+                                "contents": [{"parts": [{"text": user}]}], "generationConfig": {"maxOutputTokens": 2048}})
+        r.raise_for_status()
+        return "".join(p.get("text", "") for p in r.json()["candidates"][0]["content"]["parts"]).strip()
+    except Exception as e:
+        log.warning("AI opis nije uspio za %s: %s", lead.get("oglas_link"), e)
+        return ""
+
+
 def ai_classify(leads: list[dict]) -> None:
     """Dopiše lead["_ai"] leadovima koji imaju opis, a još nemaju presudu.
     Svaka greška se samo loguje — mejl ide i bez AI kolone."""
@@ -994,23 +1046,34 @@ def push_panel(leads: list[dict], review: list[dict]) -> bool:
         stavke = list(SEEN.items())
     dopuna = 0
     for url, e in stavke:
-        if (e.get("p") or url in have or not e.get("lead")
+        if ((e.get("p") and e.get("o")) or url in have or not e.get("lead")
                 or e.get("status") not in ("vlasnik", "provjeri") or e.get("ts", "") < granica):
             continue
         cand.append((e["status"], e["lead"]))
         have.add(url)
         dopuna += 1
 
-    novih, ok, n_run = 0, True, len(leads) + len(review)
+    novih, ok, n_run, opisa = 0, True, len(leads) + len(review), 0
     for i, (vrsta, l) in enumerate(cand):
         link = l.get("oglas_link") or ""
         if not link:
             continue
         try:
             ref = db.collection("scraper_leads").document(hashlib.sha1(link.encode()).hexdigest()[:20])
-            if ref.get().exists:
-                ref.update({"lastSeen": firestore.SERVER_TIMESTAMP})
+            snap = ref.get()
+            if snap.exists:
+                upd = {"lastSeen": firestore.SERVER_TIMESTAMP}
+                o = (snap.to_dict() or {}).get("nasOpis") or ""
+                if not o and opisa < 30:
+                    o = ai_opis(l)
+                    if o:
+                        upd["nasOpis"] = o[:3000]
+                        opisa += 1
+                ref.update(upd)
             else:
+                o = ai_opis(l)
+                if o:
+                    opisa += 1
                 ref.set({
                     "ime": str(l.get("ime") or "")[:120],
                     "link": link,
@@ -1019,6 +1082,7 @@ def push_panel(leads: list[dict], review: list[dict]) -> bool:
                     "izvor": str(l.get("izvor") or ""),
                     "telefoni": [str(t) for t in (l.get("telefoni") or [])][:4],
                     "opis": str(l.get("_opis") or "")[:900],
+                    "nasOpis": o[:3000],
                     "vrsta": vrsta,
                     "status": "novo",
                     "createdAt": firestore.SERVER_TIMESTAMP,
@@ -1028,11 +1092,13 @@ def push_panel(leads: list[dict], review: list[dict]) -> bool:
             with _SEEN_LOCK:
                 if link in SEEN:
                     SEEN[link]["p"] = 1
+                    if o or len((l.get("_opis") or "").strip()) < 20:
+                        SEEN[link]["o"] = 1
         except Exception as e:  # jedan los oglas ne rusi ostale
             if i < n_run:
                 ok = False
             log.error("Panel: %s nije upisan: %s", link, e)
-    log.info("Panel: upisano %d novih vlasnika (provjereno %d, iz keša %d).", novih, len(cand), dopuna)
+    log.info("Panel: upisano %d novih vlasnika (provjereno %d, iz keša %d, naših opisa %d).", novih, len(cand), dopuna, opisa)
     save_seen()
     return ok
 
