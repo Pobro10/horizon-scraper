@@ -1,19 +1,4 @@
 {
-  "https://www.patuljak.me/oglas/izdaje-se-poslovni-prostor-60m2-stari-aerodrom-i--84958": {
-    "ts": "2026-10-23T07:31:43.830000",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://www.patuljak.me/oglas/prodaje-se-kuca-231m2-gornja-gorica-id-h-332--84957": {
-    "ts": "2026-10-23T07:31:45.341379",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://www.patuljak.me/oglas/prodaje-se-plac-5435m2-pasina-voda-id-ml-1778--84956": {
-    "ts": "2026-10-23T07:31:46.834336",
-    "status": "drugi_grad",
-    "lead": null
-  },
   "https://www.patuljak.me/oglas/izdaje-se-luksuzno-opremljen-jednosoban-stan-povrs--85000": {
     "ts": "2026-10-23T13:25:55.337080",
     "status": "posrednik",
@@ -1118,7 +1103,8 @@
         "razlog": "Oglas koristi lično ime, napisan je u prvom licu i nudi zamjenu nekretnine, što je tipično za privatne vlasnike."
       }
     },
-    "p": 1
+    "p": 1,
+    "o": 1
   },
   "https://www.patuljak.me/oglas/jednosoban-stan-45m2-garaza-new-city-podgorica--85109": {
     "ts": "2026-10-24T14:32:20.951172",
@@ -1204,7 +1190,8 @@
         "razlog": "Tekst oglasa je prekratak i ne sadrži specifične ključne riječi koje bi jasno identifikovale vlasnika ili agenciju."
       }
     },
-    "p": 1
+    "p": 1,
+    "o": 1
   },
   "https://www.patuljak.me/oglas/magacinski-i-kancelarijski-prostor-1230m2-mareza--85114": {
     "ts": "2026-10-24T20:48:41.873302",
@@ -1240,7 +1227,8 @@
         "razlog": "Lično ime i jednostavan, neformalan tekst bez agencijskih oznaka ukazuju na privatnog vlasnika."
       }
     },
-    "p": 1
+    "p": 1,
+    "o": 1
   },
   "https://www.patuljak.me/oglas/prodaja-plac-481-m2-cetinje--85115": {
     "ts": "2026-10-24T23:13:29.545318",
@@ -1346,7 +1334,8 @@
         "razlog": "Oglas ima ličan ton i specifičan uslov izdavanja sobe ženskoj osobi bez profesionalnih oznaka."
       }
     },
-    "p": 1
+    "p": 1,
+    "o": 1
   },
   "https://www.patuljak.me/oglas/plac-481-m-na-prodaju-centar-cetinje--85115": {
     "ts": "2026-10-25T01:11:35.105794",
@@ -1461,7 +1450,8 @@
         "razlog": "Oglas izričito navodi da se izdaje bez agencija i posrednika uz korišćenje ličnog imena."
       }
     },
-    "p": 1
+    "p": 1,
+    "o": 1
   },
   "https://www.oglasi.me/nekretnine/stanovi/trosoban-stan--podgorica-og77115658me": {
     "ts": "2026-10-25T16:18:03.337990",
@@ -1582,7 +1572,8 @@
         "razlog": "Tekst je kratak, neformalan, sadrži pravopisne greške i nema nikakvih obilježja agencijskog oglašavanja."
       }
     },
-    "p": 1
+    "p": 1,
+    "o": 1
   },
   "https://www.patuljak.me/oglas/prodaja-dvosoban-stan-podgorica-zabjelo-80m2--85197": {
     "ts": "2026-10-25T22:33:04.420832",
@@ -1690,7 +1681,8 @@
         "razlog": "Lično ime i kratak, neformalan tekst u prvom licu bez ikakvih oznaka agencije."
       }
     },
-    "p": 1
+    "p": 1,
+    "o": 1
   },
   "https://www.patuljak.me/oglas/potreban-jednosoban-stan-za-kupovinu--85203": {
     "ts": "2026-10-26T08:17:56.861532",
@@ -1709,7 +1701,8 @@
         "razlog": "Oglas je veoma kratak i koristi lično ime, što je uobičajeno i za privatne kupce i za agente koji potražuju stanove."
       }
     },
-    "p": 1
+    "p": 1,
+    "o": 1
   },
   "https://www.patuljak.me/oglas/prodaje-se-namjesten-jednosoban-stan-povrsine-45m--85281": {
     "ts": "2026-10-26T13:02:30.818066",
@@ -1735,7 +1728,8 @@
         "razlog": "Oglas je dvojezičan i dobro strukturiran, ali ne sadrži ni prepoznatljivu šifru agencije ni potvrdu vlasništva."
       }
     },
-    "p": 1
+    "p": 1,
+    "o": 1
   },
   "https://www.patuljak.me/oglas/jednosoban-stan-40m2-zabjelo--85278": {
     "ts": "2026-10-26T13:02:33.856950",
@@ -1759,7 +1753,8 @@
         "razlog": "Oglas je napisan informativno i pregledno, ali ne sadrži ni šifru agencije ni eksplicitnu potvrdu o vlasništvu."
       }
     },
-    "p": 1
+    "p": 1,
+    "o": 1
   },
   "https://www.patuljak.me/oglas/jednosoban-stan-60m2-city-kvart--85275": {
     "ts": "2026-10-26T13:02:36.848336",
@@ -1783,7 +1778,8 @@
         "razlog": "Neformalan tekst oglasa i pominjanje kompenzacije za stan ukazuju na privatnog vlasnika."
       }
     },
-    "p": 1
+    "p": 1,
+    "o": 1
   },
   "https://www.patuljak.me/oglas/izdavanje-jednosoban-stan-podgorica-zabjelo-40m2--85266": {
     "ts": "2026-10-26T13:02:39.839005",
@@ -2396,7 +2392,8 @@
         "razlog": "Tekst je neformalan i nema agencijskih oznaka, ali generičko ime 'Korisnik' ne pruža dovoljno informacija za sigurnu identifikaciju."
       }
     },
-    "p": 1
+    "p": 1,
+    "o": 1
   },
   "https://www.oglasi.me/nekretnine/kuce/prodajem-kucu-sa-dvoristem-og84303674me": {
     "ts": "2026-10-26T23:53:06.562934",
@@ -2417,7 +2414,8 @@
         "razlog": "Oglas je informativan i strukturiran, ali nedostaju jasni znaci agencije poput šifre, kao i direktna potvrda vlasnika."
       }
     },
-    "p": 1
+    "p": 1,
+    "o": 1
   },
   "https://www.patuljak.me/oglas/izdavanje-dvosoban-stan-podgorica-gintas-65m2--85411": {
     "ts": "2026-10-27T05:03:17.572267",
@@ -2568,7 +2566,8 @@
         "razlog": "Tekst oglasa je neutralan i ne sadrži specifične ključne riječi koje bi jasno ukazale na agenciju ili vlasnika."
       }
     },
-    "p": 1
+    "p": 1,
+    "o": 1
   },
   "https://www.patuljak.me/oglas/jednosoban-namjesten-stan--85379": {
     "ts": "2026-10-27T05:03:58.557753",
@@ -2589,7 +2588,8 @@
         "razlog": "Oglas ne sadrži specifične ključne riječi koje bi jasno razlikovale vlasnika od agenta."
       }
     },
-    "p": 1
+    "p": 1,
+    "o": 1
   },
   "https://www.patuljak.me/oglas/prodajem-kucu-sa-dvoristem--85377": {
     "ts": "2026-10-27T05:04:00.021350",
@@ -2608,7 +2608,8 @@
         "razlog": "Iako je opis detaljan i strukturiran, nema jasnih oznaka agencije niti eksplicitne potvrde da je oglas postavio vlasnik."
       }
     },
-    "p": 1
+    "p": 1,
+    "o": 1
   },
   "https://www.patuljak.me/oglas/izdajem-jednosoban-stan-drac--85374": {
     "ts": "2026-10-27T05:04:01.524899",
@@ -2831,7 +2832,8 @@
         "razlog": "Ime oglašivača i stil pisanja su neutralni bez jasnih znakova agencije ili potvrde da je vlasnik."
       }
     },
-    "p": 1
+    "p": 1,
+    "o": 1
   },
   "https://www.oglasi.me/nekretnine/zemljiste/placevi-og81362377me": {
     "ts": "2026-10-27T10:34:03.902201",
@@ -4440,7 +4442,8 @@
         "razlog": "Oglas je napisan ličnim tonom uz korišćenje neformalnog opisa i bez agencijskih oznaka poput šifre ili provizije."
       }
     },
-    "p": 1
+    "p": 1,
+    "o": 1
   },
   "https://www.patuljak.me/oglas/prodaje-se-dvosoban-stan--85655": {
     "ts": "2026-10-29T07:04:26.783740",
@@ -4532,7 +4535,8 @@
         "razlog": "Ime je lično i tekst je jednostavan, ali nedostaju ključne riječi poput 'vlasnik' ili znakovi agencije za preciznu identifikaciju."
       }
     },
-    "p": 1
+    "p": 1,
+    "o": 1
   },
   "https://www.patuljak.me/oglas/prodajajednosoban-stan-preko-morace--85636": {
     "ts": "2026-10-29T07:04:48.126494",
@@ -6507,5 +6511,101 @@
     "ts": "2026-10-31T02:23:27.602908",
     "status": "posrednik",
     "lead": null
+  },
+  "https://www.patuljak.me/oglas/pizdaje-se�strongjednosoban-luks-namjesten-st--86002": {
+    "ts": "2026-10-31T09:38:26.698656",
+    "status": "drugi_grad",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/izdaje-se-poslovni-prostor-53m2-city-kvart-id-p--86001": {
+    "ts": "2026-10-31T09:38:28.538758",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/izdavanje-modernog-poslovnog-prostora-67-m-na-tr--86000": {
+    "ts": "2026-10-31T09:38:30.383071",
+    "status": "drugi_grad",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/jednosoban-stan-4683m2-u-novom-stambenom-kompleksu--85999": {
+    "ts": "2026-10-31T09:38:32.268858",
+    "status": "drugi_grad",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/jednosoban-stan-4473m2-u-novom-stambenom-kompleksu--85998": {
+    "ts": "2026-10-31T09:38:38.123010",
+    "status": "drugi_grad",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/jednosoban-stan-446m2-u-novom-stambenom-kompleksub--85997": {
+    "ts": "2026-10-31T09:38:39.974325",
+    "status": "drugi_grad",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/jednosoban-stan-4683m2-u-novom-stambenom-kompleksu--85996": {
+    "ts": "2026-10-31T09:38:41.826763",
+    "status": "drugi_grad",
+    "lead": null
+  },
+  "https://www.oglasi.me/nekretnine/stanovi/izdajem-jednosoban-stan-og84343644me": {
+    "ts": "2026-10-31T09:38:43.834921",
+    "status": "vlasnik",
+    "lead": {
+      "ime": "Miki",
+      "oglas_link": "https://www.oglasi.me/nekretnine/stanovi/izdajem-jednosoban-stan-og84343644me",
+      "lokacija": "Podgorica",
+      "cijena": "450.00 € mjesec",
+      "izvor": "Oglasi.me",
+      "telefoni": [
+        "38268832800"
+      ],
+      "_opis": "Opis oglasa Potpuno namjeaatwn stan.Kontakt 068832800",
+      "_uid": null,
+      "_ai": {
+        "presuda": "vlasnik",
+        "razlog": "Tekst je izuzetno kratak, neformalan, sadrži štamparsku grešku i lično ime oglašivača."
+      }
+    },
+    "p": 1,
+    "o": 1
+  },
+  "https://www.oglasi.me/nekretnine/stanovi/izdajem-stan-og84343505me": {
+    "ts": "2026-10-31T09:38:43.834988",
+    "status": "vlasnik",
+    "lead": {
+      "ime": "Miki",
+      "oglas_link": "https://www.oglasi.me/nekretnine/stanovi/izdajem-stan-og84343505me",
+      "lokacija": "Podgorica",
+      "cijena": "450.00 € mjesec",
+      "izvor": "Oglasi.me",
+      "telefoni": [
+        "38268832800"
+      ],
+      "_opis": "Opis oglasa Novi stan,potpuno namjesten.Kontakt 068832800",
+      "_uid": null,
+      "_ai": {
+        "presuda": "nesigurno",
+        "razlog": "Oglas je veoma kratak i ne sadrži specifične ključne riječi koje bi jasno ukazale na vlasnika ili agenciju."
+      }
+    },
+    "p": 1,
+    "o": 1
+  },
+  "https://www.oglasi.me/nekretnine/stanovi/izdajem-jednosoban-namesten-stan-na-starom-aerodromu-og81408346me": {
+    "ts": "2026-10-31T09:38:43.835646",
+    "status": "vlasnik",
+    "lead": {
+      "ime": "Dragan",
+      "oglas_link": "https://www.oglasi.me/nekretnine/stanovi/izdajem-jednosoban-namesten-stan-na-starom-aerodromu-og81408346me",
+      "lokacija": "Podgorica",
+      "cijena": "400.00 € mjesec",
+      "izvor": "Oglasi.me",
+      "telefoni": [
+        "38267280330"
+      ],
+      "_opis": "Opis oglasa Izdajem jednosoban lijepo namjesten stan na Starom Aerodromu u blizini tržnog centra Forum i restorana Sicilija.",
+      "_uid": null
+    },
+    "p": 1
   }
 }
