@@ -1,14 +1,4 @@
 {
-  "https://www.patuljak.me/oglas/magacinski-i-kancelarijski-prostor-1230m2-mareza--85114": {
-    "ts": "2026-10-24T20:48:41.873302",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://www.oglasi.me/nekretnine/stanovi/izdaje-se-jednosoban-stan--zagoric-og84272077me": {
-    "ts": "2026-10-24T20:48:54.578245",
-    "status": "posrednik",
-    "lead": null
-  },
   "https://www.patuljak.me/oglas/izdajem-studio-budva-dubovica-lux-22m-terasa-7m--85120": {
     "ts": "2026-10-24T23:13:26.501309",
     "status": "drugi_grad",
@@ -1112,7 +1102,8 @@
         "razlog": "Ime je lično, ali je tekst oglasa generički placeholder koji ne pruža dovoljno informacija za klasifikaciju."
       }
     },
-    "p": 1
+    "p": 1,
+    "o": 1
   },
   "https://www.oglasi.me/nekretnine/stanovi/prodaje-se-jednosoban-stan-povrsine-53m--u-naselju-ljubovic--podgorica--u-zgradi-investitora-gradnja-promet--og84288786me": {
     "ts": "2026-10-26T19:19:25.687171",
@@ -1446,7 +1437,8 @@
         "razlog": "Oglas je napisan u prvom licu uz lično ime i bez ikakvih agencijskih obilježja ili šifara."
       }
     },
-    "p": 1
+    "p": 1,
+    "o": 1
   },
   "https://www.patuljak.me/oglas/prodaje-se-dvosoban-stan--85364": {
     "ts": "2026-10-27T05:04:03.037727",
@@ -3585,7 +3577,8 @@
         "razlog": "Lični ton oglasa, specifičan uslov izdavanja i odsustvo bilo kakvih agencijskih oznaka ukazuju na privatnog vlasnika."
       }
     },
-    "p": 1
+    "p": 1,
+    "o": 1
   },
   "https://www.patuljak.me/oglas/prodaje-se-poslovni-prostor-povrsine-22-m--85709": {
     "ts": "2026-10-29T14:19:10.936472",
@@ -4590,7 +4583,8 @@
         "razlog": "Ime je lično i tekst je neformalan, ali nema izričitih ključnih riječi poput 'vlasnik' ili 'bez posrednika'."
       }
     },
-    "p": 1
+    "p": 1,
+    "o": 1
   },
   "https://www.oglasi.me/nekretnine/stanovi/izdajem-stan-u-podgorici-og22380131me": {
     "ts": "2026-10-30T12:54:54.928545",
@@ -5909,6 +5903,41 @@
   },
   "https://www.oglasi.me/nekretnine/stanovi/izdaje-se-jednosobam-stan--zabjelo-og84352748me": {
     "ts": "2026-11-01T18:56:27.793470",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/prodaje-se-jednosoban-stan--86084": {
+    "ts": "2026-11-01T22:49:09.201010",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/prodaje-se-jednosoban-stan--86082": {
+    "ts": "2026-11-01T22:49:10.771807",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/prodaje-se-jednosoban-stan--86081": {
+    "ts": "2026-11-01T22:49:12.833801",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/prodaje-se-dvosoban-stan--86080": {
+    "ts": "2026-11-01T22:49:14.396253",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/prodaja-plac-u-curilac--86077": {
+    "ts": "2026-11-01T22:49:15.916954",
+    "status": "drugi_grad",
+    "lead": null
+  },
+  "https://www.oglasi.me/nekretnine/stanovi/prodaje-se-jednosoban-stan--city-kej-og84360458me": {
+    "ts": "2026-11-01T22:49:23.162313",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.oglasi.me/nekretnine/stanovi/prodaje-se-jednosoban-stan--krivi-most-og84360609me": {
+    "ts": "2026-11-01T22:49:23.162620",
     "status": "posrednik",
     "lead": null
   }

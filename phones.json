@@ -256,7 +256,9 @@
       "https://www.patuljak.me/oglas/prodaje-se-dvosoban-stan--86075": "2026-11-01T18:56:11.752842",
       "https://www.patuljak.me/oglas/prodaje-se-dvosoban-stan--86074": "2026-11-01T18:56:13.355283",
       "https://www.patuljak.me/oglas/prodaje-se-jednosoban-stan--86072": "2026-11-01T18:56:16.509753",
-      "https://www.patuljak.me/oglas/prodaje-se-garsonjera--86071": "2026-11-01T18:56:18.072833"
+      "https://www.patuljak.me/oglas/prodaje-se-garsonjera--86071": "2026-11-01T18:56:18.072833",
+      "https://www.patuljak.me/oglas/prodaje-se-jednosoban-stan--86081": "2026-11-01T22:49:12.833783",
+      "https://www.patuljak.me/oglas/prodaje-se-dvosoban-stan--86080": "2026-11-01T22:49:14.396237"
     },
     "imena": [
       "Tvoj agent"
@@ -1486,7 +1488,9 @@
       "https://www.oglasi.me/nekretnine/stanovi/prodaje-se-jednosoban-stan--zabjelo-og84341809me": "2026-10-30T22:58:43.450780",
       "https://www.oglasi.me/nekretnine/stanovi/izdaje-se-jednosoban-stan--zagoric-og84344549me": "2026-10-31T15:44:37.710251",
       "https://www.oglasi.me/nekretnine/stanovi/izdaje-se-dvosoban-stan--stari-aerodrom-og84352551me": "2026-11-01T18:56:27.793391",
-      "https://www.oglasi.me/nekretnine/stanovi/izdaje-se-jednosobam-stan--zabjelo-og84352748me": "2026-11-01T18:56:27.793466"
+      "https://www.oglasi.me/nekretnine/stanovi/izdaje-se-jednosobam-stan--zabjelo-og84352748me": "2026-11-01T18:56:27.793466",
+      "https://www.oglasi.me/nekretnine/stanovi/prodaje-se-jednosoban-stan--city-kej-og84360458me": "2026-11-01T22:49:23.162263",
+      "https://www.oglasi.me/nekretnine/stanovi/prodaje-se-jednosoban-stan--krivi-most-og84360609me": "2026-11-01T22:49:23.162612"
     },
     "imena": [
       "Living nekretnine",
@@ -4242,6 +4246,31 @@
     },
     "imena": [
       "Zdravko"
+    ]
+  },
+  "38267426732": {
+    "urls": {
+      "https://www.patuljak.me/oglas/prodaje-se-jednosoban-stan--86084": "2026-11-01T22:49:09.200990",
+      "https://www.patuljak.me/oglas/prodaje-se-jednosoban-stan--86082": "2026-11-01T22:49:10.771790"
+    },
+    "imena": [
+      "Tvoj agent"
+    ]
+  },
+  "382682822800": {
+    "urls": {
+      "https://www.oglasi.me/nekretnine/stanovi/prodaje-se-jednosoban-stan--city-kej-og84360458me": "2026-11-01T22:49:23.162282"
+    },
+    "imena": [
+      "Living nekretnine"
+    ]
+  },
+  "38263259879": {
+    "urls": {
+      "https://www.oglasi.me/nekretnine/stanovi/prodaje-se-jednosoban-stan--krivi-most-og84360609me": "2026-11-01T22:49:23.162614"
+    },
+    "imena": [
+      "Living nekretnine"
     ]
   }
 }
