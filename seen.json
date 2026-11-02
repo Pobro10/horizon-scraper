@@ -1,22 +1,4 @@
 {
-  "https://www.oglasi.me/nekretnine/stanovi/izdavanje-og83631678me": {
-    "ts": "2026-10-25T06:07:34.550117",
-    "status": "vlasnik",
-    "lead": {
-      "ime": "Radojica",
-      "oglas_link": "https://www.oglasi.me/nekretnine/stanovi/izdavanje-og83631678me",
-      "lokacija": "Podgorica",
-      "cijena": "220.00 € mjesec",
-      "izvor": "Oglasi.me",
-      "telefoni": [
-        "38269013162"
-      ],
-      "_opis": "",
-      "_uid": null
-    },
-    "p": 1,
-    "o": 1
-  },
   "https://www.patuljak.me/oglas/prodaje-se-jednosoban-stan--85164": {
     "ts": "2026-10-25T11:27:09.452493",
     "status": "posrednik",
@@ -2146,7 +2128,8 @@
         "razlog": "Lično ime oglašivača i neformalan stil pisanja bez elemenata karakterističnih za agencije."
       }
     },
-    "p": 1
+    "p": 1,
+    "o": 1
   },
   "https://www.patuljak.me/oglas/prodaje-se-jednosoban-stan--85502": {
     "ts": "2026-10-28T01:21:40.316889",
@@ -2357,7 +2340,8 @@
         "razlog": "Oglas ima ličan ton i odnosi se na izdavanje sobe u okviru stana, bez ijednog znaka agencije."
       }
     },
-    "p": 1
+    "p": 1,
+    "o": 1
   },
   "https://www.patuljak.me/oglas/tuski-put-jednosoban-stan-41m2--85615": {
     "ts": "2026-10-28T16:01:34.377742",
@@ -2463,7 +2447,8 @@
         "razlog": "U oglasu se eksplicitno pominje naziv firme 'DM Real Estate' uz profesionalno formatiran tekst."
       }
     },
-    "p": 1
+    "p": 1,
+    "o": 1
   },
   "https://www.patuljak.me/oglas/prodajem-plac-u-ravnom-dijelu-doljana-podgorica--85589": {
     "ts": "2026-10-28T16:02:02.212388",
@@ -2484,7 +2469,8 @@
         "razlog": "Oglas koristi lično ime i profesionalan ton, ali nedostaju jasni indikatori poput šifre oglasa ili naznake da se prodaje direktno od vlasnika."
       }
     },
-    "p": 1
+    "p": 1,
+    "o": 1
   },
   "https://www.patuljak.me/oglas/jednosoban-stan-rudo-polje--85588": {
     "ts": "2026-10-28T16:02:03.760774",
@@ -2556,7 +2542,8 @@
         "razlog": "Oglas koristi lično ime i jednostavan, neformalan opis bez ikakvih elemenata profesionalnog oglašavanja."
       }
     },
-    "p": 1
+    "p": 1,
+    "o": 1
   },
   "https://www.patuljak.me/oglas/izdajem-dvosoban-stan--85563": {
     "ts": "2026-10-28T16:02:17.705489",
@@ -2575,7 +2562,8 @@
         "razlog": "Ime je lično, ali u tekstu nedostaju i oznake agencije i izričite potvrde da oglas postavlja vlasnik."
       }
     },
-    "p": 1
+    "p": 1,
+    "o": 1
   },
   "https://www.patuljak.me/oglas/jednosoban-56m2-preko-morace-moskovska-pet-friendl--85562": {
     "ts": "2026-10-28T16:02:19.255999",
@@ -2987,7 +2975,8 @@
         "razlog": "Kratak i neformalan tekst oglasa uz lično ime oglašivača bez ikakvih elemenata profesionalnog posredovanja."
       }
     },
-    "p": 1
+    "p": 1,
+    "o": 1
   },
   "https://www.oglasi.me/nekretnine/stanovi/izdavanje-jednosobnog-stana--zagoric--og84322653me": {
     "ts": "2026-10-28T21:04:03.054175",
@@ -3008,7 +2997,8 @@
         "razlog": "Ime oglašivača Dolce Vita ukazuje na naziv firme ili agencije umjesto ličnog imena."
       }
     },
-    "p": 1
+    "p": 1,
+    "o": 1
   },
   "https://www.pazar3.me/oglas/prodaja-placeva-raznih-kvadratura/2919952": {
     "ts": "2026-10-29T00:55:48.560265",
@@ -3557,7 +3547,8 @@
         "razlog": "Oglašivač izričito navodi da ne želi saradnju sa agencijama i koristi lično ime."
       }
     },
-    "p": 1
+    "p": 1,
+    "o": 1
   },
   "https://www.oglasi.me/nekretnine/poslovni-prostori/makacin-mahala-zeta----og84325651me": {
     "ts": "2026-10-29T14:19:16.187088",
@@ -3918,7 +3909,8 @@
       "_opis": "Opis oglasa Izdaje se polunamjesten stan na duzi vremenski period",
       "_uid": null
     },
-    "p": 1
+    "p": 1,
+    "o": 1
   },
   "https://www.patuljak.me/oglas/prodaje-se-dvosoban-stan-povrsine-56m-u-izgradnji--85761": {
     "ts": "2026-10-29T20:17:57.593005",
@@ -5126,7 +5118,8 @@
       "_opis": "Izdaje se luksuzno opremljen jednosoban stan sa garažnim mjestom, novogradnja u New City naselju. Ugovor na minimum godinu dana obavezan, viber whatsapp za više informacija",
       "_count": 1
     },
-    "p": 1
+    "p": 1,
+    "o": 1
   },
   "https://www.patuljak.me/oglas/jednosoban-namjesten-stan--85959": {
     "ts": "2026-10-31T02:23:11.557842",
@@ -5372,7 +5365,8 @@
         "razlog": "Oglas ima lični ton, navedena je tačna adresa i nudi se specifična zamjena za placeve uz doplatu."
       }
     },
-    "p": 1
+    "p": 1,
+    "o": 1
   },
   "https://www.patuljak.me/oglas/pprodaje-sestrong-dvosobanstrong��strong--86004": {
     "ts": "2026-10-31T15:44:38.822959",
@@ -5411,7 +5405,8 @@
         "razlog": "Oglas sadrži lično ime i opis bez agencijskih oznaka, ali nedostaju i jasne potvrde da je oglašivač vlasnik."
       }
     },
-    "p": 1
+    "p": 1,
+    "o": 1
   },
   "https://www.patuljak.me/oglas/neuseljavan-jednosoban-stan--86029": {
     "ts": "2026-10-31T19:59:10.612554",
@@ -5466,7 +5461,8 @@
         "razlog": "Oglas sadrži samo osnovne informacije bez specifičnih ključnih riječi koje bi jasno ukazale na vlasnika ili agenciju."
       }
     },
-    "p": 1
+    "p": 1,
+    "o": 1
   },
   "https://www.patuljak.me/oglas/nov-stan-garaza--86026": {
     "ts": "2026-10-31T19:59:15.374117",
@@ -5684,7 +5680,8 @@
         "razlog": "Profesionalni marketinški ton, ponuda više parcela i najava poskupljenja ukazuju na komercijalnu prodaju a ne na privatnog vlasnika."
       }
     },
-    "p": 1
+    "p": 1,
+    "o": 1
   },
   "https://www.patuljak.me/oglas/prodajem-plac-na-verusu--86055": {
     "ts": "2026-11-01T18:56:22.763783",
@@ -5834,6 +5831,232 @@
   },
   "https://www.patuljak.me/oglas/prodaje-se-garsonjera--86085": {
     "ts": "2026-11-02T02:30:27.390828",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/jednosoban-stan-45-m2-kod-nove-osnovne-skole--86175": {
+    "ts": "2026-11-02T11:04:19.041444",
+    "status": "drugi_grad",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/izdajem-apartman-na-duzi-period-u-igalo--86174": {
+    "ts": "2026-11-02T11:04:20.604622",
+    "status": "drugi_grad",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/izdajem-garsonjeru-30-m2-bjelisi-bar--86172": {
+    "ts": "2026-11-02T11:04:22.190031",
+    "status": "drugi_grad",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/prodaje-se-dvosoban-stan--86157": {
+    "ts": "2026-11-02T11:04:23.920182",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/prodaje-se-dvosoban-stan--86156": {
+    "ts": "2026-11-02T11:04:25.489836",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/prodaje-se-jednosoban-stan--86155": {
+    "ts": "2026-11-02T11:04:27.061263",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/prodaje-se-dvosoban-stan--86154": {
+    "ts": "2026-11-02T11:04:28.664417",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/prodaje-se-jednosoban-stan--86153": {
+    "ts": "2026-11-02T11:04:30.271258",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/prodaje-se-garsonjera--86152": {
+    "ts": "2026-11-02T11:04:31.966375",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/prodaje-se-jednosoban-stan--86151": {
+    "ts": "2026-11-02T11:04:33.560005",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/prodaje-se-jednosoban-stan--86150": {
+    "ts": "2026-11-02T11:04:35.143176",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/magacinski-prostor--86147": {
+    "ts": "2026-11-02T11:04:36.642879",
+    "status": "vlasnik",
+    "lead": {
+      "ime": "Pavle",
+      "oglas_link": "https://www.patuljak.me/oglas/magacinski-prostor--86147",
+      "lokacija": "Podgorica",
+      "cijena": "Cijena na upit",
+      "izvor": "Patuljak.me",
+      "telefoni": [
+        "38269579939"
+      ],
+      "_opis": "Izdaje se magacinski prostor 300m2 . Tolosi Dostupan od 1. decembra. Sve informacije na broj 069-579-939",
+      "_count": 1,
+      "_ai": {
+        "presuda": "vlasnik",
+        "razlog": "Kratak i neformalan tekst uz lično ime bez agencijskih oznaka ukazuje na privatnog oglašivača."
+      }
+    },
+    "p": 1,
+    "o": 1
+  },
+  "https://www.patuljak.me/oglas/prodajem-plac-mahala-podgorica--86131": {
+    "ts": "2026-11-02T11:04:38.177968",
+    "status": "vlasnik",
+    "lead": {
+      "ime": "Zdravko",
+      "oglas_link": "https://www.patuljak.me/oglas/prodajem-plac-mahala-podgorica--86131",
+      "lokacija": "Podgorica",
+      "cijena": "Cijena na upit",
+      "izvor": "Patuljak.me",
+      "telefoni": [
+        "38269055790"
+      ],
+      "_opis": "Prodajem urbanizovan plac 4500m2, vlasnik 1/1. Mogućnost mješovite gradnje do 3300m2. Na Cijevni-Zeta od kružnog toka 400m, između balona i Aluminil bravarije. Kontakt telefon: 069-055-790",
+      "_count": 1,
+      "_ai": {
+        "presuda": "vlasnik",
+        "razlog": "Oglašivač koristi lično ime, navodi da je vlasnik 1/1 i koristi neformalan opis sa lokalnim orijentirima bez znakova agencije."
+      }
+    },
+    "p": 1,
+    "o": 1
+  },
+  "https://www.patuljak.me/oglas/izdajem-sobu-podgorica-kod-ekonomskog-fakulteta--86130": {
+    "ts": "2026-11-02T11:04:39.691285",
+    "status": "provjeri",
+    "lead": {
+      "ime": "Marija",
+      "oglas_link": "https://www.patuljak.me/oglas/izdajem-sobu-podgorica-kod-ekonomskog-fakulteta--86130",
+      "lokacija": "Podgorica",
+      "cijena": "140.00€",
+      "izvor": "Patuljak.me",
+      "telefoni": [
+        "38267554791",
+        "38267300565"
+      ],
+      "_opis": "Izdajem ženskoj osobi lijepo namještenu sobu, sa upotrebom kuhinje i kupatila, kod Ekonomskog i Pravnog fakulteta, Podgorica (kod OŠ Sutjeska). Ekstra lokacija, brzi internet, novogradnja! Cijena 140e mjesečno. Tel: 067/554-791 i 067/300-565",
+      "_count": 1,
+      "_ai": {
+        "presuda": "vlasnik",
+        "razlog": "Oglas ima lični ton, navodi izdavanje sobe i nema nikakvih oznaka agencijskog oglašavanja."
+      }
+    },
+    "p": 1,
+    "o": 1
+  },
+  "https://www.patuljak.me/oglas/izdaje-se-jednosoban-stan-od-45m2-na-duzi-period--86125": {
+    "ts": "2026-11-02T11:04:41.275694",
+    "status": "drugi_grad",
+    "lead": null
+  },
+  "https://www.oglasi.me/nekretnine/stanovi/izdajem-dvosoban-stan-iza-delte-og84364150me": {
+    "ts": "2026-11-02T11:04:54.092444",
+    "status": "provjeri",
+    "lead": {
+      "ime": "Denis",
+      "oglas_link": "https://www.oglasi.me/nekretnine/stanovi/izdajem-dvosoban-stan-iza-delte-og84364150me",
+      "lokacija": "Podgorica",
+      "cijena": "500.00 € mjesec",
+      "izvor": "Oglasi.me",
+      "telefoni": [
+        "38269988752"
+      ],
+      "_opis": "Opis oglasa 069/988-752",
+      "_uid": null,
+      "_ai": {
+        "presuda": "nesigurno",
+        "razlog": "Tekst je previše kratak i sadrži samo generički placeholder bez jasnih indikatora o identitetu oglašivača."
+      }
+    },
+    "p": 1
+  },
+  "https://www.oglasi.me/nekretnine/stanovi/prodaje-se-jednosoban-stan-povrsine-47-5m--u-izgradnji-na-zabjelu--u-stambenom-kompleksu-astra-homes-og84364229me": {
+    "ts": "2026-11-02T11:04:54.092703",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.oglasi.me/nekretnine/stanovi/prodaje-se-jednosoban-stan-povrsine-50-m--u-novom-stambeno-poslovnom-kompleksu-na-zabjelu--og84363779me": {
+    "ts": "2026-11-02T11:04:54.092798",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.oglasi.me/nekretnine/stanovi/prodaje-se-jednosoban-stan-povrsine-48-5-m--na-trecem-spratu-u-novom-stambeno-poslovnom-kompleksu-na-zabjelu--og84363898me": {
+    "ts": "2026-11-02T11:04:54.092874",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.oglasi.me/nekretnine/stanovi/prodaje-se-jednosoban-stan-povrsine-56-m--u-novom-stambeno-poslovnom-kompleksu-na-zabjelu--og84363631me": {
+    "ts": "2026-11-02T11:04:54.092941",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.oglasi.me/nekretnine/stanovi/prodaje-se-jednosoban-stan-povrsine-55-m--na-drugom-spratu-u-novom-stambeno-poslovnom-kompleksu-na-zabjelu--og84363590me": {
+    "ts": "2026-11-02T11:04:54.093003",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.oglasi.me/nekretnine/stanovi/prodaje-se-garsonjera-povrsine-30-08m---og84363447me": {
+    "ts": "2026-11-02T11:04:54.093064",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.oglasi.me/nekretnine/stanovi/prodaje-se-garsonjera-povrsine-31m---og84363308me": {
+    "ts": "2026-11-02T11:04:54.093127",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.oglasi.me/nekretnine/stanovi/prodaje-se-garsonjera-povrsine-29m---og84363265me": {
+    "ts": "2026-11-02T11:04:54.093187",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.oglasi.me/nekretnine/stanovi/izdaje-se-jednosoban-stan--stari-aerodrom-og84361490me": {
+    "ts": "2026-11-02T11:04:54.093302",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.oglasi.me/nekretnine/stanovi/izdaje-se-dvosoban-stan-u-kuci--donja-gorica-og84361624me": {
+    "ts": "2026-11-02T11:04:54.093372",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.oglasi.me/nekretnine/stanovi/smjestaj-za-radnike-zabjelo---kod-multikoma--6-kreveta---og84362176me": {
+    "ts": "2026-11-02T11:04:54.093438",
+    "status": "vlasnik",
+    "lead": {
+      "ime": "Vesko",
+      "oglas_link": "https://www.oglasi.me/nekretnine/stanovi/smjestaj-za-radnike-zabjelo---kod-multikoma--6-kreveta---og84362176me",
+      "lokacija": "Podgorica",
+      "cijena": "Cijena na upit",
+      "izvor": "Oglasi.me",
+      "telefoni": [
+        "38268353973"
+      ],
+      "_opis": "",
+      "_uid": null
+    },
+    "p": 1,
+    "o": 1
+  },
+  "https://www.oglasi.me/nekretnine/stanovi/trosoban-stan-85m2--blok-5-og84362335me": {
+    "ts": "2026-11-02T11:04:54.093466",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.oglasi.me/nekretnine/stanovi/garsonjera-28m2--zabjelo-og84362716me": {
+    "ts": "2026-11-02T11:04:54.093528",
     "status": "posrednik",
     "lead": null
   }
