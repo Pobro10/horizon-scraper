@@ -1018,6 +1018,30 @@ def send_warning_email(sajt: str, fail_count: int, total: int, detalj: str = "",
         log.error("✗  Greška pri slanju upozorenja za %s.", sajt)
 
 
+def load_panel_blacklist() -> None:
+    """Brojevi telefona sa oglasa koje je Marko u panelu označio "Agencija / pogrešno" idu na crnu listu
+    (samo za ovaj run; kad vrati status, broj sam izlazi). Imena se ne uzimaju: "Marko" bi blokirao pola grada."""
+    sa = os.environ.get("FIREBASE_SA", "").strip()
+    if not sa:
+        return
+    try:
+        import firebase_admin
+        from firebase_admin import credentials, firestore
+        if not firebase_admin._apps:
+            firebase_admin.initialize_app(credentials.Certificate(json.loads(sa)))
+        db = firestore.client()
+        novih = 0
+        for d in db.collection("scraper_leads").where("status", "==", "posrednik").stream():
+            for t in (d.to_dict() or {}).get("telefoni") or []:
+                n = normalize_phone(str(t))
+                if n and n not in BROKER_PHONES:
+                    BROKER_PHONES.add(n)
+                    novih += 1
+        log.info("Crna lista iz panela: +%d brojeva (ukupno %d).", novih, len(BROKER_PHONES))
+    except Exception as e:
+        log.warning("Crna lista iz panela nije učitana: %s", e)
+
+
 def push_panel(leads: list[dict], review: list[dict]) -> bool:
     """Upisuje vlasnike u Horizon panel (Firestore, kolekcija scraper_leads).
     Pored vlasnika iz ovog runa dopunjava i vlasnike iz keša (zadnjih 7 dana) koji
@@ -2083,6 +2107,7 @@ def main() -> None:
         log.info("Javna adresa runnera: nepoznata (%s)", e)
 
     global SEEN, PHONES
+    load_panel_blacklist()
     SEEN = load_seen()
     PHONES = load_phones()
     log.info("Keš obrađenih: %d zapisa | registar telefona: %d brojeva.",
@@ -2133,6 +2158,15 @@ def main() -> None:
     dupes = len(all_leads) - len(unique_leads)
     if dupes:
         log.info("Deduplikacija: uklonjeno %d duplikata.", dupes)
+
+    # ── Crna lista telefona (i iz panela): i keširani oglasi tih brojeva ispadaju ──
+    def _crna(l: dict) -> bool:
+        return any((normalize_phone(str(t)) or "") in BROKER_PHONES for t in (l.get("telefoni") or []))
+    prije = len(unique_leads) + len(unique_review)
+    unique_leads = [l for l in unique_leads if not _crna(l)]
+    unique_review = [l for l in unique_review if not _crna(l)]
+    if prije - len(unique_leads) - len(unique_review):
+        log.info("Crna lista: izbačeno %d oglasa agencija.", prije - len(unique_leads) - len(unique_review))
 
     # ── Memorija poslatih: izbaci oglase koji su već bili u mejlu ──
     sent    = load_sent()
