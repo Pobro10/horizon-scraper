@@ -889,7 +889,7 @@ def send_email(leads: list[dict], review_leads: list[dict] = []) -> bool:
 </table>
 {review_block}
 <p style="color:#888;font-size:12px;margin-top:24px">
-  Izvor: Oglasi.me + Patuljak.me + Pazar3.me + OglasiCG.me &nbsp;|&nbsp; Horizon Scraper
+  Izvor: Oglasi.me + Patuljak.me + Pazar3.me + OglasiCG.me + Vijesti &nbsp;|&nbsp; Horizon Scraper
 </p>
 </body></html>"""
 
@@ -2133,6 +2133,137 @@ def run_oglasicg() -> tuple[list[dict], list[dict]]:
     return leads, review
 
 # ──────────────────────────────────────────────────────────────
+# OGLASI.VIJESTI.ME  (Listivo; svaki oglas ima "Privatni korisnik" / "Poslovni korisnik")
+# ──────────────────────────────────────────────────────────────
+VIJESTI_BASE  = "https://oglasi.vijesti.me"
+VIJESTI_INDEX = VIJESTI_BASE + "/ponude/nekretnine-real-estate/?lokacija=podgorica"
+VIJESTI_SAJT_TEL = {"38220404604"}   # broj Vijesti (oglasi predati preko njihovog marketinga)
+_VIJ_REL = re.compile(r"(\d+)\s*(sek|min|sat|h\b|dan|sedm|mjes|god)")
+_VIJ_JED = {"sek": 1 / 3600, "min": 1 / 60, "sat": 1, "h": 1, "dan": 24, "sedm": 168, "mjes": 720, "god": 8760}
+
+
+def _vij_date(t: str) -> datetime | None:
+    t = (t or "").lower()
+    m = _VIJ_REL.search(t)
+    if m:
+        jed = m.group(2)
+        return datetime.now() - timedelta(hours=int(m.group(1)) * _VIJ_JED.get(jed, 24))
+    return parse_date(t)
+
+
+def _vij_index() -> list[tuple[str, str, str, str, str]] | None:
+    """Vraća [(link, naslov, cijena, adresa, vrijeme)] ili None na HTTP grešku."""
+    r = get(VIJESTI_INDEX)
+    if r is None:
+        return None
+    soup = BeautifulSoup(r.text, "lxml")
+    out = []
+    for c in soup.select("a.listivo-listing-card-v4[href]"):
+        g = lambda s: (c.select_one(s).get_text(" ", strip=True) if c.select_one(s) else "")
+        info = c.select_one(".location-time-info")
+        out.append((c["href"].split("?")[0], g(".listivo-listing-card-v4__name"), g(".listivo-listing-card-v4__value"),
+                    g(".listivo-listing-card-v4__address"), info.get_text(" ", strip=True) if info else ""))
+    return out
+
+
+def _parse_vijesti_listing(url: str, naslov: str, cijena: str, adresa: str) -> dict | str | None:
+    r = get(url)
+    if r is None:
+        return None
+    soup = BeautifulSoup(r.text, "lxml")
+    txt = soup.get_text(" ", strip=True)
+    if "Poslovni korisnik" in txt and "Privatni korisnik" not in txt:
+        return "posrednik"
+    if "Privatni korisnik" not in txt:
+        return "selector_fail"
+    if FILTER_CITY and FILTER_CITY.lower() not in (naslov + " " + adresa + " " + url).lower():
+        return "drugi_grad"
+    if re.search(r"(?i)\bkupujem|\btra[zž]im", naslov):
+        return "drugi_tip"
+    opis_tag = soup.select_one(".listivo-listing-section__text")
+    opis = (opis_tag.get_text(" ", strip=True) if opis_tag else "")[:1500]
+    if _P3_NA_DAN_NASLOV.search(naslov) or _P3_NA_DAN_OPIS.search(opis):
+        return "na_dan"
+    m = re.search(r"Oglas objavio:\s*(.+?)\s+Član od", txt)
+    name = m.group(1).strip() if m else "Nepoznat"
+
+    telefoni: list[str] = []
+    ph = soup.select_one(".listivo-phone-v3")
+    for izvor_txt in (opis, ph.get_text(" ", strip=True) if ph else ""):
+        for mm in _PHONE_IN_TEXT.finditer(izvor_txt):
+            np_ = normalize_phone(mm.group(0))
+            if np_ and np_ not in telefoni and np_ not in VIJESTI_SAJT_TEL:
+                telefoni.append(np_)
+        if telefoni:
+            break   # broj iz opisa je pravi vlasnikov; broj naloga samo ako opis nema broj
+    return {
+        "ime":        name,
+        "oglas_link": url,
+        "lokacija":   adresa or FILTER_CITY,
+        "cijena":     clean_price(cijena),
+        "izvor":      "Vijesti oglasi",
+        "telefoni":   telefoni,
+        "_opis":      f"{naslov}. {opis}",
+    }
+
+
+def run_vijesti() -> tuple[list[dict], list[dict]]:
+    log.info("═" * 60)
+    log.info("  OGLASI.VIJESTI.ME  (od %s)", CUTOFF.strftime("%d.%m.%Y %H:%M"))
+    log.info("═" * 60)
+    IZ = "Vijesti oglasi"
+    cards = _vij_index()
+    leads: list[dict] = []
+    review: list[dict] = []
+    if cards is None:
+        send_warning_email(IZ, 0, 0, vrsta="http")
+        return leads, review
+    if not cards:
+        send_warning_email(IZ, 0, 0)
+        return leads, review
+    _blokada_reset(IZ)
+    fails = fetched = 0
+
+    def _klasifikuj(lead: dict, fresh: bool) -> None:
+        if fresh:
+            phones_record(lead["oglas_link"], lead["ime"], lead.get("telefoni") or [])
+        status, razlog = is_broker(lead["ime"], 1, lead.get("telefoni"))
+        if fresh:
+            seen_record(lead["oglas_link"], status, dict(lead) if status in ("vlasnik", "provjeri") else None)
+        _audit_log(IZ, lead["ime"], lead["oglas_link"], "poslat" if status == "vlasnik" else status, razlog)
+        if status == "provjeri":
+            lead["_razlog"] = razlog
+            review.append(lead)
+        elif status == "vlasnik":
+            leads.append(lead)
+
+    for link, naslov, cijena, adresa, vrijeme in cards:
+        dt = _vij_date(vrijeme)
+        if dt is not None and dt < CUTOFF:
+            continue
+        cached = seen_get(link)
+        if cached is not None:
+            if cached["status"] in ("vlasnik", "provjeri") and cached.get("lead"):
+                _klasifikuj(dict(cached["lead"]), fresh=False)
+            continue
+        res = _parse_vijesti_listing(link, naslov, cijena, adresa)
+        fetched += 1
+        if res == "selector_fail":
+            fails += 1
+            seen_record(link, "neparsiran")
+        elif isinstance(res, str):
+            seen_record(link, res)
+        elif isinstance(res, dict):
+            _klasifikuj(res, fresh=True)
+        time.sleep(DELAY_LISTING)
+
+    if fetched >= 5 and fails / fetched > SELECTOR_FAIL_RATIO:
+        send_warning_email(IZ, fails, fetched)
+    log.info("Vijesti oglasi → %d kartica, %d otvoreno, %d vlasnika, %d za provjeru",
+             len(cards), fetched, len(leads), len(review))
+    return leads, review
+
+# ──────────────────────────────────────────────────────────────
 # REALITICA.COM
 # ──────────────────────────────────────────────────────────────
 
@@ -2289,7 +2420,7 @@ def main() -> None:
     rezultati: dict[str, tuple[list[dict], list[dict]]] = {}
     poslovi = {"Oglasi.me": run_oglasi, "Patuljak.me": run_patuljak,
                "Pazar3.me": run_pazar3, "Realitica.com": run_realitica,
-               "OglasiCG.me": run_oglasicg}
+               "OglasiCG.me": run_oglasicg, "Vijesti oglasi": run_vijesti}
     with ThreadPoolExecutor(max_workers=len(poslovi)) as ex:
         futures = {ex.submit(fn): ime for ime, fn in poslovi.items()}
         for fut in as_completed(futures):
@@ -2308,8 +2439,9 @@ def main() -> None:
     leads_r, review_r = rezultati["Realitica.com"]
     leads_z, review_z = rezultati["Pazar3.me"]
     leads_c, review_c = rezultati["OglasiCG.me"]
-    all_leads    = leads_o + leads_p + leads_z + leads_r + leads_c
-    all_review   = review_o + review_p + review_z + review_r + review_c
+    leads_v, review_v = rezultati["Vijesti oglasi"]
+    all_leads    = leads_o + leads_p + leads_z + leads_r + leads_c + leads_v
+    all_review   = review_o + review_p + review_z + review_r + review_c + review_v
 
     # Deduplikacija po linku oglasa
     seen:         set[str]   = set()
