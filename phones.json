@@ -10,7 +10,6 @@
   },
   "38267416732": {
     "urls": {
-      "https://www.patuljak.me/oglas/prodaje-se-dvosoban-stan--82151": "2026-10-04T20:12:50.782565",
       "https://www.patuljak.me/oglas/prodaje-se-dvosoban-stan--82212": "2026-10-05T11:38:17.353413",
       "https://www.patuljak.me/oglas/prodaje-se-dvosoban-stan--82210": "2026-10-05T11:38:18.828149",
       "https://www.patuljak.me/oglas/prodaje-se-jednosoban-stan--82208": "2026-10-05T11:38:20.301810",
@@ -570,7 +569,8 @@
       "https://www.patuljak.me/oglas/izdavanjeposlovni-prostor-preko-morace--86223": "2026-11-02T20:47:12.926539",
       "https://www.patuljak.me/oglas/prodajagarsonjeracity-kvart--86269": "2026-11-03T02:55:59.477887",
       "https://www.patuljak.me/oglas/izdavanjejednosoban-stannew-city--86268": "2026-11-03T02:56:01.572788",
-      "https://www.patuljak.me/oglas/prodajadvosoban-stan-master-kvart--86373": "2026-11-03T18:27:03.201521"
+      "https://www.patuljak.me/oglas/prodajadvosoban-stan-master-kvart--86373": "2026-11-03T18:27:03.201521",
+      "https://www.patuljak.me/oglas/izdavanjedvosoban-stan-malo-brdo--86385": "2026-11-03T23:59:16.789903"
     },
     "imena": [
       "Luxury Property Montenegro"
@@ -1234,7 +1234,8 @@
       "https://www.patuljak.me/oglas/izdavanjegarsonjera-donja-gorica--86225": "2026-11-02T20:47:09.616244",
       "https://www.patuljak.me/oglas/izdavanjeposlovni-prostor-preko-morace--86223": "2026-11-02T20:47:12.926550",
       "https://www.patuljak.me/oglas/prodajagarsonjeracity-kvart--86269": "2026-11-03T02:55:59.477899",
-      "https://www.patuljak.me/oglas/prodajadvosoban-stan-master-kvart--86373": "2026-11-03T18:27:03.201534"
+      "https://www.patuljak.me/oglas/prodajadvosoban-stan-master-kvart--86373": "2026-11-03T18:27:03.201534",
+      "https://www.patuljak.me/oglas/izdavanjedvosoban-stan-malo-brdo--86385": "2026-11-03T23:59:16.789916"
     },
     "imena": [
       "Luxury Property Montenegro"
@@ -1936,7 +1937,6 @@
   },
   "38267245989": {
     "urls": {
-      "https://www.oglasi.me/nekretnine/poslovni-prostori/izdaje-se-magacinski-prostor--1000m2-og84055238me": "2026-10-04T20:13:00.790589",
       "https://www.oglasi.me/nekretnine/poslovni-prostori/izdaje-se-magacinski-prostor--1000m2--donja-gorica-og84154059me": "2026-10-14T10:12:49.953082"
     },
     "imena": [
@@ -4241,6 +4241,14 @@
     },
     "imena": [
       "Tanja"
+    ]
+  },
+  "38268800223": {
+    "urls": {
+      "https://www.patuljak.me/oglas/prodaja-momosici--86384": "2026-11-03T23:59:18.516551"
+    },
+    "imena": [
+      "Aleksandar"
     ]
   }
 }
