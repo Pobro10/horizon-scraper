@@ -2398,7 +2398,8 @@
         "razlog": "Ime je lično i tekst je neformalan, ali nema izričitih tvrdnji o vlasništvu niti jasnih znakova agencije."
       }
     },
-    "p": 1
+    "p": 1,
+    "o": 1
   },
   "https://www.oglasi.me/nekretnine/zemljiste/prodajem-poljoprivredno-zemljiste-ukupne-povrsine-placa-8000m2-og62152773me": {
     "ts": "2026-10-29T20:17:56.576281",
@@ -4274,7 +4275,8 @@
       "_opis": "Izdaje se poslovni prostor, renoviran, sa malom kuhinjom, ugrađene dva klima uređaja, sa terasom i parkingom. Preko puta Katoličke crkve na Starom aerodromu. Predviđen za kancelarije, administraciju ili studio/ordinaciju. Mjesečna renta 600 eura, broj telefona 067 371 699 ____________________________________________ Commercial space for rent – ​​renovated, featuring a small kitchen, two installed air conditioning units, a terrace, and parking. Located across from the Catholic Church in Stari Aerodrom. Suitable for offices, administrative use, or a studio/consulting room. Monthly rent: 600 euros. Phone number: 067 371 699.",
       "_count": 1
     },
-    "p": 1
+    "p": 1,
+    "o": 1
   },
   "https://www.patuljak.me/oglas/prodajem-plac-na-verusu--86058": {
     "ts": "2026-11-01T18:56:21.168885",
@@ -4713,7 +4715,8 @@
       ],
       "_opis": "Izdajem smjestaj za radike, 7 eura po krevetu"
     },
-    "p": 1
+    "p": 1,
+    "o": 1
   },
   "https://www.patuljak.me/oglas/prodaje-se-dvosoban-stan-povrsine-62m2-u-izgradnji--86263": {
     "ts": "2026-11-02T20:46:30.067989",
@@ -6377,6 +6380,31 @@
   },
   "https://www.patuljak.me/oglas/jednosoban-stan-46m2-tolosi--86389": {
     "ts": "2026-11-04T06:22:03.291364",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/jednosoban-namjesten-stan-45m2-dalmatinska-podgor--86486": {
+    "ts": "2026-11-04T07:26:22.188062",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/izdavanje-jednosoban-stan-podgorica-ljubovic-45m2--86485": {
+    "ts": "2026-11-04T07:26:23.798900",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/izdavanje-jednosoban-stan-podgorica-zabjelo-41m2--86484": {
+    "ts": "2026-11-04T07:26:25.404118",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/izdavanje-dvosoban-stan-podgorica-1-maj-71m2--86483": {
+    "ts": "2026-11-04T07:26:27.019310",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/prodaja-jednosoban-stan-podgorica-zagoric-55m2--86482": {
+    "ts": "2026-11-04T07:26:28.613647",
     "status": "posrednik",
     "lead": null
   }
