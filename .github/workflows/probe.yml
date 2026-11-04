@@ -11,6 +11,7 @@ jobs:
     steps:
       - name: Probaj sajtove
         run: |
+          set +e
           UA="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
           probe() {
             out=$(curl -sL --max-time 25 -A "$UA" -w "\n%{http_code} %{size_download}" "$2" 2>/dev/null)
@@ -29,7 +30,7 @@ jobs:
           probe "estitor-sitemap-me" "https://estitor.com/sitemap-me.xml"
           probe "estitor-api-v2"     "https://api-v2.estitor.com/"
           probe "oglasicg"       "https://www.oglasicg.me/nekretnine-kupovina-i-prodaja-30/"
-          probe "oglasicg-izdavanje" "https://www.oglasicg.me/nekretnine-izdavanje-31/"
+          probe "oglasicg-kategorije" "https://www.oglasicg.me/"
           probe "crnagora-nekretnine" "https://nekretnine.crna.gora.me/kategorija/oglasi-za-nekretnine/izdavanje-stana/"
           probe "crnagora-oglasi"    "https://oglasi.crna.gora.me/category/nekretnine/"
           probe "mojtrg"             "https://www.mojtrg.me/"
