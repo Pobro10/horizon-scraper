@@ -889,7 +889,7 @@ def send_email(leads: list[dict], review_leads: list[dict] = []) -> bool:
 </table>
 {review_block}
 <p style="color:#888;font-size:12px;margin-top:24px">
-  Izvor: Oglasi.me + Patuljak.me + Pazar3.me &nbsp;|&nbsp; Horizon Scraper
+  Izvor: Oglasi.me + Patuljak.me + Pazar3.me + OglasiCG.me &nbsp;|&nbsp; Horizon Scraper
 </p>
 </body></html>"""
 
@@ -1962,6 +1962,177 @@ def run_pazar3() -> tuple[list[dict], list[dict]]:
     return leads, review_leads
 
 # ──────────────────────────────────────────────────────────────
+# OGLASICG.ME
+# ──────────────────────────────────────────────────────────────
+OGLASICG_BASE       = "https://www.oglasicg.me"
+OGLASICG_KATEGORIJE = ("nekretnine-kupovina-i-prodaja-30", "nekretnine-iznajmljivanje-29")
+_OCG_TIP_LOS        = re.compile(r"(?i)kupujem|kupovina|tra[zž]im|potra[zž]|zamjen|zamen")
+
+
+def _ocg_index_cards(kat: str, page: int) -> list[tuple[str, str, str, str]] | None:
+    """Vraća [(link, naslov, grad, datum)] ili None na HTTP grešku."""
+    url = f"{OGLASICG_BASE}/{kat}/" + (f"{page}/" if page > 1 else "")
+    r = get(url)
+    if r is None:
+        return None
+    soup = BeautifulSoup(r.text, "lxml")
+    out: list[tuple[str, str, str, str]] = []
+    for card in soup.select("div.ad-card"):
+        a = card.select_one("a[href$='.html']")
+        if not a:
+            continue
+        link   = urljoin(OGLASICG_BASE, a["href"].split("?")[0])
+        t      = card.select_one(".ad-title")
+        naslov = (t.get_text(" ", strip=True) if t else a.get("title", "")).strip()
+        tag    = card.select_one(".ad-cat-tag")
+        grad   = tag.get_text(" ", strip=True).split("·")[-1].strip() if tag else ""
+        d      = card.select_one(".ad-footer-left")
+        out.append((link, naslov, grad, d.get_text(" ", strip=True) if d else ""))
+    return out
+
+
+def _parse_oglasicg_listing(url: str) -> dict | str | None:
+    r = get(url)
+    if r is None:
+        return None
+    soup = BeautifulSoup(r.text, "lxml")
+    h1 = soup.find("h1")
+    naslov = h1.get_text(" ", strip=True) if h1 else ""
+    det: dict[str, str] = {}
+    for it in soup.select(".details-grid .detail-item"):
+        lb, vl = it.select_one(".detail-label"), it.select_one(".detail-value")
+        if lb and vl:
+            det[lb.get_text(strip=True).lower()] = vl.get_text(" ", strip=True)
+    if not naslov or not det:
+        log.debug("  [selector_fail/oglasicg] %s", url)
+        return "selector_fail"
+
+    m = re.search(r"Objavljeno:\s*(\d{1,2}\.\d{1,2}\.\d{4})", soup.get_text(" "))
+    if m:
+        dt = parse_date(m.group(1))
+        if dt is not None and dt.date() < CUTOFF.date():
+            return "old"
+
+    lokacija = det.get("lokacija", "")
+    if FILTER_CITY and FILTER_CITY.lower() not in lokacija.lower():
+        return "drugi_grad"
+    if _OCG_TIP_LOS.search(naslov) or _OCG_TIP_LOS.search(det.get("tip oglasa", "")):
+        return "drugi_tip"
+
+    opis_tag = soup.select_one("#adDesc, .ad-description")
+    opis = (opis_tag.get_text(" ", strip=True) if opis_tag else "")[:1500]
+    if _P3_NA_DAN_NASLOV.search(naslov) or _P3_NA_DAN_OPIS.search(opis):
+        return "na_dan"
+
+    s = soup.select_one(".seller-name a")
+    name = s.get_text(" ", strip=True) if s else "Nepoznat"
+    p = soup.select_one(".ad-price-main")
+    cijena = clean_price(p.get_text(" ", strip=True)) if p else ""
+
+    telefoni: list[str] = []
+    for el in soup.select(".phone-number[data-tel]"):
+        np_ = normalize_phone(el.get("data-tel", ""))
+        if np_ and np_ not in telefoni:
+            telefoni.append(np_)
+    for mm in _PHONE_IN_TEXT.finditer(opis):
+        np_ = normalize_phone(mm.group(0))
+        if np_ and np_ not in telefoni:
+            telefoni.append(np_)
+
+    return {
+        "ime":        name,
+        "oglas_link": url,
+        "lokacija":   lokacija + (f", {det['površina']}" if det.get("površina") else ""),
+        "cijena":     cijena,
+        "izvor":      "OglasiCG.me",
+        "telefoni":   telefoni,
+        "_opis":      f"{naslov}. {opis}",
+    }
+
+
+def run_oglasicg() -> tuple[list[dict], list[dict]]:
+    log.info("═" * 60)
+    log.info("  OGLASICG.ME  (od %s)", CUTOFF.strftime("%d.%m.%Y %H:%M"))
+    log.info("═" * 60)
+    IZ = "OglasiCG.me"
+    queue: list[str] = []
+    total_cards, http_fail = 0, False
+    for kat in OGLASICG_KATEGORIJE:
+        old_in_row = 0
+        for page in range(1, MAX_PAGES + 1):
+            cards = _ocg_index_cards(kat, page)
+            if cards is None:
+                http_fail = True
+                break
+            if not cards:
+                break
+            total_cards += len(cards)
+            page_new = 0
+            for link, naslov, grad, datum in cards:
+                dt = parse_date(datum)
+                if dt is not None and dt.date() < CUTOFF.date():
+                    old_in_row += 1
+                    continue
+                old_in_row = 0
+                if FILTER_CITY and grad and FILTER_CITY.lower() not in grad.lower():
+                    continue
+                if link not in queue:
+                    queue.append(link)
+                    page_new += 1
+            log.info("  %s str. %d: %d novih od %d kartica", kat, page, page_new, len(cards))
+            if old_in_row >= MAX_OLD_IN_ROW:
+                break
+            time.sleep(DELAY_LISTING)
+
+    leads: list[dict] = []
+    review: list[dict] = []
+    fails = fetched = 0
+
+    def _klasifikuj(lead: dict, fresh: bool) -> None:
+        if fresh:
+            phones_record(lead["oglas_link"], lead["ime"], lead.get("telefoni") or [])
+        status, razlog = is_broker(lead["ime"], 1, lead.get("telefoni"))
+        if fresh:
+            seen_record(lead["oglas_link"], status, dict(lead) if status in ("vlasnik", "provjeri") else None)
+        _audit_log(IZ, lead["ime"], lead["oglas_link"], "poslat" if status == "vlasnik" else status, razlog)
+        if status == "provjeri":
+            lead["_razlog"] = razlog
+            review.append(lead)
+        elif status == "vlasnik":
+            leads.append(lead)
+
+    for i, url in enumerate(queue, 1):
+        cached = seen_get(url)
+        if cached is not None:
+            if cached["status"] in ("vlasnik", "provjeri") and cached.get("lead"):
+                _klasifikuj(dict(cached["lead"]), fresh=False)
+            continue
+        log.info("  [%4d/%d] %s", i, len(queue), url)
+        res = _parse_oglasicg_listing(url)
+        fetched += 1
+        if res == "old":
+            seen_record(url, "star")
+        elif res == "selector_fail":
+            fails += 1
+            seen_record(url, "neparsiran")
+        elif res in ("drugi_grad", "drugi_tip", "na_dan"):
+            seen_record(url, res)
+        elif isinstance(res, dict):
+            _klasifikuj(res, fresh=True)
+        time.sleep(DELAY_LISTING)
+
+    if total_cards > 0:
+        _blokada_reset(IZ)
+    if total_cards == 0 and http_fail:
+        send_warning_email(IZ, 0, 0, vrsta="http")
+    elif total_cards == 0:
+        send_warning_email(IZ, 0, 0)
+    elif fetched >= 5 and fails / fetched > SELECTOR_FAIL_RATIO:
+        send_warning_email(IZ, fails, fetched)
+    log.info("OglasiCG.me → %d vlasnika, %d za provjeru", len(leads), len(review))
+    return leads, review
+
+# ──────────────────────────────────────────────────────────────
 # REALITICA.COM
 # ──────────────────────────────────────────────────────────────
 
@@ -2117,7 +2288,8 @@ def main() -> None:
     # Pad jednog sajta ne obara ostale.
     rezultati: dict[str, tuple[list[dict], list[dict]]] = {}
     poslovi = {"Oglasi.me": run_oglasi, "Patuljak.me": run_patuljak,
-               "Pazar3.me": run_pazar3, "Realitica.com": run_realitica}
+               "Pazar3.me": run_pazar3, "Realitica.com": run_realitica,
+               "OglasiCG.me": run_oglasicg}
     with ThreadPoolExecutor(max_workers=len(poslovi)) as ex:
         futures = {ex.submit(fn): ime for ime, fn in poslovi.items()}
         for fut in as_completed(futures):
@@ -2135,8 +2307,9 @@ def main() -> None:
     leads_p, review_p = rezultati["Patuljak.me"]
     leads_r, review_r = rezultati["Realitica.com"]
     leads_z, review_z = rezultati["Pazar3.me"]
-    all_leads    = leads_o + leads_p + leads_z + leads_r
-    all_review   = review_o + review_p + review_z + review_r
+    leads_c, review_c = rezultati["OglasiCG.me"]
+    all_leads    = leads_o + leads_p + leads_z + leads_r + leads_c
+    all_review   = review_o + review_p + review_z + review_r + review_c
 
     # Deduplikacija po linku oglasa
     seen:         set[str]   = set()
