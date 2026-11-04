@@ -2218,7 +2218,9 @@
       "https://www.patuljak.me/oglas/jednosoban-stan-45m2-garaza-new-city-podgorica--85109": "2026-10-24T14:32:20.951154",
       "https://www.patuljak.me/oglas/izdavanje-dvosoban-stan-120-m2-capital-plaza-podgo--85692": "2026-10-29T14:19:26.077439",
       "https://www.patuljak.me/oglas/dvosoban-stan-73m2-garaza-city-kvart-podgorica--85691": "2026-10-29T14:19:28.119441",
-      "https://www.patuljak.me/oglas/jednosoban-namjesten-stan-45m2-dalmatinska-podgor--86486": "2026-11-04T07:26:22.188039"
+      "https://www.patuljak.me/oglas/jednosoban-namjesten-stan-45m2-dalmatinska-podgor--86486": "2026-11-04T07:26:22.188039",
+      "https://www.patuljak.me/oglas/urbanizovan-plac-665m2-doljane-podgoirca--86488": "2026-11-04T07:56:44.653460",
+      "https://www.patuljak.me/oglas/urbanizovan-plac-533m2-doljane-podgoirca--86487": "2026-11-04T07:56:46.322277"
     },
     "imena": [
       "Domus nekretnine"
@@ -4294,6 +4296,39 @@
     },
     "imena": [
       "Jelena"
+    ]
+  },
+  "38267247242": {
+    "urls": {
+      "https://oglasi.vijesti.me/ponuda/manji-dvosoban-stan/": "2026-11-04T07:58:02.262022",
+      "https://oglasi.vijesti.me/ponuda/prilika-za-izgradnju-stambenog-ili-stambeno-poslovnog-objekta/": "2026-11-04T07:58:27.944101"
+    },
+    "imena": [
+      "Sladja Marketin"
+    ]
+  },
+  "38269257051": {
+    "urls": {
+      "https://oglasi.vijesti.me/ponuda/izdaje-se-stan-povrsine-72-m%c2%b2-u-bloku-6-ulica-djoka-mirasevica/": "2026-11-04T07:58:30.877936"
+    },
+    "imena": [
+      "Oglasi.Vijesti.Me"
+    ]
+  },
+  "38267332397": {
+    "urls": {
+      "https://oglasi.vijesti.me/ponuda/izdaje-se-garsonjera-u-podgorici-2/": "2026-11-04T07:58:40.381224"
+    },
+    "imena": [
+      "Oglasi.Vijesti.Me"
+    ]
+  },
+  "38269711192": {
+    "urls": {
+      "https://oglasi.vijesti.me/ponuda/prodajem-jednosoban-stan-42m2-zabjelo-ljubovic/": "2026-11-04T07:59:00.244377"
+    },
+    "imena": [
+      "Sladjana Vorotovic"
     ]
   }
 }
