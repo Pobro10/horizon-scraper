@@ -265,7 +265,6 @@
   },
   "382670008300": {
     "urls": {
-      "https://www.patuljak.me/oglas/izdavanjejednosoban-stancentral-point--82296": "2026-10-05T21:18:46.835761",
       "https://www.patuljak.me/oglas/izdavanjejednosoban-stanstari-aerodrom--82308": "2026-10-06T11:24:10.840392",
       "https://www.patuljak.me/oglas/izdavanjejednosoban-stanpreko-morace--82305": "2026-10-06T11:24:14.082833",
       "https://www.patuljak.me/oglas/izdavanjejednosoban-stanzagoric--82451": "2026-10-06T15:28:41.707613",
@@ -377,9 +376,6 @@
   },
   "382670007300": {
     "urls": {
-      "https://www.patuljak.me/oglas/izdavanjejednosoban-stan-stari-aerodrom--82260": "2026-10-05T17:26:19.051836",
-      "https://www.patuljak.me/oglas/prodaja-plac-donji-kokoti--82297": "2026-10-05T21:18:45.249543",
-      "https://www.patuljak.me/oglas/izdavanjejednosoban-stancentral-point--82296": "2026-10-05T21:18:46.835773",
       "https://www.patuljak.me/oglas/prodaja-trsoban-stan-zabjelo--82301": "2026-10-05T23:10:59.513173",
       "https://www.patuljak.me/oglas/izdavanjejednosoban-stanstari-aerodrom--82308": "2026-10-06T11:24:10.840402",
       "https://www.patuljak.me/oglas/prodajadvosoban-stan-green-city--82304": "2026-10-06T11:24:15.698399",
@@ -1165,8 +1161,6 @@
   },
   "382670007100": {
     "urls": {
-      "https://www.patuljak.me/oglas/izdavanjejednosoban-stan-stari-aerodrom--82260": "2026-10-05T17:26:19.051846",
-      "https://www.patuljak.me/oglas/prodaja-plac-donji-kokoti--82297": "2026-10-05T21:18:45.249556",
       "https://www.patuljak.me/oglas/prodaja-trsoban-stan-zabjelo--82301": "2026-10-05T23:10:59.513182",
       "https://www.patuljak.me/oglas/izdavanjejednosoban-stanpreko-morace--82305": "2026-10-06T11:24:14.082845",
       "https://www.patuljak.me/oglas/prodajadvosoban-stan-green-city--82304": "2026-10-06T11:24:15.698411",
@@ -1284,11 +1278,6 @@
   },
   "38269727288": {
     "urls": {
-      "https://www.patuljak.me/oglas/izdaje-se-poslovni-prostor-povrsine-115-m--82278": "2026-10-05T17:26:01.226730",
-      "https://www.patuljak.me/oglas/izdaje-se-poslovni-prostor-povrsine-32-m--82276": "2026-10-05T17:26:04.185480",
-      "https://www.patuljak.me/oglas/izdaje-se-jednosoban-namjesten-stan-povrsine-44-m--82275": "2026-10-05T17:26:05.666495",
-      "https://www.patuljak.me/oglas/izdaje-se-trosoban-namjesten-stan-povrsine-120-m--82253": "2026-10-05T17:26:26.498895",
-      "https://www.patuljak.me/oglas/izdaje-se-jednosoban-namjesten-stan-povrsine-38-m--82251": "2026-10-05T17:26:28.004906",
       "https://www.patuljak.me/oglas/izdaje-se-jednosoban-namjesten-stan-povrsine-40-m--82314": "2026-10-06T11:24:02.245140",
       "https://www.patuljak.me/oglas/izdaje-se-jednosoban-namjesten-stan-povrsine-40-m--82452": "2026-10-06T15:28:40.024559",
       "https://www.patuljak.me/oglas/prodaje-se-jednosoban-namjesten-stan-povrsine-39-m--82621": "2026-10-07T15:48:04.618005",
@@ -1449,7 +1438,8 @@
       "https://www.oglasi.me/nekretnine/stanovi/izdaje-se-dvosoban-stan--masline-og84377848me": "2026-11-03T10:52:05.263652",
       "https://www.oglasi.me/nekretnine/stanovi/izdaje-se-jednosobam-stan--preko-morace-og84378126me": "2026-11-03T10:52:05.263755",
       "https://www.oglasi.me/nekretnine/stanovi/izdaje-se-garsonjera---stari-aerodrom-og84375162me": "2026-11-03T10:52:05.264106",
-      "https://www.oglasi.me/nekretnine/stanovi/izdaje-se-jednosoban-stan--centar-og84377019me": "2026-11-03T10:52:05.264472"
+      "https://www.oglasi.me/nekretnine/stanovi/izdaje-se-jednosoban-stan--centar-og84377019me": "2026-11-03T10:52:05.264472",
+      "https://www.oglasi.me/nekretnine/stanovi/prodaje-se-jednosoban-stan--zabjelo-og84403554me": "2026-11-04T21:53:06.709829"
     },
     "imena": [
       "Living nekretnine",
@@ -1459,7 +1449,6 @@
   },
   "38268156405": {
     "urls": {
-      "https://www.oglasi.me/nekretnine/stanovi/dvosoban-stan-53m2--masline-og84061405me": "2026-10-05T17:26:11.609830",
       "https://www.oglasi.me/nekretnine/stanovi/dvosoban-stan-68m2--kod-gintasa-og84070554me": "2026-10-06T11:22:13.687827",
       "https://www.oglasi.me/nekretnine/stanovi/dvosoban-stan-62m2--zagoric-og84068430me": "2026-10-06T11:22:13.688439",
       "https://www.oglasi.me/nekretnine/stanovi/jednosoban-stan-43m2--zabjelo-og84068774me": "2026-10-06T11:22:13.688616",
@@ -1654,10 +1643,6 @@
   },
   "38267090210": {
     "urls": {
-      "https://www.oglasi.me/nekretnine/stanovi/izdaje-se-dvosoban-stan-povrsine-70m--u-master-kvartu--og84061662me": "2026-10-05T17:26:11.609595",
-      "https://www.oglasi.me/nekretnine/stanovi/izdaje-se-jednosoban-stan-povrsine-46m--u-city-kvartu--u-zgradi-investitora-acton--og84061521me": "2026-10-05T17:26:11.609707",
-      "https://www.oglasi.me/nekretnine/poslovni-prostori/izdaje-se-poslovni-prostor-povrsine-34m---smjesten-na-trgu-bozane-vucinic--iza-paradisa--og84061336me": "2026-10-05T17:26:11.609927",
-      "https://www.patuljak.me/oglas/prodaje-se-dvosoban-stan-povrsine-64m2-u-izgradnji--82249": "2026-10-05T17:26:29.495904",
       "https://www.oglasi.me/nekretnine/stanovi/prodaju-se-stanovi-u-izgradnji-na-zabjelu--u-novom-stambenom-objektu--og84070683me": "2026-10-06T11:22:13.687699",
       "https://www.oglasi.me/nekretnine/stanovi/prodaju-se-stanovi-u-izgradnji-na-zabjelu--u-novom-stambenom-objektu--og84070434me": "2026-10-06T11:22:13.687934",
       "https://www.oglasi.me/nekretnine/stanovi/prodaju-se-stanovi-u-izgradnji-na-zabjelu--u-novom-stambenom-objektu--og84070240me": "2026-10-06T11:22:13.688041",
@@ -1946,7 +1931,7 @@
   },
   "38267382923": {
     "urls": {
-      "https://www.oglasi.me/nekretnine/zemljiste/zemljiste-bandici-2000m2-og24007823me": "2026-10-20T10:04:51.442393"
+      "https://www.oglasi.me/nekretnine/zemljiste/zemljiste-bandici-2000m2-og24007823me": "2026-11-04T21:53:06.709694"
     },
     "imena": [
       "Bbb"
@@ -1998,20 +1983,8 @@
       "G1"
     ]
   },
-  "38267431600": {
-    "urls": {
-      "https://www.patuljak.me/oglas/izdajem-namjesten-jednosoban-stan-52-m-blok-6-po--82285": "2026-10-05T17:25:52.406922"
-    },
-    "imena": [
-      "Filip"
-    ]
-  },
   "38267105355": {
     "urls": {
-      "https://www.patuljak.me/oglas/izdaje-se-namjestena-garsonjera-27m2-zabjelo-podgo--82281": "2026-10-05T17:25:58.277486",
-      "https://www.patuljak.me/oglas/izdaje-se-namjesten-trosoban-stan-107m2-city-kvart--82280": "2026-10-05T17:25:59.767005",
-      "https://www.patuljak.me/oglas/izdaje-se-namjesten-jednosoban-stan-41m2-zabjelo-p--82267": "2026-10-05T17:26:14.608600",
-      "https://www.patuljak.me/oglas/izdaje-se-jednosoban-stan-46m2-central-point-podgo--82263": "2026-10-05T17:26:16.087623",
       "https://www.patuljak.me/oglas/izdaje-se-jednosoban-stan-45m2-zagoric-podgorica--82455": "2026-10-06T15:28:35.076297",
       "https://www.patuljak.me/oglas/izdaje-se-nenamjesten-dvosoban-stan-70m2-centar-po--82450": "2026-10-06T15:28:43.343526",
       "https://www.patuljak.me/oglas/izdaje-se-polunamjesten-trosoban-stan-100m2-preko--82505": "2026-10-07T11:11:08.245755",
@@ -2036,7 +2009,6 @@
   },
   "38267833010": {
     "urls": {
-      "https://www.oglasi.me/nekretnine/stanovi/prodaja-tolosi--og84062503me": "2026-10-05T17:26:11.609337",
       "https://www.oglasi.me/nekretnine/stanovi/izdavanja-stana-central-point-og84108524me": "2026-10-09T15:19:25.273602",
       "https://www.oglasi.me/nekretnine/stanovi/garsonjera-drac-28m2-og84165309me": "2026-10-15T13:26:40.991266",
       "https://www.oglasi.me/nekretnine/stanovi/central-point-49m2-og84165564me": "2026-10-15T13:26:40.991454",
@@ -2051,7 +2023,6 @@
   },
   "38268019600": {
     "urls": {
-      "https://www.oglasi.me/nekretnine/poslovni-prostori/prodajem-poslovni-prostor-na-starom-aerordromu-og78310862me": "2026-10-05T17:26:11.609537",
       "https://www.oglasi.me/nekretnine/stanovi/izdajem-stan-u-city-kvartu-og78388561me": "2026-11-04T15:27:04.285985"
     },
     "imena": [
@@ -2060,7 +2031,6 @@
   },
   "38269041441": {
     "urls": {
-      "https://www.patuljak.me/oglas/izdajem-namjesten-jednosoban-stan-50-m2-zagoric-is--82262": "2026-10-05T17:26:17.573689",
       "https://www.patuljak.me/oglas/izdavanje-jednosoban-stan-50-m2-zagoric-podgorica--84662": "2026-10-21T13:48:17.533193",
       "https://www.oglasi.me/nekretnine/stanovi/izdaje-se-namjesten-stan-u-zagoricu--350e-og84237637me": "2026-10-21T13:48:41.647968"
     },
@@ -2070,21 +2040,12 @@
   },
   "382673526200": {
     "urls": {
-      "https://www.patuljak.me/oglas/izdavanje-garsonjera-28-m2-preko-morace-podgorica--82290": "2026-10-05T21:18:53.194309",
       "https://www.patuljak.me/oglas/izdavanje-garsonjera-preko-morace-ul-moskovska--84854": "2026-10-22T18:32:48.902456",
       "https://www.patuljak.me/oglas/izdavanje-garsonjera-preko-morace--85289": "2026-10-26T19:19:07.283087",
       "https://www.patuljak.me/oglas/izdavanje-garsonjera-preko-morace-ul-moskovska--86247": "2026-11-02T20:46:53.030899"
     },
     "imena": [
       "Rajna"
-    ]
-  },
-  "38268004664": {
-    "urls": {
-      "https://www.oglasi.me/nekretnine/kuce/kuca-og84064368me": "2026-10-05T21:18:55.607704"
-    },
-    "imena": [
-      "zlatko"
     ]
   },
   "38269618445": {
@@ -2572,7 +2533,8 @@
       "https://www.patuljak.me/oglas/prodaje-se-renovirana-opremljena-garsonjera-24m2-k--83106": "2026-10-11T01:53:18.982528",
       "https://www.oglasi.me/nekretnine/stanovi/izdaje-se-moderno-opremljen-dvosoban-stan-85m2--gorica-c---zagoric-og84211768me": "2026-10-19T13:29:23.136606",
       "https://www.patuljak.me/oglas/izdaje-se-kancelarijski-prostor-112m2-dadi-plaza--85731": "2026-10-29T14:18:57.591814",
-      "https://www.oglasi.me/nekretnine/poslovni-prostori/izdaje-se-kancelarijski-prostor-112m2--dadi-plaza--stari-aerodrom-og84326413me": "2026-10-29T14:19:16.186661"
+      "https://www.oglasi.me/nekretnine/poslovni-prostori/izdaje-se-kancelarijski-prostor-112m2--dadi-plaza--stari-aerodrom-og84326413me": "2026-10-29T14:19:16.186661",
+      "https://www.oglasi.me/nekretnine/poslovni-prostori/prodaje-se-poslovni-prostor-47m2--zabjelo--podgorica-og84404421me": "2026-11-04T21:53:06.709403"
     },
     "imena": [
       "Bane",
@@ -4132,7 +4094,8 @@
       "https://www.oglasi.me/nekretnine/stanovi/izdaje-se-dvosoban-stan---malo-brdo-og84374663me": "2026-11-03T02:55:19.706466",
       "https://www.oglasi.me/nekretnine/stanovi/hitno-se-prodaje-jednosoban-stan--zabjelo-og84373844me": "2026-11-03T02:55:19.707023",
       "https://www.oglasi.me/nekretnine/stanovi/izdaje-se-garsonjera---stari-aerodrom-og84375162me": "2026-11-03T10:52:05.264109",
-      "https://www.oglasi.me/nekretnine/stanovi/izdaje-se-jednosoban-stan--centar-og84377019me": "2026-11-03T10:52:05.264475"
+      "https://www.oglasi.me/nekretnine/stanovi/izdaje-se-jednosoban-stan--centar-og84377019me": "2026-11-03T10:52:05.264475",
+      "https://www.oglasi.me/nekretnine/stanovi/prodaje-se-jednosoban-stan--zabjelo-og84403554me": "2026-11-04T21:53:06.709834"
     },
     "imena": [
       "Living nekretnine"
@@ -4313,6 +4276,22 @@
     },
     "imena": [
       "Luxury Property Montenegro"
+    ]
+  },
+  "38267401951": {
+    "urls": {
+      "https://www.oglasi.me/nekretnine/stanovi/izdajem-kompletno-namjesten-apartman-38-m2-na-duzi-vremenski-period-bez-posrednika-bulevar-dzordza--vasingtona-57-podgorica---og84404077me": "2026-11-04T21:53:06.709768"
+    },
+    "imena": [
+      "Biljana"
+    ]
+  },
+  "38269352233": {
+    "urls": {
+      "https://www.oglasi.me/nekretnine/stanovi/izdajem-kompletno-namjesten-apartman-38-m2-na-duzi-vremenski-period-bez-posrednika-bulevar-dzordza--vasingtona-57-podgorica---og84404077me": "2026-11-04T21:53:06.709773"
+    },
+    "imena": [
+      "Biljana"
     ]
   }
 }
