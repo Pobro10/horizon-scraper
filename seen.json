@@ -5653,7 +5653,11 @@
         "38267225087"
       ],
       "_opis": "Opis oglasa dva poslovna prostora po 45m2,masline ulica v.bogisica-glavni ulaz kasarna, izdaju se zasebno, ispred veci parking, izuzetno prometna ulica, blizu idea marketa, glavi ulaz u kasarnu,..iskljucivo na duzi period...cijena mjesecnog zakupa 500e-45m2",
-      "_uid": null
+      "_uid": null,
+      "_ai": {
+        "presuda": "vlasnik",
+        "razlog": "Tekst je neformalan, bez agencijskih obilježja i šifre oglasa, a ime oglašivača su inicijali."
+      }
     },
     "p": 1,
     "o": 1
@@ -6260,5 +6264,115 @@
     },
     "p": 1,
     "o": 1
+  },
+  "https://www.patuljak.me/oglas/izdaje-se-namjestena-garsonjera-povrsine-22-m--86977": {
+    "ts": "2026-11-07T22:45:50.569331",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/izdaje-se-jednosoban-namjesten-stan-povrsine-46-m--86976": {
+    "ts": "2026-11-07T22:45:52.252852",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/izdaje-se-namjesten-jednosoban-stan-povrsine-50-m--86975": {
+    "ts": "2026-11-07T22:45:53.921863",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/izdaje-se-cetvorosoban-namjesten-stan-povrsine-120--86974": {
+    "ts": "2026-11-07T22:45:55.592388",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/jednosoban-stan--86971": {
+    "ts": "2026-11-07T22:45:57.234457",
+    "status": "vlasnik",
+    "lead": {
+      "ime": "NEMANJA",
+      "oglas_link": "https://www.patuljak.me/oglas/jednosoban-stan--86971",
+      "lokacija": "Podgorica",
+      "cijena": "370.00€",
+      "izvor": "Patuljak.me",
+      "telefoni": [],
+      "_opis": "Jednosoban namjesten stan 42 m2 sa podrumom 6 m2, Useljiv 1 decembra 2026 godine",
+      "_count": 1,
+      "_ai": {
+        "presuda": "nesigurno",
+        "razlog": "Ime je lično i tekst je kratak, ali nedostaju jasni pokazatelji poput riječi 'vlasnik' ili agencijskih šifri."
+      }
+    },
+    "p": 1,
+    "o": 1
+  },
+  "https://www.patuljak.me/oglas/stan-30-m-na-prodaju-centar-cetinje--86962": {
+    "ts": "2026-11-07T22:45:58.893545",
+    "status": "drugi_grad",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/poslovni-prostor-80m2-preko-morace--86961": {
+    "ts": "2026-11-07T22:46:00.542375",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/poslovni-prostor-200m2-susanj--86960": {
+    "ts": "2026-11-07T22:46:02.251081",
+    "status": "drugi_grad",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/plac-600m2-hladna-uvala--86959": {
+    "ts": "2026-11-07T22:46:03.902656",
+    "status": "drugi_grad",
+    "lead": null
+  },
+  "https://www.oglasi.me/nekretnine/kuce/prodajem-kucu-i-plac--bjelisi--bar-og84437339me": {
+    "ts": "2026-11-07T22:46:04.802364",
+    "status": "vlasnik",
+    "lead": {
+      "ime": "Jelena",
+      "oglas_link": "https://www.oglasi.me/nekretnine/kuce/prodajem-kucu-i-plac--bjelisi--bar-og84437339me",
+      "lokacija": "Podgorica",
+      "cijena": "Cijena na upit",
+      "izvor": "Oglasi.me",
+      "telefoni": [
+        "38269971542"
+      ],
+      "_opis": "Opis oglasa Jedinstvena prilika da spojite mediteranski način života, mir, privatnost, prirodu i prelijep pogled na Jadransko more. \nNa atraktivnoj lokaciji u naselju Bjeliši - Ahmetov brijeg u Baru prodaje se kuća površine 200 m2 smještena na prostranom placu površine 2200 m2.\nPrelijep pogled na more i veliko zemljište čine ovu nekretninu posebnom prilikom za sve koji žele da ostvare san o životu na crnogorskom primorju ili da investiraju u nekretninu sa velikim potencijalom.",
+      "_uid": null,
+      "_ai": {
+        "presuda": "nesigurno",
+        "razlog": "Oglas je napisan u promotivnom stilu, ali nema jasnih oznaka agencije kao ni potvrde da prodaje direktno vlasnik."
+      }
+    },
+    "p": 1,
+    "o": 1
+  },
+  "https://www.oglasi.me/nekretnine/stanovi/prodajem-jednosoban-stan-53m--og84437412me": {
+    "ts": "2026-11-07T22:46:04.802515",
+    "status": "vlasnik",
+    "lead": {
+      "ime": "Admir",
+      "oglas_link": "https://www.oglasi.me/nekretnine/stanovi/prodajem-jednosoban-stan-53m--og84437412me",
+      "lokacija": "Podgorica",
+      "cijena": "150000€",
+      "izvor": "Oglasi.me",
+      "telefoni": [
+        "38263200060"
+      ],
+      "_opis": "",
+      "_uid": null
+    },
+    "p": 1,
+    "o": 1
+  },
+  "https://www.patuljak.me/oglas/jednosoban-stan-53m2-garaza-zagoric-podgorica--86958": {
+    "ts": "2026-11-07T22:46:05.561373",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/jednosoban-stan-45m2-garaza-city-kej-podgorica--86957": {
+    "ts": "2026-11-07T22:46:07.233155",
+    "status": "posrednik",
+    "lead": null
   }
 }
