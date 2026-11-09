@@ -1,9 +1,4 @@
 {
-  "https://www.patuljak.me/oglas/prodajaplacpricelje--86037": {
-    "ts": "2026-10-31T23:23:42.891431",
-    "status": "posrednik",
-    "lead": null
-  },
   "https://www.patuljak.me/oglas/prodajajednosoban-stanzagoric--86041": {
     "ts": "2026-11-01T06:02:17.047894",
     "status": "posrednik",
@@ -5881,6 +5876,21 @@
   "https://www.pazar3.me/oglas/iznajmljivanje-stanova-na-kraci-i-duzi-period-u-podgorici/3072527": {
     "ts": "2026-11-08T21:10:41.153532",
     "status": "na_dan",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/izdaje-se-dvosoban-stan-65m2-stari-aerodrom-id-p--87040": {
+    "ts": "2026-11-09T00:54:24.923712",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/prodaja-penthouse-stana-117-m-sa-privatnom-krovn--87039": {
+    "ts": "2026-11-09T00:54:26.454793",
+    "status": "drugi_grad",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/prodaja-penthouse-stana-77-m-sa-terasom-22-m-i--87038": {
+    "ts": "2026-11-09T00:54:28.004538",
+    "status": "drugi_grad",
     "lead": null
   }
 }
