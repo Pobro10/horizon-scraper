@@ -1,14 +1,4 @@
 {
-  "https://www.patuljak.me/oglas/prodajajednosoban-stanzagoric--86041": {
-    "ts": "2026-11-01T06:02:17.047894",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://www.pazar3.me/oglas/prodaja/3304959": {
-    "ts": "2026-11-01T06:02:35.388757",
-    "status": "drugi_tip",
-    "lead": null
-  },
   "https://www.patuljak.me/oglas/prodajaapartmankolasin--86048": {
     "ts": "2026-11-01T13:22:57.527166",
     "status": "drugi_grad",
@@ -5891,6 +5881,26 @@
   "https://www.patuljak.me/oglas/prodaja-penthouse-stana-77-m-sa-terasom-22-m-i--87038": {
     "ts": "2026-11-09T00:54:28.004538",
     "status": "drugi_grad",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/dvosoban-stan-63m2-autobuska-stanica-podgorica--87043": {
+    "ts": "2026-11-09T07:58:26.387041",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/izdaje-se-garsonjera-31m2-city-kvart-id-p-852--87042": {
+    "ts": "2026-11-09T07:58:28.017956",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/prodaje-se-garsonjera-28m2-tuski-put-id-p-853--87041": {
+    "ts": "2026-11-09T07:58:29.635579",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/prodaja-kuca-134m2-podgorica-tolosi--87032": {
+    "ts": "2026-11-09T07:58:31.302807",
+    "status": "posrednik",
     "lead": null
   }
 }
