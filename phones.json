@@ -259,7 +259,6 @@
   },
   "382670008300": {
     "urls": {
-      "https://www.patuljak.me/oglas/izdavanjejednosoban-stancentar--83671": "2026-10-14T19:23:30.263881",
       "https://www.patuljak.me/oglas/izdavanjejednosoban-stanljubovic--83707": "2026-10-15T01:31:03.692646",
       "https://www.patuljak.me/oglas/izdavanjejednosoban-stanstari-aerodrom--83823": "2026-10-15T22:17:12.100893",
       "https://www.patuljak.me/oglas/prodajajednosoban-stanstari-aerodrom--83871": "2026-10-16T00:29:34.257536",
@@ -367,7 +366,6 @@
   },
   "382670007300": {
     "urls": {
-      "https://www.patuljak.me/oglas/izdavanjejednosoban-stancentar--83671": "2026-10-14T19:23:30.263893",
       "https://www.patuljak.me/oglas/izdavanjedvoosoban-stancity-kvart--83701": "2026-10-14T23:13:58.519257",
       "https://www.patuljak.me/oglas/izdavanjejednosoban-stan-stari-aerodrom--83700": "2026-10-14T23:14:00.164347",
       "https://www.patuljak.me/oglas/izdavanjejednosoban-stan-zabjelo--83699": "2026-10-14T23:14:01.810826",
@@ -722,7 +720,8 @@
       "https://www.patuljak.me/oglas/dvosoban-stan-64m2-stari-aerodrom--86498": "2026-11-04T15:27:12.781337",
       "https://www.patuljak.me/oglas/jednosoban-stan-44m2-stari-aerodrom--87337": "2026-11-10T17:50:40.466580",
       "https://www.patuljak.me/oglas/dvosoban-stan-62m2-blok-9--87332": "2026-11-10T17:50:48.047480",
-      "https://www.patuljak.me/oglas/poslovni-prostor-110m2-ljubovic--87750": "2026-11-12T11:06:41.449535"
+      "https://www.patuljak.me/oglas/poslovni-prostor-110m2-ljubovic--87750": "2026-11-12T11:06:41.449535",
+      "https://www.patuljak.me/oglas/jednosoban-stan-46m2-preko-morace--87976": "2026-11-13T22:37:21.790480"
     },
     "imena": [
       "Dom home Real Estate"
@@ -1601,7 +1600,7 @@
   },
   "38267628918": {
     "urls": {
-      "https://www.oglasi.me/nekretnine/poslovni-prostori/izdavanje-magacinskog-prostora-kontenjerskog-tipa-og72138579me": "2026-11-04T06:20:40.434631"
+      "https://www.oglasi.me/nekretnine/poslovni-prostori/izdavanje-magacinskog-prostora-kontenjerskog-tipa-og72138579me": "2026-11-13T22:37:31.756215"
     },
     "imena": [
       "Filip"
@@ -2091,7 +2090,8 @@
       "https://www.patuljak.me/oglas/jednosoban-stan-42m2-dvoriste-26m2-zabjelo-podg--86631": "2026-11-05T10:55:11.336123",
       "https://www.patuljak.me/oglas/garsonjera-33m2-dvoriste-26m2-zabjelo-podgor--86630": "2026-11-05T10:55:12.966916",
       "https://www.patuljak.me/oglas/jednosoban-stan-53m2-city-kvart-podgorica--87324": "2026-11-10T17:50:58.584455",
-      "https://www.patuljak.me/oglas/jednosoban-stan-63m2-zabjelo-podgorica--87323": "2026-11-10T17:51:00.108248"
+      "https://www.patuljak.me/oglas/jednosoban-stan-63m2-zabjelo-podgorica--87323": "2026-11-10T17:51:00.108248",
+      "https://www.patuljak.me/oglas/dvosoban-stan-70m2-toloska-suma-podgorica--87972": "2026-11-13T22:37:26.286814"
     },
     "imena": [
       "Domus nekretnine"
@@ -2458,7 +2458,6 @@
   },
   "38269988752": {
     "urls": {
-      "https://www.oglasi.me/nekretnine/stanovi/jednosoban-stan-new-city-og84161808me": "2026-10-14T19:23:38.433119",
       "https://www.patuljak.me/oglas/jednosoban-stan-new-city--83717": "2026-10-15T01:31:00.740746",
       "https://www.oglasi.me/nekretnine/stanovi/izdajem-dvosoban-stan-kod-sahat-kule-og84166580me": "2026-10-15T13:26:40.990924",
       "https://www.oglasi.me/nekretnine/stanovi/izdajem-dvosoban-stan-u-city-kvartu-og84166291me": "2026-10-15T13:26:40.991950",
@@ -2576,30 +2575,6 @@
     },
     "imena": [
       "Compact"
-    ]
-  },
-  "38269360110": {
-    "urls": {
-      "https://www.oglasi.me/nekretnine/stanovi/izdajem-garsonjeru-komplet-namjestenu---og46653317me": "2026-10-14T19:23:38.433274"
-    },
-    "imena": [
-      "Dragan Radović"
-    ]
-  },
-  "382673144290": {
-    "urls": {
-      "https://www.oglasi.me/nekretnine/stanovi/izdajem-garsonjeru-komplet-namjestenu---og46653317me": "2026-10-14T19:23:38.433280"
-    },
-    "imena": [
-      "Dragan Radović"
-    ]
-  },
-  "38267629166": {
-    "urls": {
-      "https://www.oglasi.me/nekretnine/stanovi/izdajem-jednosoban-stan-og84161268me": "2026-10-14T19:23:38.433338"
-    },
-    "imena": [
-      "Ljilja"
     ]
   },
   "382680008300": {
@@ -4181,7 +4156,9 @@
       "https://www.patuljak.me/oglas/city-kvart-jednosoban-50m2-izdavanje--87755": "2026-11-12T11:06:33.314214",
       "https://www.patuljak.me/oglas/poslovni-prostor-city-kvart-46m2-izdavanje--87754": "2026-11-12T11:06:34.890517",
       "https://www.patuljak.me/oglas/izdavanje-jednosoban-stan-43m2-na-zabjelu--87751": "2026-11-12T11:06:39.858721",
-      "https://www.patuljak.me/oglas/central-point-dvosoban-70m2-izdavanje--87759": "2026-11-13T07:59:13.198817"
+      "https://www.patuljak.me/oglas/central-point-dvosoban-70m2-izdavanje--87759": "2026-11-13T07:59:13.198817",
+      "https://www.patuljak.me/oglas/dadi-plaza-poslovni-prostor-112-m2-izdavanje--87980": "2026-11-13T22:37:15.348549",
+      "https://www.patuljak.me/oglas/stari-aerodrom-jednosoban-45-m2-izdavanje--87979": "2026-11-13T22:37:17.268194"
     },
     "imena": [
       "Concord Nekretnine"
@@ -4229,7 +4206,8 @@
   },
   "38267892207": {
     "urls": {
-      "https://www.patuljak.me/oglas/izdaje-se-brodski-kontejner--87697": "2026-11-12T02:59:14.263624"
+      "https://www.patuljak.me/oglas/izdaje-se-brodski-kontejner--87697": "2026-11-12T02:59:14.263624",
+      "https://www.oglasi.me/nekretnine/garaze-parking/brodski-kontejner-og84513448me": "2026-11-13T22:37:31.756296"
     },
     "imena": [
       "Milan"
@@ -4284,6 +4262,30 @@
     },
     "imena": [
       "Saša"
+    ]
+  },
+  "38267111123": {
+    "urls": {
+      "https://www.patuljak.me/oglas/kuca-300m2-tolosi--87975": "2026-11-13T22:37:23.274891"
+    },
+    "imena": [
+      "Dom home Real Estate"
+    ]
+  },
+  "38269815082": {
+    "urls": {
+      "https://www.oglasi.me/nekretnine/kuce/izdavanje-garsonjere-og83873338me": "2026-11-13T22:37:31.756059"
+    },
+    "imena": [
+      "Danica"
+    ]
+  },
+  "38269832157": {
+    "urls": {
+      "https://www.oglasi.me/nekretnine/zemljiste/zemljiste-zeta---5700m2-og73541490me": "2026-11-13T22:37:31.756380"
+    },
+    "imena": [
+      "Veljo"
     ]
   }
 }
