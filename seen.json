@@ -1,85 +1,4 @@
 {
-  "https://www.patuljak.me/oglas/prodaja-jednosobnog-stana-u-central-pointu--86853": {
-    "ts": "2026-11-06T20:53:56.720729",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://www.patuljak.me/oglas/halaposlovni-prostor-karabusko-polje-tuzi--86847": {
-    "ts": "2026-11-06T20:53:58.311437",
-    "status": "drugi_grad",
-    "lead": null
-  },
-  "https://www.patuljak.me/oglas/na-prodaju-porodicna-kuca-134-m2-spuz-danilovgrad--86812": {
-    "ts": "2026-11-06T20:53:59.913477",
-    "status": "drugi_grad",
-    "lead": null
-  },
-  "https://www.oglasi.me/nekretnine/zemljiste/prodaja--plac--2300-m---murtovina--podgorica-og84430074me": {
-    "ts": "2026-11-06T20:54:13.469834",
-    "status": "vlasnik",
-    "lead": {
-      "ime": "Aleksandar",
-      "oglas_link": "https://www.oglasi.me/nekretnine/zemljiste/prodaja--plac--2300-m---murtovina--podgorica-og84430074me",
-      "lokacija": "Podgorica",
-      "cijena": "Cijena na upit",
-      "izvor": "Oglasi.me",
-      "telefoni": [
-        "38267994683"
-      ],
-      "_opis": "Opis oglasa Izuzetna investiciona prilika - ubranizovano građevinsko zemljište od 2300 m kvadratnih u Murtovini (KO Masline), ul. Iveze Vukova, nekoliko minuta od centra Podgorice. \n\nZemljište je u zahvatu DUP-a, namijenjeno stambeno-poslovnoj gradnji P+2, sa izdatim urbanističko-tehničkim uslovima. Asfaltni pristup, voda, kanalizacija i struja u blizini, ravan teren. \n\nUknjiženo, uredna dokumentacija i dostupna na uvid. Cijena na upit (dogovor).",
-      "_uid": null,
-      "_ai": {
-        "presuda": "nesigurno",
-        "razlog": "Ime oglašivača je lično, ali je tekst napisan veoma profesionalnim i tehničkim tonom bez direktne potvrde da je prodavac vlasnik."
-      }
-    },
-    "p": 1,
-    "o": 1
-  },
-  "https://www.oglasi.me/nekretnine/stanovi/izdajem-garsonjeru-og84427644me": {
-    "ts": "2026-11-06T20:54:13.469967",
-    "status": "vlasnik",
-    "lead": {
-      "ime": "Igor",
-      "oglas_link": "https://www.oglasi.me/nekretnine/stanovi/izdajem-garsonjeru-og84427644me",
-      "lokacija": "Podgorica",
-      "cijena": "200.00 € mjesec",
-      "izvor": "Oglasi.me",
-      "telefoni": [
-        "38267184575"
-      ],
-      "_opis": "Opis oglasa Zvati posle 16 casova.",
-      "_uid": null,
-      "_ai": {
-        "presuda": "vlasnik",
-        "razlog": "Lično ime i specifično vrijeme za poziv ukazuju na privatno lice koje ima radne obaveze."
-      }
-    },
-    "p": 1,
-    "o": 1
-  },
-  "https://www.oglasi.me/nekretnine/poslovni-prostori/makacin-mahala-zeta----og84325651me": {
-    "ts": "2026-11-06T20:54:13.470430",
-    "status": "vlasnik",
-    "lead": {
-      "ime": "ana",
-      "oglas_link": "https://www.oglasi.me/nekretnine/poslovni-prostori/makacin-mahala-zeta----og84325651me",
-      "lokacija": "Podgorica",
-      "cijena": "1000 € mjesec",
-      "izvor": "Oglasi.me",
-      "telefoni": [
-        "38269457717"
-      ],
-      "_opis": "Opis oglasa magacin pogodan za vise namjena moguc svaki dogovor in na br 069 457 717",
-      "_uid": null,
-      "_ai": {
-        "presuda": "nesigurno",
-        "razlog": "Oglas je veoma kratak i neformalan, bez jasnih ključnih riječi koje bi potvrdile da je riječ o vlasniku ili agenciji."
-      }
-    },
-    "p": 1,
-    "o": 1
-  },
   "https://www.oglasi.me/nekretnine/stanovi/jednosoban-stan--44m2--zagoric--podgorica-og80282264me": {
     "ts": "2026-11-07T00:56:35.120126",
     "status": "star",
@@ -7012,7 +6931,8 @@
         "razlog": "Tekst je profesionalno formatiran sa elementima marketinga i nudi više različitih parcela uz najavu promjene cijena."
       }
     },
-    "p": 1
+    "p": 1,
+    "o": 1
   },
   "https://www.patuljak.me/oglas/novogradnja-u-djenovicima-stan-sa-pogledom-na-more--88009": {
     "ts": "2026-11-14T17:07:14.256303",
@@ -7182,5 +7102,15 @@
     },
     "p": 1,
     "o": 1
+  },
+  "https://www.oglasi.me/nekretnine/stanovi/izdaje-se-jednosoban-stan--zabjelo--og84523022me": {
+    "ts": "2026-11-14T21:29:27.387616",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.oglasi.me/nekretnine/stanovi/izdaje-se-jednosoban-stan-new-city-og84523312me": {
+    "ts": "2026-11-14T21:29:27.387932",
+    "status": "posrednik",
+    "lead": null
   }
 }
