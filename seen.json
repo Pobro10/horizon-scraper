@@ -1,142 +1,4 @@
 {
-  "https://www.oglasi.me/nekretnine/stanovi/jednosoban-stan--44m2--zagoric--podgorica-og80282264me": {
-    "ts": "2026-11-07T00:56:35.120126",
-    "status": "star",
-    "lead": null
-  },
-  "https://www.oglasi.me/nekretnine/poslovni-prostori/-magacinski-prostor-300-m-og83444367me": {
-    "ts": "2026-11-07T00:56:38.326967",
-    "status": "star",
-    "lead": null
-  },
-  "https://www.oglasi.me/nekretnine/poslovni-prostori/dva-pp-po-45m2-izdaju-se-zasebno-og75017223me": {
-    "ts": "2026-11-07T00:56:39.327824",
-    "status": "vlasnik",
-    "lead": {
-      "ime": "m.t",
-      "oglas_link": "https://www.oglasi.me/nekretnine/poslovni-prostori/dva-pp-po-45m2-izdaju-se-zasebno-og75017223me",
-      "lokacija": "Podgorica",
-      "cijena": "500.00 € mjesec",
-      "izvor": "Oglasi.me",
-      "telefoni": [
-        "38267225087"
-      ],
-      "_opis": "Opis oglasa dva poslovna prostora po 45m2,masline ulica v.bogisica-glavni ulaz kasarna, izdaju se zasebno, ispred veci parking, izuzetno prometna ulica, blizu idea marketa, glavi ulaz u kasarnu,..iskljucivo na duzi period...cijena mjesecnog zakupa 500e-45m2",
-      "_uid": null,
-      "_ai": {
-        "presuda": "vlasnik",
-        "razlog": "Tekst je neformalan, bez agencijskih obilježja i šifre oglasa, a ime oglašivača su inicijali."
-      }
-    },
-    "p": 1,
-    "o": 1
-  },
-  "https://www.oglasi.me/nekretnine/zemljiste/gradjevinsko-zemljiste--6951m2--podgorica-og57018862me": {
-    "ts": "2026-11-07T00:56:39.328170",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://www.patuljak.me/oglas/jednosoban-stan-44m2-vezirov-most-izdavanje--69974": {
-    "ts": "2026-11-07T00:56:43.616796",
-    "status": "star",
-    "lead": null
-  },
-  "https://www.patuljak.me/oglas/pobrezje-45m2-jednosoban-stan--69973": {
-    "ts": "2026-11-07T00:56:45.180532",
-    "status": "star",
-    "lead": null
-  },
-  "https://www.patuljak.me/oglas/poslovni-prostor-211-m-na-izdavanje-central--69972": {
-    "ts": "2026-11-07T00:56:46.731933",
-    "status": "star",
-    "lead": null
-  },
-  "https://www.patuljak.me/oglas/jednosoban-stan-43m2-krivi-most-izdavanje--69971": {
-    "ts": "2026-11-07T00:56:48.320660",
-    "status": "star",
-    "lead": null
-  },
-  "https://www.patuljak.me/oglas/dvosoban-stan-100m2-grbalj--69969": {
-    "ts": "2026-11-07T00:56:49.890743",
-    "status": "star",
-    "lead": null
-  },
-  "https://www.patuljak.me/oglas/stan-56-m-na-izdavanje-stara-varos-podgorica--69968": {
-    "ts": "2026-11-07T00:56:51.504026",
-    "status": "star",
-    "lead": null
-  },
-  "https://www.patuljak.me/oglas/stan-48-m-na-prodaju-central-point-podgorica--69967": {
-    "ts": "2026-11-07T00:56:53.095969",
-    "status": "star",
-    "lead": null
-  },
-  "https://www.patuljak.me/oglas/dvosoban-stan-84m2-njegoseva-izdavanje--69966": {
-    "ts": "2026-11-07T00:56:54.673262",
-    "status": "star",
-    "lead": null
-  },
-  "https://www.patuljak.me/oglas/izzdaje-se-vila-sa-bazenom-6-stanova--86867": {
-    "ts": "2026-11-07T00:56:56.221027",
-    "status": "drugi_grad",
-    "lead": null
-  },
-  "https://www.patuljak.me/oglas/jednosoban-stan-45m2-city-kej--86866": {
-    "ts": "2026-11-07T00:56:57.791647",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://www.patuljak.me/oglas/izdavanje-jednosoban-stan-43-m2-zabjelo-podgorica--86865": {
-    "ts": "2026-11-07T00:56:59.372892",
-    "status": "vlasnik",
-    "lead": {
-      "ime": "Zoran",
-      "oglas_link": "https://www.patuljak.me/oglas/izdavanje-jednosoban-stan-43-m2-zabjelo-podgorica--86865",
-      "lokacija": "Podgorica",
-      "cijena": "350.00€",
-      "izvor": "Patuljak.me",
-      "telefoni": [],
-      "_opis": "",
-      "_count": 1
-    },
-    "p": 1,
-    "o": 1
-  },
-  "https://www.patuljak.me/oglas/trosoban-stan-80m2-doljani--86864": {
-    "ts": "2026-11-07T00:57:00.953728",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://www.patuljak.me/oglas/prodaje-se-trosoban-stan-povrsine-11112m-sa-pripad--86863": {
-    "ts": "2026-11-07T00:57:02.516590",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://www.patuljak.me/oglas/prodaje-se-jednosoban-stan-povrsine-4764m-u-stambe--86859": {
-    "ts": "2026-11-07T00:57:04.082986",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://www.patuljak.me/oglas/izdavanjegarsonjera-city-kvart--86857": {
-    "ts": "2026-11-07T00:57:05.649083",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://www.patuljak.me/oglas/prodaje-se-dvosoban-stan-povrsine-54m-u-stambenom--86855": {
-    "ts": "2026-11-07T00:57:07.229913",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://www.patuljak.me/oglas/na-prodaju-jednosoban-stan-37-m2-djenovici-herceg--86564": {
-    "ts": "2026-11-07T00:57:08.810446",
-    "status": "star",
-    "lead": null
-  },
-  "https://www.patuljak.me/oglas/kuca-101m2-spuz-prodaja--86504": {
-    "ts": "2026-11-07T00:57:10.412611",
-    "status": "star",
-    "lead": null
-  },
   "https://www.patuljak.me/oglas/izdavanje-novog-namestenog-jednosobnog-stana-60m2--86939": {
     "ts": "2026-11-07T07:10:01.217131",
     "status": "drugi_grad",
@@ -7112,5 +6974,38 @@
     "ts": "2026-11-14T21:29:27.387932",
     "status": "posrednik",
     "lead": null
+  },
+  "https://www.patuljak.me/oglas/prodaje-se-dvosoban-stan--88037": {
+    "ts": "2026-11-15T01:54:58.559560",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/prodaje-se-dvosoban-stan--88035": {
+    "ts": "2026-11-15T01:55:00.260176",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.oglasi.me/nekretnine/zemljiste/gradjevinsko-zemljiste-zabjelo-og51622773me": {
+    "ts": "2026-11-15T01:55:09.290555",
+    "status": "vlasnik",
+    "lead": {
+      "ime": "milos",
+      "oglas_link": "https://www.oglasi.me/nekretnine/zemljiste/gradjevinsko-zemljiste-zabjelo-og51622773me",
+      "lokacija": "Podgorica",
+      "cijena": "410.00€",
+      "izvor": "Oglasi.me",
+      "telefoni": [
+        "38267204879",
+        "38269607604"
+      ],
+      "_opis": "Opis oglasa PRODAJE SE / FOR SALE\n\n                6805m2\n\n7 URBANISTICKIH PARCELA /   7 CONSTRUCTION PLOTS\n\nIndeks zauzetosti 0.40 / Occupancy index  0.40\n\nIndeks izgradjenosti 1.20 / Construction index 1.20\n\nGaraza + Prizemlje + 3 Sprata / Garage + Ground floor + 3 Levels\n\nSvi papiri uredni / \nAll documents clear\n\n410 eur/m2 \n\nVlasnik / Owner\n\n+382 67 204 879 whats app / viber\n+382 69 607 604 whats app / viber",
+      "_uid": null,
+      "_ai": {
+        "presuda": "vlasnik",
+        "razlog": "Oglašivač koristi lično ime i eksplicitno navodi da je vlasnik nekretnine."
+      }
+    },
+    "p": 1,
+    "o": 1
   }
 }
