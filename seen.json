@@ -1,46 +1,4 @@
 {
-  "https://www.patuljak.me/oglas/dvosoban-stan-70m2-garaza-central-point-podgori--86956": {
-    "ts": "2026-11-07T18:48:07.226954",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://www.patuljak.me/oglas/nova-garsonjera-21m2-stari-aerodrom-podgorica--86955": {
-    "ts": "2026-11-07T18:48:08.884354",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://www.patuljak.me/oglas/izdavanje-trosoban-stan-podgorica-master-kvart-95m--86954": {
-    "ts": "2026-11-07T18:48:10.618227",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://www.patuljak.me/oglas/izdavanje-kuca-podgorica-donja-gorica-60m2--86953": {
-    "ts": "2026-11-07T18:48:12.284898",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://www.oglasi.me/nekretnine/stanovi/izdajem-stan-u-podgorici-og22380131me": {
-    "ts": "2026-11-07T18:48:23.635781",
-    "status": "vlasnik",
-    "lead": {
-      "ime": "perica",
-      "oglas_link": "https://www.oglasi.me/nekretnine/stanovi/izdajem-stan-u-podgorici-og22380131me",
-      "lokacija": "Podgorica",
-      "cijena": "600.00 € mjesec",
-      "izvor": "Oglasi.me",
-      "telefoni": [
-        "38268024959"
-      ],
-      "_opis": "Opis oglasa dvoso.stan sa terasom i fr.balkonima,prozracan,komarnici,prelijepa lokacija sa terenima za igru i blizina Ljubovic brda za setnju i rekreaciju.Mirno i izvojeno od gr.guzve.Visoka izolacija stam.prostora sto daje toplinu i totalnu tisinu stana.Dostupan od 25 oktobra 2026.",
-      "_uid": null,
-      "_ai": {
-        "presuda": "vlasnik",
-        "razlog": "Neformalan stil pisanja sa skraćenicama i lično ime oglašivača ukazuju na privatno lice."
-      }
-    },
-    "p": 1,
-    "o": 1
-  },
   "https://www.patuljak.me/oglas/izdaje-se-namjestena-garsonjera-povrsine-22-m--86977": {
     "ts": "2026-11-07T22:45:50.569331",
     "status": "posrednik",
@@ -6710,6 +6668,85 @@
   },
   "https://www.patuljak.me/oglas/prodaje-se-dvosoban-stan--88039": {
     "ts": "2026-11-15T17:10:11.596815",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.pazar3.me/oglas/izdajem-jednosoban-stan-zabjelo/3315274": {
+    "ts": "2026-11-15T21:48:51.349804",
+    "status": "vlasnik",
+    "lead": {
+      "ime": "Nina",
+      "oglas_link": "https://www.pazar3.me/oglas/izdajem-jednosoban-stan-zabjelo/3315274",
+      "lokacija": "Podgorica",
+      "cijena": "360 €",
+      "izvor": "Pazar3.me",
+      "telefoni": [
+        "38268351214"
+      ],
+      "_opis": "🏡 IZDAJEM JEDNOSOBAN STAN – ZABJELO, PODBROJCI Izdaje se jednosoban namješten stan površine 35 m² Pobrežje kod trgovinske škole početak Zabjela. Stan se nalazi u sklopu porodične kuće, sa zasebnim ulazom, što pruža privatnost i komfor. - 📍 Lokacija: Zabjelo, Podgorica - 📐 Površina: 35 m² - 💶 Mjesečna kirija: 350 € - 💡 Komunalije uključene u cijenu, osim električne energije - 🔑 Obavezan depozit - 👤 Izdaje direktno vlasnik, bez posrednika - 🏠 Stan je odmah useljiv Za više informacija i dogovor oko gledanja stana, kontaktirati vlasnika.",
+      "_ai": {
+        "presuda": "vlasnik",
+        "razlog": "U oglasu se eksplicitno navodi da izdaje direktno vlasnik bez posrednika uz lični ton."
+      }
+    },
+    "p": 1,
+    "o": 1
+  },
+  "https://www.patuljak.me/oglas/prodaje-se-jednosoban-stan--88153": {
+    "ts": "2026-11-15T21:48:51.712412",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.pazar3.me/oglas/izdajem-jednosoban-namjesten-stan/3204904": {
+    "ts": "2026-11-15T21:48:52.754151",
+    "status": "provjeri",
+    "lead": {
+      "ime": "Nina Pajović",
+      "oglas_link": "https://www.pazar3.me/oglas/izdajem-jednosoban-namjesten-stan/3204904",
+      "lokacija": "Podgorica",
+      "cijena": "350 €",
+      "izvor": "Pazar3.me",
+      "telefoni": [
+        "38268351214"
+      ],
+      "_opis": "Izdaje se jednosoban namješten stan površine 35m2 Pobrežje u ulici Kralja Nikole Stan je komplet opremljen lijepim i kvalitetnim namještajem. .Veoma je funkcionalan.. Struktura: ulazni hodnik, dnevni boravak,trpezarija,kuhinja, spsvaća soba, kupatilo. Zaseban ulaz, dvorište kao i jedno parking mjesto. U neposrednoj blizini se nalaze: Tržni centar Gintaš- MALL OF MONTENEGRO, autobuska i željeznička stanica,vrtić, osnovne i srednje škole,dom zdravlja, apoteke, kao i veliki marketi HDL Laković i Naš Diskont Voli, Jumbo... U cijenu su uračunate komunalije sve izuzet struje. Izdaje se na duži period. 350€ 068 351 214",
+      "_ai": {
+        "presuda": "nesigurno",
+        "razlog": "Oglas ne sadrži šifru agencije niti profesionalne fraze, ali ni eksplicitnu potvrdu da je oglašivač vlasnik."
+      }
+    },
+    "p": 1,
+    "o": 1
+  },
+  "https://www.patuljak.me/oglas/prodaje-se-jednosoban-stan--88152": {
+    "ts": "2026-11-15T21:48:53.189296",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/izdajem-jednosoban-stan-50m2--88151": {
+    "ts": "2026-11-15T21:48:54.657509",
+    "status": "vlasnik",
+    "lead": {
+      "ime": "G",
+      "oglas_link": "https://www.patuljak.me/oglas/izdajem-jednosoban-stan-50m2--88151",
+      "lokacija": "Podgorica",
+      "cijena": "550.00€",
+      "izvor": "Patuljak.me",
+      "telefoni": [
+        "38269230120"
+      ],
+      "_opis": "Izdaje se neuseljavan i namješten stan, površine 50 m2 na Zabjelu u Podgorici. Nalazi se u novom stambeno-poslovnom objektu \"Ventura Republika\" , ul. Ilije Plamenca (pored Mega Centra -MULTICOM). U potpunosti je opremljen sa svim neophodnim uredjajima. Stan je klimatizovan (Multi-split sistemom) i nalazi na trećem spratu a zgrada posjeduje 2 lifta. Stan se sastoji od dnevnog boravka koji je povezan sa kuhinjom, spavaće sobe,hodnika, kupatila i terase. Stan se nalazi u blizini marketa, škola, vrtića, igrališta,restorana, apoteka i drugih sadržaja uz dobru povezanost sa centrom i ostalim djelovima grada. Stan se izdaje na duži vremenski period. Za više informacija možete nas kontaktirati putem Vibera ili WhatsApp-a na broj 069-230-120.",
+      "_count": 1,
+      "_ai": {
+        "presuda": "agencija",
+        "razlog": "Upotreba množine 'možete nas kontaktirati' i detaljan, profesionalno sročen opis ukazuju na agencijsko oglašavanje."
+      }
+    },
+    "p": 1,
+    "o": 1
+  },
+  "https://www.patuljak.me/oglas/prodaje-se-dvosoban-stan--88150": {
+    "ts": "2026-11-15T21:48:56.136308",
     "status": "posrednik",
     "lead": null
   }

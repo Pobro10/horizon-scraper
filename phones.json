@@ -244,7 +244,10 @@
       "https://www.patuljak.me/oglas/prodaje-se-dvosoban-stan--88038": "2026-11-15T09:25:49.808777",
       "https://www.patuljak.me/oglas/prodaje-se-dvosoban-stan--88149": "2026-11-15T17:09:51.499411",
       "https://www.patuljak.me/oglas/prodaje-se-trosoban-stan--88040": "2026-11-15T17:10:08.676880",
-      "https://www.patuljak.me/oglas/prodaje-se-dvosoban-stan--88039": "2026-11-15T17:10:11.596797"
+      "https://www.patuljak.me/oglas/prodaje-se-dvosoban-stan--88039": "2026-11-15T17:10:11.596797",
+      "https://www.patuljak.me/oglas/prodaje-se-jednosoban-stan--88153": "2026-11-15T21:48:51.712394",
+      "https://www.patuljak.me/oglas/prodaje-se-jednosoban-stan--88152": "2026-11-15T21:48:53.189276",
+      "https://www.patuljak.me/oglas/prodaje-se-dvosoban-stan--88150": "2026-11-15T21:48:56.136290"
     },
     "imena": [
       "Tvoj agent"
@@ -252,7 +255,6 @@
   },
   "382670008300": {
     "urls": {
-      "https://www.patuljak.me/oglas/prodajatrosoban-stancity-kvart--84003": "2026-10-16T19:58:02.141826",
       "https://www.patuljak.me/oglas/izdavanjejednosoban-stangreen-level--84020": "2026-10-17T01:20:19.621664",
       "https://www.patuljak.me/oglas/izdavanjejednosoban-stancentral-point--84016": "2026-10-17T01:20:22.979215",
       "https://www.patuljak.me/oglas/prodajajednosoban-stanzabjelo--84157": "2026-10-18T04:32:46.381652",
@@ -353,7 +355,6 @@
   },
   "382670007300": {
     "urls": {
-      "https://www.patuljak.me/oglas/prodajatrosoban-stancity-kvart--84003": "2026-10-16T19:58:02.141838",
       "https://www.patuljak.me/oglas/izdavanjejednosoban-stangreen-level--84020": "2026-10-17T01:20:19.621673",
       "https://www.patuljak.me/oglas/izdavanjejednosoban-stancentral-point--84016": "2026-10-17T01:20:22.979223",
       "https://www.patuljak.me/oglas/prodajajednosoban-stanzabjelo--84157": "2026-10-18T04:32:46.381664",
@@ -1529,10 +1530,13 @@
   },
   "38268351214": {
     "urls": {
-      "https://www.oglasi.me/nekretnine/garaze-parking/izdajem-magacin-og84013270me": "2026-11-10T09:49:24.208662"
+      "https://www.oglasi.me/nekretnine/garaze-parking/izdajem-magacin-og84013270me": "2026-11-10T09:49:24.208662",
+      "https://www.pazar3.me/oglas/izdajem-jednosoban-stan-zabjelo/3315274": "2026-11-15T21:48:51.349782",
+      "https://www.pazar3.me/oglas/izdajem-jednosoban-namjesten-stan/3204904": "2026-11-15T21:48:52.754124"
     },
     "imena": [
-      "Nina"
+      "Nina",
+      "Nina Pajović"
     ]
   },
   "38267637977": {
@@ -1832,10 +1836,12 @@
   },
   "38269230120": {
     "urls": {
-      "https://www.oglasi.me/nekretnine/stanovi/jednosoban-stan-50m2---zabjelo--podgorica-og84076099me": "2026-11-11T14:31:24.749818"
+      "https://www.oglasi.me/nekretnine/stanovi/jednosoban-stan-50m2---zabjelo--podgorica-og84076099me": "2026-11-11T14:31:24.749818",
+      "https://www.patuljak.me/oglas/izdajem-jednosoban-stan-50m2--88151": "2026-11-15T21:48:54.657485"
     },
     "imena": [
-      "G1"
+      "G1",
+      "G"
     ]
   },
   "38267105355": {
@@ -2435,14 +2441,6 @@
     },
     "imena": [
       "Vlado"
-    ]
-  },
-  "38267548810": {
-    "urls": {
-      "https://www.oglasi.me/nekretnine/stanovi/izdavanje-troiposoban-stan-100m2-podgorica-og70061550me": "2026-10-16T19:58:11.317318"
-    },
-    "imena": [
-      "Nikola"
     ]
   },
   "38268830159": {
