@@ -1,57 +1,4 @@
 {
-  "https://www.patuljak.me/oglas/zabjelo-jednosoban-41-m2-izdavanje--87986": {
-    "ts": "2026-11-14T03:13:49.140240",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://www.patuljak.me/oglas/jednosoban-stan-40m2-central-point-izdavanje--87985": {
-    "ts": "2026-11-14T03:13:50.698388",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://www.patuljak.me/oglas/plac-399m2-cvijetin-brijeg-prodaja--87984": {
-    "ts": "2026-11-14T03:13:52.256893",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://www.patuljak.me/oglas/dvosoban-85m2-master-kvart-prodaja--87983": {
-    "ts": "2026-11-14T03:13:53.818663",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://www.patuljak.me/oglas/dvosoban-85m2-master-kvart-prodaja--87982": {
-    "ts": "2026-11-14T03:13:55.415074",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://www.patuljak.me/oglas/stan-113-m-na-prodaju-master-kvart-podgorica--87981": {
-    "ts": "2026-11-14T03:13:56.962354",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://www.oglasi.me/nekretnine/stanovi/izdaje-se-namjesten-stan--stari-aerodrom-og84515222me": {
-    "ts": "2026-11-14T10:28:32.672119",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://www.oglasi.me/nekretnine/poslovni-prostori/poslovni-prostor-u-bloku-5-og78361251me": {
-    "ts": "2026-11-14T10:28:32.672354",
-    "status": "vlasnik",
-    "lead": {
-      "ime": "Miras",
-      "oglas_link": "https://www.oglasi.me/nekretnine/poslovni-prostori/poslovni-prostor-u-bloku-5-og78361251me",
-      "lokacija": "Podgorica",
-      "cijena": "95000€",
-      "izvor": "Oglasi.me",
-      "telefoni": [
-        "38267498210"
-      ],
-      "_opis": "",
-      "_uid": null
-    },
-    "p": 1,
-    "o": 1
-  },
   "https://www.patuljak.me/oglas/prodaje-se-jednosoban-stan--88034": {
     "ts": "2026-11-14T17:07:02.656667",
     "status": "posrednik",
@@ -6110,5 +6057,36 @@
     "ts": "2026-11-22T03:13:21.803187",
     "status": "posrednik",
     "lead": null
+  },
+  "https://www.patuljak.me/oglas/blok-9-opremljen-dvosoban-stan-60m2--89172": {
+    "ts": "2026-11-22T11:25:31.271601",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/pobrezje-opremljen-jednosoban-stan-40m2--89170": {
+    "ts": "2026-11-22T11:25:32.761344",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/izdajem-poslovni-prostor-u-centru-niksica--89169": {
+    "ts": "2026-11-22T11:25:34.227882",
+    "status": "drugi_grad",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/izdajem-jednosoban-stan-45-kvadrata-kod-autobuske--89168": {
+    "ts": "2026-11-22T11:25:35.793725",
+    "status": "vlasnik",
+    "lead": {
+      "ime": "Zeljko",
+      "oglas_link": "https://www.patuljak.me/oglas/izdajem-jednosoban-stan-45-kvadrata-kod-autobuske--89168",
+      "lokacija": "Podgorica",
+      "cijena": "400.00€",
+      "izvor": "Patuljak.me",
+      "telefoni": [],
+      "_opis": "",
+      "_count": 1
+    },
+    "p": 1,
+    "o": 1
   }
 }
