@@ -1,14 +1,4 @@
 {
-  "https://www.oglasi.me/nekretnine/stanovi/izdaje-se-jednosoban-stan--zabjelo--og84523022me": {
-    "ts": "2026-11-14T21:29:27.387616",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://www.oglasi.me/nekretnine/stanovi/izdaje-se-jednosoban-stan-new-city-og84523312me": {
-    "ts": "2026-11-14T21:29:27.387932",
-    "status": "posrednik",
-    "lead": null
-  },
   "https://www.patuljak.me/oglas/prodaje-se-dvosoban-stan--88037": {
     "ts": "2026-11-15T01:54:58.559560",
     "status": "posrednik",
@@ -6043,6 +6033,54 @@
         "presuda": "vlasnik",
         "razlog": "Lično ime oglašivača i specifičan uslov izdavanja bez depozita ukazuju na privatnog vlasnika."
       }
+    },
+    "p": 1,
+    "o": 1
+  },
+  "https://www.patuljak.me/oglas/petrovac-dvosoban-stan-74-m2-s-pogledom-na-more--89225": {
+    "ts": "2026-11-23T00:52:04.277893",
+    "status": "drugi_grad",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/prodaja-zemljiste-podgorica-dajbabe-761m2--89219": {
+    "ts": "2026-11-23T00:52:05.835426",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/prodaje-se-dvosoban-stan--89218": {
+    "ts": "2026-11-23T00:52:07.421812",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/prodaje-se-garsonjera--89217": {
+    "ts": "2026-11-23T00:52:08.985944",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/prodaje-se-jednosoban-stan--89216": {
+    "ts": "2026-11-23T00:52:10.568825",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/prodaje-se-jednosoban-stan--89215": {
+    "ts": "2026-11-23T00:52:12.166932",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.oglasi.me/nekretnine/stanovi/izdajem-jednosoban-nenamjesten-stan-na-zabjelu-og80186812me": {
+    "ts": "2026-11-23T00:52:14.107901",
+    "status": "vlasnik",
+    "lead": {
+      "ime": "Simo",
+      "oglas_link": "https://www.oglasi.me/nekretnine/stanovi/izdajem-jednosoban-nenamjesten-stan-na-zabjelu-og80186812me",
+      "lokacija": "Podgorica",
+      "cijena": "300.00 € mjesec",
+      "izvor": "Oglasi.me",
+      "telefoni": [
+        "38267478577"
+      ],
+      "_opis": "",
+      "_uid": null
     },
     "p": 1,
     "o": 1
