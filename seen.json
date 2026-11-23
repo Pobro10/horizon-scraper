@@ -1,37 +1,4 @@
 {
-  "https://www.patuljak.me/oglas/prodaje-se-dvosoban-stan--88037": {
-    "ts": "2026-11-15T01:54:58.559560",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://www.patuljak.me/oglas/prodaje-se-dvosoban-stan--88035": {
-    "ts": "2026-11-15T01:55:00.260176",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://www.oglasi.me/nekretnine/zemljiste/gradjevinsko-zemljiste-zabjelo-og51622773me": {
-    "ts": "2026-11-15T01:55:09.290555",
-    "status": "vlasnik",
-    "lead": {
-      "ime": "milos",
-      "oglas_link": "https://www.oglasi.me/nekretnine/zemljiste/gradjevinsko-zemljiste-zabjelo-og51622773me",
-      "lokacija": "Podgorica",
-      "cijena": "410.00€",
-      "izvor": "Oglasi.me",
-      "telefoni": [
-        "38267204879",
-        "38269607604"
-      ],
-      "_opis": "Opis oglasa PRODAJE SE / FOR SALE\n\n                6805m2\n\n7 URBANISTICKIH PARCELA /   7 CONSTRUCTION PLOTS\n\nIndeks zauzetosti 0.40 / Occupancy index  0.40\n\nIndeks izgradjenosti 1.20 / Construction index 1.20\n\nGaraza + Prizemlje + 3 Sprata / Garage + Ground floor + 3 Levels\n\nSvi papiri uredni / \nAll documents clear\n\n410 eur/m2 \n\nVlasnik / Owner\n\n+382 67 204 879 whats app / viber\n+382 69 607 604 whats app / viber",
-      "_uid": null,
-      "_ai": {
-        "presuda": "vlasnik",
-        "razlog": "Oglašivač koristi lično ime i eksplicitno navodi da je vlasnik nekretnine."
-      }
-    },
-    "p": 1,
-    "o": 1
-  },
   "https://www.oglasi.me/nekretnine/stanovi/izdaje-se-jednosoban-stan--zabjelo-og84524440me": {
     "ts": "2026-11-15T09:25:29.747217",
     "status": "posrednik",
@@ -6081,6 +6048,153 @@
       ],
       "_opis": "",
       "_uid": null
+    },
+    "p": 1,
+    "o": 1
+  },
+  "https://www.patuljak.me/oglas/prodaje-se-jednosoban-stan--89306": {
+    "ts": "2026-11-23T09:03:24.911623",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/izdajem-nenamjestenu-komplet-renoviranu-kucu-na-dv--89304": {
+    "ts": "2026-11-23T09:03:26.420570",
+    "status": "vlasnik",
+    "lead": {
+      "ime": "Aleksandar",
+      "oglas_link": "https://www.patuljak.me/oglas/izdajem-nenamjestenu-komplet-renoviranu-kucu-na-dv--89304",
+      "lokacija": "Podgorica",
+      "cijena": "650.00€",
+      "izvor": "Patuljak.me",
+      "telefoni": [],
+      "_opis": "Kuca  se nalazi u mirnom dijelu Zabjela u blizini tornja. Klimatizovana u dvije etaze u prizemlju dnevni boravak .trepezarijom .kuhinjom ostava kypatilo sa balkonom i dvoristem na spratu se nalaze tri sobe sa kupatilo i terasama kuca ima 2 do 3 parking mjesta.",
+      "_count": 1
+    },
+    "p": 1,
+    "o": 1
+  },
+  "https://www.patuljak.me/oglas/izdajem-stan-u-podgorici-40m2--89302": {
+    "ts": "2026-11-23T09:03:27.927111",
+    "status": "vlasnik",
+    "lead": {
+      "ime": "Predrag",
+      "oglas_link": "https://www.patuljak.me/oglas/izdajem-stan-u-podgorici-40m2--89302",
+      "lokacija": "Podgorica",
+      "cijena": "Cijena na upit",
+      "izvor": "Patuljak.me",
+      "telefoni": [],
+      "_opis": "Izdaje se komforan jednosoban stan u mirnom dijelu Podgorice, na Starom Aerodromu, idealan za ugodan život. Smješten u prizemlju kuće, ovaj potpuno namješten stan površine 40.0 m² nudi sve što je potrebno za udoban boravak. Sastoji se od jedne spavaće sobe, prostrane kuhinje, kupatila i praktičnog hodnika. Stan je opremljen svim neophodnim sadržajima, uključujući klimatizaciju za prijatnu temperaturu tokom cijele godine, kao i obezbijeđen internet i kablovsku televiziju. Jedna od posebnih pogodnosti je pristup dvorištu, koje pruža privatnost i mogućnost za opuštanje na otvorenom. Parking je obezbijeđen ispred samog objekta. Lokacija je izuzetno povoljna – u neposrednoj blizini se nalaze osnovna škola, brojne prodavnice, dom zdravlja i zeleni parkovi, što čini svakodnevni život praktičnim i ispunjenim. Ovaj stan predstavlja odličan izbor za one koji traže kvalitetan smještaj na dobro povezanoj lokaciji.",
+      "_count": 1
+    },
+    "p": 1,
+    "o": 1
+  },
+  "https://www.patuljak.me/oglas/izdajem-dvosoban-stan--89297": {
+    "ts": "2026-11-23T09:03:29.415384",
+    "status": "drugi_grad",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/prodajem-kucu-niksic--89272": {
+    "ts": "2026-11-23T09:03:30.898243",
+    "status": "drugi_grad",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/izdajem-stan-za-radnike-bar--89263": {
+    "ts": "2026-11-23T09:03:32.435095",
+    "status": "drugi_grad",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/pobrezje-opremljen-dvosoban-stan-64m2--89253": {
+    "ts": "2026-11-23T09:03:34.469919",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/dvosoban-prazan-stan-na-zabjelo--89251": {
+    "ts": "2026-11-23T09:03:36.007324",
+    "status": "vlasnik",
+    "lead": {
+      "ime": "Zorica",
+      "oglas_link": "https://www.patuljak.me/oglas/dvosoban-prazan-stan-na-zabjelo--89251",
+      "lokacija": "Podgorica",
+      "cijena": "450.00€",
+      "izvor": "Patuljak.me",
+      "telefoni": [
+        "38263202497"
+      ],
+      "_opis": "Izdaje se dvosoban prazan stan sa kuhinjskim elementima, pov. 67m2 na četvrtom spratu, Zabjelo u blizini Multicoma. Stan je komforan, ima dnevnu sobu sa trpezarijom, dvije klime, dvije terase, kupatilo,wc, lift i parking Izdaje se na duži period bez depozita tel 063/202-497",
+      "_count": 1
+    },
+    "p": 1,
+    "o": 1
+  },
+  "https://www.patuljak.me/oglas/pobrezje-opremljen-dvosoban-stan-58m2--89250": {
+    "ts": "2026-11-23T09:03:37.540428",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/izdajem-kucu-85-kvadrata--89248": {
+    "ts": "2026-11-23T09:03:39.040585",
+    "status": "vlasnik",
+    "lead": {
+      "ime": "Mladen",
+      "oglas_link": "https://www.patuljak.me/oglas/izdajem-kucu-85-kvadrata--89248",
+      "lokacija": "Podgorica",
+      "cijena": "350.00€",
+      "izvor": "Patuljak.me",
+      "telefoni": [
+        "38269567342",
+        "38269313206"
+      ],
+      "_opis": "Izdajem kuću na Murtovini- Radosava Popovića(300 metara iza policijskog kampa - pumpe na Zlatici). Kuča je 85 kvadrata ima dvije spavaće sobe, dnevni boravak, terpezariju sa kuhinjim.  Potkrovlje iste kvadrature. Garažu od 12 kvadrata. Cijena mjesećnog izdavanja 350 eura. Kontakt 069 567 342 i 069 313 206.",
+      "_count": 1
+    },
+    "p": 1,
+    "o": 1
+  },
+  "https://www.patuljak.me/oglas/nov-dvosoban-stangaraza--89238": {
+    "ts": "2026-11-23T09:03:40.560276",
+    "status": "vlasnik",
+    "lead": {
+      "ime": "Marina",
+      "oglas_link": "https://www.patuljak.me/oglas/nov-dvosoban-stangaraza--89238",
+      "lokacija": "Podgorica",
+      "cijena": "650.00€",
+      "izvor": "Patuljak.me",
+      "telefoni": [],
+      "_opis": "Izdaje se moderno opremljen dvosoban stan, sa dva parking mjesta u sklopu cijene, novogradnja sa liftom na Pobrežju, ulica 4 Jula. Dostupno za useljenje odmah. Ugovor na minimum godinu dana uz obavezan depozit prilikom zaključenja. Kućni ljubimci nisu dozvoljeni u stanu. Viber whatsapp za više informacija.",
+      "_count": 1
+    },
+    "p": 1,
+    "o": 1
+  },
+  "https://www.patuljak.me/oglas/nov-dvosoban-stanparking--89237": {
+    "ts": "2026-11-23T09:03:42.088081",
+    "status": "vlasnik",
+    "lead": {
+      "ime": "Marina",
+      "oglas_link": "https://www.patuljak.me/oglas/nov-dvosoban-stanparking--89237",
+      "lokacija": "Podgorica",
+      "cijena": "700.00€",
+      "izvor": "Patuljak.me",
+      "telefoni": [],
+      "_opis": "Izdaje se moderno opremljen dvosoban stan površine 66m2, sa pripadajućim parking mjestom, novogradnja sa liftom na Zabjelu, u blizini Multikoma. Druga spavaća soba se može preurediti po potrebi budućih Zakupaca. Moguće je zakupiti još jedno parking mjesto. Ugovor na minimum godinu dana obavezan. Kućni ljubimci nisu dozvoljeni u stanu. Viber whatsapp za više informacija",
+      "_count": 1
+    },
+    "p": 1,
+    "o": 1
+  },
+  "https://www.patuljak.me/oglas/izdajem-jednosoban-stan-40m-u-blizini-udg--89226": {
+    "ts": "2026-11-23T09:03:43.595238",
+    "status": "vlasnik",
+    "lead": {
+      "ime": "Zoran",
+      "oglas_link": "https://www.patuljak.me/oglas/izdajem-jednosoban-stan-40m-u-blizini-udg--89226",
+      "lokacija": "Podgorica",
+      "cijena": "350.00€",
+      "izvor": "Patuljak.me",
+      "telefoni": [],
+      "_opis": "",
+      "_count": 1
     },
     "p": 1,
     "o": 1
