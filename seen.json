@@ -1,545 +1,4 @@
 {
-  "https://www.patuljak.me/oglas/izdavanjetrosoban-standalmatinska-ulica--88628": {
-    "ts": "2026-11-18T13:57:29.457828",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://www.patuljak.me/oglas/prodaje-se-luksuzno-opremljen-jednosoban-stan-povr--88627": {
-    "ts": "2026-11-18T13:57:30.982287",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://www.patuljak.me/oglas/izdaje-se-jednosoban-stan-povrsine-49m-u-stambenom--88626": {
-    "ts": "2026-11-18T13:57:32.567098",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://oglasi.vijesti.me/ponuda/jednosoban-stan-50m2-tuski-put-podgorica/": {
-    "ts": "2026-11-18T13:57:33.168574",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://www.patuljak.me/oglas/izdaje-se-dvosoban-nenamjesten-stan-povrsine-85m-u--88622": {
-    "ts": "2026-11-18T13:57:34.100098",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://www.patuljak.me/oglas/jednosoban-stan-53m2-city-kvart--88621": {
-    "ts": "2026-11-18T13:57:35.613494",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://oglasi.vijesti.me/ponuda/jednosoban-stan-47m2-garaza-premium-kvart-podgorica/": {
-    "ts": "2026-11-18T13:57:36.215381",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://www.patuljak.me/oglas/dvosoban-stan-63m2-iza-delte--88618": {
-    "ts": "2026-11-18T13:57:37.149546",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://www.patuljak.me/oglas/kotor-plac-na-prodaju-katastarska-opstina-dobrota--88611": {
-    "ts": "2026-11-18T13:57:38.650220",
-    "status": "drugi_grad",
-    "lead": null
-  },
-  "https://oglasi.vijesti.me/ponuda/porodicna-kuca-140m2-na-placu-1000m2-velje-brdo-podgorica/": {
-    "ts": "2026-11-18T13:57:39.157741",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://www.patuljak.me/oglas/jednosoban-47m2-new-city-izdavanje--88608": {
-    "ts": "2026-11-18T13:57:40.176626",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://www.patuljak.me/oglas/izdavanje-dvosoban-stan-70-m2-momisici--88607": {
-    "ts": "2026-11-18T13:57:41.740873",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://oglasi.vijesti.me/ponuda/dvosoban-stan-85m2-parking-gorica-c-podgorica-2/": {
-    "ts": "2026-11-18T13:57:42.159595",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://www.patuljak.me/oglas/zabjelo-69m2-dvosoban-stan--88606": {
-    "ts": "2026-11-18T13:57:43.261398",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://www.patuljak.me/oglas/malo-brdo-garsonjera-30-m2-izdavanje--88605": {
-    "ts": "2026-11-18T13:57:44.794664",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://oglasi.vijesti.me/ponuda/dvosoban-stan-70m2-garaza-zabjelo-podgorica/": {
-    "ts": "2026-11-18T13:57:45.108339",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://www.patuljak.me/oglas/dvosoban-stan-68m2-bar-prodaja--88604": {
-    "ts": "2026-11-18T13:57:46.328673",
-    "status": "drugi_grad",
-    "lead": null
-  },
-  "https://www.patuljak.me/oglas/kuca-220m2-skaljari-prodaja--88603": {
-    "ts": "2026-11-18T13:57:47.833472",
-    "status": "drugi_grad",
-    "lead": null
-  },
-  "https://oglasi.vijesti.me/ponuda/nov-jednosoban-stan-53-m%c2%b2-stari-aerodrom-podgorica/": {
-    "ts": "2026-11-18T13:57:48.302030",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://www.patuljak.me/oglas/stan-68-m-na-izdavanje-centar-podgorica--88602": {
-    "ts": "2026-11-18T13:57:49.423697",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://www.patuljak.me/oglas/jednosoban-50m2-city-kvart-izdavanje--88601": {
-    "ts": "2026-11-18T13:57:50.944564",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://oglasi.vijesti.me/ponuda/najam-izdavanje-stan-53m%c2%b2-podgorica-city-kvart/": {
-    "ts": "2026-11-18T13:57:51.292905",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://www.patuljak.me/oglas/poslovni-prostor-stari-aerodrom-22m2--88600": {
-    "ts": "2026-11-18T13:57:52.455580",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://www.patuljak.me/oglas/jednosoban-stan-kavaci-57m2--88599": {
-    "ts": "2026-11-18T13:57:53.982693",
-    "status": "drugi_grad",
-    "lead": null
-  },
-  "https://oglasi.vijesti.me/ponuda/prodaja-jednosoban-stan-63m2-podgorica-preko-morace-2/": {
-    "ts": "2026-11-18T13:57:54.280116",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://www.patuljak.me/oglas/izdavanje-trosoban-stan-podgorica-preko-morace-142--88598": {
-    "ts": "2026-11-18T13:57:55.517544",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://www.patuljak.me/oglas/izdavanje-dvosoban-stan-podgorica-preko-morace-142--88597": {
-    "ts": "2026-11-18T13:57:57.106078",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://oglasi.vijesti.me/ponuda/prodaja-trosoban-stan-89m2-podgorica-tuski-put-2/": {
-    "ts": "2026-11-18T13:57:57.160034",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://www.patuljak.me/oglas/izdavanje-jednosoban-stan-podgorica-tuski-put-40m2--88596": {
-    "ts": "2026-11-18T13:57:58.652846",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://oglasi.vijesti.me/ponuda/najam-izdavanje-stan-47m%c2%b2-podgorica-zabjelo/": {
-    "ts": "2026-11-18T13:58:00.127735",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://www.patuljak.me/oglas/prodaja-zemljiste-podgorica-zagoric-500m2--88595": {
-    "ts": "2026-11-18T13:58:00.155989",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://www.patuljak.me/oglas/prodaja-trosoban-stan-podgorica-centar-64m2--88594": {
-    "ts": "2026-11-18T13:58:01.672350",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://oglasi.vijesti.me/ponuda/najam-izdavanje-garsonjera-25m2-podgorica-preko-morace-2/": {
-    "ts": "2026-11-18T13:58:03.249681",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://www.patuljak.me/oglas/pizdaje-se-stronglijepo-namjestena-garsonjera--88593": {
-    "ts": "2026-11-18T13:58:03.254774",
-    "status": "drugi_grad",
-    "lead": null
-  },
-  "https://www.patuljak.me/oglas/dvosoban-moderno-opremljen-stan-sa-garaznim-mestom--88592": {
-    "ts": "2026-11-18T13:58:04.798615",
-    "status": "drugi_grad",
-    "lead": null
-  },
-  "https://oglasi.vijesti.me/ponuda/prodaja-garsonjera-30m2-podgorica-preko-morace/": {
-    "ts": "2026-11-18T13:58:06.196201",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://www.patuljak.me/oglas/najamizdavanje-stan-53m-podgorica-city-kva--88591": {
-    "ts": "2026-11-18T13:58:06.319189",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://www.patuljak.me/oglas/prodaja-jednosoban-stan-63m2-podgorica-preko--88590": {
-    "ts": "2026-11-18T13:58:07.858522",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://oglasi.vijesti.me/ponuda/najam-izdavanje-garsonjera-38m2-podgorica-stari-aerodrom-2/": {
-    "ts": "2026-11-18T13:58:09.178763",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://www.patuljak.me/oglas/prodaja-trosoban-stan-89m2-podgorica-tuski-p--88589": {
-    "ts": "2026-11-18T13:58:09.454642",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://www.patuljak.me/oglas/najamizdavanje-stan-47m-podgorica-zabjelo--88588": {
-    "ts": "2026-11-18T13:58:10.983902",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://oglasi.vijesti.me/ponuda/najam-izdavanje-stan-40m%c2%b2-podgorica-stari-aerodrom-5/": {
-    "ts": "2026-11-18T13:58:12.201615",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://www.patuljak.me/oglas/najamizdavanje-garsonjera-25m2-podgorica-pre--88587": {
-    "ts": "2026-11-18T13:58:12.518157",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://oglasi.vijesti.me/ponuda/najam-izdavanje-kuca-200m2-podgorica-donja-gorica-2/": {
-    "ts": "2026-11-18T13:58:15.203592",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://oglasi.vijesti.me/ponuda/najam-izdavanje-dvosoban-stan-40m2-podgorica-preko-morace-2/": {
-    "ts": "2026-11-18T13:58:18.358962",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://oglasi.vijesti.me/ponuda/najam-izdavanje-poslovni-prostor-65m2-podgorica-stari-aerodrom-2/": {
-    "ts": "2026-11-18T13:58:21.439927",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://oglasi.vijesti.me/ponuda/prodaja-poslovni-prostor-79m2-podgorica-blok-5-2/": {
-    "ts": "2026-11-18T13:58:24.499852",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://www.oglasi.me/nekretnine/stanovi/izdaje-se-opremljena-garsonjera-povrsine-23m--u-naselju-zabjelo--podgorica--u-stambenom-kompleksu-garden-complex--og84558076me": {
-    "ts": "2026-11-18T13:58:26.926088",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://www.oglasi.me/nekretnine/stanovi/jednosoban-stan-42m2--centar-podgorica-og84558113me": {
-    "ts": "2026-11-18T13:58:26.926198",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://www.oglasi.me/nekretnine/kuce/izdaje-se-porodicna-kuca-povrsine-180m---sa-dvoristem-od-620m---u-naselju-donja-gorica--podgorica--og84558829me": {
-    "ts": "2026-11-18T13:58:26.926268",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://www.oglasi.me/nekretnine/stanovi/izdaje-se-jednosoban-stan--podgorica-og84558555me": {
-    "ts": "2026-11-18T13:58:26.931131",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://www.oglasi.me/nekretnine/stanovi/garsonjera-25-m-podgorica-u-big-fashion-og84558711me": {
-    "ts": "2026-11-18T13:58:26.931227",
-    "status": "vlasnik",
-    "lead": {
-      "ime": "Andrei",
-      "oglas_link": "https://www.oglasi.me/nekretnine/stanovi/garsonjera-25-m-podgorica-u-big-fashion-og84558711me",
-      "lokacija": "Podgorica",
-      "cijena": "53000€",
-      "izvor": "Oglasi.me",
-      "telefoni": [
-        "38268397276"
-      ],
-      "_opis": "Opis oglasa Podgorica. Super lokacija. 100 m od tržnog centra Big Fashion. Ulaz sa Cetinskog puta, parking za stanare ispred kuće. Nova kuća 2023. Garsoniera 25m, ulazni prostor, kuhinja, gostinjski dio, spavaća, wc/tuš",
-      "_uid": null
-    },
-    "p": 1,
-    "o": 1
-  },
-  "https://www.oglasi.me/nekretnine/stanovi/prodaje-se-garsonjera-povrsine-31m---og84556843me": {
-    "ts": "2026-11-18T13:58:26.931255",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://www.oglasi.me/nekretnine/stanovi/prodaje-se-garsonjera-povrsine-30-08m---og84557103me": {
-    "ts": "2026-11-18T13:58:26.931315",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://www.oglasi.me/nekretnine/stanovi/izdaje-se-jednosoban-stan-povrsine-40m--u-naselju-pobrezje--podgorica--u-zgradi-investitora-zetagradnja--og84557516me": {
-    "ts": "2026-11-18T13:58:26.931365",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://www.oglasi.me/nekretnine/kuce/kuca-96m2--zabjelo-og84557849me": {
-    "ts": "2026-11-18T13:58:26.931414",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://www.oglasi.me/nekretnine/stanovi/prodaje-se-polunamjesten-dvosoban-stan-u-zgradi-maxim--u-dijelu-grada-preko-morace--og84557715me": {
-    "ts": "2026-11-18T13:58:26.931462",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://www.oglasi.me/nekretnine/stanovi/prodaje-se-stan-u-podgorici--preko-morace--og84556785me": {
-    "ts": "2026-11-18T13:58:26.931519",
-    "status": "vlasnik",
-    "lead": {
-      "ime": "Anastasia",
-      "oglas_link": "https://www.oglasi.me/nekretnine/stanovi/prodaje-se-stan-u-podgorici--preko-morace--og84556785me",
-      "lokacija": "Podgorica",
-      "cijena": "180000€",
-      "izvor": "Oglasi.me",
-      "telefoni": [
-        "38268391094"
-      ],
-      "_opis": "",
-      "_uid": null
-    },
-    "p": 1,
-    "o": 1
-  },
-  "https://www.oglasi.me/nekretnine/stanovi/izdaje-se-trosoban-duplex-stan-povrsine-120m--na-vezirovom-mostu--sa-pogledom-na-moracu--og84556000me": {
-    "ts": "2026-11-18T13:58:26.931543",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://www.oglasi.me/nekretnine/stanovi/jednosoban-stan-48m2--tuski-put-og84556180me": {
-    "ts": "2026-11-18T13:58:26.931593",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://www.oglasi.me/nekretnine/stanovi/izdaje-se-jednosoban-stan--centar-og84556686me": {
-    "ts": "2026-11-18T13:58:26.931641",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://www.oglasi.me/nekretnine/stanovi/prodaje-se-garsonjera-povrsine-29m---og84556500me": {
-    "ts": "2026-11-18T13:58:26.931689",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://www.oglasi.me/nekretnine/stanovi/izdaje-se-jednosoban-stan---zabjelo-og84552331me": {
-    "ts": "2026-11-18T13:58:26.931738",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://www.oglasi.me/nekretnine/stanovi/izdaje-se-jednosobam-stan---stari-aerodrom-og84552446me": {
-    "ts": "2026-11-18T13:58:26.931791",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://www.oglasi.me/nekretnine/stanovi/dvosoban-stan-63m2--iza-delte-og84554561me": {
-    "ts": "2026-11-18T13:58:26.931838",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://www.oglasi.me/nekretnine/stanovi/jednosoban-stan-53m2--city-kvart-og84554825me": {
-    "ts": "2026-11-18T13:58:26.931887",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://www.oglasi.me/nekretnine/stanovi/prodaje-se-luksuzno-opremljen-jednosoban-stan-povrsine-60m--u-ulici-ivana-vujosevica--preko-morace--podgorica--og84555707me": {
-    "ts": "2026-11-18T13:58:26.931933",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://www.oglasi.me/nekretnine/stanovi/izdaje-se-dvosoban-nenamjesten-stan-povrsine-85m--u-stambenom-kompleksu-oaza-2--podgorica--og84555289me": {
-    "ts": "2026-11-18T13:58:26.931980",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://www.oglasi.me/nekretnine/stanovi/izdaje-se-namjesten-stan--stari-aerodrom-og84555348me": {
-    "ts": "2026-11-18T13:58:26.932026",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://www.oglasi.me/nekretnine/stanovi/izdaje-se-jednosoban-stan-povrsine-49m--u-stambenom-kompleksu-central-point--podgorica--og84555433me": {
-    "ts": "2026-11-18T13:58:26.932072",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://www.oglasi.me/nekretnine/poslovni-prostori/izdaje-se-poslovni-prostor--stari-aerodrom-og84555622me": {
-    "ts": "2026-11-18T13:58:26.932119",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://www.oglasi.me/nekretnine/stanovi/izdaje-se-namjesten-stan-u-kuci--stari-aerodrom-og84555584me": {
-    "ts": "2026-11-18T13:58:26.932173",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://oglasi.vijesti.me/ponuda/najam-izdavanje-stan-40m%c2%b2-podgorica-central-point-2/": {
-    "ts": "2026-11-18T13:58:27.633817",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://oglasi.vijesti.me/ponuda/najam-izdavanje-jednosoban-stan-50m2-podgorica-ljubovic/": {
-    "ts": "2026-11-18T13:58:30.728345",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://oglasi.vijesti.me/ponuda/prodaja-kuca-140m%c2%b2-podgorica-zlatica/": {
-    "ts": "2026-11-18T13:58:33.851726",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://oglasi.vijesti.me/ponuda/najam-izdavanje-jednosoban-stan-53m2-podgorica-dalmatinska-2/": {
-    "ts": "2026-11-18T13:58:36.835629",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://oglasi.vijesti.me/ponuda/najam-izdavanje-jednosoban-stan-45m2-podgorica-city-kvart-2/": {
-    "ts": "2026-11-18T13:58:39.880352",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://oglasi.vijesti.me/ponuda/najam-izdavanje-garsonjera-36m2-podgorica-zlatica-2/": {
-    "ts": "2026-11-18T13:58:42.867061",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://oglasi.vijesti.me/ponuda/najam-izdavanje-dvosoban-stan-72m2-podgorica-pejton-2/": {
-    "ts": "2026-11-18T13:58:45.880876",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://oglasi.vijesti.me/ponuda/najam-izdavanje-poslovni-prostor-125m%c2%b2-podgorica-zabjelo-2/": {
-    "ts": "2026-11-18T13:58:48.852891",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://oglasi.vijesti.me/ponuda/najam-izdavanje-poslovni-prostor-42m2-podgorica-tuski-put-2/": {
-    "ts": "2026-11-18T13:58:51.980517",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://oglasi.vijesti.me/ponuda/prodaja-poslovni-prostor-57m2-podgorica-tuski-put-2/": {
-    "ts": "2026-11-18T13:58:54.909785",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://oglasi.vijesti.me/ponuda/prodaja-zemljiste-6350m%c2%b2-podgorica-kornet-2/": {
-    "ts": "2026-11-18T13:58:57.880487",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://oglasi.vijesti.me/ponuda/najam-izdavanje-jednosoban-stan-54m2-podgorica-1-maj-2/": {
-    "ts": "2026-11-18T13:59:00.859798",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://oglasi.vijesti.me/ponuda/najam-izdavanje-jednosoban-stan-48m2-podgorica-ljubovic-2/": {
-    "ts": "2026-11-18T13:59:03.968227",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://oglasi.vijesti.me/ponuda/najam-izdavanje-jednosoban-stan-52m2-podgorica-ljubovic/": {
-    "ts": "2026-11-18T13:59:06.963119",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://oglasi.vijesti.me/ponuda/najam-izdavanje-jednosoban-stan-47m2-podgorica-central-point-2/": {
-    "ts": "2026-11-18T13:59:09.934109",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://oglasi.vijesti.me/ponuda/prodaja-jednosoban-stan-42m2-podgorica-stari-aerodrom/": {
-    "ts": "2026-11-18T13:59:12.962930",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://oglasi.vijesti.me/ponuda/najam-izdavanje-stan-50m%c2%b2-podgorica-master-kvart-2/": {
-    "ts": "2026-11-18T13:59:15.965502",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://oglasi.vijesti.me/ponuda/najam-izdavanje-poslovni-prostor-300m2-podgorica-centar-2/": {
-    "ts": "2026-11-18T13:59:18.967824",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://oglasi.vijesti.me/ponuda/najam-izdavanje-jednosoban-stan-45m2-podgorica-stari-aerodrom-5/": {
-    "ts": "2026-11-18T13:59:22.128249",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://oglasi.vijesti.me/ponuda/najam-izdavanje-kuca-120m2-podgorica-zlatica-2/": {
-    "ts": "2026-11-18T13:59:25.322753",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://oglasi.vijesti.me/ponuda/najam-izdavanje-cetvorosoban-stan-139m2-podgorica-dalmatinska-2/": {
-    "ts": "2026-11-18T13:59:28.406820",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://oglasi.vijesti.me/ponuda/najam-izdavanje-stan-56m%c2%b2-podgorica-dalmatinska-2/": {
-    "ts": "2026-11-18T13:59:31.466161",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://oglasi.vijesti.me/ponuda/najam-izdavanje-kuca-120m2-podgorica-stara-varos-2/": {
-    "ts": "2026-11-18T13:59:34.531429",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://oglasi.vijesti.me/ponuda/najam-izdavanje-jednosoban-stan-49m2-podgorica-central-point-2/": {
-    "ts": "2026-11-18T13:59:37.614635",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://oglasi.vijesti.me/ponuda/prodaja-poslovni-prostor-66m%c2%b2-podgorica-1-maj-2/": {
-    "ts": "2026-11-18T13:59:40.588400",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://oglasi.vijesti.me/ponuda/najam-izdavanje-poslovni-prostor-66m2-podgorica-1-maj-2/": {
-    "ts": "2026-11-18T13:59:43.806625",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://oglasi.vijesti.me/ponuda/najam-izdavanje-jednosoban-stan-42m2-podgorica-konik-2/": {
-    "ts": "2026-11-18T13:59:46.831803",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://oglasi.vijesti.me/ponuda/najam-izdavanje-jednosoban-stan-54m2-podgorica-dalmatinska-2/": {
-    "ts": "2026-11-18T13:59:49.844127",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://oglasi.vijesti.me/ponuda/najam-izdavanje-dvosoban-stan-66m2-podgorica-blok-9-2/": {
-    "ts": "2026-11-18T13:59:52.753922",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://oglasi.vijesti.me/ponuda/prodaja-kuca-178m2-podgorica-zlatica-2/": {
-    "ts": "2026-11-18T13:59:55.715878",
-    "status": "posrednik",
-    "lead": null
-  },
-  "https://oglasi.vijesti.me/ponuda/najam-izdavanje-kuca-178m%c2%b2-podgorica-zlatica-2/": {
-    "ts": "2026-11-18T13:59:58.693949",
-    "status": "posrednik",
-    "lead": null
-  },
   "https://www.patuljak.me/oglas/izdaje-se-opremljena-garsonjera-povrsine-23m-u-nas--88651": {
     "ts": "2026-11-18T21:56:15.994711",
     "status": "posrednik",
@@ -6222,7 +5681,8 @@
         "razlog": "Tekst je veoma kratak i ne sadrži ni profesionalne elemente agencije ni jasne potvrde o privatnom vlasništvu."
       }
     },
-    "p": 1
+    "p": 1,
+    "o": 1
   },
   "https://www.patuljak.me/oglas/prodaje-se-jednosoban-stan-povrsine-41m-u-naselju--89737": {
     "ts": "2026-11-25T22:31:14.871196",
@@ -6655,7 +6115,8 @@
         "razlog": "Ime oglašivača je lično i tekst je kratak, ali nedostaju jasne potvrde o vlasništvu ili isključenju posrednika."
       }
     },
-    "p": 1
+    "p": 1,
+    "o": 1
   },
   "https://www.patuljak.me/oglas/izdajem-magacin--89771": {
     "ts": "2026-11-26T05:03:25.126460",
@@ -6676,7 +6137,8 @@
         "razlog": "Tekst je profesionalno formatiran sa mnogo stavki, ali je ime lično i nedostaju jasni znaci agencije ili potvrda vlasništva."
       }
     },
-    "p": 1
+    "p": 1,
+    "o": 1
   },
   "https://www.patuljak.me/oglas/unikatna-mobilna-vikendica-sa-panoramskim-krovom-2--89766": {
     "ts": "2026-11-26T05:03:26.508549",
@@ -6775,6 +6237,539 @@
   },
   "https://www.patuljak.me/oglas/izdaje-se-dvosoban-stan-povrsine-68m-u-city-kvartu--89740": {
     "ts": "2026-11-26T05:03:50.564578",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/zabjelo-opremljen-jednosoban-stan-40m2--89931": {
+    "ts": "2026-11-26T15:13:59.785074",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/prodaje-se-jednosoban-stan-povrsine-4488m-sa-pripa--89930": {
+    "ts": "2026-11-26T15:14:01.293575",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/izdavanjedvosoban-stannew-city--89929": {
+    "ts": "2026-11-26T15:14:02.779223",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://oglasi.vijesti.me/ponuda/dvosoban-stan-preko-morace/": {
+    "ts": "2026-11-26T15:14:02.843573",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/jednosoban-stan-40m2-pobrezje--89928": {
+    "ts": "2026-11-26T15:14:04.261741",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/izdavanje-dvosoban-stan-70-m2-gintas-lepa-kata-pod--89927": {
+    "ts": "2026-11-26T15:14:05.748231",
+    "status": "vlasnik",
+    "lead": {
+      "ime": "Mladen",
+      "oglas_link": "https://www.patuljak.me/oglas/izdavanje-dvosoban-stan-70-m2-gintas-lepa-kata-pod--89927",
+      "lokacija": "Podgorica",
+      "cijena": "450.00€",
+      "izvor": "Patuljak.me",
+      "telefoni": [
+        "38267246924"
+      ],
+      "_opis": "Izdaje se dvosoban stan površine 70 m2 na duži vremenski period. Stan se nalazi u blizini Gintaša, zgrada Lepa Kata u zgradi koja posjeduje lift. Stuktura: ulazni hodnik, dnevni boravak, odvojena kuhinja, predosoblje, dvije spavaće sobe, kupatilo i balkon. Stan je odlično pozicioniran u blizini svih važnih sadržaja – škola, marketa, banaka i gradskog prevoza. Stan se izdaje kompletno namješten. Nalazi se u mirom dijelu grada nadomak centra grada. Cijena: 450e Stan je dostupan od 1. decembra. Stan izdaje vlasnik. Kontakt: 067 246 924",
+      "_count": 1,
+      "_ai": {
+        "presuda": "vlasnik",
+        "razlog": "Oglašivač je izričito naveo da stan izdaje vlasnik i koristi lično ime bez ikakvih agencijskih oznaka."
+      }
+    },
+    "p": 1,
+    "o": 1
+  },
+  "https://oglasi.vijesti.me/ponuda/prodaja-kuca-352m2-podgorica-masline/": {
+    "ts": "2026-11-26T15:14:05.986789",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/poslovni-prostor-na-starom-aerodromu-izdavanje-ren--89925": {
+    "ts": "2026-11-26T15:14:07.241306",
+    "status": "provjeri",
+    "lead": {
+      "ime": "Aleksandra",
+      "oglas_link": "https://www.patuljak.me/oglas/poslovni-prostor-na-starom-aerodromu-izdavanje-ren--89925",
+      "lokacija": "Podgorica",
+      "cijena": "600.00€",
+      "izvor": "Patuljak.me",
+      "telefoni": [
+        "38267371699"
+      ],
+      "_opis": "Izdaje se poslovni prostor 60 M2 , renoviran, sa malom kuhinjom, ugrađena dva klima uređaja, sa terasom i parkingom. Sastoji se iz 5 prostorija: * 2 velike prostorije/kancelarije * hodnik/čekaonica * kupatilo * kuhinjica Preko puta Katoličke crkve na Starom aerodromu, Podgorica. Pogodan za kancelarije, administraciju, studio/ordinaciju, ili manji fitness/pilates studio. Mjesečna renta 600 eura , broj telefona 067 371 699 ____________________________________________ Commercial space 60 M2 FOR RENT – ​​fully renovated, featuring a small kitchen, two installed air conditioning units, a terrace, and parking. It consists of 5 rooms: * 2 large rooms/offices * corridor/waiting room * bathroom * kitchenette Located across from the Catholic Church in Stari Aerodrom, Podgorica. Suitable for offices, administrative use, or a studio/consulting room or smaller fitness/pilates studio. Monthly rent: 600 euros . Phone number: 067 371 699 .",
+      "_count": 1
+    },
+    "p": 1,
+    "o": 1
+  },
+  "https://www.patuljak.me/oglas/prodajem-stan-86m--89922": {
+    "ts": "2026-11-26T15:14:08.707277",
+    "status": "vlasnik",
+    "lead": {
+      "ime": "Aleksandra",
+      "oglas_link": "https://www.patuljak.me/oglas/prodajem-stan-86m--89922",
+      "lokacija": "Podgorica",
+      "cijena": "240.00€",
+      "izvor": "Patuljak.me",
+      "telefoni": [],
+      "_opis": "U ponudi je ekskluzivan, neuseljavan stan površine 86 m², smješten u modernoj stambenoj zgradi visokog kvaliteta gradnje, na jednoj od atraktivnih lokacija u Zagoriču, u blizini Protokola. Nekretnina se odlikuje kvalitetnom izvedbom, savremenim standardima gradnje i ambijentom koji pruža udobnost, funkcionalnost i kvalitet svakodnevnog života. Stan predstavlja odličan izbor za kupce koji traže nov, reprezentativan i kvalitetan stambeni prostor, ali i za one koji prepoznaju vrijednost dobre investicije. Osnovne karakteristike: - Površina: 86 m² - Novogradnja - Potpuno neuseljavan stan - Visok kvalitet gradnje - Moderna stambena zgrada - Atraktivna lokacija – Zagorič, Podgorica Nekretnina za kupce koji cijene kvalitet, komfor i dobru lokaciju. Za dodatne informacije i zakazivanje obilaska, kontaktirati putem telefona.",
+      "_count": 1,
+      "_ai": {
+        "presuda": "agencija",
+        "razlog": "Korišćenje profesionalne fraze 'u ponudi' i strukturiran, marketinški formatiran tekst ukazuju na posrednika."
+      }
+    },
+    "p": 1,
+    "o": 1
+  },
+  "https://oglasi.vijesti.me/ponuda/prodaja-poslovni-prostor-41m2-podgorica-centar/": {
+    "ts": "2026-11-26T15:14:09.081072",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/pobrezje-opremljen-jednosoban-stan-40m2--89920": {
+    "ts": "2026-11-26T15:14:10.185375",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/jednosoban-stan-new-city--89918": {
+    "ts": "2026-11-26T15:14:11.657308",
+    "status": "vlasnik",
+    "lead": {
+      "ime": "Dejan",
+      "oglas_link": "https://www.patuljak.me/oglas/jednosoban-stan-new-city--89918",
+      "lokacija": "Podgorica",
+      "cijena": "Cijena na upit",
+      "izvor": "Patuljak.me",
+      "telefoni": [],
+      "_opis": "Izdaje se jednosoban, namjesten stan u Kipsovim zgradama - New City. Izdaje se na duzi period, sa garazom. Nisu dozvoljeni kucni ljubimci.",
+      "_count": 1,
+      "_ai": {
+        "presuda": "nesigurno",
+        "razlog": "Ime je lično i tekst je kratak, ali nedostaju jasni indikatori poput šifre oglasa ili potvrde da je vlasnik."
+      }
+    },
+    "p": 1,
+    "o": 1
+  },
+  "https://oglasi.vijesti.me/ponuda/prodaja-zemljiste-2500m%c2%b2-podgorica-rogami/": {
+    "ts": "2026-11-26T15:14:12.207166",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/izdavanjeposlovni-prostor-donja-gorica--89914": {
+    "ts": "2026-11-26T15:14:13.122829",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/prodaja-jednosoban-stan-45m2-new-city--89913": {
+    "ts": "2026-11-26T15:14:14.598544",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://oglasi.vijesti.me/ponuda/prodaja-kuca-106m2-podgorica-velje-brdo/": {
+    "ts": "2026-11-26T15:14:15.224054",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/izdavanjeposlovni-prostor-preko-morace--89912": {
+    "ts": "2026-11-26T15:14:16.096623",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/dvosoban-stan-zgrada-vektre--89910": {
+    "ts": "2026-11-26T15:14:17.570269",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://oglasi.vijesti.me/ponuda/najam-izdavanje-dvosoban-stan-66m2-podgorica-city-kvart/": {
+    "ts": "2026-11-26T15:14:18.397055",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/izdavanjejednosoban-stanpobrezje--89909": {
+    "ts": "2026-11-26T15:14:19.051171",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/izdavanjejednosoban-stantolosi--89908": {
+    "ts": "2026-11-26T15:14:20.538960",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://oglasi.vijesti.me/ponuda/najam-izdavanje-poslovni-prostor-45m%c2%b2-podgorica-zabjelo/": {
+    "ts": "2026-11-26T15:14:21.636983",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/izdaje-se-luksuzno-opremljen-jednosoban-stan-povrs--89907": {
+    "ts": "2026-11-26T15:14:22.025195",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/izdavanje-garsonjera-donja-gorica--89906": {
+    "ts": "2026-11-26T15:14:23.505286",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://oglasi.vijesti.me/ponuda/najam-izdavanje-stan-82m%c2%b2-podgorica-zabjelo-2/": {
+    "ts": "2026-11-26T15:14:24.600300",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/izdavanjetrosoban-stan-dalmatinska--89905": {
+    "ts": "2026-11-26T15:14:24.982767",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/prodaje-se-dvosoban-duplex-stan-povrsine-72m-u-sta--89904": {
+    "ts": "2026-11-26T15:14:26.473347",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://oglasi.vijesti.me/ponuda/najam-izdavanje-stan-43m%c2%b2-podgorica-drac/": {
+    "ts": "2026-11-26T15:14:27.558033",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/izdajem-jednosoban-stan-u-baru-naselje-polje--89903": {
+    "ts": "2026-11-26T15:14:27.940652",
+    "status": "drugi_grad",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/izdaje-se-jednosoban-namjesten-stan-povrsine-40-m--89902": {
+    "ts": "2026-11-26T15:14:29.422516",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/prodaje-se-trosoban-stan-povrsine-76m-u-stambenom--89901": {
+    "ts": "2026-11-26T15:14:30.900539",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/izdaje-se-jednosoban-namjesten-stan-povrsine-60-m--89900": {
+    "ts": "2026-11-26T15:14:32.387281",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/prodaje-se-garsonjera-povrsine-26m-u-stambenom-kom--89899": {
+    "ts": "2026-11-26T15:14:33.869378",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/izdaje-se-dvosoban-namjesten-stan-povrsine-66-mpa--89898": {
+    "ts": "2026-11-26T15:14:35.359478",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/izdaje-se-dvosoban-namjesten-stan-povrsine-62-mpa--89897": {
+    "ts": "2026-11-26T15:14:36.872476",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/prodaje-se-dvosoban-stan-povrsine-54m-u-stambenom--89896": {
+    "ts": "2026-11-26T15:14:38.409668",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/prodaje-se-jednosoban-stan-povrsine-38m-u-stambeno--89893": {
+    "ts": "2026-11-26T15:14:39.908234",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/prodaje-se-jednosoban-stan-povrsine-50m-u-novom-st--89892": {
+    "ts": "2026-11-26T15:14:41.389839",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/prodaje-se-jednosoban-stan-povrsine-56-m-u-novom-s--89890": {
+    "ts": "2026-11-26T15:14:42.867848",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/prodaje-se-dvosoban-stan-povrsine-71-m-u-novom-sta--89889": {
+    "ts": "2026-11-26T15:14:44.353347",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/kuca-234m2-centar-danilovgrad--89888": {
+    "ts": "2026-11-26T15:14:45.833285",
+    "status": "drugi_grad",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/konik-54m2-dvosoban-stan--89881": {
+    "ts": "2026-11-26T15:14:47.312430",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/poslovni-prostor-27m2-centar-izdavanje--89880": {
+    "ts": "2026-11-26T15:14:48.792323",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/dvosoban-stan-67m2-city-kvart-izdavanje--89879": {
+    "ts": "2026-11-26T15:14:50.299670",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/stan-50-m-na-prodaju-stari-aerodrom-podgoric--89878": {
+    "ts": "2026-11-26T15:14:51.805981",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/poslovni-prostor-27m2-centar--89877": {
+    "ts": "2026-11-26T15:14:53.274473",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/kuca-102m2-obala-ribnice--89876": {
+    "ts": "2026-11-26T15:14:54.765052",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/trosoban-stan-84m2-zabjelo--89875": {
+    "ts": "2026-11-26T15:14:56.266698",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/dvosoban-stan-zagoric-868m2--89873": {
+    "ts": "2026-11-26T15:14:57.759033",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/dvosoban-stan-zagoric-88m2--89872": {
+    "ts": "2026-11-26T15:14:59.241414",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/jednosoban-stan-stari-aerodrom-44m2--89871": {
+    "ts": "2026-11-26T15:15:00.734967",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/kuca-bar-90m2--89870": {
+    "ts": "2026-11-26T15:15:02.211696",
+    "status": "drugi_grad",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/trosoban-duplex-stan-bar-128m2--89869": {
+    "ts": "2026-11-26T15:15:03.702238",
+    "status": "drugi_grad",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/jednosoban-stan-bar-47m2--89868": {
+    "ts": "2026-11-26T15:15:05.189871",
+    "status": "drugi_grad",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/poslovni-prostor-48m2-stari-aerodrom-podgorica--89867": {
+    "ts": "2026-11-26T15:15:06.654042",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/porodicna-kuca-200m2-na-placu-500m2-donja-gorica--89866": {
+    "ts": "2026-11-26T15:15:08.152521",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.oglasi.me/nekretnine/stanovi/jednosoban-stan-u-podgorici-og84661251me": {
+    "ts": "2026-11-26T15:15:09.210527",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.oglasi.me/nekretnine/stanovi/izdavanje-og83631678me": {
+    "ts": "2026-11-26T15:15:09.210674",
+    "status": "vlasnik",
+    "lead": {
+      "ime": "Radojica",
+      "oglas_link": "https://www.oglasi.me/nekretnine/stanovi/izdavanje-og83631678me",
+      "lokacija": "Podgorica",
+      "cijena": "220.00 € mjesec",
+      "izvor": "Oglasi.me",
+      "telefoni": [
+        "38269013162"
+      ],
+      "_opis": "",
+      "_uid": null
+    },
+    "p": 1,
+    "o": 1
+  },
+  "https://www.oglasi.me/nekretnine/stanovi/prodaja-garsonjere-u-podgorici-og84661341me": {
+    "ts": "2026-11-26T15:15:09.210713",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.oglasi.me/nekretnine/stanovi/izdaje-se-luksuzno-opremljen-jednosoban-stan-u-master-kvartu--podgorica--og84660590me": {
+    "ts": "2026-11-26T15:15:09.210787",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.oglasi.me/nekretnine/stanovi/jednosoban-stan-45m2--new-city-og84660317me": {
+    "ts": "2026-11-26T15:15:09.210852",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.oglasi.me/nekretnine/stanovi/izdaje-se-dvosoban-stan-povrsine-70m--u-naselju-zabjelo--podgorica--u-zgradi-investitora-dadi-gradnja--og84660413me": {
+    "ts": "2026-11-26T15:15:09.210918",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.oglasi.me/nekretnine/stanovi/izdaje-se-jednosoban-stan--new-city-og84658405me": {
+    "ts": "2026-11-26T15:15:09.210979",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.oglasi.me/nekretnine/stanovi/jednosoban-stan-39m2--stari-aerodrom-og84658560me": {
+    "ts": "2026-11-26T15:15:09.211032",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.oglasi.me/nekretnine/stanovi/izdaje-se-jednosoban-stan-povrsine-40m--u-novogradnji-investitora-zetagradnja--podgorica--og84660156me": {
+    "ts": "2026-11-26T15:15:09.211087",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.oglasi.me/nekretnine/stanovi/prodaje-se-garsonjera-povrsine-25-96m--u-stambenom-projektu-hill-house--u-naselju-zagoric--podgorica--og84658298me": {
+    "ts": "2026-11-26T15:15:09.211144",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.oglasi.me/nekretnine/stanovi/izdaje-se-jednosoban-stan--zabjelo-og84657892me": {
+    "ts": "2026-11-26T15:15:09.211200",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.oglasi.me/nekretnine/stanovi/prodaje-se-trosoban-stan-povrsine-93-03m--u-stambenom-projektu-hill-house--u-naselju-zagoric--podgorica--og84657587me": {
+    "ts": "2026-11-26T15:15:09.211255",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.oglasi.me/nekretnine/zemljiste/prodaja-zemljiste-uz-rijeku-zetu--pricelje-og84658723me": {
+    "ts": "2026-11-26T15:15:09.211312",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.oglasi.me/nekretnine/stanovi/prodaje-se-garsonjera-povrsine-18m---smjestena-na-visokom-prizemlju-stambeno-poslovne-zgrade-kod-gintasa--u-kojoj-se-nalazi-butik-coton--og84660086me": {
+    "ts": "2026-11-26T15:15:09.211367",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.oglasi.me/nekretnine/stanovi/prodaje-se-jednosoban-stan-povrsine-44-88m--sa-pripadajucim-dvoristem-povrsine-87-36m---u-stambenom-projektu-hill-house--u-naselju-zagoric--podgorica--og84657039me": {
+    "ts": "2026-11-26T15:15:09.211429",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.oglasi.me/nekretnine/stanovi/jednosoban-stan-40m2--pobrezje-og84655882me": {
+    "ts": "2026-11-26T15:15:09.211500",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.oglasi.me/nekretnine/stanovi/jednosoban-stan-44m2--city-kej-og84657143me": {
+    "ts": "2026-11-26T15:15:09.211554",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.oglasi.me/nekretnine/stanovi/dvosoban-stan---rimski-trg-og84654814me": {
+    "ts": "2026-11-26T15:15:09.211611",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.oglasi.me/nekretnine/stanovi/izdaje-se-luksuzno-opremljen-jednosoban-stan-povrsine-41m--u-kompleksu-family-residence--investitora-kips--u-tolosima--podgorica--og84654771me": {
+    "ts": "2026-11-26T15:15:09.211666",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.oglasi.me/nekretnine/stanovi/prodaje-se-dvosoban-duplex-stan-povrsine-72m--u-stambenom-kompleksu-urban-house--u-ulici-romanovih-na-zabjelu--og84654376me": {
+    "ts": "2026-11-26T15:15:09.211721",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.oglasi.me/nekretnine/stanovi/prodaje-se-trosoban-stan-povrsine-76m--u-stambenom-kompleksu-urban-house--u-ulici-romanovih-na-zabjelu--og84654025me": {
+    "ts": "2026-11-26T15:15:09.211774",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.oglasi.me/nekretnine/stanovi/prodaje-se-garsonjera-povrsine-26m--u-stambenom-kompleksu-urban-house--u-ulici-romanovih-na-zabjelu--og84653859me": {
+    "ts": "2026-11-26T15:15:09.211826",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.oglasi.me/nekretnine/stanovi/prodaje-se-dvosoban-stan-povrsine-54m--u-stambenom-kompleksu-urban-house--u-ulici-romanovih-na-zabjelu--og84653641me": {
+    "ts": "2026-11-26T15:15:09.211878",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.oglasi.me/nekretnine/stanovi/prodaje-se-jednosoban-stan-povrsine-38m--u-stambenom-kompleksu-urban-house--u-ulici-romanovih-na-zabjelu--og84653129me": {
+    "ts": "2026-11-26T15:15:09.211931",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.oglasi.me/nekretnine/stanovi/prodaje-se-jednosoban-stan-povrsine-50m--u-novom-stambeno-poslovnom-kompleksu-na-zabjelu--stan-je-dostupan-na-trecem-spratu--og84652729me": {
+    "ts": "2026-11-26T15:15:09.211983",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.oglasi.me/nekretnine/stanovi/prodaje-se-jednosoban-stan-povrsine-56-m--u-novom-stambeno-poslovnom-kompleksu-na-zabjelu--stan-je-dostupan-na-trecem-spratu--og84652510me": {
+    "ts": "2026-11-26T15:15:09.212037",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.oglasi.me/nekretnine/stanovi/prodaje-se-dvosoban-stan-povrsine-71-m--u-novom-stambeno-poslovnom-kompleksu-na-zabjelu--og84652196me": {
+    "ts": "2026-11-26T15:15:09.212090",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.oglasi.me/nekretnine/zemljiste/plac-1139m2--donji-kokoti-og84477111me": {
+    "ts": "2026-11-26T15:15:09.212144",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.oglasi.me/nekretnine/stanovi/izdavanje--dvosoban-stan--54m---gintas--podgorica-og84650703me": {
+    "ts": "2026-11-26T15:15:09.212253",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/poslovni-prostor-76m2-centar-podgorica--89865": {
+    "ts": "2026-11-26T15:15:09.635006",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/jednosoban-stan-49m2-parking-ljubovic-podgorica--89864": {
+    "ts": "2026-11-26T15:15:11.115933",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/jednosoban-stan-55m2-basta-150m2-zabjelo-podgor--89863": {
+    "ts": "2026-11-26T15:15:12.647995",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/izdavanje-dvosoban-stan-podgorica-momisici-72m2--89862": {
+    "ts": "2026-11-26T15:15:14.133360",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/izdavanje-jednosoban-stan-podgorica-city-kvart-53m--89861": {
+    "ts": "2026-11-26T15:15:15.615864",
+    "status": "posrednik",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/izdavanje-jednosoban-stan-kolasin-centar-42m2--89860": {
+    "ts": "2026-11-26T15:15:17.090317",
+    "status": "drugi_grad",
+    "lead": null
+  },
+  "https://www.patuljak.me/oglas/prodaja-jednosoban-stan-podgorica-ljubovic-50m2--89859": {
+    "ts": "2026-11-26T15:15:18.577018",
     "status": "posrednik",
     "lead": null
   }
